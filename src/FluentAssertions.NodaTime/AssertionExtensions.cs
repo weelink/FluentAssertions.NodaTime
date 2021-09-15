@@ -29,5 +29,25 @@ namespace FluentAssertions.NodaTime
         {
             return new InstantAssertions(instant);
         }
+
+        /// <summary>
+        ///     Returns an <see cref="OffsetAssertions"/> object that can be used to assert an <see cref="Offset" />.
+        /// </summary>
+        /// <param name="offset">The <see cref="Offset" /> to assert.</param>
+        /// <returns>The <see cref="OffsetAssertions" /> to use for asserting an <see cref="Offset" />.</returns>
+        public static OffsetAssertions Should(this Offset offset)
+        {
+            return new OffsetAssertions(offset);
+        }
+
+        /// <summary>
+        ///     Returns an <see cref="OffsetAssertions"/> object that can be used to assert an <see cref="Offset" />.
+        /// </summary>
+        /// <param name="offset">The <see cref="Offset" /> to assert.</param>
+        /// <returns>The <see cref="OffsetAssertions" /> to use for asserting an <see cref="Offset" />.</returns>
+        public static OffsetAssertions Should(this Offset? offset)
+        {
+            return new OffsetAssertions(offset);
+        }
     }
 }
