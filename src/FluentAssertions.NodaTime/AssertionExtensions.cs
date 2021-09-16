@@ -49,5 +49,25 @@ namespace FluentAssertions.NodaTime
         {
             return new OffsetAssertions(offset);
         }
+
+        /// <summary>
+        ///     Returns an <see cref="LocalDateTimeAssertions"/> object that can be used to assert an <see cref="LocalDateTime" />.
+        /// </summary>
+        /// <param name="localDateTime">The <see cref="LocalDateTime" /> to assert.</param>
+        /// <returns>The <see cref="LocalDateTimeAssertions" /> to use for asserting an <see cref="LocalDateTime" />.</returns>
+        public static LocalDateTimeAssertions Should(this LocalDateTime? localDateTime)
+        {
+            return new LocalDateTimeAssertions(localDateTime);
+        }
+
+        /// <summary>
+        ///     Returns an <see cref="LocalDateTimeAssertions"/> object that can be used to assert an <see cref="LocalDateTime" />.
+        /// </summary>
+        /// <param name="localDateTime">The <see cref="LocalDateTime" /> to assert.</param>
+        /// <returns>The <see cref="LocalDateTimeAssertions" /> to use for asserting an <see cref="LocalDateTime" />.</returns>
+        public static LocalDateTimeAssertions Should(this LocalDateTime localDateTime)
+        {
+            return new LocalDateTimeAssertions(localDateTime);
+        }
     }
 }

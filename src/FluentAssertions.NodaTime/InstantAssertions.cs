@@ -26,7 +26,7 @@ namespace FluentAssertions.NodaTime
         [ExcludeFromCodeCoverage]
         protected override string Identifier
         {
-            get { return "instant"; }
+            get { return "Instant"; }
         }
 
         /// <summary>
@@ -46,23 +46,10 @@ namespace FluentAssertions.NodaTime
         [CustomAssertion]
         public AndConstraint<InstantAssertions> Be(Instant? other, string because = "", params object[] becauseArgs)
         {
-            AssertionScope scope =
-                Execute.Assertion
-                    .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Expected {context:instant} to be equal to {0}{reason}", other);
-
-            if (Subject.HasValue)
-            {
-                scope
-                    .ForCondition(Subject.Equals(other))
-                    .FailWith(", but found {0}.", Subject);
-            }
-            else
-            {
-                scope
-                    .ForCondition(!other.HasValue)
-                    .FailWith(", but found <null>.");
-            }
+            Execute.Assertion
+                .BecauseOf(because, becauseArgs)
+                .ForCondition((Subject.HasValue && Subject.Equals(other)) || (!Subject.HasValue && !other.HasValue))
+                .FailWith("Expected {context:Instant} to be equal to {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<InstantAssertions>(this);
         }
@@ -104,23 +91,10 @@ namespace FluentAssertions.NodaTime
         [CustomAssertion]
         public AndConstraint<InstantAssertions> NotBe(Instant? other, string because = "", params object[] becauseArgs)
         {
-            AssertionScope scope =
-                Execute.Assertion
-                    .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Expected {context:instant} not to be equal to {0}{reason}", other);
-
-            if (Subject.HasValue)
-            {
-                scope
-                    .ForCondition(!Subject.Equals(other))
-                    .FailWith(", but found {0}.", Subject);
-            }
-            else
-            {
-                scope
-                    .ForCondition(other.HasValue)
-                    .FailWith(", but found <null>.");
-            }
+            Execute.Assertion
+                .BecauseOf(because, becauseArgs)
+                .ForCondition((Subject.HasValue && !Subject.Equals(other)) || (!Subject.HasValue && other.HasValue))
+                .FailWith("Did not expect {context:Instant} to be equal to {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<InstantAssertions>(this);
         }
@@ -193,13 +167,13 @@ namespace FluentAssertions.NodaTime
             Execute.Assertion
                 .ForCondition(distance <= precision)
                 .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:instant} to be within {0} from {1}{reason}, but it was {2}.", precision, other, distance);
+                .FailWith("Expected {context:Instant} to be within {0} from {1}{reason}, but it was {2}.", precision, other, distance);
 
             return new AndConstraint<InstantAssertions>(this);
         }
 
         /// <summary>
-        ///     Asserts that this <see cref="Instant" /> is within <paramref name="precision" /> of <paramref name="other" />.
+        ///     Asserts that this <see cref="Instant" /> is not within <paramref name="precision" /> of <paramref name="other" />.
         /// </summary>
         /// <param name="other">The <see cref="Instant" /> to compare to.</param>
         /// <param name="precision">The maximum amount of time which the two values may differ.</param>
@@ -220,7 +194,7 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
-        ///     Asserts that this <see cref="Instant" /> is within <paramref name="precision" /> of <paramref name="other" />.
+        ///     Asserts that this <see cref="Instant" /> is not within <paramref name="precision" /> of <paramref name="other" />.
         /// </summary>
         /// <param name="other">The <see cref="Instant" /> to compare to.</param>
         /// <param name="precision">The maximum amount of time which the two values may differ.</param>
@@ -246,7 +220,7 @@ namespace FluentAssertions.NodaTime
             Execute.Assertion
                 .ForCondition(distance > precision)
                 .BecauseOf(because, becauseArgs)
-                .FailWith("Did not expect {context:instant} to be within {0} from {1}{reason}, but it was {2}.", precision, other, distance);
+                .FailWith("Did not expect {context:Instant} to be within {0} from {1}{reason}, but it was {2}.", precision, other, distance);
 
             return new AndConstraint<InstantAssertions>(this);
         }
@@ -271,7 +245,7 @@ namespace FluentAssertions.NodaTime
             Execute.Assertion
                 .ForCondition(Subject > other)
                 .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:instant} to be after {0}{reason}, but found {1}.", other, Subject);
+                .FailWith("Expected {context:Instant} to be after {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<InstantAssertions>(this);
         }
@@ -296,7 +270,7 @@ namespace FluentAssertions.NodaTime
             Execute.Assertion
                 .ForCondition(Subject >= other)
                 .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:instant} to be on or after {0}{reason}, but found {1}.", other, Subject);
+                .FailWith("Expected {context:Instant} to be on or after {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<InstantAssertions>(this);
         }
@@ -321,7 +295,7 @@ namespace FluentAssertions.NodaTime
             Execute.Assertion
                 .ForCondition(Subject < other)
                 .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:instant} to be before {0}{reason}, but found {1}.", other, Subject);
+                .FailWith("Expected {context:Instant} to be before {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<InstantAssertions>(this);
         }
@@ -346,7 +320,7 @@ namespace FluentAssertions.NodaTime
             Execute.Assertion
                 .ForCondition(Subject <= other)
                 .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:instant} to be on or before {0}{reason}, but found {1}.", other, Subject);
+                .FailWith("Expected {context:Instant} to be on or before {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<InstantAssertions>(this);
         }

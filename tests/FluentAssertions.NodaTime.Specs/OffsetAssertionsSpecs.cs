@@ -40,7 +40,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().NotThrow();
             }
-            
+
             [Fact]
             [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
             public void When_asserting_null_is_equal_to_null_it_succeeds()
@@ -117,7 +117,7 @@ namespace FluentAssertions.NodaTime.Specs
                 act.Should().Throw<XunitException>()
                     .WithMessage($"Expected {nameof(offset)} to be equal to {other}, but found {offset}.");
             }
-            
+
             [Fact]
             public void When_an_offset_is_equal_to_a_timespan_it_succeeds()
             {
@@ -206,7 +206,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} not to be equal to {other}, but found {offset}.");
+                    .WithMessage($"Did not expect {nameof(offset)} to be equal to {other}, but found {offset}.");
             }
 
             [Fact]
@@ -221,7 +221,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} not to be equal to {offset}, but found {offset}.");
+                    .WithMessage($"Did not expect {nameof(offset)} to be equal to {offset}, but found {offset}.");
             }
 
             [Fact]
@@ -237,7 +237,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} not to be equal to <null>, but found <null>.");
+                    .WithMessage($"Did not expect {nameof(offset)} to be equal to <null>, but found <null>.");
             }
 
             [Fact]
@@ -269,7 +269,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().NotThrow();
             }
-    
+
             [Fact]
             public void When_an_offset_is_equal_to_a_timespan_it_fails()
             {
@@ -282,7 +282,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} not to be equal to {Offset.FromTimeSpan(other)}, but found {offset}.");
+                    .WithMessage($"Did not expect {nameof(offset)} to be equal to {Offset.FromTimeSpan(other)}, but found {offset}.");
             }
 
             [Fact]
@@ -949,6 +949,49 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage($"Expected {nameof(offset)} to be zero, but found {offset}.");
+            }
+        }
+
+        public class NotBeZero
+        {
+            [Fact]
+            public void When_an_offset_is_zero_it_fails()
+            {
+                // Arrange
+                Offset offset = Offset.Zero;
+
+                // Act
+                Action act = () => offset.Should().NotBeZero();
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(offset)} to be zero, but found {offset}.");
+            }
+
+            [Fact]
+            public void When_an_offset_is_positive_it_suceeds()
+            {
+                // Arrange
+                Offset offset = Offset.FromSeconds(1);
+
+                // Act
+                Action act = () => offset.Should().NotBeZero();
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_an_offset_is_negative_it_succeeds()
+            {
+                // Arrange
+                Offset offset = Offset.FromSeconds(-1);
+
+                // Act
+                Action act = () => offset.Should().NotBeZero();
+
+                // Assert
+                act.Should().NotThrow();
             }
         }
     }
