@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 using NodaTime;
 
@@ -7,7 +8,7 @@ using Xunit.Sdk;
 
 namespace FluentAssertions.NodaTime.Specs
 {
-    public class OffsetAssertionsSpecs
+    public static class OffsetAssertionsSpecs
     {
         public class Be
         {
@@ -39,6 +40,53 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().NotThrow();
             }
+            
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_null_is_equal_to_null_it_succeeds()
+            {
+                // Arrange
+                Offset? offset = default;
+                Offset? other = default;
+
+                // Act
+                Action act = () => offset.Should().Be(other);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_null_is_equal_to_not_null_it_fails()
+            {
+                // Arrange
+                Offset? offset = default;
+                Offset other = Offset.Zero;
+
+                // Act
+                Action act = () => offset.Should().Be(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(offset)} to be equal to {other}, but found <null>.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_not_null_is_equal_to_null_it_fails()
+            {
+                // Arrange
+                Offset offset = Offset.Zero;
+                Offset? other = default;
+
+                // Act
+                Action act = () => offset.Should().Be(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(offset)} to be equal to <null>, but found {offset}.");
+            }
 
             [Fact]
             public void When_an_offset_is_less_than_an_other_offset_it_fails()
@@ -52,7 +100,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} to be equal to {other}.");
+                    .WithMessage($"Expected {nameof(offset)} to be equal to {other}, but found {offset}.");
             }
 
             [Fact]
@@ -67,7 +115,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} to be equal to {other}.");
+                    .WithMessage($"Expected {nameof(offset)} to be equal to {other}, but found {offset}.");
             }
             
             [Fact]
@@ -96,7 +144,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} to be equal to {Offset.FromTimeSpan(other)}.");
+                    .WithMessage($"Expected {nameof(offset)} to be equal to {Offset.FromTimeSpan(other)}, but found {offset}.");
             }
 
             [Fact]
@@ -111,7 +159,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} to be equal to {Offset.FromTimeSpan(other)}.");
+                    .WithMessage($"Expected {nameof(offset)} to be equal to {Offset.FromTimeSpan(other)}, but found {offset}.");
             }
         }
 
@@ -158,7 +206,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} not to be equal to {other}.");
+                    .WithMessage($"Expected {nameof(offset)} not to be equal to {other}, but found {offset}.");
             }
 
             [Fact]
@@ -173,7 +221,53 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} not to be equal to {offset}.");
+                    .WithMessage($"Expected {nameof(offset)} not to be equal to {offset}, but found {offset}.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_null_is_not_equal_to_null_it_fails()
+            {
+                // Arrange
+                Offset? offset = default;
+                Offset? other = default;
+
+                // Act
+                Action act = () => offset.Should().NotBe(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(offset)} not to be equal to <null>, but found <null>.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_null_is_not_equal_to_not_null_it_succeeds()
+            {
+                // Arrange
+                Offset? offset = default;
+                Offset other = Offset.Zero;
+
+                // Act
+                Action act = () => offset.Should().NotBe(other);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_not_null_is_equal_to_null_it_succeeds()
+            {
+                // Arrange
+                Offset offset = Offset.Zero;
+                Offset? other = default;
+
+                // Act
+                Action act = () => offset.Should().NotBe(other);
+
+                // Assert
+                act.Should().NotThrow();
             }
     
             [Fact]
@@ -188,7 +282,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} not to be equal to {Offset.FromTimeSpan(other)}.");
+                    .WithMessage($"Expected {nameof(offset)} not to be equal to {Offset.FromTimeSpan(other)}, but found {offset}.");
             }
 
             [Fact]
@@ -248,7 +342,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} to be greater than {other}.");
+                    .WithMessage($"Expected {nameof(offset)} to be greater than {other}, but found {offset}.");
             }
 
             [Fact]
@@ -264,7 +358,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} to be greater than {other}.");
+                    .WithMessage($"Expected {nameof(offset)} to be greater than {other}, but found {offset}.");
             }
 
             [Fact]
@@ -278,7 +372,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} to be greater than {offset}.");
+                    .WithMessage($"Expected {nameof(offset)} to be greater than {offset}, but found {offset}.");
             }
         }
 
@@ -338,7 +432,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} to be greater than or equal to {other}.");
+                    .WithMessage($"Expected {nameof(offset)} to be greater than or equal to {other}, but found {offset}.");
             }
         }
 
@@ -370,7 +464,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} to be less than {other}.");
+                    .WithMessage($"Expected {nameof(offset)} to be less than {other}, but found {offset}.");
             }
 
             [Fact]
@@ -386,7 +480,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} to be less than {other}.");
+                    .WithMessage($"Expected {nameof(offset)} to be less than {other}, but found {offset}.");
             }
 
             [Fact]
@@ -400,7 +494,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} to be less than {offset}.");
+                    .WithMessage($"Expected {nameof(offset)} to be less than {offset}, but found {offset}.");
             }
         }
 
@@ -460,7 +554,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} to be less than or equal to {other}.");
+                    .WithMessage($"Expected {nameof(offset)} to be less than or equal to {other}, but found {offset}.");
             }
         }
 
@@ -752,7 +846,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} to be positive.");
+                    .WithMessage($"Expected {nameof(offset)} to be positive, but found {offset}.");
             }
 
             [Fact]
@@ -766,7 +860,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} to be positive.");
+                    .WithMessage($"Expected {nameof(offset)} to be positive, but found {offset}.");
             }
         }
 
@@ -796,7 +890,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} to be negative.");
+                    .WithMessage($"Expected {nameof(offset)} to be negative, but found {offset}.");
             }
 
             [Fact]
@@ -810,7 +904,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} to be negative.");
+                    .WithMessage($"Expected {nameof(offset)} to be negative, but found {offset}.");
             }
         }
 
@@ -840,7 +934,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} to be zero.");
+                    .WithMessage($"Expected {nameof(offset)} to be zero, but found {offset}.");
             }
 
             [Fact]
@@ -854,7 +948,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offset)} to be zero.");
+                    .WithMessage($"Expected {nameof(offset)} to be zero, but found {offset}.");
             }
         }
     }

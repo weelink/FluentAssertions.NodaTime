@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 using FluentAssertions.Execution;
 using FluentAssertions.Primitives;
@@ -22,6 +23,7 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <inheritdoc />
+        [ExcludeFromCodeCoverage]
         protected override string Identifier
         {
             get { return "instant"; }
@@ -42,12 +44,25 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<InstantAssertions> Be(Instant other, string because = "", params object[] becauseArgs)
+        public AndConstraint<InstantAssertions> Be(Instant? other, string because = "", params object[] becauseArgs)
         {
-            Execute.Assertion
-                .ForCondition(Subject.Equals(other))
-                .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:instant} to be equal to {0}{reason}.", other);
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Expected {context:instant} to be equal to {0}{reason}", other);
+
+            if (Subject.HasValue)
+            {
+                scope
+                    .ForCondition(Subject.Equals(other))
+                    .FailWith(", but found {0}.", Subject);
+            }
+            else
+            {
+                scope
+                    .ForCondition(!other.HasValue)
+                    .FailWith(", but found <null>.");
+            }
 
             return new AndConstraint<InstantAssertions>(this);
         }
@@ -67,9 +82,9 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<InstantAssertions> Be(DateTimeOffset other, string because = "", params object[] becauseArgs)
+        public AndConstraint<InstantAssertions> Be(DateTimeOffset? other, string because = "", params object[] becauseArgs)
         {
-            return Be(Instant.FromDateTimeOffset(other), because, becauseArgs);
+            return Be(other.HasValue ? Instant.FromDateTimeOffset(other.Value) : null, because, becauseArgs);
         }
 
         /// <summary>
@@ -87,12 +102,25 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<InstantAssertions> NotBe(Instant other, string because = "", params object[] becauseArgs)
+        public AndConstraint<InstantAssertions> NotBe(Instant? other, string because = "", params object[] becauseArgs)
         {
-            Execute.Assertion
-                .ForCondition(!Subject.Equals(other))
-                .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:instant} not to be equal to {0}{reason}.", other);
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Expected {context:instant} not to be equal to {0}{reason}", other);
+
+            if (Subject.HasValue)
+            {
+                scope
+                    .ForCondition(!Subject.Equals(other))
+                    .FailWith(", but found {0}.", Subject);
+            }
+            else
+            {
+                scope
+                    .ForCondition(other.HasValue)
+                    .FailWith(", but found <null>.");
+            }
 
             return new AndConstraint<InstantAssertions>(this);
         }
@@ -112,9 +140,9 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<InstantAssertions> NotBe(DateTimeOffset other, string because = "", params object[] becauseArgs)
+        public AndConstraint<InstantAssertions> NotBe(DateTimeOffset? other, string because = "", params object[] becauseArgs)
         {
-            return NotBe(Instant.FromDateTimeOffset(other), because, becauseArgs);
+            return NotBe(other.HasValue ? Instant.FromDateTimeOffset(other.Value) : null, because, becauseArgs);
         }
 
         /// <summary>
@@ -243,7 +271,7 @@ namespace FluentAssertions.NodaTime
             Execute.Assertion
                 .ForCondition(Subject > other)
                 .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:instant} to be after {0}{reason}.", other);
+                .FailWith("Expected {context:instant} to be after {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<InstantAssertions>(this);
         }
@@ -268,7 +296,7 @@ namespace FluentAssertions.NodaTime
             Execute.Assertion
                 .ForCondition(Subject >= other)
                 .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:instant} to be on or after {0}{reason}.", other);
+                .FailWith("Expected {context:instant} to be on or after {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<InstantAssertions>(this);
         }
@@ -293,7 +321,7 @@ namespace FluentAssertions.NodaTime
             Execute.Assertion
                 .ForCondition(Subject < other)
                 .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:instant} to be before {0}{reason}.", other);
+                .FailWith("Expected {context:instant} to be before {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<InstantAssertions>(this);
         }
@@ -318,7 +346,7 @@ namespace FluentAssertions.NodaTime
             Execute.Assertion
                 .ForCondition(Subject <= other)
                 .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:instant} to be on or before {0}{reason}.", other);
+                .FailWith("Expected {context:instant} to be on or before {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<InstantAssertions>(this);
         }

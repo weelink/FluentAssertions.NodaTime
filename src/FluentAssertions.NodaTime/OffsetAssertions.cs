@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 using FluentAssertions.Execution;
 using FluentAssertions.Primitives;
@@ -22,6 +23,7 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <inheritdoc />
+        [ExcludeFromCodeCoverage]
         protected override string Identifier
         {
             get { return "offset"; }
@@ -42,12 +44,25 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<OffsetAssertions> Be(Offset other, string because = "", params object[] becauseArgs)
+        public AndConstraint<OffsetAssertions> Be(Offset? other, string because = "", params object[] becauseArgs)
         {
-            Execute.Assertion
-                .ForCondition(Subject.Equals(other))
-                .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:offset} to be equal to {0}{reason}.", other);
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Expected {context:offset} to be equal to {0}{reason}", other);
+
+            if (Subject.HasValue)
+            {
+                scope
+                    .ForCondition(Subject.Equals(other))
+                    .FailWith(", but found {0}.", Subject);
+            }
+            else
+            {
+                scope
+                    .ForCondition(!other.HasValue)
+                    .FailWith(", but found <null>.");
+            }
 
             return new AndConstraint<OffsetAssertions>(this);
         }
@@ -67,9 +82,9 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<OffsetAssertions> Be(TimeSpan other, string because = "", params object[] becauseArgs)
+        public AndConstraint<OffsetAssertions> Be(TimeSpan? other, string because = "", params object[] becauseArgs)
         {
-            return Be(Offset.FromTimeSpan(other), because, becauseArgs);
+            return Be(other.HasValue ? Offset.FromTimeSpan(other.Value) : null, because, becauseArgs);
         }
 
         /// <summary>
@@ -87,12 +102,25 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<OffsetAssertions> NotBe(Offset other, string because = "", params object[] becauseArgs)
+        public AndConstraint<OffsetAssertions> NotBe(Offset? other, string because = "", params object[] becauseArgs)
         {
-            Execute.Assertion
-                .ForCondition(!Subject.Equals(other))
-                .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:offset} not to be equal to {0}{reason}.", other);
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Expected {context:offset} not to be equal to {0}{reason}", other);
+
+            if (Subject.HasValue)
+            {
+                scope
+                    .ForCondition(!Subject.Equals(other))
+                    .FailWith(", but found {0}.", Subject);
+            }
+            else
+            {
+                scope
+                    .ForCondition(other.HasValue)
+                    .FailWith(", but found <null>.");
+            }
 
             return new AndConstraint<OffsetAssertions>(this);
         }
@@ -112,9 +140,9 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<OffsetAssertions> NotBe(TimeSpan other, string because = "", params object[] becauseArgs)
+        public AndConstraint<OffsetAssertions> NotBe(TimeSpan? other, string because = "", params object[] becauseArgs)
         {
-            return NotBe(Offset.FromTimeSpan(other), because, becauseArgs);
+            return NotBe(other.HasValue ? Offset.FromTimeSpan(other.Value) : null, because, becauseArgs);
         }
 
         /// <summary>
@@ -136,7 +164,7 @@ namespace FluentAssertions.NodaTime
             Execute.Assertion
                 .ForCondition(Subject > Offset.Zero)
                 .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:offset} to be positive.");
+                .FailWith("Expected {context:offset} to be positive, but found {0}.", Subject);
 
             return new AndConstraint<OffsetAssertions>(this);
         }
@@ -160,7 +188,7 @@ namespace FluentAssertions.NodaTime
             Execute.Assertion
                 .ForCondition(Subject < Offset.Zero)
                 .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:offset} to be negative.");
+                .FailWith("Expected {context:offset} to be negative, but found {0}.", Subject);
 
             return new AndConstraint<OffsetAssertions>(this);
         }
@@ -184,7 +212,7 @@ namespace FluentAssertions.NodaTime
             Execute.Assertion
                 .ForCondition(Subject == Offset.Zero)
                 .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:offset} to be zero.");
+                .FailWith("Expected {context:offset} to be zero, but found {0}.", Subject);
 
             return new AndConstraint<OffsetAssertions>(this);
         }
@@ -315,7 +343,7 @@ namespace FluentAssertions.NodaTime
             Execute.Assertion
                 .ForCondition(Subject > other)
                 .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:offset} to be greater than {0}{reason}.", other);
+                .FailWith("Expected {context:offset} to be greater than {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<OffsetAssertions>(this);
         }
@@ -340,7 +368,7 @@ namespace FluentAssertions.NodaTime
             Execute.Assertion
                 .ForCondition(Subject >= other)
                 .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:offset} to be greater than or equal to {0}{reason}.", other);
+                .FailWith("Expected {context:offset} to be greater than or equal to {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<OffsetAssertions>(this);
         }
@@ -365,7 +393,7 @@ namespace FluentAssertions.NodaTime
             Execute.Assertion
                 .ForCondition(Subject < other)
                 .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:offset} to be less than {0}{reason}.", other);
+                .FailWith("Expected {context:offset} to be less than {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<OffsetAssertions>(this);
         }
@@ -390,7 +418,7 @@ namespace FluentAssertions.NodaTime
             Execute.Assertion
                 .ForCondition(Subject <= other)
                 .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:offset} to be less than or equal to {0}{reason}.", other);
+                .FailWith("Expected {context:offset} to be less than or equal to {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<OffsetAssertions>(this);
         }

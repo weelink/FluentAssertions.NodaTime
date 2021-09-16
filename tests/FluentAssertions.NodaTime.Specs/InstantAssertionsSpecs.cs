@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 using NodaTime;
 
@@ -7,7 +8,7 @@ using Xunit.Sdk;
 
 namespace FluentAssertions.NodaTime.Specs
 {
-    public class InstantAssertionsSpecs
+    public static class InstantAssertionsSpecs
     {
         public class Be
         {
@@ -30,14 +31,60 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_an_instant_is_equal_to_itself_it_succeeds()
             {
                 // Arrange
-                DateTimeOffset now = DateTimeOffset.Now;
-                Instant instant = Instant.FromDateTimeOffset(now);
+                Instant instant = Instant.FromDateTimeOffset(DateTimeOffset.Now);
 
                 // Act
                 Action act = () => instant.Should().Be(instant);
 
                 // Assert
                 act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_null_is_equal_to_null_it_succeeds()
+            {
+                // Arrange
+                Instant? instant = default;
+                Instant? other = default;
+
+                // Act
+                Action act = () => instant.Should().Be(other);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_null_is_equal_to_not_null_it_fails()
+            {
+                // Arrange
+                Instant? instant = default;
+                Instant other = Instant.FromDateTimeOffset(DateTimeOffset.Now);
+
+                // Act
+                Action act = () => instant.Should().Be(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(instant)} to be equal to {other}, but found <null>.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_not_null_is_equal_to_null_it_fails()
+            {
+                // Arrange
+                Instant instant = Instant.FromDateTimeOffset(DateTimeOffset.Now);
+                Instant? other = default;
+
+                // Act
+                Action act = () => instant.Should().Be(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(instant)} to be equal to <null>, but found {instant}.");
             }
 
             [Fact]
@@ -52,7 +99,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} to be equal to {other}.");
+                    .WithMessage($"Expected {nameof(instant)} to be equal to {other}, but found {instant}.");
             }
 
             [Fact]
@@ -67,7 +114,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} to be equal to {other}.");
+                    .WithMessage($"Expected {nameof(instant)} to be equal to {other}, but found {instant}.");
             }
             
             [Fact]
@@ -96,7 +143,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} to be equal to {Instant.FromDateTimeOffset(other)}.");
+                    .WithMessage($"Expected {nameof(instant)} to be equal to {Instant.FromDateTimeOffset(other)}, but found {instant}.");
             }
 
             [Fact]
@@ -111,7 +158,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} to be equal to {Instant.FromDateTimeOffset(other)}.");
+                    .WithMessage($"Expected {nameof(instant)} to be equal to {Instant.FromDateTimeOffset(other)}, but found {instant}.");
             }
         }
 
@@ -158,7 +205,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} not to be equal to {other}.");
+                    .WithMessage($"Expected {nameof(instant)} not to be equal to {other}, but found {instant}.");
             }
 
             [Fact]
@@ -173,9 +220,55 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} not to be equal to {instant}.");
+                    .WithMessage($"Expected {nameof(instant)} not to be equal to {instant}, but found {instant}.");
             }
-    
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_null_is_not_equal_to_null_it_fails()
+            {
+                // Arrange
+                Instant? instant = default;
+                Instant? other = default;
+
+                // Act
+                Action act = () => instant.Should().NotBe(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(instant)} not to be equal to <null>, but found <null>.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_null_is_not_equal_to_not_null_it_succeeds()
+            {
+                // Arrange
+                Instant? instant = default;
+                Instant other = Instant.FromDateTimeOffset(DateTimeOffset.Now);
+
+                // Act
+                Action act = () => instant.Should().NotBe(other);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_not_null_is_equal_to_null_it_succeeds()
+            {
+                // Arrange
+                Instant instant = Instant.FromDateTimeOffset(DateTimeOffset.Now);
+                Instant? other = default;
+
+                // Act
+                Action act = () => instant.Should().NotBe(other);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
             [Fact]
             public void When_an_instant_is_equal_to_a_datetimeoffset_it_fails()
             {
@@ -188,7 +281,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} not to be equal to {Instant.FromDateTimeOffset(other)}.");
+                    .WithMessage($"Expected {nameof(instant)} not to be equal to {Instant.FromDateTimeOffset(other)}, but found {instant}.");
             }
 
             [Fact]
@@ -248,7 +341,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} to be after {other}.");
+                    .WithMessage($"Expected {nameof(instant)} to be after {other}, but found {instant}.");
             }
 
             [Fact]
@@ -264,7 +357,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} to be after {other}.");
+                    .WithMessage($"Expected {nameof(instant)} to be after {other}, but found {instant}.");
             }
 
             [Fact]
@@ -278,7 +371,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} to be after {instant}.");
+                    .WithMessage($"Expected {nameof(instant)} to be after {instant}, but found {instant}.");
             }
         }
 
@@ -338,7 +431,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} to be on or after {other}.");
+                    .WithMessage($"Expected {nameof(instant)} to be on or after {other}, but found {instant}.");
             }
         }
 
@@ -370,7 +463,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} to be before {other}.");
+                    .WithMessage($"Expected {nameof(instant)} to be before {other}, but found {instant}.");
             }
 
             [Fact]
@@ -386,7 +479,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} to be before {other}.");
+                    .WithMessage($"Expected {nameof(instant)} to be before {other}, but found {instant}.");
             }
 
             [Fact]
@@ -400,7 +493,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} to be before {instant}.");
+                    .WithMessage($"Expected {nameof(instant)} to be before {instant}, but found {instant}.");
             }
         }
 
@@ -460,7 +553,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} to be on or before {other}.");
+                    .WithMessage($"Expected {nameof(instant)} to be on or before {other}, but found {instant}.");
             }
         }
 
