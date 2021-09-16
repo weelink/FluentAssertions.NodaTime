@@ -2,4 +2,13 @@
 
 - [x] Instant
 - [x] Offset
-- [ ] LocalDateTime (in progress)
+- [x] LocalDateTime
+- [ ] LocalDate
+- [ ] LocalTime
+- [ ] OffsetDateTime
+- [ ] OffsetDate
+- [ ] OffsetTime
+- [ ] ZonedDateTime
+- [ ] Duration
+- [ ] Period
+- [ ] Interval
