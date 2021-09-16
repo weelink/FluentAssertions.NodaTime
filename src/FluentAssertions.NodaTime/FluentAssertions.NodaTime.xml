@@ -51,6 +51,290 @@
             <param name="localDateTime">The <see cref="T:NodaTime.LocalDateTime" /> to assert.</param>
             <returns>The <see cref="T:FluentAssertions.NodaTime.LocalDateTimeAssertions" /> to use for asserting an <see cref="T:NodaTime.LocalDateTime" />.</returns>
         </member>
+        <member name="M:FluentAssertions.NodaTime.AssertionExtensions.Should(System.Nullable{NodaTime.Duration})">
+            <summary>
+                Returns an <see cref="T:FluentAssertions.NodaTime.DurationAssertions"/> object that can be used to assert an <see cref="T:NodaTime.Duration" />.
+            </summary>
+            <param name="duration">The <see cref="T:NodaTime.Duration" /> to assert.</param>
+            <returns>The <see cref="T:FluentAssertions.NodaTime.DurationAssertions" /> to use for asserting an <see cref="T:NodaTime.Duration" />.</returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.AssertionExtensions.Should(NodaTime.Duration)">
+            <summary>
+                Returns an <see cref="T:FluentAssertions.NodaTime.DurationAssertions"/> object that can be used to assert an <see cref="T:NodaTime.Duration" />.
+            </summary>
+            <param name="duration">The <see cref="T:NodaTime.Duration" /> to assert.</param>
+            <returns>The <see cref="T:FluentAssertions.NodaTime.DurationAssertions" /> to use for asserting an <see cref="T:NodaTime.Duration" />.</returns>
+        </member>
+        <member name="T:FluentAssertions.NodaTime.DurationAssertions">
+            <summary>
+                Contains assertions for <see cref="T:NodaTime.Duration" />.
+            </summary>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.#ctor(System.Nullable{NodaTime.Duration})">
+            <summary>
+                Initializes a new <see cref="T:FluentAssertions.NodaTime.DurationAssertions" />.
+            </summary>
+            <param name="subject">The <see cref="T:NodaTime.Duration" /> that is being asserted.</param>
+        </member>
+        <member name="P:FluentAssertions.NodaTime.DurationAssertions.Identifier">
+            <inheritdoc />
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.Be(System.Nullable{NodaTime.Duration},System.String,System.Object[])">
+            <summary>
+                Asserts that this <see cref="T:NodaTime.Duration" /> is equal to <paramref name="other" />.
+            </summary>
+            <param name="other">The <see cref="T:NodaTime.Duration" /> to compare to.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.Be(System.Nullable{System.TimeSpan},System.String,System.Object[])">
+            <summary>
+                Asserts that this <see cref="T:NodaTime.Duration" /> is equal to <paramref name="other" />.
+            </summary>
+            <param name="other">The <see cref="T:NodaTime.Duration" /> to compare to.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.NotBe(System.Nullable{NodaTime.Duration},System.String,System.Object[])">
+            <summary>
+                Asserts that this <see cref="T:NodaTime.Duration" /> is not equal to <paramref name="other" />.
+            </summary>
+            <param name="other">The <see cref="T:NodaTime.Duration" /> to compare to.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.NotBe(System.Nullable{System.TimeSpan},System.String,System.Object[])">
+            <summary>
+                Asserts that this <see cref="T:NodaTime.Duration" /> is not equal to <paramref name="other" />.
+            </summary>
+            <param name="other">The <see cref="T:NodaTime.Duration" /> to compare to.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.BePositive(System.String,System.Object[])">
+            <summary>
+                Asserts that this <see cref="T:NodaTime.Duration" /> is positive.
+            </summary>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.BeNegative(System.String,System.Object[])">
+            <summary>
+                Asserts that this <see cref="T:NodaTime.Duration" /> is negative.
+            </summary>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.BeZero(System.String,System.Object[])">
+            <summary>
+                Asserts that this <see cref="T:NodaTime.Duration" /> is zero.
+            </summary>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.NotBeZero(System.String,System.Object[])">
+            <summary>
+                Asserts that this <see cref="T:NodaTime.Duration" /> is not zero.
+            </summary>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.BeCloseTo(NodaTime.Duration,System.TimeSpan,System.String,System.Object[])">
+            <summary>
+                Asserts that this <see cref="T:NodaTime.Duration" /> is within <paramref name="precision" /> of <paramref name="other" />.
+            </summary>
+            <param name="other">The <see cref="T:NodaTime.Duration" /> to compare to.</param>
+            <param name="precision">The maximum amount of time which the two values may differ.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.BeCloseTo(NodaTime.Duration,NodaTime.Duration,System.String,System.Object[])">
+            <summary>
+                Asserts that this <see cref="T:NodaTime.Duration" /> is within <paramref name="precision" /> of <paramref name="other" />.
+            </summary>
+            <param name="other">The <see cref="T:NodaTime.Duration" /> to compare to.</param>
+            <param name="precision">The maximum amount of time which the two values may differ.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.NotBeCloseTo(NodaTime.Duration,System.TimeSpan,System.String,System.Object[])">
+            <summary>
+                Asserts that this <see cref="T:NodaTime.Duration" /> is not within <paramref name="precision" /> of <paramref name="other" />.
+            </summary>
+            <param name="other">The <see cref="T:NodaTime.Duration" /> to compare to.</param>
+            <param name="precision">The maximum amount of time which the two values may differ.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.NotBeCloseTo(NodaTime.Duration,NodaTime.Duration,System.String,System.Object[])">
+            <summary>
+                Asserts that this <see cref="T:NodaTime.Duration" /> is not within <paramref name="precision" /> of <paramref name="other" />.
+            </summary>
+            <param name="other">The <see cref="T:NodaTime.Duration" /> to compare to.</param>
+            <param name="precision">The maximum amount of time which the two values may differ.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.BeGreaterThan(NodaTime.Duration,System.String,System.Object[])">
+            <summary>
+                Asserts that this <see cref="T:NodaTime.Duration" /> is greater than <paramref name="other" />.
+            </summary>
+            <param name="other">The <see cref="T:NodaTime.Duration" /> to compare to.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.BeGreaterThanOrEqualTo(NodaTime.Duration,System.String,System.Object[])">
+            <summary>
+                Asserts that this <see cref="T:NodaTime.Duration" /> is on or after <paramref name="other" />.
+            </summary>
+            <param name="other">The <see cref="T:NodaTime.Duration" /> to compare to.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.BeLessThan(NodaTime.Duration,System.String,System.Object[])">
+            <summary>
+                Asserts that this <see cref="T:NodaTime.Duration" /> is less than <paramref name="other" />.
+            </summary>
+            <param name="other">The <see cref="T:NodaTime.Duration" /> to compare to.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.BeLessThanOrEqualTo(NodaTime.Duration,System.String,System.Object[])">
+            <summary>
+                Asserts that this <see cref="T:NodaTime.Duration" /> is less than or equal to <paramref name="other" />.
+            </summary>
+            <param name="other">The <see cref="T:NodaTime.Duration" /> to compare to.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
         <member name="T:FluentAssertions.NodaTime.InstantAssertions">
             <summary>
                 Contains assertions for <see cref="T:NodaTime.Instant" />.
@@ -1253,6 +1537,150 @@
                 Asserts that this <see cref="T:NodaTime.Offset" /> is less than or equal to <paramref name="other" />.
             </summary>
             <param name="other">The <see cref="T:NodaTime.Offset" /> to compare to.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.OffsetAssertions.HaveSeconds(System.Int32,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Offset" /> has the specified seconds.
+            </summary>
+            <param name="seconds">
+                The seconds that the current <see cref="T:NodaTime.Offset" /> is expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.OffsetAssertions.NotHaveSeconds(System.Int32,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Offset" /> does not have the specified seconds.
+            </summary>
+            <param name="seconds">
+                The seconds that the current <see cref="T:NodaTime.Offset" /> is not expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.OffsetAssertions.HaveMilliseconds(System.Int32,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Offset" /> has the specified milliseconds.
+            </summary>
+            <param name="milliseconds">
+                The milliseconds that the current <see cref="T:NodaTime.Offset" /> is expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.OffsetAssertions.NotHaveMilliseconds(System.Int32,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Offset" /> does not have the specified milliseconds.
+            </summary>
+            <param name="milliseconds">
+                The milliseconds that the current <see cref="T:NodaTime.Offset" /> is not expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.OffsetAssertions.HaveNanoseconds(System.Int64,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Offset" /> has the specified nanoseconds.
+            </summary>
+            <param name="nanoseconds">
+                The nanoseconds that the current <see cref="T:NodaTime.Offset" /> is expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.OffsetAssertions.NotHaveNanoseconds(System.Int64,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Offset" /> does not have the specified nanoseconds.
+            </summary>
+            <param name="nanoseconds">
+                The nanoseconds that the current <see cref="T:NodaTime.Offset" /> is not expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.OffsetAssertions.HaveTicks(System.Int64,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Offset" /> has the specified ticks.
+            </summary>
+            <param name="ticks">
+                The ticks that the current <see cref="T:NodaTime.Offset" /> is expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.OffsetAssertions.NotHaveTicks(System.Int64,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Offset" /> does not have the specified ticks.
+            </summary>
+            <param name="ticks">
+                The ticks that the current <see cref="T:NodaTime.Offset" /> is not expected to have.
+            </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
                 is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.

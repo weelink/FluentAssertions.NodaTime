@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
+using FluentAssertions.NodaTime.Specs.Extensions;
+
 using NodaTime;
 
 using Xunit;
@@ -992,6 +994,381 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().NotThrow();
+            }
+        }
+
+        public class HaveSeconds
+        {
+            [Fact]
+            public void When_an_offset_has_the_specified_seconds_it_succeeds()
+            {
+                // Arrange
+                Offset offset = Offset.FromTicks(new Random().Next());
+
+                // Act
+                Action act = () => offset.Should().HaveSeconds(offset.Seconds);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_an_offset_does_not_have_the_specified_seconds_it_fails()
+            {
+                // Arrange
+                Offset offset = Offset.FromTicks(new Random().Next());
+                int seconds = offset.Plus(Offset.FromSeconds(1)).Seconds;
+
+                // Act
+                Action act = () => offset.Should().HaveSeconds(seconds);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(offset)} to have {seconds} seconds, but found {offset.Seconds}.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_local_date_time_has_the_specified_seconds_it_fails()
+            {
+                // Arrange
+                int seconds = new Random().Next(1, 365);
+                Offset? offset = null;
+
+                // Act
+                Action act = () => offset.Should().HaveSeconds(seconds);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(offset)} to have {seconds} seconds, but {nameof(offset)} was <null>.");
+            }
+        }
+
+        public class NotHaveSeconds
+        {
+            [Fact]
+            public void When_an_offset_has_the_specified_seconds_it_fails()
+            {
+                // Arrange
+                Offset offset = Offset.FromTicks(new Random().Next());
+
+                // Act
+                Action act = () => offset.Should().NotHaveSeconds(offset.Seconds);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(offset)} to have {offset.Seconds} seconds.");
+            }
+
+            [Fact]
+            public void When_an_offset_does_not_have_the_specified_seconds_it_succeeds()
+            {
+                // Arrange
+                Offset offset = Offset.FromTicks(new Random().Next());
+                int seconds = offset.Plus(Offset.FromSeconds(1)).Seconds;
+
+                // Act
+                Action act = () => offset.Should().NotHaveSeconds(seconds);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_local_date_time_does_not_have_the_specified_seconds_it_fails()
+            {
+                // Arrange
+                int seconds = new Random().Next(1, 365);
+                Offset? offset = null;
+
+                // Act
+                Action act = () => offset.Should().NotHaveSeconds(seconds);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(offset)} to have {seconds} seconds, but {nameof(offset)} was <null>.");
+            }
+        }
+        public class HaveMilliseconds
+        {
+            [Fact]
+            public void When_an_offset_has_the_specified_milliseconds_it_succeeds()
+            {
+                // Arrange
+                Offset offset = Offset.FromTicks(new Random().Next());
+
+                // Act
+                Action act = () => offset.Should().HaveMilliseconds(offset.Milliseconds);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_an_offset_does_not_have_the_specified_milliseconds_it_fails()
+            {
+                // Arrange
+                Offset offset = Offset.FromTicks(new Random().Next());
+                int milliseconds = offset.Plus(Offset.FromSeconds(1)).Milliseconds;
+
+                // Act
+                Action act = () => offset.Should().HaveMilliseconds(milliseconds);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(offset)} to have {milliseconds} milliseconds, but found {offset.Milliseconds}.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_local_date_time_has_the_specified_milliseconds_it_fails()
+            {
+                // Arrange
+                int milliseconds = new Random().Next(1, 365);
+                Offset? offset = null;
+
+                // Act
+                Action act = () => offset.Should().HaveMilliseconds(milliseconds);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(offset)} to have {milliseconds} milliseconds, but {nameof(offset)} was <null>.");
+            }
+        }
+
+        public class NotHaveMilliseconds
+        {
+            [Fact]
+            public void When_an_offset_has_the_specified_milliseconds_it_fails()
+            {
+                // Arrange
+                Offset offset = Offset.FromTicks(new Random().Next());
+
+                // Act
+                Action act = () => offset.Should().NotHaveMilliseconds(offset.Milliseconds);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(offset)} to have {offset.Milliseconds} milliseconds.");
+            }
+
+            [Fact]
+            public void When_an_offset_does_not_have_the_specified_milliseconds_it_succeeds()
+            {
+                // Arrange
+                Offset offset = Offset.FromTicks(new Random().Next());
+                int milliseconds = offset.Plus(Offset.FromSeconds(1)).Milliseconds;
+
+                // Act
+                Action act = () => offset.Should().NotHaveMilliseconds(milliseconds);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_local_date_time_does_not_have_the_specified_milliseconds_it_fails()
+            {
+                // Arrange
+                int milliseconds = new Random().Next(1, 365);
+                Offset? offset = null;
+
+                // Act
+                Action act = () => offset.Should().NotHaveMilliseconds(milliseconds);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(offset)} to have {milliseconds} milliseconds, but {nameof(offset)} was <null>.");
+            }
+        }
+
+        public class HaveNanoseconds
+        {
+            [Fact]
+            public void When_an_offset_has_the_specified_nanoseconds_it_succeeds()
+            {
+                // Arrange
+                Offset offset = Offset.FromTicks(new Random().Next());
+
+                // Act
+                Action act = () => offset.Should().HaveNanoseconds(offset.Nanoseconds);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_an_offset_does_not_have_the_specified_nanoseconds_it_fails()
+            {
+                // Arrange
+                Offset offset = Offset.FromTicks(new Random().Next());
+                long nanoseconds = offset.Plus(Offset.FromSeconds(1)).Nanoseconds;
+
+                // Act
+                Action act = () => offset.Should().HaveNanoseconds(nanoseconds);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(offset)} to have {nanoseconds.AsFormatted()} nanoseconds, but found {offset.Nanoseconds.AsFormatted()}.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_local_date_time_has_the_specified_nanoseconds_it_fails()
+            {
+                // Arrange
+                long nanoseconds = new Random().Next(1, 999999);
+                Offset? offset = null;
+
+                // Act
+                Action act = () => offset.Should().HaveNanoseconds(nanoseconds);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(offset)} to have {nanoseconds.AsFormatted()} nanoseconds, but {nameof(offset)} was <null>.");
+            }
+        }
+
+        public class NotHaveNanoseconds
+        {
+            [Fact]
+            public void When_an_offset_has_the_specified_nanoseconds_it_fails()
+            {
+                // Arrange
+                Offset offset = Offset.FromTicks(new Random().Next());
+
+                // Act
+                Action act = () => offset.Should().NotHaveNanoseconds(offset.Nanoseconds);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(offset)} to have {offset.Nanoseconds.AsFormatted()} nanoseconds.");
+            }
+
+            [Fact]
+            public void When_an_offset_does_not_have_the_specified_nanoseconds_it_succeeds()
+            {
+                // Arrange
+                Offset offset = Offset.FromTicks(new Random().Next());
+                long nanoseconds = offset.Plus(Offset.FromSeconds(1)).Nanoseconds;
+
+                // Act
+                Action act = () => offset.Should().NotHaveNanoseconds(nanoseconds);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_local_date_time_does_not_have_the_specified_nanoseconds_it_fails()
+            {
+                // Arrange
+                long nanoseconds = new Random().Next(1, 999999);
+                Offset? offset = null;
+
+                // Act
+                Action act = () => offset.Should().NotHaveNanoseconds(nanoseconds);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(offset)} to have {nanoseconds.AsFormatted()} nanoseconds, but {nameof(offset)} was <null>.");
+            }
+        }
+
+        public class HaveTicks
+        {
+            [Fact]
+            public void When_an_offset_has_the_specified_ticks_it_succeeds()
+            {
+                // Arrange
+                Offset offset = Offset.FromTicks(new Random().Next());
+
+                // Act
+                Action act = () => offset.Should().HaveTicks(offset.Ticks);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_an_offset_does_not_have_the_specified_ticks_it_fails()
+            {
+                // Arrange
+                Offset offset = Offset.FromTicks(new Random().Next());
+                long ticks = offset.Plus(Offset.FromSeconds(1)).Ticks;
+
+                // Act
+                Action act = () => offset.Should().HaveTicks(ticks);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(offset)} to have {ticks.AsFormatted()} ticks, but found {offset.Ticks.AsFormatted()}.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_local_date_time_has_the_specified_ticks_it_fails()
+            {
+                // Arrange
+                long ticks = new Random().Next(1, 999999);
+                Offset? offset = null;
+
+                // Act
+                Action act = () => offset.Should().HaveTicks(ticks);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(offset)} to have {ticks.AsFormatted()} ticks, but {nameof(offset)} was <null>.");
+            }
+        }
+
+        public class NotHaveTicks
+        {
+            [Fact]
+            public void When_an_offset_has_the_specified_ticks_it_fails()
+            {
+                // Arrange
+                Offset offset = Offset.FromTicks(new Random().Next());
+
+                // Act
+                Action act = () => offset.Should().NotHaveTicks(offset.Ticks);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(offset)} to have {offset.Ticks.AsFormatted()} ticks.");
+            }
+
+            [Fact]
+            public void When_an_offset_does_not_have_the_specified_ticks_it_succeeds()
+            {
+                // Arrange
+                Offset offset = Offset.FromTicks(new Random().Next());
+                long ticks = offset.Plus(Offset.FromSeconds(1)).Ticks;
+
+                // Act
+                Action act = () => offset.Should().NotHaveTicks(ticks);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_local_date_time_does_not_have_the_specified_ticks_it_fails()
+            {
+                // Arrange
+                long ticks = new Random().Next(1, 999999);
+                Offset? offset = null;
+
+                // Act
+                Action act = () => offset.Should().NotHaveTicks(ticks);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(offset)} to have {ticks.AsFormatted()} ticks, but {nameof(offset)} was <null>.");
             }
         }
     }

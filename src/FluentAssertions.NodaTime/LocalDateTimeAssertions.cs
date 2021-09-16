@@ -11,7 +11,8 @@ namespace FluentAssertions.NodaTime
     /// <summary>
     ///     Contains assertions for <see cref="LocalDateTime" />.
     /// </summary>
-    public class LocalDateTimeAssertions : ReferenceTypeAssertions<LocalDateTime?, LocalDateTimeAssertions>
+    [SuppressMessage("ReSharper", "UnusedMethodReturnValue.Global")]
+    public sealed class LocalDateTimeAssertions : ReferenceTypeAssertions<LocalDateTime?, LocalDateTimeAssertions>
     {
         /// <summary>
         ///     Initializes a new <see cref="LocalDateTimeAssertions" />.

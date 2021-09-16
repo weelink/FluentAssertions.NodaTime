@@ -11,7 +11,8 @@ namespace FluentAssertions.NodaTime
     /// <summary>
     ///     Contains assertions for <see cref="Instant" />.
     /// </summary>
-    public class InstantAssertions : ReferenceTypeAssertions<Instant?, InstantAssertions>
+    [SuppressMessage("ReSharper", "UnusedMethodReturnValue.Global")]
+    public sealed class InstantAssertions : ReferenceTypeAssertions<Instant?, InstantAssertions>
     {
         /// <summary>
         ///     Initializes a new <see cref="InstantAssertions" />.

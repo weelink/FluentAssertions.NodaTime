@@ -11,7 +11,8 @@ namespace FluentAssertions.NodaTime
     /// <summary>
     ///     Contains assertions for <see cref="Offset" />.
     /// </summary>
-    public class OffsetAssertions : ReferenceTypeAssertions<Offset?, OffsetAssertions>
+    [SuppressMessage("ReSharper", "UnusedMethodReturnValue.Global")]
+    public sealed class OffsetAssertions : ReferenceTypeAssertions<Offset?, OffsetAssertions>
     {
         /// <summary>
         ///     Initializes a new <see cref="OffsetAssertions" />.
@@ -417,6 +418,326 @@ namespace FluentAssertions.NodaTime
                 .ForCondition(Subject <= other)
                 .BecauseOf(because, becauseArgs)
                 .FailWith("Expected {context:Offset} to be less than or equal to {0}{reason}, but found {1}.", other, Subject);
+
+            return new AndConstraint<OffsetAssertions>(this);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="Offset" /> has the specified seconds.
+        /// </summary>
+        /// <param name="seconds">
+        ///     The seconds that the current <see cref="Offset" /> is expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<OffsetAssertions> HaveSeconds(int seconds, string because = "", params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Expected {context:Offset} to have {0} seconds{reason}", seconds);
+
+            if (Subject.HasValue)
+            {
+                scope
+                    .ForCondition(Subject.Value.Seconds.Equals(seconds))
+                    .FailWith(", but found {0}.", Subject.Value.Seconds);
+            }
+            else
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but {context:Offset} was <null>.");
+            }
+
+            return new AndConstraint<OffsetAssertions>(this);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="Offset" /> does not have the specified seconds.
+        /// </summary>
+        /// <param name="seconds">
+        ///     The seconds that the current <see cref="Offset" /> is not expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<OffsetAssertions> NotHaveSeconds(int seconds, string because = "", params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Did not expect {context:Offset} to have {0} seconds{reason}", seconds);
+
+            if (Subject.HasValue)
+            {
+                scope
+                    .ForCondition(!Subject.Value.Seconds.Equals(seconds))
+                    .FailWith(".");
+            }
+            else
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but {context:Offset} was <null>.");
+            }
+
+            return new AndConstraint<OffsetAssertions>(this);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="Offset" /> has the specified milliseconds.
+        /// </summary>
+        /// <param name="milliseconds">
+        ///     The milliseconds that the current <see cref="Offset" /> is expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<OffsetAssertions> HaveMilliseconds(int milliseconds, string because = "", params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Expected {context:Offset} to have {0} milliseconds{reason}", milliseconds);
+
+            if (Subject.HasValue)
+            {
+                scope
+                    .ForCondition(Subject.Value.Milliseconds.Equals(milliseconds))
+                    .FailWith(", but found {0}.", Subject.Value.Milliseconds);
+            }
+            else
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but {context:Offset} was <null>.");
+            }
+
+            return new AndConstraint<OffsetAssertions>(this);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="Offset" /> does not have the specified milliseconds.
+        /// </summary>
+        /// <param name="milliseconds">
+        ///     The milliseconds that the current <see cref="Offset" /> is not expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<OffsetAssertions> NotHaveMilliseconds(int milliseconds, string because = "", params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Did not expect {context:Offset} to have {0} milliseconds{reason}", milliseconds);
+
+            if (Subject.HasValue)
+            {
+                scope
+                    .ForCondition(!Subject.Value.Milliseconds.Equals(milliseconds))
+                    .FailWith(".");
+            }
+            else
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but {context:Offset} was <null>.");
+            }
+
+            return new AndConstraint<OffsetAssertions>(this);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="Offset" /> has the specified nanoseconds.
+        /// </summary>
+        /// <param name="nanoseconds">
+        ///     The nanoseconds that the current <see cref="Offset" /> is expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<OffsetAssertions> HaveNanoseconds(long nanoseconds, string because = "", params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Expected {context:Offset} to have {0} nanoseconds{reason}", nanoseconds);
+
+            if (Subject.HasValue)
+            {
+                scope
+                    .ForCondition(Subject.Value.Nanoseconds.Equals(nanoseconds))
+                    .FailWith(", but found {0}.", Subject.Value.Nanoseconds);
+            }
+            else
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but {context:Offset} was <null>.");
+            }
+
+            return new AndConstraint<OffsetAssertions>(this);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="Offset" /> does not have the specified nanoseconds.
+        /// </summary>
+        /// <param name="nanoseconds">
+        ///     The nanoseconds that the current <see cref="Offset" /> is not expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<OffsetAssertions> NotHaveNanoseconds(long nanoseconds, string because = "", params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Did not expect {context:Offset} to have {0} nanoseconds{reason}", nanoseconds);
+
+            if (Subject.HasValue)
+            {
+                scope
+                    .ForCondition(!Subject.Value.Nanoseconds.Equals(nanoseconds))
+                    .FailWith(".");
+            }
+            else
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but {context:Offset} was <null>.");
+            }
+
+            return new AndConstraint<OffsetAssertions>(this);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="Offset" /> has the specified ticks.
+        /// </summary>
+        /// <param name="ticks">
+        ///     The ticks that the current <see cref="Offset" /> is expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<OffsetAssertions> HaveTicks(long ticks, string because = "", params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Expected {context:Offset} to have {0} ticks{reason}", ticks);
+
+            if (Subject.HasValue)
+            {
+                scope
+                    .ForCondition(Subject.Value.Ticks.Equals(ticks))
+                    .FailWith(", but found {0}.", Subject.Value.Ticks);
+            }
+            else
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but {context:Offset} was <null>.");
+            }
+
+            return new AndConstraint<OffsetAssertions>(this);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="Offset" /> does not have the specified ticks.
+        /// </summary>
+        /// <param name="ticks">
+        ///     The ticks that the current <see cref="Offset" /> is not expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<OffsetAssertions> NotHaveTicks(long ticks, string because = "", params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Did not expect {context:Offset} to have {0} ticks{reason}", ticks);
+
+            if (Subject.HasValue)
+            {
+                scope
+                    .ForCondition(!Subject.Value.Ticks.Equals(ticks))
+                    .FailWith(".");
+            }
+            else
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but {context:Offset} was <null>.");
+            }
 
             return new AndConstraint<OffsetAssertions>(this);
         }

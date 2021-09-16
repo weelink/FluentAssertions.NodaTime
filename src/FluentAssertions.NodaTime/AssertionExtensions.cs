@@ -69,5 +69,25 @@ namespace FluentAssertions.NodaTime
         {
             return new LocalDateTimeAssertions(localDateTime);
         }
+
+        /// <summary>
+        ///     Returns an <see cref="DurationAssertions"/> object that can be used to assert an <see cref="Duration" />.
+        /// </summary>
+        /// <param name="duration">The <see cref="Duration" /> to assert.</param>
+        /// <returns>The <see cref="DurationAssertions" /> to use for asserting an <see cref="Duration" />.</returns>
+        public static DurationAssertions Should(this Duration? duration)
+        {
+            return new DurationAssertions(duration);
+        }
+
+        /// <summary>
+        ///     Returns an <see cref="DurationAssertions"/> object that can be used to assert an <see cref="Duration" />.
+        /// </summary>
+        /// <param name="duration">The <see cref="Duration" /> to assert.</param>
+        /// <returns>The <see cref="DurationAssertions" /> to use for asserting an <see cref="Duration" />.</returns>
+        public static DurationAssertions Should(this Duration duration)
+        {
+            return new DurationAssertions(duration);
+        }
     }
 }

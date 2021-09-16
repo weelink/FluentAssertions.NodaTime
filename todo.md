@@ -9,6 +9,6 @@
 - [ ] OffsetDate
 - [ ] OffsetTime
 - [ ] ZonedDateTime
-- [ ] Duration
+- [x] Duration
 - [ ] Period
 - [ ] Interval
