@@ -1625,5 +1625,105 @@ namespace FluentAssertions.NodaTime
 
             return new AndConstraint<LocalDateTimeAssertions>(this);
         }
+
+        /// <summary>
+        ///     Asserts that this <see cref="LocalDateTime" /> is greater than <paramref name="other" />.
+        /// </summary>
+        /// <param name="other">The <see cref="LocalDateTime" /> to compare to.</param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;LocalDateTimeAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<LocalDateTimeAssertions> BeGreaterThan(LocalDateTime other, string because = "", params object[] becauseArgs)
+        {
+            Execute.Assertion
+                .ForCondition(Subject > other)
+                .BecauseOf(because, becauseArgs)
+                .FailWith("Expected {context:LocalDateTime} to be greater than {0}{reason}, but found {1}.", other, Subject);
+
+            return new AndConstraint<LocalDateTimeAssertions>(this);
+        }
+
+        /// <summary>
+        ///     Asserts that this <see cref="LocalDateTime" /> is on or after <paramref name="other" />.
+        /// </summary>
+        /// <param name="other">The <see cref="LocalDateTime" /> to compare to.</param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;LocalDateTimeAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<LocalDateTimeAssertions> BeGreaterThanOrEqualTo(LocalDateTime other, string because = "", params object[] becauseArgs)
+        {
+            Execute.Assertion
+                .ForCondition(Subject >= other)
+                .BecauseOf(because, becauseArgs)
+                .FailWith("Expected {context:LocalDateTime} to be greater than or equal to {0}{reason}, but found {1}.", other, Subject);
+
+            return new AndConstraint<LocalDateTimeAssertions>(this);
+        }
+
+        /// <summary>
+        ///     Asserts that this <see cref="LocalDateTime" /> is less than <paramref name="other" />.
+        /// </summary>
+        /// <param name="other">The <see cref="LocalDateTime" /> to compare to.</param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;LocalDateTimeAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<LocalDateTimeAssertions> BeLessThan(LocalDateTime other, string because = "", params object[] becauseArgs)
+        {
+            Execute.Assertion
+                .ForCondition(Subject < other)
+                .BecauseOf(because, becauseArgs)
+                .FailWith("Expected {context:LocalDateTime} to be less than {0}{reason}, but found {1}.", other, Subject);
+
+            return new AndConstraint<LocalDateTimeAssertions>(this);
+        }
+
+        /// <summary>
+        ///     Asserts that this <see cref="LocalDateTime" /> is less than or equal to <paramref name="other" />.
+        /// </summary>
+        /// <param name="other">The <see cref="LocalDateTime" /> to compare to.</param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;LocalDateTimeAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<LocalDateTimeAssertions> BeLessThanOrEqualTo(LocalDateTime other, string because = "", params object[] becauseArgs)
+        {
+            Execute.Assertion
+                .ForCondition(Subject <= other)
+                .BecauseOf(because, becauseArgs)
+                .FailWith("Expected {context:LocalDateTime} to be less than or equal to {0}{reason}, but found {1}.", other, Subject);
+
+            return new AndConstraint<LocalDateTimeAssertions>(this);
+        }
     }
 }

@@ -3,8 +3,8 @@
 - [x] Instant
 - [x] Offset
 - [x] LocalDateTime
-- [ ] LocalDate
-- [ ] LocalTime
+- [x] LocalDate
+- [X] LocalTime
 - [ ] OffsetDateTime
 - [ ] OffsetDate
 - [ ] OffsetTime

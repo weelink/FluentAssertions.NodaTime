@@ -91,6 +91,26 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
+        ///     Returns an <see cref="LocalTimeAssertions"/> object that can be used to assert an <see cref="LocalTime" />.
+        /// </summary>
+        /// <param name="localTime">The <see cref="LocalTime" /> to assert.</param>
+        /// <returns>The <see cref="LocalTimeAssertions" /> to use for asserting an <see cref="LocalTime" />.</returns>
+        public static LocalTimeAssertions Should(this LocalTime? localTime)
+        {
+            return new LocalTimeAssertions(localTime);
+        }
+
+        /// <summary>
+        ///     Returns an <see cref="LocalTimeAssertions"/> object that can be used to assert an <see cref="LocalTime" />.
+        /// </summary>
+        /// <param name="localTime">The <see cref="LocalTime" /> to assert.</param>
+        /// <returns>The <see cref="LocalTimeAssertions" /> to use for asserting an <see cref="LocalTime" />.</returns>
+        public static LocalTimeAssertions Should(this LocalTime localTime)
+        {
+            return new LocalTimeAssertions(localTime);
+        }
+
+        /// <summary>
         ///     Returns an <see cref="DurationAssertions"/> object that can be used to assert an <see cref="Duration" />.
         /// </summary>
         /// <param name="duration">The <see cref="Duration" /> to assert.</param>

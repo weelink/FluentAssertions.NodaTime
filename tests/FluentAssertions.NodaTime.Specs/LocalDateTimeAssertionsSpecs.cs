@@ -2025,5 +2025,249 @@ namespace FluentAssertions.NodaTime.Specs
                     .WithMessage($"Did not expect {nameof(localDateTime)} to have year of era {yearOfEra}, but {nameof(localDateTime)} was <null>.");
             }
         }
+
+        public class BeGreaterThan
+        {
+            [Fact]
+            public void When_a_local_date_time_is_greater_than_an_other_local_date_time_it_succeeds()
+            {
+                // Arrange
+                LocalDateTime other = LocalDateTime.FromDateTime(DateTime.Now, RandomCalendarSystem());
+                LocalDateTime localDateTime = other + Period.FromSeconds(1);
+
+                // Act
+                Action act = () => localDateTime.Should().BeGreaterThan(other);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_a_local_date_time_is_less_than_an_other_local_date_time_it_fails()
+            {
+                // Arrange
+                LocalDateTime other = LocalDateTime.FromDateTime(DateTime.Now, RandomCalendarSystem());
+                LocalDateTime localDateTime = other - Period.FromSeconds(1);
+
+                // Act
+                Action act = () => localDateTime.Should().BeGreaterThan(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(localDateTime)} to be greater than {other}, but found {localDateTime}.");
+            }
+
+            [Fact]
+            public void When_a_local_date_time_is_equal_to_an_other_local_date_time_it_fails()
+            {
+                // Arrange
+                DateTime now = DateTime.Now;
+                LocalDateTime localDateTime = LocalDateTime.FromDateTime(now, RandomCalendarSystem());
+                LocalDateTime other = LocalDateTime.FromDateTime(now, localDateTime.Calendar);
+
+                // Act
+                Action act = () => localDateTime.Should().BeGreaterThan(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(localDateTime)} to be greater than {other}, but found {localDateTime}.");
+            }
+
+            [Fact]
+            public void When_asserting_a_local_date_time_is_greater_than_itself_it_fails()
+            {
+                // Arrange
+                LocalDateTime localDateTime = LocalDateTime.FromDateTime(DateTime.Now, RandomCalendarSystem());
+
+                // Act
+                Action act = () => localDateTime.Should().BeGreaterThan(localDateTime);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(localDateTime)} to be greater than {localDateTime}, but found {localDateTime}.");
+            }
+        }
+
+        public class BeGreaterThanOrEqualTo
+        {
+            [Fact]
+            public void When_asserting_a_local_date_time_is_greater_than_or_equal_to_itself_it_succeeds()
+            {
+                // Arrange
+                LocalDateTime localDateTime = LocalDateTime.FromDateTime(DateTime.Now, RandomCalendarSystem());
+
+                // Act
+                Action act = () => localDateTime.Should().BeGreaterThanOrEqualTo(localDateTime);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_a_local_date_time_is_equal_to_an_other_local_date_time_it_succeeds()
+            {
+                // Arrange
+                DateTime now = DateTime.Now;
+                LocalDateTime localDateTime = LocalDateTime.FromDateTime(now, RandomCalendarSystem());
+                LocalDateTime other = LocalDateTime.FromDateTime(now, localDateTime.Calendar);
+
+                // Act
+                Action act = () => localDateTime.Should().BeGreaterThanOrEqualTo(other);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_a_local_date_time_is_greater_than_an_other_local_date_time_it_succeeds()
+            {
+                // Arrange
+                LocalDateTime other = LocalDateTime.FromDateTime(DateTime.Now, RandomCalendarSystem());
+                LocalDateTime localDateTime = other + Period.FromSeconds(1);
+
+                // Act
+                Action act = () => localDateTime.Should().BeGreaterThanOrEqualTo(other);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_a_local_date_time_is_less_than_an_other_local_date_time_it_fails()
+            {
+                // Arrange
+                LocalDateTime other = LocalDateTime.FromDateTime(DateTime.Now, RandomCalendarSystem());
+                LocalDateTime localDateTime = other - Period.FromSeconds(1);
+
+                // Act
+                Action act = () => localDateTime.Should().BeGreaterThanOrEqualTo(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(localDateTime)} to be greater than or equal to {other}, but found {localDateTime}.");
+            }
+        }
+
+        public class BeLessThan
+        {
+            [Fact]
+            public void When_a_local_date_time_is_less_than_an_other_local_date_time_it_succeeds()
+            {
+                // Arrange
+                LocalDateTime other = LocalDateTime.FromDateTime(DateTime.Now, RandomCalendarSystem());
+                LocalDateTime localDateTime = other - Period.FromSeconds(1);
+
+                // Act
+                Action act = () => localDateTime.Should().BeLessThan(other);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_a_local_date_time_is_greater_than_an_other_local_date_time_it_fails()
+            {
+                // Arrange
+                LocalDateTime other = LocalDateTime.FromDateTime(DateTime.Now, RandomCalendarSystem());
+                LocalDateTime localDateTime = other + Period.FromSeconds(1);
+
+                // Act
+                Action act = () => localDateTime.Should().BeLessThan(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(localDateTime)} to be less than {other}, but found {localDateTime}.");
+            }
+
+            [Fact]
+            public void When_a_local_date_time_is_equal_to_an_other_local_date_time_it_fails()
+            {
+                // Arrange
+                DateTime now = DateTime.Now;
+                LocalDateTime localDateTime = LocalDateTime.FromDateTime(now, RandomCalendarSystem());
+                LocalDateTime other = LocalDateTime.FromDateTime(now, localDateTime.Calendar);
+
+                // Act
+                Action act = () => localDateTime.Should().BeLessThan(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(localDateTime)} to be less than {other}, but found {localDateTime}.");
+            }
+
+            [Fact]
+            public void When_asserting_a_local_date_time_is_less_than_itself_it_fails()
+            {
+                // Arrange
+                LocalDateTime localDateTime = LocalDateTime.FromDateTime(DateTime.Now, RandomCalendarSystem());
+
+                // Act
+                Action act = () => localDateTime.Should().BeLessThan(localDateTime);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(localDateTime)} to be less than {localDateTime}, but found {localDateTime}.");
+            }
+        }
+
+        public class BeLessThanOrEqualTo
+        {
+            [Fact]
+            public void When_asserting_a_local_date_time_is_less_than_or_equal_to_itself_it_succeeds()
+            {
+                // Arrange
+                LocalDateTime localDateTime = LocalDateTime.FromDateTime(DateTime.Now, RandomCalendarSystem());
+
+                // Act
+                Action act = () => localDateTime.Should().BeLessThanOrEqualTo(localDateTime);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_a_local_date_time_is_equal_to_an_other_local_date_time_it_succeeds()
+            {
+                // Arrange
+                DateTime now = DateTime.Now;
+                LocalDateTime localDateTime = LocalDateTime.FromDateTime(now, RandomCalendarSystem());
+                LocalDateTime other = LocalDateTime.FromDateTime(now, localDateTime.Calendar);
+
+                // Act
+                Action act = () => localDateTime.Should().BeLessThanOrEqualTo(other);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_a_local_date_time_is_less_than_an_other_local_date_time_it_succeeds()
+            {
+                // Arrange
+                LocalDateTime other = LocalDateTime.FromDateTime(DateTime.Now, RandomCalendarSystem());
+                LocalDateTime localDateTime = other - Period.FromSeconds(1);
+
+                // Act
+                Action act = () => localDateTime.Should().BeLessThanOrEqualTo(other);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_a_local_date_time_is_greater_than_an_other_local_date_time_it_fails()
+            {
+                // Arrange
+                LocalDateTime other = LocalDateTime.FromDateTime(DateTime.Now, RandomCalendarSystem());
+                LocalDateTime localDateTime = other + Period.FromSeconds(1);
+
+                // Act
+                Action act = () => localDateTime.Should().BeLessThanOrEqualTo(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(localDateTime)} to be less than or equal to {other}, but found {localDateTime}.");
+            }
+        }
     }
 }
