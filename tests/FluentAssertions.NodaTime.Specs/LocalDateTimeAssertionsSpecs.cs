@@ -25,6 +25,11 @@ namespace FluentAssertions.NodaTime.Specs
             return (first, second);
         }
 
+        private static IsoDayOfWeek RandomDayOfWeek()
+        {
+            return (IsoDayOfWeek)new Random().Next(1, 7);
+        }
+
         public class Be
         {
             [Fact]
@@ -740,7 +745,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_has_the_specified_day_of_week_it_fails()
             {
                 // Arrange
-                IsoDayOfWeek dayOfWeek = (IsoDayOfWeek)new Random().Next(1, 7);
+                IsoDayOfWeek dayOfWeek = RandomDayOfWeek();
                 LocalDateTime? localDateTime = null;
 
                 // Act
@@ -787,7 +792,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_does_not_have_the_specified_day_of_week_it_fails()
             {
                 // Arrange
-                IsoDayOfWeek dayOfWeek = (IsoDayOfWeek)new Random().Next(1, 7);
+                IsoDayOfWeek dayOfWeek = RandomDayOfWeek();
                 LocalDateTime? localDateTime = null;
 
                 // Act
@@ -928,7 +933,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_has_the_specified_hour_of_day_it_fails()
             {
                 // Arrange
-                int hourOfDay = new Random().Next(1, 365);
+                int hourOfDay = new Random().Next(1, 23);
                 LocalDateTime? localDateTime = null;
 
                 // Act
@@ -975,7 +980,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_does_not_have_the_specified_hour_of_day_it_fails()
             {
                 // Arrange
-                int hourOfDay = new Random().Next(1, 365);
+                int hourOfDay = new Random().Next(1, 23);
                 LocalDateTime? localDateTime = null;
 
                 // Act
@@ -1116,7 +1121,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_has_the_specified_millisecond_of_day_it_fails()
             {
                 // Arrange
-                int millisecondOfDay = new Random().Next(1, 365);
+                int millisecondOfDay = new Random().Next(1, 999);
                 LocalDateTime? localDateTime = null;
 
                 // Act
@@ -1163,7 +1168,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_does_not_have_the_specified_millisecond_of_day_it_fails()
             {
                 // Arrange
-                int millisecondOfDay = new Random().Next(1, 365);
+                int millisecondOfDay = new Random().Next(1, 999);
                 LocalDateTime? localDateTime = null;
 
                 // Act
@@ -1210,7 +1215,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_has_the_specified_minute_of_day_it_fails()
             {
                 // Arrange
-                int minuteOfDay = new Random().Next(1, 365);
+                int minuteOfDay = new Random().Next(1, 59);
                 LocalDateTime? localDateTime = null;
 
                 // Act
@@ -1257,7 +1262,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_does_not_have_the_specified_minute_of_day_it_fails()
             {
                 // Arrange
-                int minuteOfDay = new Random().Next(1, 365);
+                int minuteOfDay = new Random().Next(1, 59);
                 LocalDateTime? localDateTime = null;
 
                 // Act
@@ -1272,7 +1277,7 @@ namespace FluentAssertions.NodaTime.Specs
         public class HaveMonth
         {
             [Fact]
-            public void When_a_local_date_time_has_the_specified_month_of_day_it_succeeds()
+            public void When_a_local_date_time_has_the_specified_month_it_succeeds()
             {
                 // Arrange
                 LocalDateTime localDateTime = LocalDateTime.FromDateTime(DateTime.Now, RandomCalendarSystem());
@@ -1285,41 +1290,41 @@ namespace FluentAssertions.NodaTime.Specs
             }
 
             [Fact]
-            public void When_a_local_date_time_does_not_have_the_specified_month_of_day_it_fails()
+            public void When_a_local_date_time_does_not_have_the_specified_month_it_fails()
             {
                 // Arrange
                 LocalDateTime localDateTime = LocalDateTime.FromDateTime(DateTime.Now, RandomCalendarSystem());
-                int monthOfDay = localDateTime.PlusMonths(1).Month;
+                int month = localDateTime.PlusMonths(1).Month;
 
                 // Act
-                Action act = () => localDateTime.Should().HaveMonth(monthOfDay);
+                Action act = () => localDateTime.Should().HaveMonth(month);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(localDateTime)} to have month {monthOfDay}, but found {localDateTime.Month}.");
+                    .WithMessage($"Expected {nameof(localDateTime)} to have month {month}, but found {localDateTime.Month}.");
             }
 
             [Fact]
             [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
-            public void When_asserting_a_null_local_date_time_has_the_specified_month_of_day_it_fails()
+            public void When_asserting_a_null_local_date_time_has_the_specified_month_it_fails()
             {
                 // Arrange
-                int monthOfDay = new Random().Next(1, 365);
+                int month = new Random().Next(1, 12);
                 LocalDateTime? localDateTime = null;
 
                 // Act
-                Action act = () => localDateTime.Should().HaveMonth(monthOfDay);
+                Action act = () => localDateTime.Should().HaveMonth(month);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(localDateTime)} to have month {monthOfDay}, but {nameof(localDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(localDateTime)} to have month {month}, but {nameof(localDateTime)} was <null>.");
             }
         }
 
         public class NotHaveMonth
         {
             [Fact]
-            public void When_a_local_date_time_has_the_specified_month_of_day_it_fails()
+            public void When_a_local_date_time_has_the_specified_month_it_fails()
             {
                 // Arrange
                 LocalDateTime localDateTime = LocalDateTime.FromDateTime(DateTime.Now, RandomCalendarSystem());
@@ -1333,14 +1338,14 @@ namespace FluentAssertions.NodaTime.Specs
             }
 
             [Fact]
-            public void When_a_local_date_time_does_not_have_the_specified_month_of_day_it_succeeds()
+            public void When_a_local_date_time_does_not_have_the_specified_month_it_succeeds()
             {
                 // Arrange
                 LocalDateTime localDateTime = LocalDateTime.FromDateTime(DateTime.Now, RandomCalendarSystem());
-                int monthOfDay = localDateTime.PlusMonths(1).Month;
+                int month = localDateTime.PlusMonths(1).Month;
 
                 // Act
-                Action act = () => localDateTime.Should().NotHaveMonth(monthOfDay);
+                Action act = () => localDateTime.Should().NotHaveMonth(month);
 
                 // Assert
                 act.Should().NotThrow();
@@ -1348,18 +1353,18 @@ namespace FluentAssertions.NodaTime.Specs
 
             [Fact]
             [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
-            public void When_asserting_a_null_local_date_time_does_not_have_the_specified_month_of_day_it_fails()
+            public void When_asserting_a_null_local_date_time_does_not_have_the_specified_month_it_fails()
             {
                 // Arrange
-                int monthOfDay = new Random().Next(1, 365);
+                int month = new Random().Next(1, 12);
                 LocalDateTime? localDateTime = null;
 
                 // Act
-                Action act = () => localDateTime.Should().NotHaveMonth(monthOfDay);
+                Action act = () => localDateTime.Should().NotHaveMonth(month);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(localDateTime)} to have month {monthOfDay}, but {nameof(localDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(localDateTime)} to have month {month}, but {nameof(localDateTime)} was <null>.");
             }
         }
 
@@ -1398,7 +1403,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_has_the_specified_nanosecond_of_day_it_fails()
             {
                 // Arrange
-                long nanosecondOfDay = new Random().Next(1, 999);
+                long nanosecondOfDay = new Random().Next(1, 999_999_999);
                 LocalDateTime? localDateTime = null;
 
                 // Act
@@ -1445,7 +1450,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_does_not_have_the_specified_nanosecond_of_day_it_fails()
             {
                 // Arrange
-                long nanosecondOfDay = new Random().Next(1, 999);
+                long nanosecondOfDay = new Random().Next(1, 999_999_999);
                 LocalDateTime? localDateTime = null;
 
                 // Act
@@ -1492,7 +1497,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_has_the_specified_nanosecond_of_second_it_fails()
             {
                 // Arrange
-                int nanosecondOfSecond = new Random().Next(1, 365);
+                int nanosecondOfSecond = new Random().Next(1, 999_999_999);
                 LocalDateTime? localDateTime = null;
 
                 // Act
@@ -1539,7 +1544,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_does_not_have_the_specified_nanosecond_of_second_it_fails()
             {
                 // Arrange
-                int nanosecondOfSecond = new Random().Next(1, 365);
+                int nanosecondOfSecond = new Random().Next(1, 999_999_999);
                 LocalDateTime? localDateTime = null;
 
                 // Act
@@ -1586,7 +1591,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_has_the_specified_second_it_fails()
             {
                 // Arrange
-                int second = new Random().Next(1, 365);
+                int second = new Random().Next(1, 59);
                 LocalDateTime? localDateTime = null;
 
                 // Act
@@ -1633,7 +1638,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_does_not_have_the_specified_second_it_fails()
             {
                 // Arrange
-                int second = new Random().Next(1, 365);
+                int second = new Random().Next(1, 59);
                 LocalDateTime? localDateTime = null;
 
                 // Act
@@ -1774,7 +1779,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_has_the_specified_tick_of_day_it_fails()
             {
                 // Arrange
-                long tickOfDay = new Random().Next(1, 365);
+                long tickOfDay = new Random().Next(1, 999_999_999);
                 LocalDateTime? localDateTime = null;
 
                 // Act
@@ -1821,7 +1826,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_does_not_have_the_specified_tick_of_day_it_fails()
             {
                 // Arrange
-                long tickOfDay = new Random().Next(1, 365);
+                long tickOfDay = new Random().Next(1, 999_999_999);
                 LocalDateTime? localDateTime = null;
 
                 // Act
@@ -1868,7 +1873,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_has_the_specified_tick_of_second_it_fails()
             {
                 // Arrange
-                int tickOfSecond = new Random().Next(1, 365);
+                int tickOfSecond = new Random().Next(1, 9_999_999);
                 LocalDateTime? localDateTime = null;
 
                 // Act
@@ -1915,7 +1920,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_does_not_have_the_specified_tick_of_second_it_fails()
             {
                 // Arrange
-                int tickOfSecond = new Random().Next(1, 365);
+                int tickOfSecond = new Random().Next(1, 9_999_999);
                 LocalDateTime? localDateTime = null;
 
                 // Act
@@ -1962,7 +1967,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_has_the_specified_year_of_era_it_fails()
             {
                 // Arrange
-                int yearOfEra = new Random().Next(1, 365);
+                int yearOfEra = new Random().Next(1, 100);
                 LocalDateTime? localDateTime = null;
 
                 // Act
@@ -2009,7 +2014,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_does_not_have_the_specified_year_of_era_it_fails()
             {
                 // Arrange
-                int yearOfEra = new Random().Next(1, 365);
+                int yearOfEra = new Random().Next(1, 100);
                 LocalDateTime? localDateTime = null;
 
                 // Act

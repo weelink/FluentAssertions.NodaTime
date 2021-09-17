@@ -1219,6 +1219,7 @@ namespace FluentAssertions.NodaTime
 
             return new AndConstraint<LocalDateTimeAssertions>(this);
         }
+
         /// <summary>
         ///     Asserts that the current <see cref="LocalDateTime" /> has the specified nanosecond of second.
         /// </summary>

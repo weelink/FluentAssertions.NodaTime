@@ -1032,7 +1032,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_has_the_specified_seconds_it_fails()
             {
                 // Arrange
-                int seconds = new Random().Next(1, 365);
+                int seconds = new Random().Next(1, 100);
                 Offset? offset = null;
 
                 // Act
@@ -1079,7 +1079,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_does_not_have_the_specified_seconds_it_fails()
             {
                 // Arrange
-                int seconds = new Random().Next(1, 365);
+                int seconds = new Random().Next(1, 100);
                 Offset? offset = null;
 
                 // Act
@@ -1125,7 +1125,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_has_the_specified_milliseconds_it_fails()
             {
                 // Arrange
-                int milliseconds = new Random().Next(1, 365);
+                int milliseconds = new Random().Next(1, 999);
                 Offset? offset = null;
 
                 // Act
@@ -1172,7 +1172,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_does_not_have_the_specified_milliseconds_it_fails()
             {
                 // Arrange
-                int milliseconds = new Random().Next(1, 365);
+                int milliseconds = new Random().Next(1, 999);
                 Offset? offset = null;
 
                 // Act
@@ -1219,7 +1219,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_has_the_specified_nanoseconds_it_fails()
             {
                 // Arrange
-                long nanoseconds = new Random().Next(1, 999999);
+                long nanoseconds = new Random().Next(1, 999_999_999);
                 Offset? offset = null;
 
                 // Act
@@ -1266,7 +1266,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_does_not_have_the_specified_nanoseconds_it_fails()
             {
                 // Arrange
-                long nanoseconds = new Random().Next(1, 999999);
+                long nanoseconds = new Random().Next(1, 999_999_999);
                 Offset? offset = null;
 
                 // Act
@@ -1313,7 +1313,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_has_the_specified_ticks_it_fails()
             {
                 // Arrange
-                long ticks = new Random().Next(1, 999999);
+                long ticks = new Random().Next(1, 999_999_999);
                 Offset? offset = null;
 
                 // Act
@@ -1360,7 +1360,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_asserting_a_null_local_date_time_does_not_have_the_specified_ticks_it_fails()
             {
                 // Arrange
-                long ticks = new Random().Next(1, 999999);
+                long ticks = new Random().Next(1, 999_999_999);
                 Offset? offset = null;
 
                 // Act
