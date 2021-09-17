@@ -51,6 +51,20 @@
             <param name="localDateTime">The <see cref="T:NodaTime.LocalDateTime" /> to assert.</param>
             <returns>The <see cref="T:FluentAssertions.NodaTime.LocalDateTimeAssertions" /> to use for asserting an <see cref="T:NodaTime.LocalDateTime" />.</returns>
         </member>
+        <member name="M:FluentAssertions.NodaTime.AssertionExtensions.Should(System.Nullable{NodaTime.LocalDate})">
+            <summary>
+                Returns an <see cref="T:FluentAssertions.NodaTime.LocalDateAssertions"/> object that can be used to assert an <see cref="T:NodaTime.LocalDate" />.
+            </summary>
+            <param name="localDate">The <see cref="T:NodaTime.LocalDate" /> to assert.</param>
+            <returns>The <see cref="T:FluentAssertions.NodaTime.LocalDateAssertions" /> to use for asserting an <see cref="T:NodaTime.LocalDate" />.</returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.AssertionExtensions.Should(NodaTime.LocalDate)">
+            <summary>
+                Returns an <see cref="T:FluentAssertions.NodaTime.LocalDateAssertions"/> object that can be used to assert an <see cref="T:NodaTime.LocalDate" />.
+            </summary>
+            <param name="localDate">The <see cref="T:NodaTime.LocalDate" /> to assert.</param>
+            <returns>The <see cref="T:FluentAssertions.NodaTime.LocalDateAssertions" /> to use for asserting an <see cref="T:NodaTime.LocalDate" />.</returns>
+        </member>
         <member name="M:FluentAssertions.NodaTime.AssertionExtensions.Should(System.Nullable{NodaTime.Duration})">
             <summary>
                 Returns an <see cref="T:FluentAssertions.NodaTime.DurationAssertions"/> object that can be used to assert an <see cref="T:NodaTime.Duration" />.
@@ -1275,6 +1289,341 @@
             </param>
             <returns>
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="T:FluentAssertions.NodaTime.LocalDateAssertions">
+            <summary>
+                Contains assertions for <see cref="T:NodaTime.LocalDate" />.
+            </summary>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.LocalDateAssertions.#ctor(System.Nullable{NodaTime.LocalDate})">
+            <summary>
+                Initializes a new <see cref="T:FluentAssertions.NodaTime.LocalDateAssertions" />.
+            </summary>
+            <param name="subject">The <see cref="T:NodaTime.LocalDate" /> that is being asserted.</param>
+        </member>
+        <member name="P:FluentAssertions.NodaTime.LocalDateAssertions.Identifier">
+            <inheritdoc />
+        </member>
+        <member name="M:FluentAssertions.NodaTime.LocalDateAssertions.Be(System.Nullable{NodaTime.LocalDate},System.String,System.Object[])">
+            <summary>
+                Asserts that this <see cref="T:NodaTime.LocalDate" /> is equal to <paramref name="other" />.
+            </summary>
+            <param name="other">The <see cref="T:NodaTime.LocalDate" /> to compare to.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.LocalDateAssertions.NotBe(System.Nullable{NodaTime.LocalDate},System.String,System.Object[])">
+            <summary>
+                Asserts that this <see cref="T:NodaTime.LocalDate" /> is not equal to <paramref name="other" />.
+            </summary>
+            <param name="other">The <see cref="T:NodaTime.LocalDate" /> to compare to.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.LocalDateAssertions.BeInCalendar(NodaTime.CalendarSystem,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.LocalDate" /> has the specified <see cref="T:NodaTime.CalendarSystem" />.
+            </summary>
+            <param name="calendar">
+                The <see cref="T:NodaTime.CalendarSystem" /> that the current <see cref="T:NodaTime.LocalDate" /> is expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndWhichConstraint`2">AndWhichConstraint&lt;LocalDateAssertions, CalendarSystem&gt;</see>
+                which can be used to assert the <see cref="T:NodaTime.CalendarSystem" />.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.LocalDateAssertions.NotBeInCalendar(NodaTime.CalendarSystem,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.LocalDate" /> does not have the specified <see cref="T:NodaTime.CalendarSystem" />.
+            </summary>
+            <param name="calendar">
+                The <see cref="T:NodaTime.CalendarSystem" /> that the current <see cref="T:NodaTime.LocalDate" /> is not expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.LocalDateAssertions.HaveDay(System.Int32,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.LocalDate" /> has the specified day of the month.
+            </summary>
+            <param name="day">
+                The day of the month that the current <see cref="T:NodaTime.LocalDate" /> is expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.LocalDateAssertions.NotHaveDay(System.Int32,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.LocalDate" /> does not have the specified day of the month.
+            </summary>
+            <param name="day">
+                The day of the month that the current <see cref="T:NodaTime.LocalDate" /> is not expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.LocalDateAssertions.HaveDayOfWeek(NodaTime.IsoDayOfWeek,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.LocalDate" /> has the specified day of the week.
+            </summary>
+            <param name="dayOfWeek">
+                The day of the week that the current <see cref="T:NodaTime.LocalDate" /> is expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.LocalDateAssertions.NotHaveDayOfWeek(NodaTime.IsoDayOfWeek,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.LocalDate" /> does not have the specified day of the week.
+            </summary>
+            <param name="dayOfWeek">
+                The day of the week that the current <see cref="T:NodaTime.LocalDate" /> is not expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.LocalDateAssertions.HaveDayOfYear(System.Int32,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.LocalDate" /> has the specified day of the year.
+            </summary>
+            <param name="dayOfYear">
+                The day of the year that the current <see cref="T:NodaTime.LocalDate" /> is expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.LocalDateAssertions.NotHaveDayOfYear(System.Int32,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.LocalDate" /> does not have the specified day of the year.
+            </summary>
+            <param name="dayOfYear">
+                The day of the year that the current <see cref="T:NodaTime.LocalDate" /> is not expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.LocalDateAssertions.HaveYear(System.Int32,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.LocalDate" /> has the specified year.
+            </summary>
+            <param name="year">
+                The year that the current <see cref="T:NodaTime.LocalDate" /> is expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.LocalDateAssertions.NotHaveYear(System.Int32,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.LocalDate" /> does not have the specified year.
+            </summary>
+            <param name="year">
+                The year that the current <see cref="T:NodaTime.LocalDate" /> is not expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.LocalDateAssertions.HaveMonth(System.Int32,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.LocalDate" /> has the specified month.
+            </summary>
+            <param name="month">
+                The month that the current <see cref="T:NodaTime.LocalDate" /> is expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.LocalDateAssertions.NotHaveMonth(System.Int32,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.LocalDate" /> does not have the specified month.
+            </summary>
+            <param name="month">
+                The month that the current <see cref="T:NodaTime.LocalDate" /> is not expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.LocalDateAssertions.HaveYearOfEra(System.Int32,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.LocalDate" /> has the specified year of era.
+            </summary>
+            <param name="yearOfEra">
+                The year of era that the current <see cref="T:NodaTime.LocalDate" /> is expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.LocalDateAssertions.NotHaveYearOfEra(System.Int32,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.LocalDate" /> does not have the specified year of era.
+            </summary>
+            <param name="yearOfEra">
+                The year of era that the current <see cref="T:NodaTime.LocalDate" /> is not expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.LocalDateAssertions.HaveEra(NodaTime.Calendars.Era,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.LocalDate" /> has the specified era.
+            </summary>
+            <param name="era">
+                The era that the current <see cref="T:NodaTime.LocalDate" /> is expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.LocalDateAssertions.NotHaveEra(NodaTime.Calendars.Era,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.LocalDate" /> does not have the specified era.
+            </summary>
+            <param name="era">
+                The era that the current <see cref="T:NodaTime.LocalDate" /> is not expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
         <member name="T:FluentAssertions.NodaTime.LocalDateTimeAssertions">

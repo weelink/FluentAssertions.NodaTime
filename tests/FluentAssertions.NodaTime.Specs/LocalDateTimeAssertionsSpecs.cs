@@ -1059,7 +1059,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_a_local_date_time_does_not_have_the_specified_era_it_succeeds()
             {
                 // Arrange
-                LocalDateTime ad = new LocalDate(Era.Common, 1966, 9, 8, CalendarSystem.Gregorian).AtMidnight();
+                LocalDateTime ad = new LocalDate(Era.Common, 1966, 9, 8, CalendarSystem.Iso).AtMidnight();
                 LocalDateTime bc = new LocalDate(Era.BeforeCommon, 384, 4, 16, CalendarSystem.Iso).AtMidnight();
 
                 // Act
