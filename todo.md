@@ -8,7 +8,9 @@
 - [x] OffsetDateTime
 - [x] OffsetDate
 - [x] OffsetTime
-- [ ] ZonedDateTime
 - [x] Duration
 - [ ] Period
 - [ ] Interval
+- [ ] AnnualDate
+- [ ] DateInterval
+- [ ] ZonedDateTime
