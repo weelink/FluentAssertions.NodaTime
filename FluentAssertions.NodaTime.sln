@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.csproj", "{44B9E81A-69A9-4CB7-B7D3-632F69FDE6C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentAssertions.NodaTime", "src\FluentAssertions.NodaTime\FluentAssertions.NodaTime.csproj", "{7E14D5F2-5A68-4E2D-B86E-9D77BEC1E421}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentAssertions.NodaTime", "src\FluentAssertions.NodaTime\FluentAssertions.NodaTime.csproj", "{7E14D5F2-5A68-4E2D-B86E-9D77BEC1E421}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentAssertions.NodaTime.Specs", "tests\FluentAssertions.NodaTime.Specs\FluentAssertions.NodaTime.Specs.csproj", "{F904F60C-E6D8-4197-8C17-89C94C0C7311}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentAssertions.NodaTime.Specs", "tests\FluentAssertions.NodaTime.Specs\FluentAssertions.NodaTime.Specs.csproj", "{F904F60C-E6D8-4197-8C17-89C94C0C7311}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{44B9E81A-69A9-4CB7-B7D3-632F69FDE6C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{44B9E81A-69A9-4CB7-B7D3-632F69FDE6C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E14D5F2-5A68-4E2D-B86E-9D77BEC1E421}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7E14D5F2-5A68-4E2D-B86E-9D77BEC1E421}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E14D5F2-5A68-4E2D-B86E-9D77BEC1E421}.Release|Any CPU.ActiveCfg = Release|Any CPU
