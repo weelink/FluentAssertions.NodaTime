@@ -111,6 +111,66 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
+        ///     Returns an <see cref="OffsetDateTimeAssertions"/> object that can be used to assert an <see cref="OffsetDateTime" />.
+        /// </summary>
+        /// <param name="offsetDateTime">The <see cref="OffsetDateTime" /> to assert.</param>
+        /// <returns>The <see cref="OffsetDateTimeAssertions" /> to use for asserting an <see cref="OffsetDateTime" />.</returns>
+        public static OffsetDateTimeAssertions Should(this OffsetDateTime? offsetDateTime)
+        {
+            return new OffsetDateTimeAssertions(offsetDateTime);
+        }
+
+        /// <summary>
+        ///     Returns an <see cref="OffsetDateTimeAssertions"/> object that can be used to assert an <see cref="OffsetDateTime" />.
+        /// </summary>
+        /// <param name="offsetDateTime">The <see cref="OffsetDateTime" /> to assert.</param>
+        /// <returns>The <see cref="OffsetDateTimeAssertions" /> to use for asserting an <see cref="OffsetDateTime" />.</returns>
+        public static OffsetDateTimeAssertions Should(this OffsetDateTime offsetDateTime)
+        {
+            return new OffsetDateTimeAssertions(offsetDateTime);
+        }
+
+        /// <summary>
+        ///     Returns an <see cref="OffsetDateAssertions"/> object that can be used to assert an <see cref="OffsetDate" />.
+        /// </summary>
+        /// <param name="offsetDate">The <see cref="OffsetDate" /> to assert.</param>
+        /// <returns>The <see cref="OffsetDateAssertions" /> to use for asserting an <see cref="OffsetDate" />.</returns>
+        public static OffsetDateAssertions Should(this OffsetDate? offsetDate)
+        {
+            return new OffsetDateAssertions(offsetDate);
+        }
+
+        /// <summary>
+        ///     Returns an <see cref="OffsetDateAssertions"/> object that can be used to assert an <see cref="OffsetDate" />.
+        /// </summary>
+        /// <param name="offsetDate">The <see cref="OffsetDate" /> to assert.</param>
+        /// <returns>The <see cref="OffsetDateAssertions" /> to use for asserting an <see cref="OffsetDate" />.</returns>
+        public static OffsetDateAssertions Should(this OffsetDate offsetDate)
+        {
+            return new OffsetDateAssertions(offsetDate);
+        }
+
+        /// <summary>
+        ///     Returns an <see cref="OffsetTimeAssertions"/> object that can be used to assert an <see cref="OffsetTime" />.
+        /// </summary>
+        /// <param name="offsetTime">The <see cref="OffsetTime" /> to assert.</param>
+        /// <returns>The <see cref="OffsetTimeAssertions" /> to use for asserting an <see cref="OffsetTime" />.</returns>
+        public static OffsetTimeAssertions Should(this OffsetTime? offsetTime)
+        {
+            return new OffsetTimeAssertions(offsetTime);
+        }
+
+        /// <summary>
+        ///     Returns an <see cref="OffsetTimeAssertions"/> object that can be used to assert an <see cref="OffsetTime" />.
+        /// </summary>
+        /// <param name="offsetTime">The <see cref="OffsetTime" /> to assert.</param>
+        /// <returns>The <see cref="OffsetTimeAssertions" /> to use for asserting an <see cref="OffsetTime" />.</returns>
+        public static OffsetTimeAssertions Should(this OffsetTime offsetTime)
+        {
+            return new OffsetTimeAssertions(offsetTime);
+        }
+
+        /// <summary>
         ///     Returns an <see cref="DurationAssertions"/> object that can be used to assert an <see cref="Duration" />.
         /// </summary>
         /// <param name="duration">The <see cref="Duration" /> to assert.</param>

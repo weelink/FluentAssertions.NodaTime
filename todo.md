@@ -4,10 +4,10 @@
 - [x] Offset
 - [x] LocalDateTime
 - [x] LocalDate
-- [X] LocalTime
-- [ ] OffsetDateTime
-- [ ] OffsetDate
-- [ ] OffsetTime
+- [x] LocalTime
+- [x] OffsetDateTime
+- [x] OffsetDate
+- [x] OffsetTime
 - [ ] ZonedDateTime
 - [x] Duration
 - [ ] Period

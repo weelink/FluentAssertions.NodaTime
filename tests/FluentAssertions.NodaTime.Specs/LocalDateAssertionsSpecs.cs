@@ -955,6 +955,7 @@ namespace FluentAssertions.NodaTime.Specs
                     .WithMessage($"Did not expect {nameof(localDate)} to have year of era {yearOfEra}, but {nameof(localDate)} was <null>.");
             }
         }
+
         public class BeGreaterThan
         {
             [Fact]

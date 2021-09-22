@@ -5,4 +5,4 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-[assembly: SuppressMessage("CodeQuality", "IDE0079:Remove unnecessary suppression", Justification = "ExpressionIsAlwaysNull is necessary")]
+// [assembly: SuppressMessage("CodeQuality", "IDE0079:Remove unnecessary suppression", Justification = "ExpressionIsAlwaysNull is necessary")]
