@@ -71,6 +71,16 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
+        ///     Returns an <see cref="DateIntervalAssertions"/> object that can be used to assert an <see cref="DateInterval" />.
+        /// </summary>
+        /// <param name="interval">The <see cref="DateInterval" /> to assert.</param>
+        /// <returns>The <see cref="DateIntervalAssertions" /> to use for asserting an <see cref="DateInterval" />.</returns>
+        public static DateIntervalAssertions Should(this DateInterval? interval)
+        {
+            return new DateIntervalAssertions(interval);
+        }
+
+        /// <summary>
         ///     Returns an <see cref="OffsetAssertions"/> object that can be used to assert an <see cref="Offset" />.
         /// </summary>
         /// <param name="offset">The <see cref="Offset" /> to assert.</param>

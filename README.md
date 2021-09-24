@@ -14,7 +14,7 @@
 - [x] Period
 - [x] Interval
 - [x] AnnualDate
-- [ ] DateInterval
+- [x] DateInterval
 - [x] ZonedDateTime
 
 - [ ] Double check for missing assertions

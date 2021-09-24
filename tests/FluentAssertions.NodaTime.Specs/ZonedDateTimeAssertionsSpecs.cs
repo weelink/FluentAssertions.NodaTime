@@ -1288,7 +1288,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Arrange
                 DateTimeOffset now = DateTimeOffset.Now;
                 ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(now).WithCalendar(RandomCalendarSystem());
-                int month = now.AddMonths(1).Month;
+                int month = zonedDateTime.Month + 1;
 
                 // Act
                 Action act = () => zonedDateTime.Should().HaveMonth(month);
@@ -1337,7 +1337,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Arrange
                 DateTimeOffset now = DateTimeOffset.Now;
                 ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(now).WithCalendar(RandomCalendarSystem());
-                int month = now.AddMonths(1).Month;
+                int month = zonedDateTime.Month + 1;
 
                 // Act
                 Action act = () => zonedDateTime.Should().NotHaveMonth(month);
