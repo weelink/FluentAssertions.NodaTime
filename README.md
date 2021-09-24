@@ -13,7 +13,7 @@
 - [x] Duration
 - [x] Period
 - [x] Interval
-- [ ] AnnualDate
+- [x] AnnualDate
 - [ ] DateInterval
 - [x] ZonedDateTime
 

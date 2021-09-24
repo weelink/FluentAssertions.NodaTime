@@ -31,6 +31,26 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
+        ///     Returns an <see cref="AnnualDateAssertions"/> object that can be used to assert an <see cref="AnnualDate" />.
+        /// </summary>
+        /// <param name="annualDate">The <see cref="AnnualDate" /> to assert.</param>
+        /// <returns>The <see cref="AnnualDateAssertions" /> to use for asserting an <see cref="AnnualDate" />.</returns>
+        public static AnnualDateAssertions Should(this AnnualDate annualDate)
+        {
+            return new AnnualDateAssertions(annualDate);
+        }
+
+        /// <summary>
+        ///     Returns an <see cref="AnnualDateAssertions"/> object that can be used to assert an <see cref="AnnualDate" />.
+        /// </summary>
+        /// <param name="annualDate">The <see cref="AnnualDate" /> to assert.</param>
+        /// <returns>The <see cref="AnnualDateAssertions" /> to use for asserting an <see cref="AnnualDate" />.</returns>
+        public static AnnualDateAssertions Should(this AnnualDate? annualDate)
+        {
+            return new AnnualDateAssertions(annualDate);
+        }
+
+        /// <summary>
         ///     Returns an <see cref="IntervalAssertions"/> object that can be used to assert an <see cref="Interval" />.
         /// </summary>
         /// <param name="interval">The <see cref="Interval" /> to assert.</param>
