@@ -31,6 +31,26 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
+        ///     Returns an <see cref="IntervalAssertions"/> object that can be used to assert an <see cref="Interval" />.
+        /// </summary>
+        /// <param name="interval">The <see cref="Interval" /> to assert.</param>
+        /// <returns>The <see cref="IntervalAssertions" /> to use for asserting an <see cref="Interval" />.</returns>
+        public static IntervalAssertions Should(this Interval interval)
+        {
+            return new IntervalAssertions(interval);
+        }
+
+        /// <summary>
+        ///     Returns an <see cref="IntervalAssertions"/> object that can be used to assert an <see cref="Interval" />.
+        /// </summary>
+        /// <param name="interval">The <see cref="Interval" /> to assert.</param>
+        /// <returns>The <see cref="IntervalAssertions" /> to use for asserting an <see cref="Interval" />.</returns>
+        public static IntervalAssertions Should(this Interval? interval)
+        {
+            return new IntervalAssertions(interval);
+        }
+
+        /// <summary>
         ///     Returns an <see cref="OffsetAssertions"/> object that can be used to assert an <see cref="Offset" />.
         /// </summary>
         /// <param name="offset">The <see cref="Offset" /> to assert.</param>

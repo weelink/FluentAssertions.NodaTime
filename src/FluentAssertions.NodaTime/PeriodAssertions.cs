@@ -28,7 +28,7 @@ namespace FluentAssertions.NodaTime
         {
             get { return "Period"; }
         }
-        
+
         /// <summary>
         ///     Asserts that this <see cref="Period" /> is equal to <paramref name="other" />.
         /// </summary>
@@ -149,7 +149,7 @@ namespace FluentAssertions.NodaTime
                 .ForCondition(Subject == Period.Zero)
                 .BecauseOf(because, becauseArgs)
                 .FailWith("Expected {context:Period} to be zero, but found {0}.", Subject);
-            
+
             return new AndConstraint<PeriodAssertions>(this);
         }
 
@@ -656,7 +656,7 @@ namespace FluentAssertions.NodaTime
 
             return new AndConstraint<PeriodAssertions>(this);
         }
-        
+
         /// <summary>
         ///     Asserts that the current <see cref="Period" /> has the specified nanoseconds.
         /// </summary>

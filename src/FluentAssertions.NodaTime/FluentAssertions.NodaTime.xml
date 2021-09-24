@@ -23,6 +23,20 @@
             <param name="instant">The <see cref="T:NodaTime.Instant" /> to assert.</param>
             <returns>The <see cref="T:FluentAssertions.NodaTime.InstantAssertions" /> to use for asserting an <see cref="T:NodaTime.Instant" />.</returns>
         </member>
+        <member name="M:FluentAssertions.NodaTime.AssertionExtensions.Should(NodaTime.Interval)">
+            <summary>
+                Returns an <see cref="T:FluentAssertions.NodaTime.IntervalAssertions"/> object that can be used to assert an <see cref="T:NodaTime.Interval" />.
+            </summary>
+            <param name="interval">The <see cref="T:NodaTime.Interval" /> to assert.</param>
+            <returns>The <see cref="T:FluentAssertions.NodaTime.IntervalAssertions" /> to use for asserting an <see cref="T:NodaTime.Interval" />.</returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.AssertionExtensions.Should(System.Nullable{NodaTime.Interval})">
+            <summary>
+                Returns an <see cref="T:FluentAssertions.NodaTime.IntervalAssertions"/> object that can be used to assert an <see cref="T:NodaTime.Interval" />.
+            </summary>
+            <param name="interval">The <see cref="T:NodaTime.Interval" /> to assert.</param>
+            <returns>The <see cref="T:FluentAssertions.NodaTime.IntervalAssertions" /> to use for asserting an <see cref="T:NodaTime.Interval" />.</returns>
+        </member>
         <member name="M:FluentAssertions.NodaTime.AssertionExtensions.Should(NodaTime.Offset)">
             <summary>
                 Returns an <see cref="T:FluentAssertions.NodaTime.OffsetAssertions"/> object that can be used to assert an <see cref="T:NodaTime.Offset" />.
@@ -1352,6 +1366,244 @@
             </param>
             <returns>
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="T:FluentAssertions.NodaTime.IntervalAssertions">
+            <summary>
+                Contains assertions for <see cref="T:NodaTime.Interval" />.
+            </summary>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.IntervalAssertions.#ctor(System.Nullable{NodaTime.Interval})">
+            <summary>
+                Initializes a new <see cref="T:FluentAssertions.NodaTime.IntervalAssertions" />.
+            </summary>
+            <param name="subject">The <see cref="T:NodaTime.Interval" /> that is being asserted.</param>
+        </member>
+        <member name="P:FluentAssertions.NodaTime.IntervalAssertions.Identifier">
+            <inheritdoc />
+        </member>
+        <member name="M:FluentAssertions.NodaTime.IntervalAssertions.Be(System.Nullable{NodaTime.Interval},System.String,System.Object[])">
+            <summary>
+                Asserts that this <see cref="T:NodaTime.Interval" /> is equal to <paramref name="other" />.
+            </summary>
+            <param name="other">The <see cref="T:NodaTime.Interval" /> to compare to.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;IntervalAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.IntervalAssertions.NotBe(System.Nullable{NodaTime.Interval},System.String,System.Object[])">
+            <summary>
+                Asserts that this <see cref="T:NodaTime.Interval" /> is not equal to <paramref name="other" />.
+            </summary>
+            <param name="other">The <see cref="T:NodaTime.Interval" /> to compare to.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;IntervalAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.IntervalAssertions.HaveDuration(NodaTime.Duration,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Interval" /> has the specified duration.
+            </summary>
+            <param name="duration">
+                The duration that the current <see cref="T:NodaTime.Interval" /> is expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;IntervalAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.IntervalAssertions.NotHaveDuration(NodaTime.Duration,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Interval" /> has the specified duration.
+            </summary>
+            <param name="duration">
+                The duration that the current <see cref="T:NodaTime.Interval" /> is expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;IntervalAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.IntervalAssertions.End(System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Interval" /> has a fixed end point.
+            </summary>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;IntervalAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.IntervalAssertions.NotEnd(System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Interval" /> does not have a fixed end point.
+            </summary>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;IntervalAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.IntervalAssertions.EndAt(System.Nullable{NodaTime.Instant},System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Interval" /> ends at <paramref name="instant" />.
+            </summary>
+            <param name="instant">The exclusive upper bound of the interval.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;IntervalAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.IntervalAssertions.NotEndAt(System.Nullable{NodaTime.Instant},System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Interval" /> does not end at <paramref name="instant" />.
+            </summary>
+            <param name="instant">The exclusive upper bound of the interval.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;IntervalAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.IntervalAssertions.Start(System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Interval" /> has a fixed start point.
+            </summary>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepstarted automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;IntervalAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.IntervalAssertions.NotStart(System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Interval" /> does not have a fixed start point.
+            </summary>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepstarted automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;IntervalAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.IntervalAssertions.StartAt(System.Nullable{NodaTime.Instant},System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Interval" /> starts at <paramref name="instant" />.
+            </summary>
+            <param name="instant">The inclusive lower bound of the interval.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepstarted automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;IntervalAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.IntervalAssertions.NotStartAt(System.Nullable{NodaTime.Instant},System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Interval" /> does not start at <paramref name="instant" />.
+            </summary>
+            <param name="instant">The inclusive lower bound of the interval.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepstarted automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;IntervalAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.IntervalAssertions.Contain(NodaTime.Instant,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Interval" /> contains <paramref name="instant" />.
+            </summary>
+            <param name="instant">The inclusive lower bound of the interval.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not contain with the word <i>because</i>, it is prepcontained automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;IntervalAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.IntervalAssertions.NotContain(NodaTime.Instant,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Interval" /> does not contain <paramref name="instant" />.
+            </summary>
+            <param name="instant">The inclusive lower bound of the interval.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not contain with the word <i>because</i>, it is prepcontained automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;IntervalAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
         <member name="T:FluentAssertions.NodaTime.LocalDateAssertions">

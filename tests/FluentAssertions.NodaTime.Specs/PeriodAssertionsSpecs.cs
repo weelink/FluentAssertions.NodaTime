@@ -1336,7 +1336,7 @@ namespace FluentAssertions.NodaTime.Specs
                         $"Did not expect {nameof(period)} to have {minutes.AsFormatted()} minutes, but {nameof(period)} was <null>.");
             }
         }
-        
+
         public class HaveDateComponent
         {
             [Fact]
@@ -1379,7 +1379,7 @@ namespace FluentAssertions.NodaTime.Specs
                     .WithMessage($"Expected {nameof(period)} to have a date component, but {nameof(period)} was <null>.");
             }
         }
-        
+
         public class NotHaveDateComponent
         {
             [Fact]
@@ -1410,7 +1410,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
 
             [Fact]
-            public void When_asserting_a_null_period_has_the_specified_minutes_it_fails()
+            public void When_asserting_a_null_period_has_a_date_component_it_fails()
             {
                 Period? period = null;
 
@@ -1422,7 +1422,7 @@ namespace FluentAssertions.NodaTime.Specs
                     .WithMessage($"Did not expect {nameof(period)} to have a date component, but {nameof(period)} was <null>.");
             }
         }
-        
+
         public class HaveTimeComponent
         {
             [Fact]
@@ -1453,7 +1453,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
 
             [Fact]
-            public void When_asserting_a_null_period_has_the_specified_minutes_it_fails()
+            public void When_asserting_a_null_period_has_a_time_component_it_fails()
             {
                 Period? period = null;
 
@@ -1465,7 +1465,7 @@ namespace FluentAssertions.NodaTime.Specs
                     .WithMessage($"Expected {nameof(period)} to have a time component, but {nameof(period)} was <null>.");
             }
         }
-        
+
         public class NotHaveTimeComponent
         {
             [Fact]
