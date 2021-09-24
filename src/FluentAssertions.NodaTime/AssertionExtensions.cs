@@ -189,5 +189,15 @@ namespace FluentAssertions.NodaTime
         {
             return new DurationAssertions(duration);
         }
+
+        /// <summary>
+        ///     Returns an <see cref="PeriodAssertions"/> object that can be used to assert an <see cref="Period" />.
+        /// </summary>
+        /// <param name="period">The <see cref="Period" /> to assert.</param>
+        /// <returns>The <see cref="PeriodAssertions" /> to use for asserting an <see cref="Period" />.</returns>
+        public static PeriodAssertions Should(this Period? period)
+        {
+            return new PeriodAssertions(period);
+        }
     }
 }
