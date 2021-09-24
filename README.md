@@ -15,7 +15,7 @@
 - [x] Interval
 - [ ] AnnualDate
 - [ ] DateInterval
-- [ ] ZonedDateTime
+- [x] ZonedDateTime
 
 - [ ] Double check for missing assertions
 - [ ] Double check for consistent failure messages

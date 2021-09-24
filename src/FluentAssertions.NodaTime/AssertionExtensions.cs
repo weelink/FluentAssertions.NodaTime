@@ -191,6 +191,26 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
+        ///     Returns an <see cref="ZonedDateTimeAssertions"/> object that can be used to assert an <see cref="ZonedDateTime" />.
+        /// </summary>
+        /// <param name="zonedDateTime">The <see cref="ZonedDateTime" /> to assert.</param>
+        /// <returns>The <see cref="ZonedDateTimeAssertions" /> to use for asserting an <see cref="ZonedDateTime" />.</returns>
+        public static ZonedDateTimeAssertions Should(this ZonedDateTime? zonedDateTime)
+        {
+            return new ZonedDateTimeAssertions(zonedDateTime);
+        }
+
+        /// <summary>
+        ///     Returns an <see cref="ZonedDateTimeAssertions"/> object that can be used to assert an <see cref="ZonedDateTime" />.
+        /// </summary>
+        /// <param name="zonedDateTime">The <see cref="ZonedDateTime" /> to assert.</param>
+        /// <returns>The <see cref="ZonedDateTimeAssertions" /> to use for asserting an <see cref="ZonedDateTime" />.</returns>
+        public static ZonedDateTimeAssertions Should(this ZonedDateTime zonedDateTime)
+        {
+            return new ZonedDateTimeAssertions(zonedDateTime);
+        }
+
+        /// <summary>
         ///     Returns an <see cref="DurationAssertions"/> object that can be used to assert an <see cref="Duration" />.
         /// </summary>
         /// <param name="duration">The <see cref="Duration" /> to assert.</param>
