@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 using FluentAssertions.Execution;
 using FluentAssertions.Primitives;
@@ -325,6 +326,220 @@ namespace FluentAssertions.NodaTime
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="ZonedDateTime" /> has the specified <see cref="LocalDateTime" />.
+        /// </summary>
+        /// <param name="localDateTime">
+        ///     The <see cref="LocalDateTime" /> that the current <see cref="ZonedDateTime" /> is expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndWhichConstraint{TParentConstraint, TMatchedElement}">AndWhichConstraint&lt;ZonedDateTimeAssertions, LocalDateTime&gt;</see>
+        ///     which can be used to assert the <see cref="LocalDateTime" />.
+        /// </returns>
+        [CustomAssertion]
+        public AndWhichConstraint<ZonedDateTimeAssertions, LocalDateTime> HaveLocalDateTime(LocalDateTime localDateTime, string because = "",
+            params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Expected {context:ZonedDateTime} to have local date time {0}{reason}", localDateTime);
+
+            if (Subject.HasValue)
+            {
+                scope
+                    .ForCondition(Subject.Value.LocalDateTime.Equals(localDateTime))
+                    .FailWith(", but found {0}.", Subject.Value.LocalDateTime);
+            }
+            else
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+            }
+
+            return new AndWhichConstraint<ZonedDateTimeAssertions, LocalDateTime>(this, localDateTime);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="ZonedDateTime" /> does not have the specified <see cref="LocalDateTime" />.
+        /// </summary>
+        /// <param name="date">
+        ///     The <see cref="LocalDateTime" /> that the current <see cref="ZonedDateTime" /> is not expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;ZonedDateTimeAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<ZonedDateTimeAssertions> NotHaveLocalDateTime(LocalDateTime date, string because = "",
+            params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Did not expect {context:ZonedDateTime} to have local date time {0}{reason}", date);
+
+            if (Subject.HasValue)
+            {
+                scope
+                    .ForCondition(!Subject.Value.LocalDateTime.Equals(date))
+                    .FailWith(".");
+            }
+            else
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+            }
+
+            return new AndConstraint<ZonedDateTimeAssertions>(this);
+        }
+
+
+        /// <summary>
+        ///     Asserts that the current <see cref="ZonedDateTime" /> has the specified <see cref="Offset" />.
+        /// </summary>
+        /// <param name="offset">
+        ///     The <see cref="Offset" /> that the current <see cref="ZonedDateTime" /> is expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndWhichConstraint{TParentConstraint, TMatchedElement}">AndWhichConstraint&lt;ZonedDateTimeAssertions, ZonedDateTime&gt;</see>
+        ///     which can be used to assert the <see cref="ZonedDateTime" />.
+        /// </returns>
+        [CustomAssertion]
+        public AndWhichConstraint<ZonedDateTimeAssertions, Offset> HaveOffset(Offset offset, string because = "",
+            params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Expected {context:ZonedDateTime} to have offset {0}{reason}", offset);
+
+            if (Subject.HasValue)
+            {
+                scope
+                    .ForCondition(Subject.Value.Offset.Equals(offset))
+                    .FailWith(", but found {0}.", Subject.Value.Offset);
+            }
+            else
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+            }
+
+            return new AndWhichConstraint<ZonedDateTimeAssertions, Offset>(this, offset);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="ZonedDateTime" /> has the specified <see cref="TimeSpan" />.
+        /// </summary>
+        /// <param name="timeSpan">
+        ///     The <see cref="Offset" /> that the current <see cref="ZonedDateTime" /> is expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndWhichConstraint{TParentConstraint, TMatchedElement}">AndWhichConstraint&lt;ZonedDateTimeAssertions, ZonedDateTime&gt;</see>
+        ///     which can be used to assert the <see cref="ZonedDateTime" />.
+        /// </returns>
+        [CustomAssertion]
+        public AndWhichConstraint<ZonedDateTimeAssertions, Offset> HaveOffset(TimeSpan timeSpan, string because = "",
+            params object[] becauseArgs)
+        {
+            return HaveOffset(Offset.FromTimeSpan(timeSpan), because, becauseArgs);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="ZonedDateTime" /> does not have the specified <see cref="Offset" />.
+        /// </summary>
+        /// <param name="offset">
+        ///     The <see cref="Offset" /> that the current <see cref="ZonedDateTime" /> is not expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;ZonedDateTimeAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<ZonedDateTimeAssertions> NotHaveOffset(Offset offset, string because = "",
+            params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Did not expect {context:ZonedDateTime} to have offset {0}{reason}", offset);
+
+            if (Subject.HasValue)
+            {
+                scope
+                    .ForCondition(!Subject.Value.Offset.Equals(offset))
+                    .FailWith(".");
+            }
+            else
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+            }
+
+            return new AndConstraint<ZonedDateTimeAssertions>(this);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="ZonedDateTime" /> does not have the specified <see cref="TimeSpan" />.
+        /// </summary>
+        /// <param name="timeSpan">
+        ///     The <see cref="Offset" /> that the current <see cref="ZonedDateTime" /> is not expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;ZonedDateTimeAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<ZonedDateTimeAssertions> NotHaveOffset(TimeSpan timeSpan, string because = "",
+            params object[] becauseArgs)
+        {
+            return NotHaveOffset(Offset.FromTimeSpan(timeSpan), because, becauseArgs);
         }
 
         /// <summary>

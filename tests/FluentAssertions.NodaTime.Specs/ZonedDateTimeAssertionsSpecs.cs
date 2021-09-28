@@ -188,6 +188,346 @@ namespace FluentAssertions.NodaTime.Specs
             }
         }
 
+        public class HaveLocalDateTime
+        {
+            [Fact]
+            public void When_a_zoned_local_date_time_has_the_specified_local_date_time_it_succeeds()
+            {
+                // Arrange
+                ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now);
+                LocalDateTime localDateTime = zonedDateTime.LocalDateTime;
+
+                // Act
+                Action act = () => zonedDateTime.Should().HaveLocalDateTime(localDateTime);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_it_succeeds_it_returns_the_date()
+            {
+                // Arrange
+                ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now);
+                LocalDateTime localDateTime = zonedDateTime.LocalDateTime;
+
+                // Act
+                LocalDateTime returned = zonedDateTime.Should().HaveLocalDateTime(localDateTime).Which;
+
+                // Assert
+                returned.Should().Be(localDateTime);
+            }
+
+            [Fact]
+            public void When_a_zoned_local_date_time_does_not_have_the_specified_local_date_time_it_fails()
+            {
+                // Arrange
+                ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now);
+                LocalDateTime localDateTime = zonedDateTime.PlusSeconds(1).LocalDateTime;
+
+                // Act
+                Action act = () => zonedDateTime.Should().HaveLocalDateTime(localDateTime);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have local date time {localDateTime}, but found {zonedDateTime.LocalDateTime}.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_zoned_local_date_time_has_the_specified_local_date_time_it_fails()
+            {
+                // Arrange
+                LocalDateTime localDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).LocalDateTime;
+                ZonedDateTime? zonedDateTime = null;
+
+                // Act
+                Action act = () => zonedDateTime.Should().HaveLocalDateTime(localDateTime);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have local date time {localDateTime}, but {nameof(zonedDateTime)} was <null>.");
+            }
+        }
+
+        public class NotHaveLocalDateTime
+        {
+            [Fact]
+            public void When_a_zoned_local_date_time_has_the_specified_local_date_time_it_fails()
+            {
+                // Arrange
+                ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now);
+                LocalDateTime localDateTime = zonedDateTime.LocalDateTime;
+
+                // Act
+                Action act = () => zonedDateTime.Should().NotHaveLocalDateTime(localDateTime);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have local date time {localDateTime}.");
+            }
+
+            [Fact]
+            public void When_a_zoned_local_date_time_does_not_have_the_specified_local_date_time_it_succeeds()
+            {
+                // Arrange
+                ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now);
+                LocalDateTime localDateTime = zonedDateTime.PlusSeconds(1).LocalDateTime;
+
+                // Act
+                Action act = () => zonedDateTime.Should().NotHaveLocalDateTime(localDateTime);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_zoned_local_date_time_does_not_have_the_specified_local_date_time_it_fails()
+            {
+                // Arrange
+                LocalDateTime localDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).LocalDateTime;
+                ZonedDateTime? zonedDateTime = null;
+
+                // Act
+                Action act = () => zonedDateTime.Should().NotHaveLocalDateTime(localDateTime);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have local date time {localDateTime}, but {nameof(zonedDateTime)} was <null>.");
+            }
+        }
+
+        public class HaveOffset
+        {
+            [Fact]
+            public void When_a_zoned_date_time_has_the_specified_offset_it_succeeds()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(calendar);
+                Offset offset = zonedDateTime.Offset;
+
+                // Act
+                Action act = () => zonedDateTime.Should().HaveOffset(offset);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_it_succeeds_it_returns_the_zoned_date()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(calendar);
+                Offset offset = zonedDateTime.Offset;
+
+                // Act
+                Offset returned = zonedDateTime.Should().HaveOffset(offset).Which;
+
+                // Assert
+                returned.Should().Be(offset);
+            }
+
+            [Fact]
+            public void When_a_zoned_date_time_does_not_have_the_specified_offset_it_fails()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(calendar);
+                Offset offset = zonedDateTime.Offset.Plus(Offset.FromSeconds(1));
+
+                // Act
+                Action act = () => zonedDateTime.Should().HaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have offset {offset}, but found {zonedDateTime.Offset}.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_zoned_date_time_has_the_specified_offset_it_fails()
+            {
+                // Arrange
+                Offset offset = Offset.FromSeconds(1);
+                ZonedDateTime? zonedDateTime = null;
+
+                // Act
+                Action act = () => zonedDateTime.Should().HaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have offset {offset}, but {nameof(zonedDateTime)} was <null>.");
+            }
+        }
+
+        public class NotHaveOffset
+        {
+            [Fact]
+            public void When_a_zoned_date_time_has_the_specified_offset_it_fails()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(calendar);
+                Offset offset = zonedDateTime.Offset;
+
+                // Act
+                Action act = () => zonedDateTime.Should().NotHaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have offset {offset}.");
+            }
+
+            [Fact]
+            public void When_a_zoned_date_time_does_not_have_the_specified_offset_it_succeeds()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(calendar);
+                Offset offset = zonedDateTime.Offset.Plus(Offset.FromSeconds(1));
+
+                // Act
+                Action act = () => zonedDateTime.Should().NotHaveOffset(offset);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_zoned_date_time_does_not_have_the_specified_offset_it_fails()
+            {
+                // Arrange
+                Offset offset = Offset.FromSeconds(1);
+                ZonedDateTime? zonedDateTime = null;
+
+                // Act
+                Action act = () => zonedDateTime.Should().NotHaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have offset {offset}, but {nameof(zonedDateTime)} was <null>.");
+            }
+        }
+
+        public class HaveOffsetTimeSpan
+        {
+            [Fact]
+            public void When_a_zoned_date_time_has_the_specified_offset_it_succeeds()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(calendar);
+                TimeSpan offset = zonedDateTime.Offset.ToTimeSpan();
+
+                // Act
+                Action act = () => zonedDateTime.Should().HaveOffset(offset);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_it_succeeds_it_returns_the_zoned_date()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(calendar);
+                TimeSpan offset = zonedDateTime.Offset.ToTimeSpan();
+
+                // Act
+                Offset returned = zonedDateTime.Should().HaveOffset(offset).Which;
+
+                // Assert
+                returned.Should().Be(offset);
+            }
+
+            [Fact]
+            public void When_a_zoned_date_time_does_not_have_the_specified_offset_it_fails()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(calendar);
+                TimeSpan offset = zonedDateTime.Offset.Plus(Offset.FromSeconds(1)).ToTimeSpan();
+
+                // Act
+                Action act = () => zonedDateTime.Should().HaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have offset {Offset.FromTimeSpan(offset)}, but found {zonedDateTime.Offset}.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_zoned_date_time_has_the_specified_offset_it_fails()
+            {
+                // Arrange
+                TimeSpan offset = TimeSpan.FromSeconds(1);
+                ZonedDateTime? zonedDateTime = null;
+
+                // Act
+                Action act = () => zonedDateTime.Should().HaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have offset {Offset.FromTimeSpan(offset)}, but {nameof(zonedDateTime)} was <null>.");
+            }
+        }
+
+        public class NotHaveOffsetTimeSpan
+        {
+            [Fact]
+            public void When_a_zoned_date_time_has_the_specified_offset_it_fails()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(calendar);
+                TimeSpan offset = zonedDateTime.Offset.ToTimeSpan();
+
+                // Act
+                Action act = () => zonedDateTime.Should().NotHaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have offset {Offset.FromTimeSpan(offset)}.");
+            }
+
+            [Fact]
+            public void When_a_zoned_date_time_does_not_have_the_specified_offset_it_succeeds()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(calendar);
+                TimeSpan offset = zonedDateTime.Offset.Plus(Offset.FromSeconds(1)).ToTimeSpan();
+
+                // Act
+                Action act = () => zonedDateTime.Should().NotHaveOffset(offset);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_zoned_date_time_does_not_have_the_specified_offset_it_fails()
+            {
+                // Arrange
+                TimeSpan offset = TimeSpan.FromSeconds(1);
+                ZonedDateTime? zonedDateTime = null;
+
+                // Act
+                Action act = () => zonedDateTime.Should().NotHaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have offset {Offset.FromTimeSpan(offset)}, but {nameof(zonedDateTime)} was <null>.");
+            }
+        }
+
         public class BeInCalendar
         {
             [Fact]
