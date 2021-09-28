@@ -21,6 +21,7 @@ public sealed class OffsetDateTimeAssertions :
 | [HaveDayOfYear](OffsetDateTimeAssertions/HaveDayOfYear.md)(…) | Asserts that the current OffsetDateTime has the specified day of the year. |
 | [HaveEra](OffsetDateTimeAssertions/HaveEra.md)(…) | Asserts that the current OffsetDateTime has the specified era. |
 | [HaveHour](OffsetDateTimeAssertions/HaveHour.md)(…) | Asserts that the current OffsetDateTime has the specified hour of the day. |
+| [HaveLocalDateTime](OffsetDateTimeAssertions/HaveLocalDateTime.md)(…) | Asserts that the current OffsetDateTime has the specified LocalDateTime. |
 | [HaveMillisecond](OffsetDateTimeAssertions/HaveMillisecond.md)(…) | Asserts that the current OffsetDateTime has the specified millisecond. |
 | [HaveMinute](OffsetDateTimeAssertions/HaveMinute.md)(…) | Asserts that the current OffsetDateTime has the specified minute. |
 | [HaveMonth](OffsetDateTimeAssertions/HaveMonth.md)(…) | Asserts that the current OffsetDateTime has the specified month. |
@@ -41,6 +42,7 @@ public sealed class OffsetDateTimeAssertions :
 | [NotHaveDayOfYear](OffsetDateTimeAssertions/NotHaveDayOfYear.md)(…) | Asserts that the current OffsetDateTime does not have the specified day of the year. |
 | [NotHaveEra](OffsetDateTimeAssertions/NotHaveEra.md)(…) | Asserts that the current OffsetDateTime does not have the specified era. |
 | [NotHaveHour](OffsetDateTimeAssertions/NotHaveHour.md)(…) | Asserts that the current OffsetDateTime does not have the specified hour of the day. |
+| [NotHaveLocalDateTime](OffsetDateTimeAssertions/NotHaveLocalDateTime.md)(…) | Asserts that the current OffsetDateTime does not have the specified LocalDateTime. |
 | [NotHaveMillisecond](OffsetDateTimeAssertions/NotHaveMillisecond.md)(…) | Asserts that the current OffsetDateTime does not have the specified millisecond. |
 | [NotHaveMinute](OffsetDateTimeAssertions/NotHaveMinute.md)(…) | Asserts that the current OffsetDateTime does not have the specified minute. |
 | [NotHaveMonth](OffsetDateTimeAssertions/NotHaveMonth.md)(…) | Asserts that the current OffsetDateTime does not have the specified month. |

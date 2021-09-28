@@ -409,6 +409,116 @@ namespace FluentAssertions.NodaTime.Specs
             }
         }
 
+        public class HaveLocalDateTime
+        {
+            [Fact]
+            public void When_a_offset_local_date_time_has_the_specified_local_date_time_it_succeeds()
+            {
+                // Arrange
+                OffsetDateTime offsetDateTime = OffsetDateTime.FromDateTimeOffset(DateTimeOffset.Now);
+                LocalDateTime localDateTime = offsetDateTime.LocalDateTime;
+
+                // Act
+                Action act = () => offsetDateTime.Should().HaveLocalDateTime(localDateTime);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_it_succeeds_it_returns_the_date()
+            {
+                // Arrange
+                OffsetDateTime offsetDateTime = OffsetDateTime.FromDateTimeOffset(DateTimeOffset.Now);
+                LocalDateTime localDateTime = offsetDateTime.LocalDateTime;
+
+                // Act
+                LocalDateTime returned = offsetDateTime.Should().HaveLocalDateTime(localDateTime).Which;
+
+                // Assert
+                returned.Should().Be(localDateTime);
+            }
+
+            [Fact]
+            public void When_a_offset_local_date_time_does_not_have_the_specified_local_date_time_it_fails()
+            {
+                // Arrange
+                OffsetDateTime offsetDateTime = OffsetDateTime.FromDateTimeOffset(DateTimeOffset.Now);
+                LocalDateTime localDateTime = offsetDateTime.With(localDateTime => localDateTime.PlusDays(1)).LocalDateTime;
+
+                // Act
+                Action act = () => offsetDateTime.Should().HaveLocalDateTime(localDateTime);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(offsetDateTime)} to have local date time {localDateTime}, but found {offsetDateTime.LocalDateTime}.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_offset_local_date_time_has_the_specified_local_date_time_it_fails()
+            {
+                // Arrange
+                LocalDateTime localDateTime = OffsetDateTime.FromDateTimeOffset(DateTimeOffset.Now).LocalDateTime;
+                OffsetDateTime? offsetDateTime = null;
+
+                // Act
+                Action act = () => offsetDateTime.Should().HaveLocalDateTime(localDateTime);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(offsetDateTime)} to have local date time {localDateTime}, but {nameof(offsetDateTime)} was <null>.");
+            }
+        }
+
+        public class NotHaveLocalDateTime
+        {
+            [Fact]
+            public void When_a_offset_local_date_time_has_the_specified_local_date_time_it_fails()
+            {
+                // Arrange
+                OffsetDateTime offsetDateTime = OffsetDateTime.FromDateTimeOffset(DateTimeOffset.Now);
+                LocalDateTime localDateTime = offsetDateTime.LocalDateTime;
+
+                // Act
+                Action act = () => offsetDateTime.Should().NotHaveLocalDateTime(localDateTime);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(offsetDateTime)} to have local date time {localDateTime}.");
+            }
+
+            [Fact]
+            public void When_a_offset_local_date_time_does_not_have_the_specified_local_date_time_it_succeeds()
+            {
+                // Arrange
+                OffsetDateTime offsetDateTime = OffsetDateTime.FromDateTimeOffset(DateTimeOffset.Now);
+                LocalDateTime localDateTime = offsetDateTime.With(localDateTime => localDateTime.PlusDays(1)).LocalDateTime;
+
+                // Act
+                Action act = () => offsetDateTime.Should().NotHaveLocalDateTime(localDateTime);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_offset_local_date_time_does_not_have_the_specified_local_date_time_it_fails()
+            {
+                // Arrange
+                LocalDateTime localDateTime = OffsetDateTime.FromDateTimeOffset(DateTimeOffset.Now).LocalDateTime;
+                OffsetDateTime? offsetDateTime = null;
+
+                // Act
+                Action act = () => offsetDateTime.Should().NotHaveLocalDateTime(localDateTime);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(offsetDateTime)} to have local date time {localDateTime}, but {nameof(offsetDateTime)} was <null>.");
+            }
+        }
+
         public class HaveTimeOfDay
         {
             [Fact]

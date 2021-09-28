@@ -245,6 +245,89 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
+        ///     Asserts that the current <see cref="OffsetDateTime" /> has the specified <see cref="LocalDateTime" />.
+        /// </summary>
+        /// <param name="localDateTime">
+        ///     The <see cref="LocalDateTime" /> that the current <see cref="OffsetDateTime" /> is expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndWhichConstraint{TParentConstraint, TMatchedElement}">AndWhichConstraint&lt;OffsetDateTimeAssertions, LocalDateTime&gt;</see>
+        ///     which can be used to assert the <see cref="OffsetDate" />.
+        /// </returns>
+        [CustomAssertion]
+        public AndWhichConstraint<OffsetDateTimeAssertions, LocalDateTime> HaveLocalDateTime(LocalDateTime localDateTime, string because = "",
+            params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Expected {context:OffsetDateTime} to have local date time {0}{reason}", localDateTime);
+
+            if (Subject.HasValue)
+            {
+                scope
+                    .ForCondition(Subject.Value.LocalDateTime.Equals(localDateTime))
+                    .FailWith(", but found {0}.", Subject.Value.LocalDateTime);
+            }
+            else
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but {context:OffsetDateTime} was <null>.");
+            }
+
+            return new AndWhichConstraint<OffsetDateTimeAssertions, LocalDateTime>(this, localDateTime);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="OffsetDateTime" /> does not have the specified <see cref="LocalDateTime" />.
+        /// </summary>
+        /// <param name="date">
+        ///     The <see cref="LocalDateTime" /> that the current <see cref="OffsetDateTime" /> is not expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<OffsetDateTimeAssertions> NotHaveLocalDateTime(LocalDateTime date, string because = "",
+            params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Did not expect {context:OffsetDateTime} to have local date time {0}{reason}", date);
+
+            if (Subject.HasValue)
+            {
+                scope
+                    .ForCondition(!Subject.Value.LocalDateTime.Equals(date))
+                    .FailWith(".");
+            }
+            else
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but {context:OffsetDateTime} was <null>.");
+            }
+
+            return new AndConstraint<OffsetDateTimeAssertions>(this);
+        }
+
+        /// <summary>
         ///     Asserts that the current <see cref="OffsetDateTime" /> has the specified <see cref="OffsetTime" />.
         /// </summary>
         /// <param name="timeOfDay">
