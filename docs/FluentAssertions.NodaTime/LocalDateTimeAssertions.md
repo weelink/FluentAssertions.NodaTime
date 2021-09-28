@@ -12,7 +12,7 @@ public sealed class LocalDateTimeAssertions :
 | name | description |
 | --- | --- |
 | [LocalDateTimeAssertions](LocalDateTimeAssertions/LocalDateTimeAssertions.md)(…) | Initializes a new [`LocalDateTimeAssertions`](./LocalDateTimeAssertions.md). |
-| [Be](LocalDateTimeAssertions/Be.md)(…) | Asserts that this LocalDateTime is equal to *other*. |
+| [Be](LocalDateTimeAssertions/Be.md)(…) | Asserts that this LocalDateTime is equal to *other*. (3 methods) |
 | [BeGreaterThan](LocalDateTimeAssertions/BeGreaterThan.md)(…) | Asserts that this LocalDateTime is greater than *other*. |
 | [BeGreaterThanOrEqualTo](LocalDateTimeAssertions/BeGreaterThanOrEqualTo.md)(…) | Asserts that this LocalDateTime is on or after *other*. |
 | [BeInCalendar](LocalDateTimeAssertions/BeInCalendar.md)(…) | Asserts that the current LocalDateTime has the specified CalendarSystem. |
@@ -36,7 +36,7 @@ public sealed class LocalDateTimeAssertions :
 | [HaveTimeOfDay](LocalDateTimeAssertions/HaveTimeOfDay.md)(…) | Asserts that the current LocalDateTime has the specified LocalTime. |
 | [HaveYear](LocalDateTimeAssertions/HaveYear.md)(…) | Asserts that the current LocalDateTime has the specified year. |
 | [HaveYearOfEra](LocalDateTimeAssertions/HaveYearOfEra.md)(…) | Asserts that the current LocalDateTime has the specified year of era. |
-| [NotBe](LocalDateTimeAssertions/NotBe.md)(…) | Asserts that this LocalDateTime is not equal to *other*. |
+| [NotBe](LocalDateTimeAssertions/NotBe.md)(…) | Asserts that this LocalDateTime is not equal to *other*. (3 methods) |
 | [NotBeInCalendar](LocalDateTimeAssertions/NotBeInCalendar.md)(…) | Asserts that the current LocalDateTime does not have the specified CalendarSystem. |
 | [NotHaveClockHourOfHalfDay](LocalDateTimeAssertions/NotHaveClockHourOfHalfDay.md)(…) | Asserts that the current LocalDateTime does not have the specified hour of the half-day. |
 | [NotHaveDate](LocalDateTimeAssertions/NotHaveDate.md)(…) | Asserts that the current LocalDateTime does not have the specified LocalDate. |

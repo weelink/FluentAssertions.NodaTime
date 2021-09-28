@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 using FluentAssertions.Execution;
 using FluentAssertions.Primitives;
@@ -53,6 +54,47 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
+        ///     Asserts that this <see cref="LocalDateTime" /> is equal to <paramref name="dateTime" />.
+        /// </summary>
+        /// <param name="dateTime">The <see cref="LocalDateTime" /> to compare to.</param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;LocalDateTimeAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<LocalDateTimeAssertions> Be(DateTime? dateTime, string because = "", params object[] becauseArgs)
+        {
+            return Be(dateTime.HasValue ? LocalDateTime.FromDateTime(dateTime.Value) : null, because, becauseArgs);
+        }
+
+        /// <summary>
+        ///     Asserts that this <see cref="LocalDateTime" /> is equal to <paramref name="dateTime" /> in <paramref name="calendar" />.
+        /// </summary>
+        /// <param name="dateTime">The <see cref="LocalDateTime" /> to compare to.</param>
+        /// <param name="calendar">The <see cref="CalendarSystem" /> to convert <paramref name="dateTime" /> to.</param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;LocalDateTimeAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<LocalDateTimeAssertions> Be(DateTime? dateTime, CalendarSystem calendar, string because = "", params object[] becauseArgs)
+        {
+            return Be(dateTime.HasValue ? LocalDateTime.FromDateTime(dateTime.Value, calendar) : null, because, becauseArgs);
+        }
+
+        /// <summary>
         ///     Asserts that this <see cref="LocalDateTime" /> is not equal to <paramref name="other" />.
         /// </summary>
         /// <param name="other">The <see cref="LocalDateTime" /> to compare to.</param>
@@ -73,9 +115,50 @@ namespace FluentAssertions.NodaTime
             Execute.Assertion
                 .BecauseOf(because, becauseArgs)
                 .ForCondition(Subject.HasValue && !Subject.Equals(other) || !Subject.HasValue && other.HasValue)
-                .FailWith("Did not expect {context:LocalDateTime} to be equal to {0}{reason}, but found {1}.", other, Subject);
+                .FailWith("Did not expect {context:LocalDateTime} to be equal to {0}{reason}.", other, Subject);
 
             return new AndConstraint<LocalDateTimeAssertions>(this);
+        }
+
+        /// <summary>
+        ///     Asserts that this <see cref="LocalDateTime" /> is not equal to <paramref name="dateTime" />.
+        /// </summary>
+        /// <param name="dateTime">The <see cref="LocalDateTime" /> to compare to.</param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;LocalDateTimeAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<LocalDateTimeAssertions> NotBe(DateTime? dateTime, string because = "", params object[] becauseArgs)
+        {
+            return NotBe(dateTime.HasValue ? LocalDateTime.FromDateTime(dateTime.Value) : null, because, becauseArgs);
+        }
+
+        /// <summary>
+        ///     Asserts that this <see cref="LocalDateTime" /> is not equal to <paramref name="dateTime" /> in <paramref name="calendar" />.
+        /// </summary>
+        /// <param name="dateTime">The <see cref="LocalDateTime" /> to compare to.</param>
+        /// <param name="calendar">The <see cref="CalendarSystem" /> to convert <paramref name="dateTime" /> to.</param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;LocalDateTimeAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<LocalDateTimeAssertions> NotBe(DateTime? dateTime, CalendarSystem calendar, string because = "", params object[] becauseArgs)
+        {
+            return NotBe(dateTime.HasValue ? LocalDateTime.FromDateTime(dateTime.Value, calendar) : null, because, becauseArgs);
         }
 
         /// <summary>

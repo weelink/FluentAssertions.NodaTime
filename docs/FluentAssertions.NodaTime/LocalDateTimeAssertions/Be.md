@@ -1,4 +1,30 @@
-# LocalDateTimeAssertions.Be method
+# LocalDateTimeAssertions.Be method (1 of 3)
+
+Asserts that this LocalDateTime is equal to *dateTime*.
+
+```csharp
+public AndConstraint<LocalDateTimeAssertions> Be(DateTime? dateTime, string because = "", 
+    params object[] becauseArgs)
+```
+
+| parameter | description |
+| --- | --- |
+| dateTime | The LocalDateTime to compare to. |
+| because | A formatted phrase as is supported by Object[]) explaining why the assertion is needed. If the phrase does not start with the word because, it is prepended automatically. |
+| becauseArgs | Zero or more objects to format using the placeholders in *because*. |
+
+## Return Value
+
+An AndConstraint&lt;LocalDateTimeAssertions&gt; which can be used to chain assertions.
+
+## See Also
+
+* class [LocalDateTimeAssertions](../LocalDateTimeAssertions.md)
+* namespace [FluentAssertions.NodaTime](../../FluentAssertions.NodaTime.md)
+
+---
+
+# LocalDateTimeAssertions.Be method (2 of 3)
 
 Asserts that this LocalDateTime is equal to *other*.
 
@@ -10,6 +36,33 @@ public AndConstraint<LocalDateTimeAssertions> Be(LocalDateTime? other, string be
 | parameter | description |
 | --- | --- |
 | other | The LocalDateTime to compare to. |
+| because | A formatted phrase as is supported by Object[]) explaining why the assertion is needed. If the phrase does not start with the word because, it is prepended automatically. |
+| becauseArgs | Zero or more objects to format using the placeholders in *because*. |
+
+## Return Value
+
+An AndConstraint&lt;LocalDateTimeAssertions&gt; which can be used to chain assertions.
+
+## See Also
+
+* class [LocalDateTimeAssertions](../LocalDateTimeAssertions.md)
+* namespace [FluentAssertions.NodaTime](../../FluentAssertions.NodaTime.md)
+
+---
+
+# LocalDateTimeAssertions.Be method (3 of 3)
+
+Asserts that this LocalDateTime is equal to *dateTime* in *calendar*.
+
+```csharp
+public AndConstraint<LocalDateTimeAssertions> Be(DateTime? dateTime, CalendarSystem calendar, 
+    string because = "", params object[] becauseArgs)
+```
+
+| parameter | description |
+| --- | --- |
+| dateTime | The LocalDateTime to compare to. |
+| calendar | The CalendarSystem to convert *dateTime* to. |
 | because | A formatted phrase as is supported by Object[]) explaining why the assertion is needed. If the phrase does not start with the word because, it is prepended automatically. |
 | becauseArgs | Zero or more objects to format using the placeholders in *because*. |
 
