@@ -1,9 +1,9 @@
-# InstantAssertions.BeAfter method
+# InstantAssertions.LessThan method
 
-Asserts that this Instant is after *other*.
+Asserts that this Instant is less than *other*.
 
 ```csharp
-public AndConstraint<InstantAssertions> BeAfter(Instant other, string because = "", 
+public AndConstraint<InstantAssertions> LessThan(Instant other, string because = "", 
     params object[] becauseArgs)
 ```
 

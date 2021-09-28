@@ -56,9 +56,9 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
-        ///     Asserts that this <see cref="Instant" /> is equal to <paramref name="other" />.
+        ///     Asserts that this <see cref="Instant" /> is equal to <paramref name="dateTimeOffset" />.
         /// </summary>
-        /// <param name="other">The <see cref="Instant" /> to compare to.</param>
+        /// <param name="dateTimeOffset">The <see cref="Instant" /> to compare to.</param>
         /// <param name="because">
         ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
         ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
@@ -70,9 +70,29 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<InstantAssertions> Be(DateTimeOffset? other, string because = "", params object[] becauseArgs)
+        public AndConstraint<InstantAssertions> Be(DateTimeOffset? dateTimeOffset, string because = "", params object[] becauseArgs)
         {
-            return Be(other.HasValue ? Instant.FromDateTimeOffset(other.Value) : null, because, becauseArgs);
+            return Be(dateTimeOffset.HasValue ? Instant.FromDateTimeOffset(dateTimeOffset.Value) : null, because, becauseArgs);
+        }
+
+        /// <summary>
+        ///     Asserts that this <see cref="Instant" /> is equal to <paramref name="dateTimeUtc" />.
+        /// </summary>
+        /// <param name="dateTimeUtc">The <see cref="Instant" /> to compare to.</param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<InstantAssertions> Be(DateTime? dateTimeUtc, string because = "", params object[] becauseArgs)
+        {
+            return Be(dateTimeUtc.HasValue ? Instant.FromDateTimeUtc(dateTimeUtc.Value) : null, because, becauseArgs);
         }
 
         /// <summary>
@@ -101,9 +121,9 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
-        ///     Asserts that this <see cref="Instant" /> is not equal to <paramref name="other" />.
+        ///     Asserts that this <see cref="Instant" /> is not equal to <paramref name="dateTimeOffset" />.
         /// </summary>
-        /// <param name="other">The <see cref="Instant" /> to compare to.</param>
+        /// <param name="dateTimeOffset">The <see cref="Instant" /> to compare to.</param>
         /// <param name="because">
         ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
         ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
@@ -115,9 +135,29 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<InstantAssertions> NotBe(DateTimeOffset? other, string because = "", params object[] becauseArgs)
+        public AndConstraint<InstantAssertions> NotBe(DateTimeOffset? dateTimeOffset, string because = "", params object[] becauseArgs)
         {
-            return NotBe(other.HasValue ? Instant.FromDateTimeOffset(other.Value) : null, because, becauseArgs);
+            return NotBe(dateTimeOffset.HasValue ? Instant.FromDateTimeOffset(dateTimeOffset.Value) : null, because, becauseArgs);
+        }
+
+        /// <summary>
+        ///     Asserts that this <see cref="Instant" /> is not equal to <paramref name="dateTimeUtc" />.
+        /// </summary>
+        /// <param name="dateTimeUtc">The <see cref="Instant" /> to compare to.</param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<InstantAssertions> NotBe(DateTime? dateTimeUtc, string because = "", params object[] becauseArgs)
+        {
+            return NotBe(dateTimeUtc.HasValue ? Instant.FromDateTimeUtc(dateTimeUtc.Value) : null, because, becauseArgs);
         }
 
         /// <summary>
@@ -227,7 +267,7 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
-        ///     Asserts that this <see cref="Instant" /> is after <paramref name="other" />.
+        ///     Asserts that this <see cref="Instant" /> is greater than <paramref name="other" />.
         /// </summary>
         /// <param name="other">The <see cref="Instant" /> to compare to.</param>
         /// <param name="because">
@@ -241,18 +281,18 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<InstantAssertions> BeAfter(Instant other, string because = "", params object[] becauseArgs)
+        public AndConstraint<InstantAssertions> GreaterThan(Instant other, string because = "", params object[] becauseArgs)
         {
             Execute.Assertion
                 .ForCondition(Subject > other)
                 .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:Instant} to be after {0}{reason}, but found {1}.", other, Subject);
+                .FailWith("Expected {context:Instant} to greater than {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<InstantAssertions>(this);
         }
 
         /// <summary>
-        ///     Asserts that this <see cref="Instant" /> is on or after <paramref name="other" />.
+        ///     Asserts that this <see cref="Instant" /> is greater than or equal to <paramref name="other" />.
         /// </summary>
         /// <param name="other">The <see cref="Instant" /> to compare to.</param>
         /// <param name="because">
@@ -266,18 +306,18 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<InstantAssertions> BeOnOrAfter(Instant other, string because = "", params object[] becauseArgs)
+        public AndConstraint<InstantAssertions> GreaterThanOrEqualTo(Instant other, string because = "", params object[] becauseArgs)
         {
             Execute.Assertion
                 .ForCondition(Subject >= other)
                 .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:Instant} to be on or after {0}{reason}, but found {1}.", other, Subject);
+                .FailWith("Expected {context:Instant} to be greater than or equal to {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<InstantAssertions>(this);
         }
 
         /// <summary>
-        ///     Asserts that this <see cref="Instant" /> is before <paramref name="other" />.
+        ///     Asserts that this <see cref="Instant" /> is less than <paramref name="other" />.
         /// </summary>
         /// <param name="other">The <see cref="Instant" /> to compare to.</param>
         /// <param name="because">
@@ -291,18 +331,18 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<InstantAssertions> BeBefore(Instant other, string because = "", params object[] becauseArgs)
+        public AndConstraint<InstantAssertions> LessThan(Instant other, string because = "", params object[] becauseArgs)
         {
             Execute.Assertion
                 .ForCondition(Subject < other)
                 .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:Instant} to be before {0}{reason}, but found {1}.", other, Subject);
+                .FailWith("Expected {context:Instant} to be less than {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<InstantAssertions>(this);
         }
 
         /// <summary>
-        ///     Asserts that this <see cref="Instant" /> is on or before <paramref name="other" />.
+        ///     Asserts that this <see cref="Instant" /> is less than or equal to <paramref name="other" />.
         /// </summary>
         /// <param name="other">The <see cref="Instant" /> to compare to.</param>
         /// <param name="because">
@@ -316,12 +356,12 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<InstantAssertions> BeOnOrBefore(Instant other, string because = "", params object[] becauseArgs)
+        public AndConstraint<InstantAssertions> LessThanOrEqualTo(Instant other, string because = "", params object[] becauseArgs)
         {
             Execute.Assertion
                 .ForCondition(Subject <= other)
                 .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:Instant} to be on or before {0}{reason}, but found {1}.", other, Subject);
+                .FailWith("Expected {context:Instant} to be less than or equal to {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<InstantAssertions>(this);
         }

@@ -88,7 +88,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
 
             [Fact]
-            public void When_an_instant_is_before_an_other_instant_it_fails()
+            public void When_an_instant_is_less_than_an_other_instant_it_fails()
             {
                 // Arrange
                 Instant other = Instant.FromDateTimeOffset(DateTimeOffset.Now);
@@ -103,7 +103,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
 
             [Fact]
-            public void When_an_instant_is_after_an_other_instant_it_fails()
+            public void When_an_instant_is_greater_than_an_other_instant_it_fails()
             {
                 // Arrange
                 Instant other = Instant.FromDateTimeOffset(DateTimeOffset.Now);
@@ -132,7 +132,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
 
             [Fact]
-            public void When_an_instant_is_before_a_datetimeoffset_it_fails()
+            public void When_an_instant_is_less_than_a_datetimeoffset_it_fails()
             {
                 // Arrange
                 DateTimeOffset other = DateTimeOffset.Now;
@@ -147,7 +147,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
 
             [Fact]
-            public void When_an_instant_is_after_a_datetimeoffset_it_fails()
+            public void When_an_instant_is_greater_than_a_datetimeoffset_it_fails()
             {
                 // Arrange
                 DateTimeOffset other = DateTimeOffset.Now;
@@ -160,12 +160,56 @@ namespace FluentAssertions.NodaTime.Specs
                 act.Should().Throw<XunitException>()
                     .WithMessage($"Expected {nameof(instant)} to be equal to {Instant.FromDateTimeOffset(other)}, but found {instant}.");
             }
+
+            [Fact]
+            public void When_an_instant_is_equal_to_a_datetime_it_succeeds()
+            {
+                // Arrange
+                Instant instant = Instant.FromDateTimeUtc(DateTime.UtcNow);
+                DateTime other = instant.ToDateTimeUtc();
+
+                // Act
+                Action act = () => instant.Should().Be(other);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_an_instant_is_less_than_a_datetime_it_fails()
+            {
+                // Arrange
+                DateTime other = DateTime.UtcNow;
+                Instant instant = Instant.FromDateTimeUtc(other) - Duration.FromNanoseconds(1);
+
+                // Act
+                Action act = () => instant.Should().Be(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(instant)} to be equal to {Instant.FromDateTimeUtc(other)}, but found {instant}.");
+            }
+
+            [Fact]
+            public void When_an_instant_is_greater_than_a_datetime_it_fails()
+            {
+                // Arrange
+                DateTime other = DateTime.UtcNow;
+                Instant instant = Instant.FromDateTimeUtc(other) + Duration.FromNanoseconds(1);
+
+                // Act
+                Action act = () => instant.Should().Be(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(instant)} to be equal to {Instant.FromDateTimeUtc(other)}, but found {instant}.");
+            }
         }
 
         public class NotBe
         {
             [Fact]
-            public void When_an_instant_is_before_an_other_instant_it_succeeds()
+            public void When_an_instant_is_less_than_an_other_instant_it_succeeds()
             {
                 // Arrange
                 Instant other = Instant.FromDateTimeOffset(DateTimeOffset.Now);
@@ -179,7 +223,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
 
             [Fact]
-            public void When_an_instant_is_after_an_other_instant_it_succeeds()
+            public void When_an_instant_is_greater_than_an_other_instant_it_succeeds()
             {
                 // Arrange
                 Instant other = Instant.FromDateTimeOffset(DateTimeOffset.Now);
@@ -285,7 +329,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
 
             [Fact]
-            public void When_an_instant_is_before_a_datetimeoffset_it_succeeds()
+            public void When_an_instant_is_less_than_a_datetimeoffset_it_succeeds()
             {
                 // Arrange
                 DateTimeOffset other = DateTimeOffset.Now;
@@ -299,7 +343,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
 
             [Fact]
-            public void When_an_instant_is_after_a_datetimeoffset_it_succeeds()
+            public void When_an_instant_is_greater_than_a_datetimeoffset_it_succeeds()
             {
                 // Arrange
                 DateTimeOffset other = DateTimeOffset.Now;
@@ -311,37 +355,80 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().NotThrow();
             }
-        }
 
-        public class BeAfter
-        {
             [Fact]
-            public void When_an_instant_is_after_an_other_instant_it_succeeds()
+            public void When_an_instant_is_equal_to_a_datetime_it_fails()
             {
                 // Arrange
-                Instant other = Instant.FromDateTimeOffset(DateTimeOffset.Now);
-                Instant instant = other + Duration.FromNanoseconds(1);
+                Instant instant = Instant.FromDateTimeUtc(DateTime.UtcNow);
+                DateTime other = instant.ToDateTimeUtc();
 
                 // Act
-                Action act = () => instant.Should().BeAfter(other);
+                Action act = () => instant.Should().NotBe(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(instant)} to be equal to {Instant.FromDateTimeUtc(other)}, but found {instant}.");
+            }
+
+            [Fact]
+            public void When_an_instant_is_less_than_a_datetime_it_succeeds()
+            {
+                // Arrange
+                DateTime other = DateTime.UtcNow;
+                Instant instant = Instant.FromDateTimeUtc(other) - Duration.FromNanoseconds(1);
+
+                // Act
+                Action act = () => instant.Should().NotBe(other);
 
                 // Assert
                 act.Should().NotThrow();
             }
 
             [Fact]
-            public void When_an_instant_is_before_an_other_instant_it_fails()
+            public void When_an_instant_is_greater_than_a_datetime_it_succeeds()
+            {
+                // Arrange
+                DateTime other = DateTime.UtcNow;
+                Instant instant = Instant.FromDateTimeUtc(other) + Duration.FromNanoseconds(1);
+
+                // Act
+                Action act = () => instant.Should().NotBe(other);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+        }
+
+        public class GreaterThan
+        {
+            [Fact]
+            public void When_an_instant_is_greater_than_an_other_instant_it_succeeds()
+            {
+                // Arrange
+                Instant other = Instant.FromDateTimeOffset(DateTimeOffset.Now);
+                Instant instant = other + Duration.FromNanoseconds(1);
+
+                // Act
+                Action act = () => instant.Should().GreaterThan(other);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_an_instant_is_less_than_an_other_instant_it_fails()
             {
                 // Arrange
                 Instant other = Instant.FromDateTimeOffset(DateTimeOffset.Now);
                 Instant instant = other - Duration.FromNanoseconds(1);
 
                 // Act
-                Action act = () => instant.Should().BeAfter(other);
+                Action act = () => instant.Should().GreaterThan(other);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} to be after {other}, but found {instant}.");
+                    .WithMessage($"Expected {nameof(instant)} to be greater_than {other}, but found {instant}.");
             }
 
             [Fact]
@@ -353,38 +440,38 @@ namespace FluentAssertions.NodaTime.Specs
                 Instant instant = Instant.FromDateTimeOffset(now);
 
                 // Act
-                Action act = () => instant.Should().BeAfter(other);
+                Action act = () => instant.Should().GreaterThan(other);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} to be after {other}, but found {instant}.");
+                    .WithMessage($"Expected {nameof(instant)} to be greater than {other}, but found {instant}.");
             }
 
             [Fact]
-            public void When_asserting_an_instant_is_after_itself_it_fails()
+            public void When_asserting_an_instant_is_greater_than_itself_it_fails()
             {
                 // Arrange
                 Instant instant = Instant.FromDateTimeOffset(DateTimeOffset.Now);
 
                 // Act
-                Action act = () => instant.Should().BeAfter(instant);
+                Action act = () => instant.Should().GreaterThan(instant);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} to be after {instant}, but found {instant}.");
+                    .WithMessage($"Expected {nameof(instant)} to be greater than {instant}, but found {instant}.");
             }
         }
 
-        public class BeOnOrAfter
+        public class GreaterThanOrEqualTo
         {
             [Fact]
-            public void When_asserting_an_instant_is_on_or_after_itself_it_succeeds()
+            public void When_asserting_an_instant_is_greater_than_or_equal_to_itself_it_succeeds()
             {
                 // Arrange
                 Instant instant = Instant.FromDateTimeOffset(DateTimeOffset.Now);
 
                 // Act
-                Action act = () => instant.Should().BeOnOrAfter(instant);
+                Action act = () => instant.Should().GreaterThanOrEqualTo(instant);
 
                 // Assert
                 act.Should().NotThrow();
@@ -399,71 +486,71 @@ namespace FluentAssertions.NodaTime.Specs
                 Instant instant = Instant.FromDateTimeOffset(now);
 
                 // Act
-                Action act = () => instant.Should().BeOnOrAfter(other);
+                Action act = () => instant.Should().GreaterThanOrEqualTo(other);
 
                 // Assert
                 act.Should().NotThrow();
             }
 
             [Fact]
-            public void When_an_instant_is_after_an_other_instant_it_succeeds()
+            public void When_an_instant_is_greater_than_an_other_instant_it_succeeds()
             {
                 // Arrange
                 Instant other = Instant.FromDateTimeOffset(DateTimeOffset.Now);
                 Instant instant = other + Duration.FromNanoseconds(1);
 
                 // Act
-                Action act = () => instant.Should().BeOnOrAfter(other);
+                Action act = () => instant.Should().GreaterThanOrEqualTo(other);
 
                 // Assert
                 act.Should().NotThrow();
             }
 
             [Fact]
-            public void When_an_instant_is_before_an_other_instant_it_fails()
+            public void When_an_instant_is_less_than_an_other_instant_it_fails()
             {
                 // Arrange
                 Instant other = Instant.FromDateTimeOffset(DateTimeOffset.Now);
                 Instant instant = other - Duration.FromNanoseconds(1);
 
                 // Act
-                Action act = () => instant.Should().BeOnOrAfter(other);
+                Action act = () => instant.Should().GreaterThanOrEqualTo(other);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} to be on or after {other}, but found {instant}.");
+                    .WithMessage($"Expected {nameof(instant)} to be greater than or equal to {other}, but found {instant}.");
             }
         }
 
-        public class BeBefore
+        public class LessThan
         {
             [Fact]
-            public void When_an_instant_is_before_an_other_instant_it_succeeds()
+            public void When_an_instant_is_less_than_an_other_instant_it_succeeds()
             {
                 // Arrange
                 Instant other = Instant.FromDateTimeOffset(DateTimeOffset.Now);
                 Instant instant = other - Duration.FromNanoseconds(1);
 
                 // Act
-                Action act = () => instant.Should().BeBefore(other);
+                Action act = () => instant.Should().LessThan(other);
 
                 // Assert
                 act.Should().NotThrow();
             }
 
             [Fact]
-            public void When_an_instant_is_after_an_other_instant_it_fails()
+            public void When_an_instant_is_greater_than_an_other_instant_it_fails()
             {
                 // Arrange
                 Instant other = Instant.FromDateTimeOffset(DateTimeOffset.Now);
                 Instant instant = other + Duration.FromNanoseconds(1);
 
                 // Act
-                Action act = () => instant.Should().BeBefore(other);
+                Action act = () => instant.Should().LessThan(other);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} to be before {other}, but found {instant}.");
+                    .WithMessage($"Expected {nameof(instant)} to be less than {other}, but found {instant}.");
             }
 
             [Fact]
@@ -475,38 +562,38 @@ namespace FluentAssertions.NodaTime.Specs
                 Instant instant = Instant.FromDateTimeOffset(now);
 
                 // Act
-                Action act = () => instant.Should().BeBefore(other);
+                Action act = () => instant.Should().LessThan(other);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} to be before {other}, but found {instant}.");
+                    .WithMessage($"Expected {nameof(instant)} to be less than {other}, but found {instant}.");
             }
 
             [Fact]
-            public void When_asserting_an_instant_is_before_itself_it_fails()
+            public void When_asserting_an_instant_is_less_than_itself_it_fails()
             {
                 // Arrange
                 Instant instant = Instant.FromDateTimeOffset(DateTimeOffset.Now);
 
                 // Act
-                Action act = () => instant.Should().BeBefore(instant);
+                Action act = () => instant.Should().LessThan(instant);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} to be before {instant}, but found {instant}.");
+                    .WithMessage($"Expected {nameof(instant)} to be less than {instant}, but found {instant}.");
             }
         }
 
-        public class BeOnOrBefore
+        public class LessThanOrEqualTo
         {
             [Fact]
-            public void When_asserting_an_instant_is_on_or_before_itself_it_succeeds()
+            public void When_asserting_an_instant_is_less_than_or_equal_to_itself_it_succeeds()
             {
                 // Arrange
                 Instant instant = Instant.FromDateTimeOffset(DateTimeOffset.Now);
 
                 // Act
-                Action act = () => instant.Should().BeOnOrBefore(instant);
+                Action act = () => instant.Should().LessThanOrEqualTo(instant);
 
                 // Assert
                 act.Should().NotThrow();
@@ -521,39 +608,39 @@ namespace FluentAssertions.NodaTime.Specs
                 Instant instant = Instant.FromDateTimeOffset(now);
 
                 // Act
-                Action act = () => instant.Should().BeOnOrBefore(other);
+                Action act = () => instant.Should().LessThanOrEqualTo(other);
 
                 // Assert
                 act.Should().NotThrow();
             }
 
             [Fact]
-            public void When_an_instant_is_before_an_other_instant_it_succeeds()
+            public void When_an_instant_is_less_than_an_other_instant_it_succeeds()
             {
                 // Arrange
                 Instant other = Instant.FromDateTimeOffset(DateTimeOffset.Now);
                 Instant instant = other - Duration.FromNanoseconds(1);
 
                 // Act
-                Action act = () => instant.Should().BeOnOrBefore(other);
+                Action act = () => instant.Should().LessThanOrEqualTo(other);
 
                 // Assert
                 act.Should().NotThrow();
             }
 
             [Fact]
-            public void When_an_instant_is_after_an_other_instant_it_fails()
+            public void When_an_instant_is_greater_than_an_other_instant_it_fails()
             {
                 // Arrange
                 Instant other = Instant.FromDateTimeOffset(DateTimeOffset.Now);
                 Instant instant = other + Duration.FromNanoseconds(1);
 
                 // Act
-                Action act = () => instant.Should().BeOnOrBefore(other);
+                Action act = () => instant.Should().LessThanOrEqualTo(other);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} to be on or before {other}, but found {instant}.");
+                    .WithMessage($"Expected {nameof(instant)} to be less than or equal to {other}, but found {instant}.");
             }
         }
 
@@ -613,7 +700,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
 
             [Fact]
-            public void When_an_instant_is_close_to_but_before_an_other_instant_it_succeeds()
+            public void When_an_instant_is_close_to_but_less_than_an_other_instant_it_succeeds()
             {
                 // Arrange
                 Duration precision = Duration.FromSeconds(new Random().Next(1, 100));
@@ -630,7 +717,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
 
             [Fact]
-            public void When_an_instant_is_close_to_but_after_an_other_instant_it_succeeds()
+            public void When_an_instant_is_close_to_but_greater_than_an_other_instant_it_succeeds()
             {
                 // Arrange
                 Duration precision = Duration.FromSeconds(new Random().Next(1, 100));
@@ -647,7 +734,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
 
             [Fact]
-            public void When_an_instant_is_not_close_to_and_before_an_other_instant_it_fails()
+            public void When_an_instant_is_not_close_to_and_less_than_an_other_instant_it_fails()
             {
                 // Arrange
                 Duration precision = Duration.FromSeconds(new Random().Next(1, 100));
@@ -666,7 +753,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
 
             [Fact]
-            public void When_an_instant_is_not_close_to_and_after_an_other_instant_it_fails()
+            public void When_an_instant_is_not_close_to_and_greater_than_an_other_instant_it_fails()
             {
                 // Arrange
                 Duration precision = Duration.FromSeconds(new Random().Next(1, 100));
@@ -690,7 +777,7 @@ namespace FluentAssertions.NodaTime.Specs
         public class NotBeCloseTo
         {
             [Fact]
-            public void When_an_instant_is_not_close_to_and_before_an_other_instant_it_succeeds()
+            public void When_an_instant_is_not_close_to_and_less_than_an_other_instant_it_succeeds()
             {
                 // Arrange
                 Duration precision = Duration.FromSeconds(new Random().Next(1, 100));
@@ -707,7 +794,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
 
             [Fact]
-            public void When_an_instant_is_not_close_to_and_after_an_other_instant_it_succeeds()
+            public void When_an_instant_is_not_close_to_and_greater_than_an_other_instant_it_succeeds()
             {
                 // Arrange
                 Duration precision = Duration.FromSeconds(new Random().Next(1, 100));
@@ -781,7 +868,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
 
             [Fact]
-            public void When_an_instant_is_close_to_but_before_an_other_instant_it_fails()
+            public void When_an_instant_is_close_to_but_less_than_an_other_instant_it_fails()
             {
                 // Arrange
                 Duration precision = Duration.FromSeconds(new Random().Next(1, 100));
@@ -800,7 +887,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
 
             [Fact]
-            public void When_an_instant_is_close_to_but_after_an_other_instant_it_fails()
+            public void When_an_instant_is_close_to_but_greater_than_an_other_instant_it_fails()
             {
                 // Arrange
                 Duration precision = Duration.FromSeconds(new Random().Next(1, 100));

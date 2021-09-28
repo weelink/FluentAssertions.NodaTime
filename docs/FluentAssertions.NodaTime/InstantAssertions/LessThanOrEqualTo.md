@@ -1,9 +1,9 @@
-# InstantAssertions.BeBefore method
+# InstantAssertions.LessThanOrEqualTo method
 
-Asserts that this Instant is before *other*.
+Asserts that this Instant is less than or equal to *other*.
 
 ```csharp
-public AndConstraint<InstantAssertions> BeBefore(Instant other, string because = "", 
+public AndConstraint<InstantAssertions> LessThanOrEqualTo(Instant other, string because = "", 
     params object[] becauseArgs)
 ```
 

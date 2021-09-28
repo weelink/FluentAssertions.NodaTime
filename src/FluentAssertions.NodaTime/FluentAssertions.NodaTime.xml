@@ -1803,9 +1803,25 @@
         </member>
         <member name="M:FluentAssertions.NodaTime.InstantAssertions.Be(System.Nullable{System.DateTimeOffset},System.String,System.Object[])">
             <summary>
-                Asserts that this <see cref="T:NodaTime.Instant" /> is equal to <paramref name="other" />.
+                Asserts that this <see cref="T:NodaTime.Instant" /> is equal to <paramref name="dateTimeOffset" />.
             </summary>
-            <param name="other">The <see cref="T:NodaTime.Instant" /> to compare to.</param>
+            <param name="dateTimeOffset">The <see cref="T:NodaTime.Instant" /> to compare to.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.InstantAssertions.Be(System.Nullable{System.DateTime},System.String,System.Object[])">
+            <summary>
+                Asserts that this <see cref="T:NodaTime.Instant" /> is equal to <paramref name="dateTimeUtc" />.
+            </summary>
+            <param name="dateTimeUtc">The <see cref="T:NodaTime.Instant" /> to compare to.</param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
                 is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
@@ -1835,9 +1851,25 @@
         </member>
         <member name="M:FluentAssertions.NodaTime.InstantAssertions.NotBe(System.Nullable{System.DateTimeOffset},System.String,System.Object[])">
             <summary>
-                Asserts that this <see cref="T:NodaTime.Instant" /> is not equal to <paramref name="other" />.
+                Asserts that this <see cref="T:NodaTime.Instant" /> is not equal to <paramref name="dateTimeOffset" />.
             </summary>
-            <param name="other">The <see cref="T:NodaTime.Instant" /> to compare to.</param>
+            <param name="dateTimeOffset">The <see cref="T:NodaTime.Instant" /> to compare to.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.InstantAssertions.NotBe(System.Nullable{System.DateTime},System.String,System.Object[])">
+            <summary>
+                Asserts that this <see cref="T:NodaTime.Instant" /> is not equal to <paramref name="dateTimeUtc" />.
+            </summary>
+            <param name="dateTimeUtc">The <see cref="T:NodaTime.Instant" /> to compare to.</param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
                 is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
@@ -1917,9 +1949,9 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.InstantAssertions.BeAfter(NodaTime.Instant,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.InstantAssertions.GreaterThan(NodaTime.Instant,System.String,System.Object[])">
             <summary>
-                Asserts that this <see cref="T:NodaTime.Instant" /> is after <paramref name="other" />.
+                Asserts that this <see cref="T:NodaTime.Instant" /> is greater than <paramref name="other" />.
             </summary>
             <param name="other">The <see cref="T:NodaTime.Instant" /> to compare to.</param>
             <param name="because">
@@ -1933,9 +1965,9 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.InstantAssertions.BeOnOrAfter(NodaTime.Instant,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.InstantAssertions.GreaterThanOrEqualTo(NodaTime.Instant,System.String,System.Object[])">
             <summary>
-                Asserts that this <see cref="T:NodaTime.Instant" /> is on or after <paramref name="other" />.
+                Asserts that this <see cref="T:NodaTime.Instant" /> is greater than or equal to <paramref name="other" />.
             </summary>
             <param name="other">The <see cref="T:NodaTime.Instant" /> to compare to.</param>
             <param name="because">
@@ -1949,9 +1981,9 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.InstantAssertions.BeBefore(NodaTime.Instant,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.InstantAssertions.LessThan(NodaTime.Instant,System.String,System.Object[])">
             <summary>
-                Asserts that this <see cref="T:NodaTime.Instant" /> is before <paramref name="other" />.
+                Asserts that this <see cref="T:NodaTime.Instant" /> is less than <paramref name="other" />.
             </summary>
             <param name="other">The <see cref="T:NodaTime.Instant" /> to compare to.</param>
             <param name="because">
@@ -1965,9 +1997,9 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.InstantAssertions.BeOnOrBefore(NodaTime.Instant,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.InstantAssertions.LessThanOrEqualTo(NodaTime.Instant,System.String,System.Object[])">
             <summary>
-                Asserts that this <see cref="T:NodaTime.Instant" /> is on or before <paramref name="other" />.
+                Asserts that this <see cref="T:NodaTime.Instant" /> is less than or equal to <paramref name="other" />.
             </summary>
             <param name="other">The <see cref="T:NodaTime.Instant" /> to compare to.</param>
             <param name="because">

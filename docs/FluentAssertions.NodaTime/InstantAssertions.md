@@ -11,13 +11,13 @@ public sealed class InstantAssertions : ReferenceTypeAssertions<Instant?, Instan
 | name | description |
 | --- | --- |
 | [InstantAssertions](InstantAssertions/InstantAssertions.md)(…) | Initializes a new [`InstantAssertions`](./InstantAssertions.md). |
-| [Be](InstantAssertions/Be.md)(…) | Asserts that this Instant is equal to *other*. (2 methods) |
-| [BeAfter](InstantAssertions/BeAfter.md)(…) | Asserts that this Instant is after *other*. |
-| [BeBefore](InstantAssertions/BeBefore.md)(…) | Asserts that this Instant is before *other*. |
+| [Be](InstantAssertions/Be.md)(…) | Asserts that this Instant is equal to *other*. (3 methods) |
 | [BeCloseTo](InstantAssertions/BeCloseTo.md)(…) | Asserts that this Instant is within *precision* of *other*. (2 methods) |
-| [BeOnOrAfter](InstantAssertions/BeOnOrAfter.md)(…) | Asserts that this Instant is on or after *other*. |
-| [BeOnOrBefore](InstantAssertions/BeOnOrBefore.md)(…) | Asserts that this Instant is on or before *other*. |
-| [NotBe](InstantAssertions/NotBe.md)(…) | Asserts that this Instant is not equal to *other*. (2 methods) |
+| [GreaterThan](InstantAssertions/GreaterThan.md)(…) | Asserts that this Instant is greater than *other*. |
+| [GreaterThanOrEqualTo](InstantAssertions/GreaterThanOrEqualTo.md)(…) | Asserts that this Instant is greater than or equal to *other*. |
+| [LessThan](InstantAssertions/LessThan.md)(…) | Asserts that this Instant is less than *other*. |
+| [LessThanOrEqualTo](InstantAssertions/LessThanOrEqualTo.md)(…) | Asserts that this Instant is less than or equal to *other*. |
+| [NotBe](InstantAssertions/NotBe.md)(…) | Asserts that this Instant is not equal to *other*. (3 methods) |
 | [NotBeCloseTo](InstantAssertions/NotBeCloseTo.md)(…) | Asserts that this Instant is not within *precision* of *other*. (2 methods) |
 
 ## Protected Members

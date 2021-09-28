@@ -1,9 +1,9 @@
-# InstantAssertions.BeOnOrBefore method
+# InstantAssertions.GreaterThanOrEqualTo method
 
-Asserts that this Instant is on or before *other*.
+Asserts that this Instant is greater than or equal to *other*.
 
 ```csharp
-public AndConstraint<InstantAssertions> BeOnOrBefore(Instant other, string because = "", 
+public AndConstraint<InstantAssertions> GreaterThanOrEqualTo(Instant other, string because = "", 
     params object[] becauseArgs)
 ```
 

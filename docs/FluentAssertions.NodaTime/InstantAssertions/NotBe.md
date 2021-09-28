@@ -1,15 +1,15 @@
-# InstantAssertions.NotBe method (1 of 2)
+# InstantAssertions.NotBe method (1 of 3)
 
-Asserts that this Instant is not equal to *other*.
+Asserts that this Instant is not equal to *dateTimeUtc*.
 
 ```csharp
-public AndConstraint<InstantAssertions> NotBe(DateTimeOffset? other, string because = "", 
+public AndConstraint<InstantAssertions> NotBe(DateTime? dateTimeUtc, string because = "", 
     params object[] becauseArgs)
 ```
 
 | parameter | description |
 | --- | --- |
-| other | The Instant to compare to. |
+| dateTimeUtc | The Instant to compare to. |
 | because | A formatted phrase as is supported by Object[]) explaining why the assertion is needed. If the phrase does not start with the word because, it is prepended automatically. |
 | becauseArgs | Zero or more objects to format using the placeholders in *because*. |
 
@@ -24,7 +24,33 @@ An AndConstraint&lt;InstantAssertions&gt; which can be used to chain assertions.
 
 ---
 
-# InstantAssertions.NotBe method (2 of 2)
+# InstantAssertions.NotBe method (2 of 3)
+
+Asserts that this Instant is not equal to *dateTimeOffset*.
+
+```csharp
+public AndConstraint<InstantAssertions> NotBe(DateTimeOffset? dateTimeOffset, string because = "", 
+    params object[] becauseArgs)
+```
+
+| parameter | description |
+| --- | --- |
+| dateTimeOffset | The Instant to compare to. |
+| because | A formatted phrase as is supported by Object[]) explaining why the assertion is needed. If the phrase does not start with the word because, it is prepended automatically. |
+| becauseArgs | Zero or more objects to format using the placeholders in *because*. |
+
+## Return Value
+
+An AndConstraint&lt;InstantAssertions&gt; which can be used to chain assertions.
+
+## See Also
+
+* class [InstantAssertions](../InstantAssertions.md)
+* namespace [FluentAssertions.NodaTime](../../FluentAssertions.NodaTime.md)
+
+---
+
+# InstantAssertions.NotBe method (3 of 3)
 
 Asserts that this Instant is not equal to *other*.
 
