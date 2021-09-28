@@ -456,7 +456,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -496,7 +496,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -536,7 +536,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -576,7 +576,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -616,7 +616,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -656,7 +656,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -719,7 +719,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -782,7 +782,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -845,7 +845,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -908,7 +908,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -971,7 +971,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -1034,7 +1034,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -1097,7 +1097,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -1160,7 +1160,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -1223,7 +1223,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -1286,7 +1286,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -1349,7 +1349,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -1412,7 +1412,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -1475,7 +1475,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -1538,7 +1538,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -1578,7 +1578,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -1618,7 +1618,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -1658,7 +1658,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -1698,7 +1698,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -1739,7 +1739,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -1781,7 +1781,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -1821,7 +1821,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -1861,7 +1861,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -1901,7 +1901,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -1941,7 +1941,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -1981,7 +1981,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);
@@ -2021,7 +2021,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Duration} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DurationAssertions>(this);

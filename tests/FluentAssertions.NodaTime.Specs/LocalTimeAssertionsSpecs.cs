@@ -213,7 +213,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(localTime)} to have clock hour of the half-day of {time}, but {nameof(localTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(localTime)} to have clock hour of the half-day of {time}, but found <null>.");
             }
         }
 
@@ -260,7 +260,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(localTime)} to have clock hour of the half-day of {time}, but {nameof(localTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(localTime)} to have clock hour of the half-day of {time}, but found <null>.");
             }
         }
 
@@ -307,7 +307,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(localTime)} to have hour of day {hourOfDay}, but {nameof(localTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(localTime)} to have hour of day {hourOfDay}, but found <null>.");
             }
         }
 
@@ -354,7 +354,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(localTime)} to have hour of day {hourOfDay}, but {nameof(localTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(localTime)} to have hour of day {hourOfDay}, but found <null>.");
             }
         }
 
@@ -401,7 +401,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(localTime)} to have millisecond {millisecondOfDay}, but {nameof(localTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(localTime)} to have millisecond {millisecondOfDay}, but found <null>.");
             }
         }
 
@@ -448,7 +448,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(localTime)} to have millisecond {millisecondOfDay}, but {nameof(localTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(localTime)} to have millisecond {millisecondOfDay}, but found <null>.");
             }
         }
 
@@ -495,7 +495,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(localTime)} to have minute {minuteOfDay}, but {nameof(localTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(localTime)} to have minute {minuteOfDay}, but found <null>.");
             }
         }
 
@@ -542,7 +542,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(localTime)} to have minute {minuteOfDay}, but {nameof(localTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(localTime)} to have minute {minuteOfDay}, but found <null>.");
             }
         }
 
@@ -589,7 +589,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(localTime)} to have {nanosecondOfDay.AsFormatted()} nanoseconds within the day, but {nameof(localTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(localTime)} to have {nanosecondOfDay.AsFormatted()} nanoseconds within the day, but found <null>.");
             }
         }
 
@@ -636,7 +636,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(localTime)} to have {nanosecondOfDay.AsFormatted()} nanoseconds within the day, but {nameof(localTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(localTime)} to have {nanosecondOfDay.AsFormatted()} nanoseconds within the day, but found <null>.");
             }
         }
 
@@ -683,7 +683,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(localTime)} to have {nanosecondOfSecond} nanoseconds within the second, but {nameof(localTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(localTime)} to have {nanosecondOfSecond} nanoseconds within the second, but found <null>.");
             }
         }
 
@@ -730,7 +730,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(localTime)} to have {nanosecondOfSecond} nanoseconds within the second, but {nameof(localTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(localTime)} to have {nanosecondOfSecond} nanoseconds within the second, but found <null>.");
             }
         }
 
@@ -777,7 +777,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(localTime)} to have second {second}, but {nameof(localTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(localTime)} to have second {second}, but found <null>.");
             }
         }
 
@@ -824,7 +824,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(localTime)} to have second {second}, but {nameof(localTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(localTime)} to have second {second}, but found <null>.");
             }
         }
 
@@ -871,7 +871,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(localTime)} to have {tickOfDay.AsFormatted()} ticks within the day, but {nameof(localTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(localTime)} to have {tickOfDay.AsFormatted()} ticks within the day, but found <null>.");
             }
         }
 
@@ -918,7 +918,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(localTime)} to have {tickOfDay.AsFormatted()} ticks within the day, but {nameof(localTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(localTime)} to have {tickOfDay.AsFormatted()} ticks within the day, but found <null>.");
             }
         }
 
@@ -965,7 +965,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(localTime)} to have {tickOfSecond} ticks within the second, but {nameof(localTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(localTime)} to have {tickOfSecond} ticks within the second, but found <null>.");
             }
         }
 
@@ -1012,7 +1012,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(localTime)} to have {tickOfSecond} ticks within the second, but {nameof(localTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(localTime)} to have {tickOfSecond} ticks within the second, but found <null>.");
             }
         }
 

@@ -1055,7 +1055,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(duration)} to have {seconds} seconds, but {nameof(duration)} was <null>.");
+                    .WithMessage($"Expected {nameof(duration)} to have {seconds} seconds, but found <null>.");
             }
         }
 
@@ -1103,7 +1103,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Did not expect {nameof(duration)} to have {seconds} seconds, but {nameof(duration)} was <null>.");
+                        $"Did not expect {nameof(duration)} to have {seconds} seconds, but found <null>.");
             }
         }
 
@@ -1152,7 +1152,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Expected {nameof(duration)} to have {milliseconds} milliseconds, but {nameof(duration)} was <null>.");
+                        $"Expected {nameof(duration)} to have {milliseconds} milliseconds, but found <null>.");
             }
         }
 
@@ -1200,7 +1200,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Did not expect {nameof(duration)} to have {milliseconds} milliseconds, but {nameof(duration)} was <null>.");
+                        $"Did not expect {nameof(duration)} to have {milliseconds} milliseconds, but found <null>.");
             }
         }
 
@@ -1249,7 +1249,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Expected {nameof(duration)} to have {nanoseconds.AsFormatted()} nanoseconds within the day, but {nameof(duration)} was <null>.");
+                        $"Expected {nameof(duration)} to have {nanoseconds.AsFormatted()} nanoseconds within the day, but found <null>.");
             }
         }
 
@@ -1298,7 +1298,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Did not expect {nameof(duration)} to have {nanoseconds.AsFormatted()} nanoseconds within the day, but {nameof(duration)} was <null>.");
+                        $"Did not expect {nameof(duration)} to have {nanoseconds.AsFormatted()} nanoseconds within the day, but found <null>.");
             }
         }
 
@@ -1347,7 +1347,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Expected {nameof(duration)} to have {ticks.AsFormatted()} ticks, but {nameof(duration)} was <null>.");
+                        $"Expected {nameof(duration)} to have {ticks.AsFormatted()} ticks, but found <null>.");
             }
         }
 
@@ -1395,7 +1395,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Did not expect {nameof(duration)} to have {ticks.AsFormatted()} ticks, but {nameof(duration)} was <null>.");
+                        $"Did not expect {nameof(duration)} to have {ticks.AsFormatted()} ticks, but found <null>.");
             }
         }
 
@@ -1442,7 +1442,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(duration)} to have {days} days, but {nameof(duration)} was <null>.");
+                    .WithMessage($"Expected {nameof(duration)} to have {days} days, but found <null>.");
             }
         }
 
@@ -1489,7 +1489,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(duration)} to have {days} days, but {nameof(duration)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(duration)} to have {days} days, but found <null>.");
             }
         }
 
@@ -1536,7 +1536,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(duration)} to have {hours} hours, but {nameof(duration)} was <null>.");
+                    .WithMessage($"Expected {nameof(duration)} to have {hours} hours, but found <null>.");
             }
         }
 
@@ -1583,7 +1583,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(duration)} to have {hours} hours, but {nameof(duration)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(duration)} to have {hours} hours, but found <null>.");
             }
         }
 
@@ -1664,7 +1664,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Expected {nameof(duration)} to have {days.AsFormatted()} total number of days (+/- {DefaultPrecision.AsFormatted()}), but {nameof(duration)} was <null>.");
+                        $"Expected {nameof(duration)} to have {days.AsFormatted()} total number of days (+/- {DefaultPrecision.AsFormatted()}), but found <null>.");
             }
         }
 
@@ -1745,7 +1745,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Did not expect {nameof(duration)} to have {days.AsFormatted()} total number of days (+/- {DefaultPrecision.AsFormatted()}), but {nameof(duration)} was <null>.");
+                        $"Did not expect {nameof(duration)} to have {days.AsFormatted()} total number of days (+/- {DefaultPrecision.AsFormatted()}), but found <null>.");
             }
         }
 
@@ -1826,7 +1826,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Expected {nameof(duration)} to have {hours.AsFormatted()} total number of hours (+/- {DefaultPrecision.AsFormatted()}), but {nameof(duration)} was <null>.");
+                        $"Expected {nameof(duration)} to have {hours.AsFormatted()} total number of hours (+/- {DefaultPrecision.AsFormatted()}), but found <null>.");
             }
         }
 
@@ -1907,7 +1907,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Did not expect {nameof(duration)} to have {hours.AsFormatted()} total number of hours (+/- {DefaultPrecision.AsFormatted()}), but {nameof(duration)} was <null>.");
+                        $"Did not expect {nameof(duration)} to have {hours.AsFormatted()} total number of hours (+/- {DefaultPrecision.AsFormatted()}), but found <null>.");
             }
         }
 
@@ -1988,7 +1988,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Expected {nameof(duration)} to have {milliseconds.AsFormatted()} total number of milliseconds (+/- {DefaultPrecision.AsFormatted()}), but {nameof(duration)} was <null>.");
+                        $"Expected {nameof(duration)} to have {milliseconds.AsFormatted()} total number of milliseconds (+/- {DefaultPrecision.AsFormatted()}), but found <null>.");
             }
         }
 
@@ -2069,7 +2069,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Did not expect {nameof(duration)} to have {milliseconds.AsFormatted()} total number of milliseconds (+/- {DefaultPrecision.AsFormatted()}), but {nameof(duration)} was <null>.");
+                        $"Did not expect {nameof(duration)} to have {milliseconds.AsFormatted()} total number of milliseconds (+/- {DefaultPrecision.AsFormatted()}), but found <null>.");
             }
         }
 
@@ -2150,7 +2150,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Expected {nameof(duration)} to have {minutes.AsFormatted()} total number of minutes (+/- {DefaultPrecision.AsFormatted()}), but {nameof(duration)} was <null>.");
+                        $"Expected {nameof(duration)} to have {minutes.AsFormatted()} total number of minutes (+/- {DefaultPrecision.AsFormatted()}), but found <null>.");
             }
         }
 
@@ -2231,7 +2231,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Did not expect {nameof(duration)} to have {minutes.AsFormatted()} total number of minutes (+/- {DefaultPrecision.AsFormatted()}), but {nameof(duration)} was <null>.");
+                        $"Did not expect {nameof(duration)} to have {minutes.AsFormatted()} total number of minutes (+/- {DefaultPrecision.AsFormatted()}), but found <null>.");
             }
         }
 
@@ -2312,7 +2312,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Expected {nameof(duration)} to have {nanoseconds.AsFormatted()} total number of nanoseconds (+/- {DefaultPrecision.AsFormatted()}), but {nameof(duration)} was <null>.");
+                        $"Expected {nameof(duration)} to have {nanoseconds.AsFormatted()} total number of nanoseconds (+/- {DefaultPrecision.AsFormatted()}), but found <null>.");
             }
         }
 
@@ -2393,7 +2393,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Did not expect {nameof(duration)} to have {nanoseconds.AsFormatted()} total number of nanoseconds (+/- {DefaultPrecision.AsFormatted()}), but {nameof(duration)} was <null>.");
+                        $"Did not expect {nameof(duration)} to have {nanoseconds.AsFormatted()} total number of nanoseconds (+/- {DefaultPrecision.AsFormatted()}), but found <null>.");
             }
         }
 
@@ -2474,7 +2474,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Expected {nameof(duration)} to have {seconds.AsFormatted()} total number of seconds (+/- {DefaultPrecision.AsFormatted()}), but {nameof(duration)} was <null>.");
+                        $"Expected {nameof(duration)} to have {seconds.AsFormatted()} total number of seconds (+/- {DefaultPrecision.AsFormatted()}), but found <null>.");
             }
         }
 
@@ -2555,7 +2555,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Did not expect {nameof(duration)} to have {seconds.AsFormatted()} total number of seconds (+/- {DefaultPrecision.AsFormatted()}), but {nameof(duration)} was <null>.");
+                        $"Did not expect {nameof(duration)} to have {seconds.AsFormatted()} total number of seconds (+/- {DefaultPrecision.AsFormatted()}), but found <null>.");
             }
         }
 
@@ -2636,7 +2636,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Expected {nameof(duration)} to have {ticks.AsFormatted()} total number of ticks (+/- {DefaultPrecision.AsFormatted()}), but {nameof(duration)} was <null>.");
+                        $"Expected {nameof(duration)} to have {ticks.AsFormatted()} total number of ticks (+/- {DefaultPrecision.AsFormatted()}), but found <null>.");
             }
         }
 
@@ -2717,7 +2717,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Did not expect {nameof(duration)} to have {ticks.AsFormatted()} total number of ticks (+/- {DefaultPrecision.AsFormatted()}), but {nameof(duration)} was <null>.");
+                        $"Did not expect {nameof(duration)} to have {ticks.AsFormatted()} total number of ticks (+/- {DefaultPrecision.AsFormatted()}), but found <null>.");
             }
         }
 
@@ -2764,7 +2764,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(duration)} to have {minutes} minutes, but {nameof(duration)} was <null>.");
+                    .WithMessage($"Expected {nameof(duration)} to have {minutes} minutes, but found <null>.");
             }
         }
 
@@ -2812,7 +2812,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Did not expect {nameof(duration)} to have {minutes} minutes, but {nameof(duration)} was <null>.");
+                        $"Did not expect {nameof(duration)} to have {minutes} minutes, but found <null>.");
             }
         }
 
@@ -2861,7 +2861,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Expected {nameof(duration)} to have {nanoseconds} subseconds in nanoseconds, but {nameof(duration)} was <null>.");
+                        $"Expected {nameof(duration)} to have {nanoseconds} subseconds in nanoseconds, but found <null>.");
             }
         }
 
@@ -2909,7 +2909,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Did not expect {nameof(duration)} to have {nanoseconds} subseconds in nanoseconds, but {nameof(duration)} was <null>.");
+                        $"Did not expect {nameof(duration)} to have {nanoseconds} subseconds in nanoseconds, but found <null>.");
             }
         }
 
@@ -2958,7 +2958,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Expected {nameof(duration)} to have {ticks} subseconds in ticks, but {nameof(duration)} was <null>.");
+                        $"Expected {nameof(duration)} to have {ticks} subseconds in ticks, but found <null>.");
             }
         }
 
@@ -3006,7 +3006,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Did not expect {nameof(duration)} to have {ticks} subseconds in ticks, but {nameof(duration)} was <null>.");
+                        $"Did not expect {nameof(duration)} to have {ticks} subseconds in ticks, but found <null>.");
             }
         }
     }

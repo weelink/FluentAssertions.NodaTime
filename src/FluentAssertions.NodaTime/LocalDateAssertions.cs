@@ -197,7 +197,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndWhichConstraint<LocalDateAssertions, CalendarSystem>(this, calendar);
@@ -238,7 +238,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalDateAssertions>(this);
@@ -278,7 +278,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalDateAssertions>(this);
@@ -318,7 +318,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalDateAssertions>(this);
@@ -359,7 +359,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalDateAssertions>(this);
@@ -400,7 +400,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalDateAssertions>(this);
@@ -441,7 +441,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalDateAssertions>(this);
@@ -482,7 +482,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalDateAssertions>(this);
@@ -522,7 +522,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalDateAssertions>(this);
@@ -562,7 +562,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalDateAssertions>(this);
@@ -602,7 +602,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalDateAssertions>(this);
@@ -642,7 +642,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalDateAssertions>(this);
@@ -683,7 +683,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalDateAssertions>(this);
@@ -724,7 +724,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalDateAssertions>(this);
@@ -764,7 +764,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalDateAssertions>(this);
@@ -804,7 +804,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalDateAssertions>(this);

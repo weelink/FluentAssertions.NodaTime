@@ -113,7 +113,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalTimeAssertions>(this);
@@ -155,7 +155,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalTimeAssertions>(this);
@@ -195,7 +195,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalTimeAssertions>(this);
@@ -235,7 +235,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalTimeAssertions>(this);
@@ -275,7 +275,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalTimeAssertions>(this);
@@ -315,7 +315,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalTimeAssertions>(this);
@@ -355,7 +355,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalTimeAssertions>(this);
@@ -395,7 +395,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalTimeAssertions>(this);
@@ -436,7 +436,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalTimeAssertions>(this);
@@ -477,7 +477,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalTimeAssertions>(this);
@@ -518,7 +518,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalTimeAssertions>(this);
@@ -560,7 +560,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalTimeAssertions>(this);
@@ -600,7 +600,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalTimeAssertions>(this);
@@ -640,7 +640,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalTimeAssertions>(this);
@@ -681,7 +681,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalTimeAssertions>(this);
@@ -722,7 +722,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalTimeAssertions>(this);
@@ -763,7 +763,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalTimeAssertions>(this);
@@ -804,7 +804,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:LocalTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<LocalTimeAssertions>(this);

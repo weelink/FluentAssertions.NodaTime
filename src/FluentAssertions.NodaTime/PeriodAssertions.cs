@@ -211,7 +211,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);
@@ -251,7 +251,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);
@@ -291,7 +291,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);
@@ -331,7 +331,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);
@@ -371,7 +371,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);
@@ -411,7 +411,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);
@@ -451,7 +451,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);
@@ -491,7 +491,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);
@@ -531,7 +531,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);
@@ -571,7 +571,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);
@@ -611,7 +611,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);
@@ -651,7 +651,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);
@@ -691,7 +691,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);
@@ -731,7 +731,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);
@@ -771,7 +771,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);
@@ -811,7 +811,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);
@@ -851,7 +851,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);
@@ -891,7 +891,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);
@@ -931,7 +931,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);
@@ -971,7 +971,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);
@@ -1008,7 +1008,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);
@@ -1045,7 +1045,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);
@@ -1082,7 +1082,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);
@@ -1119,7 +1119,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Period} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<PeriodAssertions>(this);

@@ -398,7 +398,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(dateInterval)} to be in calendar {calendar}, but {nameof(dateInterval)} was <null>.");
+                    .WithMessage($"Expected {nameof(dateInterval)} to be in calendar {calendar}, but found <null>.");
             }
         }
 
@@ -450,7 +450,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(dateInterval)} to be in calendar {calendar}, but {nameof(dateInterval)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(dateInterval)} to be in calendar {calendar}, but found <null>.");
             }
         }
 
@@ -692,7 +692,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(dateInterval)} to contain {localDate}, but {nameof(dateInterval)} was <null>.");
+                    .WithMessage($"Expected {nameof(dateInterval)} to contain {localDate}, but found <null>.");
             }
         }
 
@@ -738,7 +738,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(dateInterval)} to contain {localDate}, but {nameof(dateInterval)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(dateInterval)} to contain {localDate}, but found <null>.");
             }
         }
 
@@ -784,7 +784,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(dateInterval)} to contain {other.AsFormatted()}, but {nameof(dateInterval)} was <null>.");
+                    .WithMessage($"Expected {nameof(dateInterval)} to contain {other.AsFormatted()}, but found <null>.");
             }
         }
 
@@ -830,7 +830,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(dateInterval)} to contain {other.AsFormatted()}, but {nameof(dateInterval)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(dateInterval)} to contain {other.AsFormatted()}, but found <null>.");
             }
         }
     }

@@ -269,7 +269,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(interval)} to have a duration of {duration}, but {nameof(interval)} was <null>.");
+                    .WithMessage($"Expected {nameof(interval)} to have a duration of {duration}, but found <null>.");
             }
         }
 
@@ -323,7 +323,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(interval)} to have a duration of {duration}, but {nameof(interval)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(interval)} to have a duration of {duration}, but found <null>.");
             }
         }
 
@@ -495,7 +495,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(interval)} to have an end, but {nameof(interval)} was <null>.");
+                    .WithMessage($"Expected {nameof(interval)} to have an end, but found <null>.");
             }
         }
 
@@ -539,7 +539,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(interval)} to have an end, but {nameof(interval)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(interval)} to have an end, but found <null>.");
             }
         }
 
@@ -711,7 +711,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(interval)} to have a start, but {nameof(interval)} was <null>.");
+                    .WithMessage($"Expected {nameof(interval)} to have a start, but found <null>.");
             }
         }
 
@@ -755,7 +755,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(interval)} to have a start, but {nameof(interval)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(interval)} to have a start, but found <null>.");
             }
         }
 
@@ -842,7 +842,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(interval)} to contain {instant}, but {nameof(interval)} was <null>.");
+                    .WithMessage($"Expected {nameof(interval)} to contain {instant}, but found <null>.");
             }
         }
 
@@ -916,7 +916,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(interval)} to contain {instant}, but {nameof(interval)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(interval)} to contain {instant}, but found <null>.");
             }
         }
     }

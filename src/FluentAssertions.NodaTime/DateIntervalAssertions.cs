@@ -369,7 +369,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:DateInterval} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DateIntervalAssertions>(this);
@@ -401,7 +401,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:DateInterval} was <null>.");
+                    .FailWith(", but found <null>.");
             }
             else
             {
@@ -445,7 +445,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:DateInterval} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DateIntervalAssertions>(this);
@@ -477,7 +477,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:DateInterval} was <null>.");
+                    .FailWith(", but found <null>.");
             }
             else
             {
@@ -525,7 +525,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:DateInterval} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndWhichConstraint<DateIntervalAssertions, CalendarSystem>(this, calendar);
@@ -566,7 +566,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:DateInterval} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DateIntervalAssertions>(this);

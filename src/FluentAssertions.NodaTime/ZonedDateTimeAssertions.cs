@@ -115,7 +115,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndWhichConstraint<ZonedDateTimeAssertions, CalendarSystem>(this, calendar);
@@ -156,7 +156,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -198,7 +198,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndWhichConstraint<ZonedDateTimeAssertions, LocalDate>(this, date);
@@ -239,7 +239,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -281,7 +281,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndWhichConstraint<ZonedDateTimeAssertions, LocalTime>(this, timeOfDay);
@@ -322,7 +322,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -364,7 +364,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndWhichConstraint<ZonedDateTimeAssertions, LocalDateTime>(this, localDateTime);
@@ -405,7 +405,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -448,7 +448,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndWhichConstraint<ZonedDateTimeAssertions, Offset>(this, offset);
@@ -513,7 +513,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -578,7 +578,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -620,7 +620,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -660,7 +660,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -700,7 +700,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -741,7 +741,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -782,7 +782,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -823,7 +823,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -864,7 +864,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -904,7 +904,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -944,7 +944,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -984,7 +984,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -1024,7 +1024,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -1064,7 +1064,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -1104,7 +1104,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -1144,7 +1144,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -1184,7 +1184,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -1224,7 +1224,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -1264,7 +1264,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -1305,7 +1305,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -1346,7 +1346,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -1387,7 +1387,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -1429,7 +1429,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -1469,7 +1469,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -1509,7 +1509,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -1550,7 +1550,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -1591,7 +1591,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -1632,7 +1632,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -1673,7 +1673,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -1714,7 +1714,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -1755,7 +1755,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -1795,7 +1795,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);
@@ -1835,7 +1835,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:ZonedDateTime} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<ZonedDateTimeAssertions>(this);

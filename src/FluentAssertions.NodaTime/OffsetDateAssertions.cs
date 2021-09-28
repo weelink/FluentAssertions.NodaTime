@@ -115,7 +115,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:OffsetDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndWhichConstraint<OffsetDateAssertions, CalendarSystem>(this, calendar);
@@ -156,7 +156,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:OffsetDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<OffsetDateAssertions>(this);
@@ -198,7 +198,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:OffsetDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndWhichConstraint<OffsetDateAssertions, LocalDate>(this, date);
@@ -239,7 +239,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:OffsetDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<OffsetDateAssertions>(this);
@@ -281,7 +281,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:OffsetDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndWhichConstraint<OffsetDateAssertions, Offset>(this, offset);
@@ -346,7 +346,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:OffsetDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<OffsetDateAssertions>(this);
@@ -409,7 +409,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:OffsetDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<OffsetDateAssertions>(this);
@@ -449,7 +449,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:OffsetDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<OffsetDateAssertions>(this);
@@ -490,7 +490,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:OffsetDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<OffsetDateAssertions>(this);
@@ -531,7 +531,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:OffsetDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<OffsetDateAssertions>(this);
@@ -572,7 +572,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:OffsetDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<OffsetDateAssertions>(this);
@@ -613,7 +613,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:OffsetDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<OffsetDateAssertions>(this);
@@ -653,7 +653,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:OffsetDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<OffsetDateAssertions>(this);
@@ -693,7 +693,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:OffsetDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<OffsetDateAssertions>(this);
@@ -733,7 +733,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:OffsetDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<OffsetDateAssertions>(this);
@@ -773,7 +773,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:OffsetDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<OffsetDateAssertions>(this);
@@ -814,7 +814,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:OffsetDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<OffsetDateAssertions>(this);
@@ -855,7 +855,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:OffsetDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<OffsetDateAssertions>(this);
@@ -895,7 +895,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:OffsetDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<OffsetDateAssertions>(this);
@@ -935,7 +935,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:OffsetDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<OffsetDateAssertions>(this);

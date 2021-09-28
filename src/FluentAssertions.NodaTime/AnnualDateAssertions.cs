@@ -289,7 +289,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:AnnualDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<AnnualDateAssertions>(this);
@@ -329,7 +329,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:AnnualDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<AnnualDateAssertions>(this);
@@ -369,7 +369,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:AnnualDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<AnnualDateAssertions>(this);
@@ -409,7 +409,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:AnnualDate} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<AnnualDateAssertions>(this);

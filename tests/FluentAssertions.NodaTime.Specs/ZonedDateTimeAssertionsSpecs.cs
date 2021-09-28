@@ -246,7 +246,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have local date time {localDateTime}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have local date time {localDateTime}, but found <null>.");
             }
         }
 
@@ -294,7 +294,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have local date time {localDateTime}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have local date time {localDateTime}, but found <null>.");
             }
         }
 
@@ -359,7 +359,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have offset {offset}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have offset {offset}, but found <null>.");
             }
         }
 
@@ -409,7 +409,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have offset {offset}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have offset {offset}, but found <null>.");
             }
         }
 
@@ -474,7 +474,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have offset {Offset.FromTimeSpan(offset)}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have offset {Offset.FromTimeSpan(offset)}, but found <null>.");
             }
         }
 
@@ -524,7 +524,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have offset {Offset.FromTimeSpan(offset)}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have offset {Offset.FromTimeSpan(offset)}, but found <null>.");
             }
         }
 
@@ -586,7 +586,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to be in calendar {calendar}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to be in calendar {calendar}, but found <null>.");
             }
         }
 
@@ -634,7 +634,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to be in calendar {calendar}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to be in calendar {calendar}, but found <null>.");
             }
         }
 
@@ -696,7 +696,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have date {date}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have date {date}, but found <null>.");
             }
         }
 
@@ -744,7 +744,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have date {date}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have date {date}, but found <null>.");
             }
         }
 
@@ -804,7 +804,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have time of day {time}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have time of day {time}, but found <null>.");
             }
         }
 
@@ -851,7 +851,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have time of day {time}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have time of day {time}, but found <null>.");
             }
         }
 
@@ -898,7 +898,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have clock hour of the half-day of {time}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have clock hour of the half-day of {time}, but found <null>.");
             }
         }
 
@@ -945,7 +945,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have clock hour of the half-day of {time}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have clock hour of the half-day of {time}, but found <null>.");
             }
         }
 
@@ -992,7 +992,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have day {day}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have day {day}, but found <null>.");
             }
         }
 
@@ -1039,7 +1039,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have day {day}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have day {day}, but found <null>.");
             }
         }
 
@@ -1086,7 +1086,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have day of week {dayOfWeek.AsFormatted()}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have day of week {dayOfWeek.AsFormatted()}, but found <null>.");
             }
         }
 
@@ -1133,7 +1133,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have day of week {dayOfWeek.AsFormatted()}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have day of week {dayOfWeek.AsFormatted()}, but found <null>.");
             }
         }
 
@@ -1180,7 +1180,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have day of year {dayOfYear}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have day of year {dayOfYear}, but found <null>.");
             }
         }
 
@@ -1227,7 +1227,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have day of year {dayOfYear}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have day of year {dayOfYear}, but found <null>.");
             }
         }
 
@@ -1274,7 +1274,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have hour of day {hourOfDay}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have hour of day {hourOfDay}, but found <null>.");
             }
         }
 
@@ -1321,7 +1321,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have hour of day {hourOfDay}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have hour of day {hourOfDay}, but found <null>.");
             }
         }
 
@@ -1368,7 +1368,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have era {era}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have era {era}, but found <null>.");
             }
         }
 
@@ -1415,7 +1415,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have era {era}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have era {era}, but found <null>.");
             }
         }
 
@@ -1462,7 +1462,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have millisecond {millisecondOfDay}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have millisecond {millisecondOfDay}, but found <null>.");
             }
         }
 
@@ -1509,7 +1509,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have millisecond {millisecondOfDay}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have millisecond {millisecondOfDay}, but found <null>.");
             }
         }
 
@@ -1556,7 +1556,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have minute {minuteOfDay}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have minute {minuteOfDay}, but found <null>.");
             }
         }
 
@@ -1603,7 +1603,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have minute {minuteOfDay}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have minute {minuteOfDay}, but found <null>.");
             }
         }
 
@@ -1651,7 +1651,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have month {month}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have month {month}, but found <null>.");
             }
         }
 
@@ -1699,7 +1699,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have month {month}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have month {month}, but found <null>.");
             }
         }
 
@@ -1746,7 +1746,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have {nanosecondOfDay.AsFormatted()} nanoseconds within the day, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have {nanosecondOfDay.AsFormatted()} nanoseconds within the day, but found <null>.");
             }
         }
 
@@ -1793,7 +1793,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have {nanosecondOfDay.AsFormatted()} nanoseconds within the day, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have {nanosecondOfDay.AsFormatted()} nanoseconds within the day, but found <null>.");
             }
         }
 
@@ -1840,7 +1840,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have {nanosecondOfSecond} nanoseconds within the second, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have {nanosecondOfSecond} nanoseconds within the second, but found <null>.");
             }
         }
 
@@ -1887,7 +1887,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have {nanosecondOfSecond} nanoseconds within the second, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have {nanosecondOfSecond} nanoseconds within the second, but found <null>.");
             }
         }
 
@@ -1934,7 +1934,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have second {second}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have second {second}, but found <null>.");
             }
         }
 
@@ -1981,7 +1981,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have second {second}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have second {second}, but found <null>.");
             }
         }
 
@@ -2029,7 +2029,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have year {year}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have year {year}, but found <null>.");
             }
         }
 
@@ -2077,7 +2077,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have year {year}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have year {year}, but found <null>.");
             }
         }
 
@@ -2124,7 +2124,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have {tickOfDay.AsFormatted()} ticks within the day, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have {tickOfDay.AsFormatted()} ticks within the day, but found <null>.");
             }
         }
 
@@ -2171,7 +2171,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have {tickOfDay.AsFormatted()} ticks within the day, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have {tickOfDay.AsFormatted()} ticks within the day, but found <null>.");
             }
         }
 
@@ -2218,7 +2218,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have {tickOfSecond} ticks within the second, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have {tickOfSecond} ticks within the second, but found <null>.");
             }
         }
 
@@ -2265,7 +2265,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have {tickOfSecond} ticks within the second, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have {tickOfSecond} ticks within the second, but found <null>.");
             }
         }
 
@@ -2312,7 +2312,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have {yearOfEra} as the year within the era, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have {yearOfEra} as the year within the era, but found <null>.");
             }
         }
 
@@ -2359,7 +2359,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have {yearOfEra} as the year within the era, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have {yearOfEra} as the year within the era, but found <null>.");
             }
         }
     }

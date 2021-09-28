@@ -619,7 +619,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(localDate)} to be in calendar {calendar}, but {nameof(localDate)} was <null>.");
+                    .WithMessage($"Expected {nameof(localDate)} to be in calendar {calendar}, but found <null>.");
             }
         }
 
@@ -667,7 +667,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(localDate)} to be in calendar {calendar}, but {nameof(localDate)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(localDate)} to be in calendar {calendar}, but found <null>.");
             }
         }
 
@@ -714,7 +714,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(localDate)} to have day {day}, but {nameof(localDate)} was <null>.");
+                    .WithMessage($"Expected {nameof(localDate)} to have day {day}, but found <null>.");
             }
         }
 
@@ -761,7 +761,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(localDate)} to have day {day}, but {nameof(localDate)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(localDate)} to have day {day}, but found <null>.");
             }
         }
 
@@ -808,7 +808,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(localDate)} to have day of week {dayOfWeek.AsFormatted()}, but {nameof(localDate)} was <null>.");
+                    .WithMessage($"Expected {nameof(localDate)} to have day of week {dayOfWeek.AsFormatted()}, but found <null>.");
             }
         }
 
@@ -855,7 +855,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(localDate)} to have day of week {dayOfWeek.AsFormatted()}, but {nameof(localDate)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(localDate)} to have day of week {dayOfWeek.AsFormatted()}, but found <null>.");
             }
         }
 
@@ -902,7 +902,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(localDate)} to have day of year {dayOfYear}, but {nameof(localDate)} was <null>.");
+                    .WithMessage($"Expected {nameof(localDate)} to have day of year {dayOfYear}, but found <null>.");
             }
         }
 
@@ -949,7 +949,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(localDate)} to have day of year {dayOfYear}, but {nameof(localDate)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(localDate)} to have day of year {dayOfYear}, but found <null>.");
             }
         }
 
@@ -996,7 +996,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(localDate)} to have era {era}, but {nameof(localDate)} was <null>.");
+                    .WithMessage($"Expected {nameof(localDate)} to have era {era}, but found <null>.");
             }
         }
 
@@ -1043,7 +1043,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(localDate)} to have era {era}, but {nameof(localDate)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(localDate)} to have era {era}, but found <null>.");
             }
         }
 
@@ -1090,7 +1090,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(localDate)} to have month {month}, but {nameof(localDate)} was <null>.");
+                    .WithMessage($"Expected {nameof(localDate)} to have month {month}, but found <null>.");
             }
         }
 
@@ -1137,7 +1137,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(localDate)} to have month {month}, but {nameof(localDate)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(localDate)} to have month {month}, but found <null>.");
             }
         }
 
@@ -1184,7 +1184,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(localDate)} to have year {year}, but {nameof(localDate)} was <null>.");
+                    .WithMessage($"Expected {nameof(localDate)} to have year {year}, but found <null>.");
             }
         }
 
@@ -1231,7 +1231,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(localDate)} to have year {year}, but {nameof(localDate)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(localDate)} to have year {year}, but found <null>.");
             }
         }
 
@@ -1278,7 +1278,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(localDate)} to have {yearOfEra} as the year within the era, but {nameof(localDate)} was <null>.");
+                    .WithMessage($"Expected {nameof(localDate)} to have {yearOfEra} as the year within the era, but found <null>.");
             }
         }
 
@@ -1325,7 +1325,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(localDate)} to have {yearOfEra} as the year within the era, but {nameof(localDate)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(localDate)} to have {yearOfEra} as the year within the era, but found <null>.");
             }
         }
 

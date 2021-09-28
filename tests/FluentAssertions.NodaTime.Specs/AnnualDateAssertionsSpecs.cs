@@ -629,7 +629,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(annualDate)} to have day {day}, but {nameof(annualDate)} was <null>.");
+                    .WithMessage($"Expected {nameof(annualDate)} to have day {day}, but found <null>.");
             }
         }
 
@@ -678,7 +678,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(annualDate)} to have day {day}, but {nameof(annualDate)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(annualDate)} to have day {day}, but found <null>.");
             }
         }
 
@@ -727,7 +727,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(annualDate)} to have month {month}, but {nameof(annualDate)} was <null>.");
+                    .WithMessage($"Expected {nameof(annualDate)} to have month {month}, but found <null>.");
             }
         }
 
@@ -776,7 +776,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(annualDate)} to have month {month}, but {nameof(annualDate)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(annualDate)} to have month {month}, but found <null>.");
             }
         }
     }

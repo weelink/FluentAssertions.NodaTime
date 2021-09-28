@@ -138,7 +138,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Interval} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<IntervalAssertions>(this);
@@ -178,7 +178,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Interval} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<IntervalAssertions>(this);
@@ -215,7 +215,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Interval} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<IntervalAssertions>(this);
@@ -252,7 +252,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Interval} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<IntervalAssertions>(this);
@@ -371,7 +371,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Interval} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<IntervalAssertions>(this);
@@ -408,7 +408,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Interval} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<IntervalAssertions>(this);
@@ -528,7 +528,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Interval} was <null>.");
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<IntervalAssertions>(this);
@@ -560,7 +560,7 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(false)
-                    .FailWith(", but {context:Interval} was <null>.");
+                    .FailWith(", but found <null>.");
             }
             else
             {

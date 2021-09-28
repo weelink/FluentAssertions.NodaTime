@@ -455,7 +455,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(period)} to have {seconds.AsFormatted()} seconds, but {nameof(period)} was <null>.");
+                    .WithMessage($"Expected {nameof(period)} to have {seconds.AsFormatted()} seconds, but found <null>.");
             }
         }
 
@@ -502,7 +502,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Did not expect {nameof(period)} to have {seconds.AsFormatted()} seconds, but {nameof(period)} was <null>.");
+                        $"Did not expect {nameof(period)} to have {seconds.AsFormatted()} seconds, but found <null>.");
             }
         }
 
@@ -550,7 +550,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Expected {nameof(period)} to have {milliseconds.AsFormatted()} milliseconds, but {nameof(period)} was <null>.");
+                        $"Expected {nameof(period)} to have {milliseconds.AsFormatted()} milliseconds, but found <null>.");
             }
         }
 
@@ -597,7 +597,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Did not expect {nameof(period)} to have {milliseconds.AsFormatted()} milliseconds, but {nameof(period)} was <null>.");
+                        $"Did not expect {nameof(period)} to have {milliseconds.AsFormatted()} milliseconds, but found <null>.");
             }
         }
 
@@ -645,7 +645,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Expected {nameof(period)} to have {nanoseconds.AsFormatted()} nanoseconds, but {nameof(period)} was <null>.");
+                        $"Expected {nameof(period)} to have {nanoseconds.AsFormatted()} nanoseconds, but found <null>.");
             }
         }
 
@@ -693,7 +693,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Did not expect {nameof(period)} to have {nanoseconds.AsFormatted()} nanoseconds, but {nameof(period)} was <null>.");
+                        $"Did not expect {nameof(period)} to have {nanoseconds.AsFormatted()} nanoseconds, but found <null>.");
             }
         }
 
@@ -741,7 +741,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Expected {nameof(period)} to have {ticks.AsFormatted()} ticks, but {nameof(period)} was <null>.");
+                        $"Expected {nameof(period)} to have {ticks.AsFormatted()} ticks, but found <null>.");
             }
         }
 
@@ -788,7 +788,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Did not expect {nameof(period)} to have {ticks.AsFormatted()} ticks, but {nameof(period)} was <null>.");
+                        $"Did not expect {nameof(period)} to have {ticks.AsFormatted()} ticks, but found <null>.");
             }
         }
 
@@ -836,7 +836,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Expected {nameof(period)} to have {hours.AsFormatted()} hours, but {nameof(period)} was <null>.");
+                        $"Expected {nameof(period)} to have {hours.AsFormatted()} hours, but found <null>.");
             }
         }
 
@@ -883,7 +883,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Did not expect {nameof(period)} to have {hours.AsFormatted()} hours, but {nameof(period)} was <null>.");
+                        $"Did not expect {nameof(period)} to have {hours.AsFormatted()} hours, but found <null>.");
             }
         }
 
@@ -929,7 +929,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(period)} to have {days} days, but {nameof(period)} was <null>.");
+                    .WithMessage($"Expected {nameof(period)} to have {days} days, but found <null>.");
             }
         }
 
@@ -975,7 +975,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(period)} to have {days} days, but {nameof(period)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(period)} to have {days} days, but found <null>.");
             }
         }
 
@@ -1021,7 +1021,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(period)} to have {years} years, but {nameof(period)} was <null>.");
+                    .WithMessage($"Expected {nameof(period)} to have {years} years, but found <null>.");
             }
         }
 
@@ -1067,7 +1067,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(period)} to have {years} years, but {nameof(period)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(period)} to have {years} years, but found <null>.");
             }
         }
 
@@ -1113,7 +1113,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(period)} to have {weeks} weeks, but {nameof(period)} was <null>.");
+                    .WithMessage($"Expected {nameof(period)} to have {weeks} weeks, but found <null>.");
             }
         }
 
@@ -1159,7 +1159,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(period)} to have {weeks} weeks, but {nameof(period)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(period)} to have {weeks} weeks, but found <null>.");
             }
         }
 
@@ -1207,7 +1207,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Expected {nameof(period)} to have {months} months, but {nameof(period)} was <null>.");
+                        $"Expected {nameof(period)} to have {months} months, but found <null>.");
             }
         }
 
@@ -1254,7 +1254,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Did not expect {nameof(period)} to have {months} months, but {nameof(period)} was <null>.");
+                        $"Did not expect {nameof(period)} to have {months} months, but found <null>.");
             }
         }
 
@@ -1300,7 +1300,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(period)} to have {minutes.AsFormatted()} minutes, but {nameof(period)} was <null>.");
+                    .WithMessage($"Expected {nameof(period)} to have {minutes.AsFormatted()} minutes, but found <null>.");
             }
         }
 
@@ -1347,7 +1347,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Did not expect {nameof(period)} to have {minutes.AsFormatted()} minutes, but {nameof(period)} was <null>.");
+                        $"Did not expect {nameof(period)} to have {minutes.AsFormatted()} minutes, but found <null>.");
             }
         }
 
@@ -1390,7 +1390,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(period)} to have a date component, but {nameof(period)} was <null>.");
+                    .WithMessage($"Expected {nameof(period)} to have a date component, but found <null>.");
             }
         }
 
@@ -1433,7 +1433,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(period)} to have a date component, but {nameof(period)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(period)} to have a date component, but found <null>.");
             }
         }
 
@@ -1476,7 +1476,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(period)} to have a time component, but {nameof(period)} was <null>.");
+                    .WithMessage($"Expected {nameof(period)} to have a time component, but found <null>.");
             }
         }
 
@@ -1519,7 +1519,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(period)} to have a time component, but {nameof(period)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(period)} to have a time component, but found <null>.");
             }
         }
     }
