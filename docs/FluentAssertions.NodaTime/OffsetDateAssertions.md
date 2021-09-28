@@ -14,20 +14,24 @@ public sealed class OffsetDateAssertions :
 | [OffsetDateAssertions](OffsetDateAssertions/OffsetDateAssertions.md)(…) | Initializes a new [`OffsetDateAssertions`](./OffsetDateAssertions.md). |
 | [Be](OffsetDateAssertions/Be.md)(…) | Asserts that this OffsetDate is equal to *other*. |
 | [BeInCalendar](OffsetDateAssertions/BeInCalendar.md)(…) | Asserts that the current OffsetDate has the specified CalendarSystem. |
+| [HaveDate](OffsetDateAssertions/HaveDate.md)(…) | Asserts that the current OffsetDate has the specified OffsetDate. |
 | [HaveDay](OffsetDateAssertions/HaveDay.md)(…) | Asserts that the current OffsetDate has the specified day of the month. |
 | [HaveDayOfWeek](OffsetDateAssertions/HaveDayOfWeek.md)(…) | Asserts that the current OffsetDate has the specified day of the week. |
 | [HaveDayOfYear](OffsetDateAssertions/HaveDayOfYear.md)(…) | Asserts that the current OffsetDate has the specified day of the year. |
 | [HaveEra](OffsetDateAssertions/HaveEra.md)(…) | Asserts that the current OffsetDate has the specified era. |
 | [HaveMonth](OffsetDateAssertions/HaveMonth.md)(…) | Asserts that the current OffsetDate has the specified month. |
+| [HaveOffset](OffsetDateAssertions/HaveOffset.md)(…) | Asserts that the current OffsetDateTime has the specified OffsetDate. |
 | [HaveYear](OffsetDateAssertions/HaveYear.md)(…) | Asserts that the current OffsetDate has the specified year. |
 | [HaveYearOfEra](OffsetDateAssertions/HaveYearOfEra.md)(…) | Asserts that the current OffsetDate has the specified year of era. |
 | [NotBe](OffsetDateAssertions/NotBe.md)(…) | Asserts that this OffsetDate is not equal to *other*. |
 | [NotBeInCalendar](OffsetDateAssertions/NotBeInCalendar.md)(…) | Asserts that the current OffsetDate does not have the specified CalendarSystem. |
+| [NotHaveDate](OffsetDateAssertions/NotHaveDate.md)(…) | Asserts that the current OffsetDate does not have the specified OffsetDate. |
 | [NotHaveDay](OffsetDateAssertions/NotHaveDay.md)(…) | Asserts that the current OffsetDate does not have the specified day of the month. |
 | [NotHaveDayOfWeek](OffsetDateAssertions/NotHaveDayOfWeek.md)(…) | Asserts that the current OffsetDate does not have the specified day of the week. |
 | [NotHaveDayOfYear](OffsetDateAssertions/NotHaveDayOfYear.md)(…) | Asserts that the current OffsetDate does not have the specified day of the year. |
 | [NotHaveEra](OffsetDateAssertions/NotHaveEra.md)(…) | Asserts that the current OffsetDate does not have the specified era. |
 | [NotHaveMonth](OffsetDateAssertions/NotHaveMonth.md)(…) | Asserts that the current OffsetDate does not have the specified month. |
+| [NotHaveOffset](OffsetDateAssertions/NotHaveOffset.md)(…) | Asserts that the current OffsetDateTime does not have the specified OffsetDate. |
 | [NotHaveYear](OffsetDateAssertions/NotHaveYear.md)(…) | Asserts that the current OffsetDate does not have the specified year. |
 | [NotHaveYearOfEra](OffsetDateAssertions/NotHaveYearOfEra.md)(…) | Asserts that the current OffsetDate does not have the specified year of era. |
 
