@@ -1,15 +1,15 @@
-# AnnualDateAssertions.BeOnOrBefore method
+# AnnualDateAssertions.HaveDay method
 
-Asserts that this AnnualDate is on or before *other*.
+Asserts that the current AnnualDate has the specified day of the month.
 
 ```csharp
-public AndConstraint<AnnualDateAssertions> BeOnOrBefore(AnnualDate other, string because = "", 
+public AndConstraint<AnnualDateAssertions> HaveDay(int day, string because = "", 
     params object[] becauseArgs)
 ```
 
 | parameter | description |
 | --- | --- |
-| other | The AnnualDate to compare to. |
+| day | The day of the month that the current AnnualDate is expected to have. |
 | because | A formatted phrase as is supported by Object[]) explaining why the assertion is needed. If the phrase does not start with the word because, it is prepended automatically. |
 | becauseArgs | Zero or more objects to format using the placeholders in *because*. |
 

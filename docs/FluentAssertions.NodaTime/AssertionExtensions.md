@@ -10,7 +10,7 @@ public static class AssertionExtensions
 
 | name | description |
 | --- | --- |
-| static [Should](AssertionExtensions/Should.md)(…) | Returns an [`InstantAssertions`](./InstantAssertions.md) object that can be used to assert an Instant. (26 methods) |
+| static [Should](AssertionExtensions/Should.md)(…) | Returns an [`InstantAssertions`](./InstantAssertions.md) object that can be used to assert a Instant. (26 methods) |
 
 ## See Also
 

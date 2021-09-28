@@ -1,6 +1,6 @@
 # AssertionExtensions.Should method (1 of 26)
 
-Returns an [`AnnualDateAssertions`](../AnnualDateAssertions.md) object that can be used to assert an AnnualDate.
+Returns an [`AnnualDateAssertions`](../AnnualDateAssertions.md) object that can be used to assert a AnnualDate.
 
 ```csharp
 public static AnnualDateAssertions Should(this AnnualDate annualDate)
@@ -12,7 +12,7 @@ public static AnnualDateAssertions Should(this AnnualDate annualDate)
 
 ## Return Value
 
-The [`AnnualDateAssertions`](../AnnualDateAssertions.md) to use for asserting an AnnualDate.
+The [`AnnualDateAssertions`](../AnnualDateAssertions.md) to use for asserting a AnnualDate.
 
 ## See Also
 
@@ -24,7 +24,7 @@ The [`AnnualDateAssertions`](../AnnualDateAssertions.md) to use for asserting an
 
 # AssertionExtensions.Should method (2 of 26)
 
-Returns an [`AnnualDateAssertions`](../AnnualDateAssertions.md) object that can be used to assert an AnnualDate.
+Returns an [`AnnualDateAssertions`](../AnnualDateAssertions.md) object that can be used to assert a AnnualDate.
 
 ```csharp
 public static AnnualDateAssertions Should(this AnnualDate? annualDate)
@@ -36,7 +36,7 @@ public static AnnualDateAssertions Should(this AnnualDate? annualDate)
 
 ## Return Value
 
-The [`AnnualDateAssertions`](../AnnualDateAssertions.md) to use for asserting an AnnualDate.
+The [`AnnualDateAssertions`](../AnnualDateAssertions.md) to use for asserting a AnnualDate.
 
 ## See Also
 
@@ -48,7 +48,7 @@ The [`AnnualDateAssertions`](../AnnualDateAssertions.md) to use for asserting an
 
 # AssertionExtensions.Should method (3 of 26)
 
-Returns an [`DateIntervalAssertions`](../DateIntervalAssertions.md) object that can be used to assert an DateInterval.
+Returns a [`DateIntervalAssertions`](../DateIntervalAssertions.md) object that can be used to assert a DateInterval.
 
 ```csharp
 public static DateIntervalAssertions Should(this DateInterval? interval)
@@ -60,7 +60,7 @@ public static DateIntervalAssertions Should(this DateInterval? interval)
 
 ## Return Value
 
-The [`DateIntervalAssertions`](../DateIntervalAssertions.md) to use for asserting an DateInterval.
+The [`DateIntervalAssertions`](../DateIntervalAssertions.md) to use for asserting a DateInterval.
 
 ## See Also
 
@@ -72,7 +72,7 @@ The [`DateIntervalAssertions`](../DateIntervalAssertions.md) to use for assertin
 
 # AssertionExtensions.Should method (4 of 26)
 
-Returns an [`DurationAssertions`](../DurationAssertions.md) object that can be used to assert an Duration.
+Returns a [`DurationAssertions`](../DurationAssertions.md) object that can be used to assert a Duration.
 
 ```csharp
 public static DurationAssertions Should(this Duration duration)
@@ -84,7 +84,7 @@ public static DurationAssertions Should(this Duration duration)
 
 ## Return Value
 
-The [`DurationAssertions`](../DurationAssertions.md) to use for asserting an Duration.
+The [`DurationAssertions`](../DurationAssertions.md) to use for asserting a Duration.
 
 ## See Also
 
@@ -96,7 +96,7 @@ The [`DurationAssertions`](../DurationAssertions.md) to use for asserting an Dur
 
 # AssertionExtensions.Should method (5 of 26)
 
-Returns an [`DurationAssertions`](../DurationAssertions.md) object that can be used to assert an Duration.
+Returns a [`DurationAssertions`](../DurationAssertions.md) object that can be used to assert a Duration.
 
 ```csharp
 public static DurationAssertions Should(this Duration? duration)
@@ -108,7 +108,7 @@ public static DurationAssertions Should(this Duration? duration)
 
 ## Return Value
 
-The [`DurationAssertions`](../DurationAssertions.md) to use for asserting an Duration.
+The [`DurationAssertions`](../DurationAssertions.md) to use for asserting a Duration.
 
 ## See Also
 
@@ -120,7 +120,7 @@ The [`DurationAssertions`](../DurationAssertions.md) to use for asserting an Dur
 
 # AssertionExtensions.Should method (6 of 26)
 
-Returns an [`InstantAssertions`](../InstantAssertions.md) object that can be used to assert an Instant.
+Returns an [`InstantAssertions`](../InstantAssertions.md) object that can be used to assert a Instant.
 
 ```csharp
 public static InstantAssertions Should(this Instant instant)
@@ -132,7 +132,7 @@ public static InstantAssertions Should(this Instant instant)
 
 ## Return Value
 
-The [`InstantAssertions`](../InstantAssertions.md) to use for asserting an Instant.
+The [`InstantAssertions`](../InstantAssertions.md) to use for asserting a Instant.
 
 ## See Also
 
@@ -144,7 +144,7 @@ The [`InstantAssertions`](../InstantAssertions.md) to use for asserting an Insta
 
 # AssertionExtensions.Should method (7 of 26)
 
-Returns an [`InstantAssertions`](../InstantAssertions.md) object that can be used to assert an Instant.
+Returns an [`InstantAssertions`](../InstantAssertions.md) object that can be used to assert a Instant.
 
 ```csharp
 public static InstantAssertions Should(this Instant? instant)
@@ -156,7 +156,7 @@ public static InstantAssertions Should(this Instant? instant)
 
 ## Return Value
 
-The [`InstantAssertions`](../InstantAssertions.md) to use for asserting an Instant.
+The [`InstantAssertions`](../InstantAssertions.md) to use for asserting a Instant.
 
 ## See Also
 
@@ -168,7 +168,7 @@ The [`InstantAssertions`](../InstantAssertions.md) to use for asserting an Insta
 
 # AssertionExtensions.Should method (8 of 26)
 
-Returns an [`IntervalAssertions`](../IntervalAssertions.md) object that can be used to assert an Interval.
+Returns an [`IntervalAssertions`](../IntervalAssertions.md) object that can be used to assert a Interval.
 
 ```csharp
 public static IntervalAssertions Should(this Interval interval)
@@ -180,7 +180,7 @@ public static IntervalAssertions Should(this Interval interval)
 
 ## Return Value
 
-The [`IntervalAssertions`](../IntervalAssertions.md) to use for asserting an Interval.
+The [`IntervalAssertions`](../IntervalAssertions.md) to use for asserting a Interval.
 
 ## See Also
 
@@ -192,7 +192,7 @@ The [`IntervalAssertions`](../IntervalAssertions.md) to use for asserting an Int
 
 # AssertionExtensions.Should method (9 of 26)
 
-Returns an [`IntervalAssertions`](../IntervalAssertions.md) object that can be used to assert an Interval.
+Returns an [`IntervalAssertions`](../IntervalAssertions.md) object that can be used to assert a Interval.
 
 ```csharp
 public static IntervalAssertions Should(this Interval? interval)
@@ -204,7 +204,7 @@ public static IntervalAssertions Should(this Interval? interval)
 
 ## Return Value
 
-The [`IntervalAssertions`](../IntervalAssertions.md) to use for asserting an Interval.
+The [`IntervalAssertions`](../IntervalAssertions.md) to use for asserting a Interval.
 
 ## See Also
 
@@ -216,7 +216,7 @@ The [`IntervalAssertions`](../IntervalAssertions.md) to use for asserting an Int
 
 # AssertionExtensions.Should method (10 of 26)
 
-Returns an [`LocalDateAssertions`](../LocalDateAssertions.md) object that can be used to assert an LocalDate.
+Returns a [`LocalDateAssertions`](../LocalDateAssertions.md) object that can be used to assert a LocalDate.
 
 ```csharp
 public static LocalDateAssertions Should(this LocalDate localDate)
@@ -228,7 +228,7 @@ public static LocalDateAssertions Should(this LocalDate localDate)
 
 ## Return Value
 
-The [`LocalDateAssertions`](../LocalDateAssertions.md) to use for asserting an LocalDate.
+The [`LocalDateAssertions`](../LocalDateAssertions.md) to use for asserting a LocalDate.
 
 ## See Also
 
@@ -240,7 +240,7 @@ The [`LocalDateAssertions`](../LocalDateAssertions.md) to use for asserting an L
 
 # AssertionExtensions.Should method (11 of 26)
 
-Returns an [`LocalDateAssertions`](../LocalDateAssertions.md) object that can be used to assert an LocalDate.
+Returns a [`LocalDateAssertions`](../LocalDateAssertions.md) object that can be used to assert a LocalDate.
 
 ```csharp
 public static LocalDateAssertions Should(this LocalDate? localDate)
@@ -252,7 +252,7 @@ public static LocalDateAssertions Should(this LocalDate? localDate)
 
 ## Return Value
 
-The [`LocalDateAssertions`](../LocalDateAssertions.md) to use for asserting an LocalDate.
+The [`LocalDateAssertions`](../LocalDateAssertions.md) to use for asserting a LocalDate.
 
 ## See Also
 
@@ -264,7 +264,7 @@ The [`LocalDateAssertions`](../LocalDateAssertions.md) to use for asserting an L
 
 # AssertionExtensions.Should method (12 of 26)
 
-Returns an [`LocalDateTimeAssertions`](../LocalDateTimeAssertions.md) object that can be used to assert an LocalDateTime.
+Returns a [`LocalDateTimeAssertions`](../LocalDateTimeAssertions.md) object that can be used to assert a LocalDateTime.
 
 ```csharp
 public static LocalDateTimeAssertions Should(this LocalDateTime localDateTime)
@@ -276,7 +276,7 @@ public static LocalDateTimeAssertions Should(this LocalDateTime localDateTime)
 
 ## Return Value
 
-The [`LocalDateTimeAssertions`](../LocalDateTimeAssertions.md) to use for asserting an LocalDateTime.
+The [`LocalDateTimeAssertions`](../LocalDateTimeAssertions.md) to use for asserting a LocalDateTime.
 
 ## See Also
 
@@ -288,7 +288,7 @@ The [`LocalDateTimeAssertions`](../LocalDateTimeAssertions.md) to use for assert
 
 # AssertionExtensions.Should method (13 of 26)
 
-Returns an [`LocalDateTimeAssertions`](../LocalDateTimeAssertions.md) object that can be used to assert an LocalDateTime.
+Returns an [`LocalDateTimeAssertions`](../LocalDateTimeAssertions.md) object that can be used to assert a LocalDateTime.
 
 ```csharp
 public static LocalDateTimeAssertions Should(this LocalDateTime? localDateTime)
@@ -300,7 +300,7 @@ public static LocalDateTimeAssertions Should(this LocalDateTime? localDateTime)
 
 ## Return Value
 
-The [`LocalDateTimeAssertions`](../LocalDateTimeAssertions.md) to use for asserting an LocalDateTime.
+The [`LocalDateTimeAssertions`](../LocalDateTimeAssertions.md) to use for asserting a LocalDateTime.
 
 ## See Also
 
@@ -312,7 +312,7 @@ The [`LocalDateTimeAssertions`](../LocalDateTimeAssertions.md) to use for assert
 
 # AssertionExtensions.Should method (14 of 26)
 
-Returns an [`LocalTimeAssertions`](../LocalTimeAssertions.md) object that can be used to assert an LocalTime.
+Returns a [`LocalTimeAssertions`](../LocalTimeAssertions.md) object that can be used to assert a LocalTime.
 
 ```csharp
 public static LocalTimeAssertions Should(this LocalTime localTime)
@@ -324,7 +324,7 @@ public static LocalTimeAssertions Should(this LocalTime localTime)
 
 ## Return Value
 
-The [`LocalTimeAssertions`](../LocalTimeAssertions.md) to use for asserting an LocalTime.
+The [`LocalTimeAssertions`](../LocalTimeAssertions.md) to use for asserting a LocalTime.
 
 ## See Also
 
@@ -336,7 +336,7 @@ The [`LocalTimeAssertions`](../LocalTimeAssertions.md) to use for asserting an L
 
 # AssertionExtensions.Should method (15 of 26)
 
-Returns an [`LocalTimeAssertions`](../LocalTimeAssertions.md) object that can be used to assert an LocalTime.
+Returns a [`LocalTimeAssertions`](../LocalTimeAssertions.md) object that can be used to assert a LocalTime.
 
 ```csharp
 public static LocalTimeAssertions Should(this LocalTime? localTime)
@@ -348,7 +348,7 @@ public static LocalTimeAssertions Should(this LocalTime? localTime)
 
 ## Return Value
 
-The [`LocalTimeAssertions`](../LocalTimeAssertions.md) to use for asserting an LocalTime.
+The [`LocalTimeAssertions`](../LocalTimeAssertions.md) to use for asserting a LocalTime.
 
 ## See Also
 
@@ -360,7 +360,7 @@ The [`LocalTimeAssertions`](../LocalTimeAssertions.md) to use for asserting an L
 
 # AssertionExtensions.Should method (16 of 26)
 
-Returns an [`OffsetAssertions`](../OffsetAssertions.md) object that can be used to assert an Offset.
+Returns a [`OffsetAssertions`](../OffsetAssertions.md) object that can be used to assert a Offset.
 
 ```csharp
 public static OffsetAssertions Should(this Offset offset)
@@ -372,7 +372,7 @@ public static OffsetAssertions Should(this Offset offset)
 
 ## Return Value
 
-The [`OffsetAssertions`](../OffsetAssertions.md) to use for asserting an Offset.
+The [`OffsetAssertions`](../OffsetAssertions.md) to use for asserting a Offset.
 
 ## See Also
 
@@ -384,7 +384,7 @@ The [`OffsetAssertions`](../OffsetAssertions.md) to use for asserting an Offset.
 
 # AssertionExtensions.Should method (17 of 26)
 
-Returns an [`OffsetAssertions`](../OffsetAssertions.md) object that can be used to assert an Offset.
+Returns an [`OffsetAssertions`](../OffsetAssertions.md) object that can be used to assert a Offset.
 
 ```csharp
 public static OffsetAssertions Should(this Offset? offset)
@@ -396,7 +396,7 @@ public static OffsetAssertions Should(this Offset? offset)
 
 ## Return Value
 
-The [`OffsetAssertions`](../OffsetAssertions.md) to use for asserting an Offset.
+The [`OffsetAssertions`](../OffsetAssertions.md) to use for asserting a Offset.
 
 ## See Also
 
@@ -408,7 +408,7 @@ The [`OffsetAssertions`](../OffsetAssertions.md) to use for asserting an Offset.
 
 # AssertionExtensions.Should method (18 of 26)
 
-Returns an [`OffsetDateAssertions`](../OffsetDateAssertions.md) object that can be used to assert an OffsetDate.
+Returns an [`OffsetDateAssertions`](../OffsetDateAssertions.md) object that can be used to assert a OffsetDate.
 
 ```csharp
 public static OffsetDateAssertions Should(this OffsetDate offsetDate)
@@ -420,7 +420,7 @@ public static OffsetDateAssertions Should(this OffsetDate offsetDate)
 
 ## Return Value
 
-The [`OffsetDateAssertions`](../OffsetDateAssertions.md) to use for asserting an OffsetDate.
+The [`OffsetDateAssertions`](../OffsetDateAssertions.md) to use for asserting a OffsetDate.
 
 ## See Also
 
@@ -432,7 +432,7 @@ The [`OffsetDateAssertions`](../OffsetDateAssertions.md) to use for asserting an
 
 # AssertionExtensions.Should method (19 of 26)
 
-Returns an [`OffsetDateAssertions`](../OffsetDateAssertions.md) object that can be used to assert an OffsetDate.
+Returns an [`OffsetDateAssertions`](../OffsetDateAssertions.md) object that can be used to assert a OffsetDate.
 
 ```csharp
 public static OffsetDateAssertions Should(this OffsetDate? offsetDate)
@@ -444,7 +444,7 @@ public static OffsetDateAssertions Should(this OffsetDate? offsetDate)
 
 ## Return Value
 
-The [`OffsetDateAssertions`](../OffsetDateAssertions.md) to use for asserting an OffsetDate.
+The [`OffsetDateAssertions`](../OffsetDateAssertions.md) to use for asserting a OffsetDate.
 
 ## See Also
 
@@ -456,7 +456,7 @@ The [`OffsetDateAssertions`](../OffsetDateAssertions.md) to use for asserting an
 
 # AssertionExtensions.Should method (20 of 26)
 
-Returns an [`OffsetDateTimeAssertions`](../OffsetDateTimeAssertions.md) object that can be used to assert an OffsetDateTime.
+Returns an [`OffsetDateTimeAssertions`](../OffsetDateTimeAssertions.md) object that can be used to assert a OffsetDateTime.
 
 ```csharp
 public static OffsetDateTimeAssertions Should(this OffsetDateTime offsetDateTime)
@@ -468,7 +468,7 @@ public static OffsetDateTimeAssertions Should(this OffsetDateTime offsetDateTime
 
 ## Return Value
 
-The [`OffsetDateTimeAssertions`](../OffsetDateTimeAssertions.md) to use for asserting an OffsetDateTime.
+The [`OffsetDateTimeAssertions`](../OffsetDateTimeAssertions.md) to use for asserting a OffsetDateTime.
 
 ## See Also
 
@@ -480,7 +480,7 @@ The [`OffsetDateTimeAssertions`](../OffsetDateTimeAssertions.md) to use for asse
 
 # AssertionExtensions.Should method (21 of 26)
 
-Returns an [`OffsetDateTimeAssertions`](../OffsetDateTimeAssertions.md) object that can be used to assert an OffsetDateTime.
+Returns an [`OffsetDateTimeAssertions`](../OffsetDateTimeAssertions.md) object that can be used to assert a OffsetDateTime.
 
 ```csharp
 public static OffsetDateTimeAssertions Should(this OffsetDateTime? offsetDateTime)
@@ -492,7 +492,7 @@ public static OffsetDateTimeAssertions Should(this OffsetDateTime? offsetDateTim
 
 ## Return Value
 
-The [`OffsetDateTimeAssertions`](../OffsetDateTimeAssertions.md) to use for asserting an OffsetDateTime.
+The [`OffsetDateTimeAssertions`](../OffsetDateTimeAssertions.md) to use for asserting a OffsetDateTime.
 
 ## See Also
 
@@ -504,7 +504,7 @@ The [`OffsetDateTimeAssertions`](../OffsetDateTimeAssertions.md) to use for asse
 
 # AssertionExtensions.Should method (22 of 26)
 
-Returns an [`OffsetTimeAssertions`](../OffsetTimeAssertions.md) object that can be used to assert an OffsetTime.
+Returns an [`OffsetTimeAssertions`](../OffsetTimeAssertions.md) object that can be used to assert a OffsetTime.
 
 ```csharp
 public static OffsetTimeAssertions Should(this OffsetTime offsetTime)
@@ -516,7 +516,7 @@ public static OffsetTimeAssertions Should(this OffsetTime offsetTime)
 
 ## Return Value
 
-The [`OffsetTimeAssertions`](../OffsetTimeAssertions.md) to use for asserting an OffsetTime.
+The [`OffsetTimeAssertions`](../OffsetTimeAssertions.md) to use for asserting a OffsetTime.
 
 ## See Also
 
@@ -528,7 +528,7 @@ The [`OffsetTimeAssertions`](../OffsetTimeAssertions.md) to use for asserting an
 
 # AssertionExtensions.Should method (23 of 26)
 
-Returns an [`OffsetTimeAssertions`](../OffsetTimeAssertions.md) object that can be used to assert an OffsetTime.
+Returns an [`OffsetTimeAssertions`](../OffsetTimeAssertions.md) object that can be used to assert a OffsetTime.
 
 ```csharp
 public static OffsetTimeAssertions Should(this OffsetTime? offsetTime)
@@ -540,7 +540,7 @@ public static OffsetTimeAssertions Should(this OffsetTime? offsetTime)
 
 ## Return Value
 
-The [`OffsetTimeAssertions`](../OffsetTimeAssertions.md) to use for asserting an OffsetTime.
+The [`OffsetTimeAssertions`](../OffsetTimeAssertions.md) to use for asserting a OffsetTime.
 
 ## See Also
 
@@ -552,7 +552,7 @@ The [`OffsetTimeAssertions`](../OffsetTimeAssertions.md) to use for asserting an
 
 # AssertionExtensions.Should method (24 of 26)
 
-Returns an [`PeriodAssertions`](../PeriodAssertions.md) object that can be used to assert an Period.
+Returns a [`PeriodAssertions`](../PeriodAssertions.md) object that can be used to assert a Period.
 
 ```csharp
 public static PeriodAssertions Should(this Period? period)
@@ -564,7 +564,7 @@ public static PeriodAssertions Should(this Period? period)
 
 ## Return Value
 
-The [`PeriodAssertions`](../PeriodAssertions.md) to use for asserting an Period.
+The [`PeriodAssertions`](../PeriodAssertions.md) to use for asserting a Period.
 
 ## See Also
 
@@ -576,7 +576,7 @@ The [`PeriodAssertions`](../PeriodAssertions.md) to use for asserting an Period.
 
 # AssertionExtensions.Should method (25 of 26)
 
-Returns an [`ZonedDateTimeAssertions`](../ZonedDateTimeAssertions.md) object that can be used to assert an ZonedDateTime.
+Returns a [`ZonedDateTimeAssertions`](../ZonedDateTimeAssertions.md) object that can be used to assert a ZonedDateTime.
 
 ```csharp
 public static ZonedDateTimeAssertions Should(this ZonedDateTime zonedDateTime)
@@ -588,7 +588,7 @@ public static ZonedDateTimeAssertions Should(this ZonedDateTime zonedDateTime)
 
 ## Return Value
 
-The [`ZonedDateTimeAssertions`](../ZonedDateTimeAssertions.md) to use for asserting an ZonedDateTime.
+The [`ZonedDateTimeAssertions`](../ZonedDateTimeAssertions.md) to use for asserting a ZonedDateTime.
 
 ## See Also
 
@@ -600,7 +600,7 @@ The [`ZonedDateTimeAssertions`](../ZonedDateTimeAssertions.md) to use for assert
 
 # AssertionExtensions.Should method (26 of 26)
 
-Returns an [`ZonedDateTimeAssertions`](../ZonedDateTimeAssertions.md) object that can be used to assert an ZonedDateTime.
+Returns a [`ZonedDateTimeAssertions`](../ZonedDateTimeAssertions.md) object that can be used to assert a ZonedDateTime.
 
 ```csharp
 public static ZonedDateTimeAssertions Should(this ZonedDateTime? zonedDateTime)
@@ -612,7 +612,7 @@ public static ZonedDateTimeAssertions Should(this ZonedDateTime? zonedDateTime)
 
 ## Return Value
 
-The [`ZonedDateTimeAssertions`](../ZonedDateTimeAssertions.md) to use for asserting an ZonedDateTime.
+The [`ZonedDateTimeAssertions`](../ZonedDateTimeAssertions.md) to use for asserting a ZonedDateTime.
 
 ## See Also
 

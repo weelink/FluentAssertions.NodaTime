@@ -1,9 +1,9 @@
-# AnnualDateAssertions.BeOnOrAfter method
+# AnnualDateAssertions.BeGreaterThan method
 
-Asserts that this AnnualDate is on or after *other*.
+Asserts that this AnnualDate is greater than *other*.
 
 ```csharp
-public AndConstraint<AnnualDateAssertions> BeOnOrAfter(AnnualDate other, string because = "", 
+public AndConstraint<AnnualDateAssertions> BeGreaterThan(AnnualDate other, string because = "", 
     params object[] becauseArgs)
 ```
 

@@ -1,10 +1,10 @@
-# AnnualDateAssertions.BeBefore method
+# AnnualDateAssertions.BeGreaterThanOrEqual method
 
-Asserts that this AnnualDate is before *other*.
+Asserts that this AnnualDate is greater than or equal to *other*.
 
 ```csharp
-public AndConstraint<AnnualDateAssertions> BeBefore(AnnualDate other, string because = "", 
-    params object[] becauseArgs)
+public AndConstraint<AnnualDateAssertions> BeGreaterThanOrEqual(AnnualDate other, 
+    string because = "", params object[] becauseArgs)
 ```
 
 | parameter | description |

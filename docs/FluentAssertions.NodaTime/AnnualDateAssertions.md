@@ -13,13 +13,17 @@ public sealed class AnnualDateAssertions :
 | --- | --- |
 | [AnnualDateAssertions](AnnualDateAssertions/AnnualDateAssertions.md)(…) | Initializes a new [`AnnualDateAssertions`](./AnnualDateAssertions.md). |
 | [Be](AnnualDateAssertions/Be.md)(…) | Asserts that this AnnualDate is equal to *other*. |
-| [BeAfter](AnnualDateAssertions/BeAfter.md)(…) | Asserts that this AnnualDate is after *other*. |
-| [BeBefore](AnnualDateAssertions/BeBefore.md)(…) | Asserts that this AnnualDate is before *other*. |
-| [BeOnOrAfter](AnnualDateAssertions/BeOnOrAfter.md)(…) | Asserts that this AnnualDate is on or after *other*. |
-| [BeOnOrBefore](AnnualDateAssertions/BeOnOrBefore.md)(…) | Asserts that this AnnualDate is on or before *other*. |
+| [BeGreaterThan](AnnualDateAssertions/BeGreaterThan.md)(…) | Asserts that this AnnualDate is greater than *other*. |
+| [BeGreaterThanOrEqual](AnnualDateAssertions/BeGreaterThanOrEqual.md)(…) | Asserts that this AnnualDate is greater than or equal to *other*. |
+| [BeLessThan](AnnualDateAssertions/BeLessThan.md)(…) | Asserts that this AnnualDate is less than *other*. |
+| [BeLessThanOrEqual](AnnualDateAssertions/BeLessThanOrEqual.md)(…) | Asserts that this AnnualDate is less than or equal to *other*. |
 | [BeValidInYear](AnnualDateAssertions/BeValidInYear.md)(…) | Asserts that this AnnualDate is a valid day and month for the specified *year*. |
+| [HaveDay](AnnualDateAssertions/HaveDay.md)(…) | Asserts that the current AnnualDate has the specified day of the month. |
+| [HaveMonth](AnnualDateAssertions/HaveMonth.md)(…) | Asserts that the current AnnualDate has the specified month of the month. |
 | [NotBe](AnnualDateAssertions/NotBe.md)(…) | Asserts that this AnnualDate is not equal to *other*. |
-| [NotBeValidInYear](AnnualDateAssertions/NotBeValidInYear.md)(…) | Asserts that this AnnualDate is a valid day and month for the specified *year*. |
+| [NotBeValidInYear](AnnualDateAssertions/NotBeValidInYear.md)(…) | Asserts that this AnnualDate is not a valid day and month for the specified *year*. |
+| [NotHaveDay](AnnualDateAssertions/NotHaveDay.md)(…) | Asserts that the current AnnualDate does not have the specified day of the month. |
+| [NotHaveMonth](AnnualDateAssertions/NotHaveMonth.md)(…) | Asserts that the current AnnualDate does not have the specified month of the month. |
 
 ## Protected Members
 

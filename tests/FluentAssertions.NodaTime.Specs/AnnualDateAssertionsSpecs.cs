@@ -235,10 +235,10 @@ namespace FluentAssertions.NodaTime.Specs
             }
         }
 
-        public class BeAfter
+        public class BeGreaterThan
         {
             [Fact]
-            public void When_an_annual_date_is_after_an_other_annual_date_it_succeeds()
+            public void When_an_annual_date_is_greater_than_an_other_annual_date_it_succeeds()
             {
                 // Arrange
                 DateTimeOffset now = DateTimeOffset.Now;
@@ -246,14 +246,14 @@ namespace FluentAssertions.NodaTime.Specs
                 AnnualDate annualDate = new AnnualDate(now.AddMonths(1).Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeAfter(other);
+                Action act = () => annualDate.Should().BeGreaterThan(other);
 
                 // Assert
                 act.Should().NotThrow();
             }
 
             [Fact]
-            public void When_an_annual_date_is_before_an_other_annual_date_it_fails()
+            public void When_an_annual_date_is_less_than_an_other_annual_date_it_fails()
             {
                 // Arrange
                 DateTimeOffset now = DateTimeOffset.Now;
@@ -261,11 +261,11 @@ namespace FluentAssertions.NodaTime.Specs
                 AnnualDate annualDate = new AnnualDate(now.AddMonths(-1).Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeAfter(other);
+                Action act = () => annualDate.Should().BeGreaterThan(other);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(annualDate)} to be after {other}, but found {annualDate}.");
+                    .WithMessage($"Expected {nameof(annualDate)} to be greater than {other}, but found {annualDate}.");
             }
 
             [Fact]
@@ -277,40 +277,40 @@ namespace FluentAssertions.NodaTime.Specs
                 AnnualDate annualDate = new AnnualDate(now.Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeAfter(other);
+                Action act = () => annualDate.Should().BeGreaterThan(other);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(annualDate)} to be after {other}, but found {annualDate}.");
+                    .WithMessage($"Expected {nameof(annualDate)} to be greater than {other}, but found {annualDate}.");
             }
 
             [Fact]
-            public void When_asserting_an_annual_date_is_after_itself_it_fails()
+            public void When_asserting_an_annual_date_is_greater_than_itself_it_fails()
             {
                 // Arrange
                 DateTimeOffset now = DateTimeOffset.Now;
                 AnnualDate annualDate = new AnnualDate(now.Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeAfter(annualDate);
+                Action act = () => annualDate.Should().BeGreaterThan(annualDate);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(annualDate)} to be after {annualDate}, but found {annualDate}.");
+                    .WithMessage($"Expected {nameof(annualDate)} to be greater than {annualDate}, but found {annualDate}.");
             }
         }
 
-        public class BeOnOrAfter
+        public class BeGreaterThanOrEqual
         {
             [Fact]
-            public void When_asserting_an_annual_date_is_on_or_after_itself_it_succeeds()
+            public void When_asserting_an_annual_date_is_greater_than_or_equal_to_itself_it_succeeds()
             {
                 // Arrange
                 DateTimeOffset now = DateTimeOffset.Now;
                 AnnualDate annualDate = new AnnualDate(now.Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeOnOrAfter(annualDate);
+                Action act = () => annualDate.Should().BeGreaterThanOrEqual(annualDate);
 
                 // Assert
                 act.Should().NotThrow();
@@ -325,14 +325,14 @@ namespace FluentAssertions.NodaTime.Specs
                 AnnualDate other = new AnnualDate(now.Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeOnOrAfter(other);
+                Action act = () => annualDate.Should().BeGreaterThanOrEqual(other);
 
                 // Assert
                 act.Should().NotThrow();
             }
 
             [Fact]
-            public void When_an_annual_date_is_after_an_other_annual_date_it_succeeds()
+            public void When_an_annual_date_is_greater_than_other_annual_date_it_succeeds()
             {
                 // Arrange
                 DateTimeOffset now = DateTimeOffset.Now;
@@ -340,7 +340,7 @@ namespace FluentAssertions.NodaTime.Specs
                 AnnualDate annualDate = new AnnualDate(now.AddMonths(1).Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeOnOrAfter(other);
+                Action act = () => annualDate.Should().BeGreaterThanOrEqual(other);
 
                 // Assert
                 act.Should().NotThrow();
@@ -355,18 +355,18 @@ namespace FluentAssertions.NodaTime.Specs
                 AnnualDate annualDate = new AnnualDate(now.AddMonths(-1).Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeOnOrAfter(other);
+                Action act = () => annualDate.Should().BeGreaterThanOrEqual(other);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(annualDate)} to be on or after {other}, but found {annualDate}.");
+                    .WithMessage($"Expected {nameof(annualDate)} to be greater than or equal to {other}, but found {annualDate}.");
             }
         }
 
-        public class BeBefore
+        public class BeLessThan
         {
             [Fact]
-            public void When_an_annual_date_is_before_an_other_annual_date_it_succeeds()
+            public void When_an_annual_date_is_less_than_an_other_annual_date_it_succeeds()
             {
                 // Arrange
                 DateTimeOffset now = DateTimeOffset.Now;
@@ -374,14 +374,14 @@ namespace FluentAssertions.NodaTime.Specs
                 AnnualDate annualDate = new AnnualDate(now.AddMonths(-1).Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeBefore(other);
+                Action act = () => annualDate.Should().BeLessThan(other);
 
                 // Assert
                 act.Should().NotThrow();
             }
 
             [Fact]
-            public void When_an_annual_date_is_after_an_other_annual_date_it_fails()
+            public void When_an_annual_date_is_greater_than_an_other_annual_date_it_fails()
             {
                 // Arrange
                 DateTimeOffset now = DateTimeOffset.Now;
@@ -389,11 +389,11 @@ namespace FluentAssertions.NodaTime.Specs
                 AnnualDate annualDate = new AnnualDate(now.AddMonths(1).Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeBefore(other);
+                Action act = () => annualDate.Should().BeLessThan(other);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(annualDate)} to be before {other}, but found {annualDate}.");
+                    .WithMessage($"Expected {nameof(annualDate)} to be less than {other}, but found {annualDate}.");
             }
 
             [Fact]
@@ -405,40 +405,40 @@ namespace FluentAssertions.NodaTime.Specs
                 AnnualDate annualDate = new AnnualDate(now.Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeBefore(other);
+                Action act = () => annualDate.Should().BeLessThan(other);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(annualDate)} to be before {other}, but found {annualDate}.");
+                    .WithMessage($"Expected {nameof(annualDate)} to be less than {other}, but found {annualDate}.");
             }
 
             [Fact]
-            public void When_asserting_an_annual_date_is_before_itself_it_fails()
+            public void When_asserting_an_annual_date_is_less_than_itself_it_fails()
             {
                 // Arrange
                 DateTimeOffset now = DateTimeOffset.Now;
                 AnnualDate annualDate = new AnnualDate(now.Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeBefore(annualDate);
+                Action act = () => annualDate.Should().BeLessThan(annualDate);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(annualDate)} to be before {annualDate}, but found {annualDate}.");
+                    .WithMessage($"Expected {nameof(annualDate)} to be less than {annualDate}, but found {annualDate}.");
             }
         }
 
-        public class BeOnOrBefore
+        public class BeLessThanOrEqual
         {
             [Fact]
-            public void When_asserting_an_annual_date_is_on_or_before_itself_it_succeeds()
+            public void When_asserting_an_annual_date_is_less_than_or_equal_to_itself_it_succeeds()
             {
                 // Arrange
                 DateTimeOffset now = DateTimeOffset.Now;
                 AnnualDate annualDate = new AnnualDate(now.Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeOnOrBefore(annualDate);
+                Action act = () => annualDate.Should().BeLessThanOrEqual(annualDate);
 
                 // Assert
                 act.Should().NotThrow();
@@ -453,14 +453,14 @@ namespace FluentAssertions.NodaTime.Specs
                 AnnualDate annualDate = new AnnualDate(now.Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeOnOrBefore(other);
+                Action act = () => annualDate.Should().BeLessThanOrEqual(other);
 
                 // Assert
                 act.Should().NotThrow();
             }
 
             [Fact]
-            public void When_an_annual_date_is_before_an_other_annual_date_it_succeeds()
+            public void When_an_annual_date_is_less_than_an_other_annual_date_it_succeeds()
             {
                 // Arrange
                 DateTimeOffset now = DateTimeOffset.Now;
@@ -468,14 +468,14 @@ namespace FluentAssertions.NodaTime.Specs
                 AnnualDate annualDate = new AnnualDate(now.AddMonths(-1).Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeOnOrBefore(other);
+                Action act = () => annualDate.Should().BeLessThanOrEqual(other);
 
                 // Assert
                 act.Should().NotThrow();
             }
 
             [Fact]
-            public void When_an_annual_date_is_after_an_other_annual_date_it_fails()
+            public void When_an_annual_date_is_greater_than_an_other_annual_date_it_fails()
             {
                 // Arrange
                 DateTimeOffset now = DateTimeOffset.Now;
@@ -483,11 +483,11 @@ namespace FluentAssertions.NodaTime.Specs
                 AnnualDate annualDate = new AnnualDate(now.AddMonths(1).Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeOnOrBefore(other);
+                Action act = () => annualDate.Should().BeLessThanOrEqual(other);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(annualDate)} to be on or before {other}, but found {annualDate}.");
+                    .WithMessage($"Expected {nameof(annualDate)} to be less than or equal to {other}, but found {annualDate}.");
             }
         }
 
@@ -582,6 +582,201 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage($"Did not expect {nameof(annualDate)} to be valid in year {year}, but found <null>.");
+            }
+        }
+        public class HaveDay
+        {
+            [Fact]
+            public void When_a_annual_date_has_the_specified_day_it_succeeds()
+            {
+                // Arrange
+                DateTimeOffset now = DateTimeOffset.Now;
+                AnnualDate annualDate = new AnnualDate(now.Month, now.Day);
+
+                // Act
+                Action act = () => annualDate.Should().HaveDay(annualDate.Day);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_a_annual_date_does_not_have_the_specified_day_it_fails()
+            {
+                // Arrange
+                DateTimeOffset now = DateTimeOffset.Now;
+                AnnualDate annualDate = new AnnualDate(now.Month, now.Day);
+                int day = annualDate.Day + 1;
+
+                // Act
+                Action act = () => annualDate.Should().HaveDay(day);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(annualDate)} to have day {day}, but found {annualDate.Day}.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_annual_date_has_the_specified_day_it_fails()
+            {
+                // Arrange
+                int day = new Random().Next(1, 28);
+                AnnualDate? annualDate = null;
+
+                // Act
+                Action act = () => annualDate.Should().HaveDay(day);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(annualDate)} to have day {day}, but {nameof(annualDate)} was <null>.");
+            }
+        }
+
+        public class NotHaveDay
+        {
+            [Fact]
+            public void When_a_annual_date_has_the_specified_day_it_fails()
+            {
+                // Arrange
+                DateTimeOffset now = DateTimeOffset.Now;
+                AnnualDate annualDate = new AnnualDate(now.Month, now.Day);
+
+                // Act
+                Action act = () => annualDate.Should().NotHaveDay(annualDate.Day);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(annualDate)} to have day {annualDate.Day}.");
+            }
+
+            [Fact]
+            public void When_a_annual_date_does_not_have_the_specified_day_it_succeeds()
+            {
+                // Arrange
+                DateTimeOffset now = DateTimeOffset.Now;
+                AnnualDate annualDate = new AnnualDate(now.Month, now.Day);
+                int day = annualDate.Day + 1;
+
+                // Act
+                Action act = () => annualDate.Should().NotHaveDay(day);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_annual_date_does_not_have_the_specified_day_it_fails()
+            {
+                // Arrange
+                int day = new Random().Next(1, 28);
+                AnnualDate? annualDate = null;
+
+                // Act
+                Action act = () => annualDate.Should().NotHaveDay(day);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(annualDate)} to have day {day}, but {nameof(annualDate)} was <null>.");
+            }
+        }
+
+        public class HaveMonth
+        {
+            [Fact]
+            public void When_a_annual_date_has_the_specified_month_it_succeeds()
+            {
+                // Arrange
+                DateTimeOffset now = DateTimeOffset.Now;
+                AnnualDate annualDate = new AnnualDate(now.Month, now.Day);
+
+                // Act
+                Action act = () => annualDate.Should().HaveMonth(annualDate.Month);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_a_annual_date_does_not_have_the_specified_month_it_fails()
+            {
+                // Arrange
+                DateTimeOffset now = DateTimeOffset.Now;
+                AnnualDate annualDate = new AnnualDate(now.Month, now.Day);
+                int month = annualDate.Month + 1;
+
+                // Act
+                Action act = () => annualDate.Should().HaveMonth(month);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(annualDate)} to have month {month}, but found {annualDate.Month}.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_annual_date_has_the_specified_month_it_fails()
+            {
+                // Arrange
+                int month = new Random().Next(1, 12);
+                AnnualDate? annualDate = null;
+
+                // Act
+                Action act = () => annualDate.Should().HaveMonth(month);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(annualDate)} to have month {month}, but {nameof(annualDate)} was <null>.");
+            }
+        }
+
+        public class NotHaveMonth
+        {
+            [Fact]
+            public void When_a_annual_date_has_the_specified_month_it_fails()
+            {
+                // Arrange
+                DateTimeOffset now = DateTimeOffset.Now;
+                AnnualDate annualDate = new AnnualDate(now.Month, now.Day);
+
+                // Act
+                Action act = () => annualDate.Should().NotHaveMonth(annualDate.Month);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(annualDate)} to have month {annualDate.Month}.");
+            }
+
+            [Fact]
+            public void When_a_annual_date_does_not_have_the_specified_month_it_succeeds()
+            {
+                // Arrange
+                DateTimeOffset now = DateTimeOffset.Now;
+                AnnualDate annualDate = new AnnualDate(now.Month, now.Day);
+                int month = annualDate.Month + 1;
+
+                // Act
+                Action act = () => annualDate.Should().NotHaveMonth(month);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_annual_date_does_not_have_the_specified_month_it_fails()
+            {
+                // Arrange
+                int month = new Random().Next(1, 12);
+                AnnualDate? annualDate = null;
+
+                // Act
+                Action act = () => annualDate.Should().NotHaveMonth(month);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(annualDate)} to have month {month}, but {nameof(annualDate)} was <null>.");
             }
         }
     }

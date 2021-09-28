@@ -1,15 +1,15 @@
-# AnnualDateAssertions.NotBeValidInYear method
+# AnnualDateAssertions.BeLessThan method
 
-Asserts that this AnnualDate is not a valid day and month for the specified *year*.
+Asserts that this AnnualDate is less than *other*.
 
 ```csharp
-public AndConstraint<AnnualDateAssertions> NotBeValidInYear(int year, string because = "", 
+public AndConstraint<AnnualDateAssertions> BeLessThan(AnnualDate other, string because = "", 
     params object[] becauseArgs)
 ```
 
 | parameter | description |
 | --- | --- |
-| year | The year to check. |
+| other | The AnnualDate to compare to. |
 | because | A formatted phrase as is supported by Object[]) explaining why the assertion is needed. If the phrase does not start with the word because, it is prepended automatically. |
 | becauseArgs | Zero or more objects to format using the placeholders in *because*. |
 
