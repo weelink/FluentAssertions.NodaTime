@@ -286,7 +286,7 @@ namespace FluentAssertions.NodaTime
             Execute.Assertion
                 .ForCondition(Subject > other)
                 .BecauseOf(because, becauseArgs)
-                .FailWith("Expected {context:Instant} to greater than {0}{reason}, but found {1}.", other, Subject);
+                .FailWith("Expected {context:Instant} to be greater than {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<InstantAssertions>(this);
         }

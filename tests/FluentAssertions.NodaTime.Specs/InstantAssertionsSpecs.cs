@@ -428,7 +428,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(instant)} to be greater_than {other}, but found {instant}.");
+                    .WithMessage($"Expected {nameof(instant)} to be greater than {other}, but found {instant}.");
             }
 
             [Fact]

@@ -11,7 +11,7 @@ public sealed class LocalDateAssertions : ReferenceTypeAssertions<LocalDate?, Lo
 | name | description |
 | --- | --- |
 | [LocalDateAssertions](LocalDateAssertions/LocalDateAssertions.md)(…) | Initializes a new [`LocalDateAssertions`](./LocalDateAssertions.md). |
-| [Be](LocalDateAssertions/Be.md)(…) | Asserts that this LocalDate is equal to *other*. |
+| [Be](LocalDateAssertions/Be.md)(…) | Asserts that this LocalDate is equal to *other*. (3 methods) |
 | [BeGreaterThan](LocalDateAssertions/BeGreaterThan.md)(…) | Asserts that this LocalDate is greater than *other*. |
 | [BeGreaterThanOrEqualTo](LocalDateAssertions/BeGreaterThanOrEqualTo.md)(…) | Asserts that this LocalDate is on or after *other*. |
 | [BeInCalendar](LocalDateAssertions/BeInCalendar.md)(…) | Asserts that the current LocalDate has the specified CalendarSystem. |
@@ -24,7 +24,7 @@ public sealed class LocalDateAssertions : ReferenceTypeAssertions<LocalDate?, Lo
 | [HaveMonth](LocalDateAssertions/HaveMonth.md)(…) | Asserts that the current LocalDate has the specified month. |
 | [HaveYear](LocalDateAssertions/HaveYear.md)(…) | Asserts that the current LocalDate has the specified year. |
 | [HaveYearOfEra](LocalDateAssertions/HaveYearOfEra.md)(…) | Asserts that the current LocalDate has the specified year of era. |
-| [NotBe](LocalDateAssertions/NotBe.md)(…) | Asserts that this LocalDate is not equal to *other*. |
+| [NotBe](LocalDateAssertions/NotBe.md)(…) | Asserts that this LocalDate is not equal to *other*. (3 methods) |
 | [NotBeInCalendar](LocalDateAssertions/NotBeInCalendar.md)(…) | Asserts that the current LocalDate does not have the specified CalendarSystem. |
 | [NotHaveDay](LocalDateAssertions/NotHaveDay.md)(…) | Asserts that the current LocalDate does not have the specified day of the month. |
 | [NotHaveDayOfWeek](LocalDateAssertions/NotHaveDayOfWeek.md)(…) | Asserts that the current LocalDate does not have the specified day of the week. |

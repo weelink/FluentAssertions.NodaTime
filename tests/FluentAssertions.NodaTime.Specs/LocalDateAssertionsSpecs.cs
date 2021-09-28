@@ -61,6 +61,22 @@ namespace FluentAssertions.NodaTime.Specs
             }
 
             [Fact]
+            public void When_a_local_date_is_not_equal_to_an_other_local_date_it_fails()
+            {
+                // Arrange
+                DateTime now = DateTime.Now;
+                LocalDate localDate = LocalDate.FromDateTime(now, RandomCalendarSystem());
+                LocalDate other = LocalDate.FromDateTime(now.AddDays(1), localDate.Calendar);
+
+                // Act
+                Action act = () => localDate.Should().Be(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(localDate)} to be equal to {other}, but found {localDate}.");
+            }
+
+            [Fact]
             [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
             public void When_asserting_null_is_equal_to_null_it_succeeds()
             {
@@ -108,6 +124,186 @@ namespace FluentAssertions.NodaTime.Specs
             }
         }
 
+        public class BeDateTime
+        {
+            [Fact]
+            public void When_a_local_date_is_equal_to_the_same_datetime_it_succeeds()
+            {
+                // Arrange
+                DateTime now = DateTime.Now;
+                LocalDate localDate = LocalDate.FromDateTime(now);
+
+                // Act
+                Action act = () => localDate.Should().Be(now);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_a_local_date_is_not_equal_to_a_datetime_it_fails()
+            {
+                // Arrange
+                DateTime now = DateTime.Now;
+                LocalDate localDate = LocalDate.FromDateTime(now);
+                DateTime other = now.AddDays(1);
+
+                // Act
+                Action act = () => localDate.Should().Be(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(localDate)} to be equal to {LocalDate.FromDateTime(other)}, but found {localDate}.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_null_is_equal_to_null_it_succeeds()
+            {
+                // Arrange
+                LocalDate? localDate = default;
+                DateTime? other = default;
+
+                // Act
+                Action act = () => localDate.Should().Be(other);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_null_is_equal_to_not_null_it_fails()
+            {
+                // Arrange
+                LocalDate? localDate = default;
+                DateTime other = DateTime.Now;
+
+                // Act
+                Action act = () => localDate.Should().Be(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(localDate)} to be equal to {LocalDate.FromDateTime(other)}, but found <null>.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_not_null_is_equal_to_null_it_fails()
+            {
+                // Arrange
+                LocalDate localDate = LocalDate.FromDateTime(DateTime.Now, RandomCalendarSystem());
+                DateTime? other = default;
+
+                // Act
+                Action act = () => localDate.Should().Be(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(localDate)} to be equal to <null>, but found {localDate}.");
+            }
+        }
+
+        public class BeDateTimeAndCalendar
+        {
+            [Fact]
+            public void When_a_local_date_is_equal_to_the_same_datetime_it_succeeds()
+            {
+                // Arrange
+                DateTime now = DateTime.Now;
+                CalendarSystem calendar = RandomCalendarSystem();
+                LocalDate localDate = LocalDate.FromDateTime(now, calendar);
+
+                // Act
+                Action act = () => localDate.Should().Be(now, calendar);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_a_local_date_is_not_equal_to_a_datetime_it_fails()
+            {
+                // Arrange
+                DateTime now = DateTime.Now;
+                CalendarSystem calendar = RandomCalendarSystem();
+                LocalDate localDate = LocalDate.FromDateTime(now);
+                DateTime other = now.AddDays(1);
+
+                // Act
+                Action act = () => localDate.Should().Be(other, calendar);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(localDate)} to be equal to {LocalDate.FromDateTime(other, calendar)}, but found {localDate}.");
+            }
+
+            [Fact]
+            public void When_a_local_date_is_not_equal_to_a_datetime_because_of_a_different_calendar_system_it_fails()
+            {
+                // Arrange
+                DateTime now = DateTime.Now;
+                (CalendarSystem calendar, CalendarSystem otherCalendar) = TwoRandomCalendarSystems();
+                LocalDate localDate = LocalDate.FromDateTime(now, calendar);
+                DateTime other = now.AddDays(1);
+
+                // Act
+                Action act = () => localDate.Should().Be(other, otherCalendar);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(localDate)} to be equal to {LocalDate.FromDateTime(other, otherCalendar)}, but found {localDate}.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_null_is_equal_to_null_it_succeeds()
+            {
+                // Arrange
+                LocalDate? localDate = default;
+                DateTime? other = default;
+
+                // Act
+                Action act = () => localDate.Should().Be(other, RandomCalendarSystem());
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_null_is_equal_to_not_null_it_fails()
+            {
+                // Arrange
+                LocalDate? localDate = default;
+                DateTime other = DateTime.Now;
+                CalendarSystem calendar = RandomCalendarSystem();
+
+                // Act
+                Action act = () => localDate.Should().Be(other, calendar);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(localDate)} to be equal to {LocalDate.FromDateTime(other, calendar)}, but found <null>.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_not_null_is_equal_to_null_it_fails()
+            {
+                // Arrange
+                LocalDate localDate = LocalDate.FromDateTime(DateTime.Now, RandomCalendarSystem());
+                DateTime? other = default;
+
+                // Act
+                Action act = () => localDate.Should().Be(other, RandomCalendarSystem());
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(localDate)} to be equal to <null>, but found {localDate}.");
+            }
+        }
+
         public class NotBe
         {
             [Fact]
@@ -123,7 +319,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(localDate)} to be equal to {other}, but found {localDate}.");
+                    .WithMessage($"Did not expect {nameof(localDate)} to be equal to {other}.");
             }
 
             [Fact]
@@ -138,7 +334,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(localDate)} to be equal to {localDate}, but found {localDate}.");
+                    .WithMessage($"Did not expect {nameof(localDate)} to be equal to {localDate}.");
             }
 
             [Fact]
@@ -154,7 +350,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(localDate)} to be equal to <null>, but found <null>.");
+                    .WithMessage($"Did not expect {nameof(localDate)} to be equal to <null>.");
             }
 
             [Fact]
@@ -182,6 +378,183 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Act
                 Action act = () => localDate.Should().NotBe(other);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+        }
+
+        public class NotBeDateTime
+        {
+            [Fact]
+            public void When_a_local_date_is_not_equal_to_the_same_datetime_it_fails()
+            {
+                // Arrange
+                DateTime now = DateTime.Now;
+                LocalDate localDate = LocalDate.FromDateTime(now);
+
+                // Act
+                Action act = () => localDate.Should().NotBe(now);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(localDate)} to be equal to {localDate}.");
+            }
+
+            [Fact]
+            public void When_a_local_date_is_not_equal_to_a_datetime_it_succeeds()
+            {
+                // Arrange
+                DateTime now = DateTime.Now;
+                LocalDate localDate = LocalDate.FromDateTime(now);
+                DateTime other = now.AddDays(1);
+
+                // Act
+                Action act = () => localDate.Should().NotBe(other);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to not be null for the test.")]
+            public void When_asserting_null_is_not_equal_to_null_it_fails()
+            {
+                // Arrange
+                LocalDate? localDate = default;
+                DateTime? other = default;
+
+                // Act
+                Action act = () => localDate.Should().NotBe(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(localDate)} to be equal to <null>.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to not be null for the test.")]
+            public void When_asserting_null_is_not_equal_to_not_null_it_succeeds()
+            {
+                // Arrange
+                LocalDate? localDate = default;
+                DateTime other = DateTime.Now;
+
+                // Act
+                Action act = () => localDate.Should().NotBe(other);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to not be null for the test.")]
+            public void When_asserting_not_null_is_not_equal_to_null_it_succeeds()
+            {
+                // Arrange
+                LocalDate localDate = LocalDate.FromDateTime(DateTime.Now, RandomCalendarSystem());
+                DateTime? other = default;
+
+                // Act
+                Action act = () => localDate.Should().NotBe(other);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+        }
+
+        public class NotBeDateTimeAndCalendar
+        {
+            [Fact]
+            public void When_a_local_date_is_equal_to_the_same_datetime_it_fails()
+            {
+                // Arrange
+                DateTime now = DateTime.Now;
+                CalendarSystem calendar = RandomCalendarSystem();
+                LocalDate localDate = LocalDate.FromDateTime(now, calendar);
+
+                // Act
+                Action act = () => localDate.Should().NotBe(now, calendar);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(localDate)} to be equal to {localDate}.");
+            }
+
+            [Fact]
+            public void When_a_local_date_is_not_equal_to_a_datetime_it_succeeds()
+            {
+                // Arrange
+                DateTime now = DateTime.Now;
+                CalendarSystem calendar = RandomCalendarSystem();
+                LocalDate localDate = LocalDate.FromDateTime(now);
+                DateTime other = now.AddDays(1);
+
+                // Act
+                Action act = () => localDate.Should().NotBe(other, calendar);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_a_local_date_is_not_equal_to_a_datetime_because_of_a_different_calendar_system_it_succeeds()
+            {
+                // Arrange
+                DateTime now = DateTime.Now;
+                (CalendarSystem calendar, CalendarSystem otherCalendar) = TwoRandomCalendarSystems();
+                LocalDate localDate = LocalDate.FromDateTime(now, calendar);
+                DateTime other = now.AddDays(1);
+
+                // Act
+                Action act = () => localDate.Should().NotBe(other, otherCalendar);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to not be null for the test.")]
+            public void When_asserting_null_is_equal_to_null_it_fails()
+            {
+                // Arrange
+                LocalDate? localDate = default;
+                DateTime? other = default;
+
+                // Act
+                Action act = () => localDate.Should().NotBe(other, RandomCalendarSystem());
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(localDate)} to be equal to <null>.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to not be null for the test.")]
+            public void When_asserting_null_is_equal_to_not_null_it_succeeds()
+            {
+                // Arrange
+                LocalDate? localDate = default;
+                DateTime other = DateTime.Now;
+                CalendarSystem calendar = RandomCalendarSystem();
+
+                // Act
+                Action act = () => localDate.Should().NotBe(other, calendar);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to not be null for the test.")]
+            public void When_asserting_not_null_is_equal_to_null_it_succeeds()
+            {
+                // Arrange
+                LocalDate localDate = LocalDate.FromDateTime(DateTime.Now, RandomCalendarSystem());
+                DateTime? other = default;
+
+                // Act
+                Action act = () => localDate.Should().NotBe(other, RandomCalendarSystem());
 
                 // Assert
                 act.Should().NotThrow();
