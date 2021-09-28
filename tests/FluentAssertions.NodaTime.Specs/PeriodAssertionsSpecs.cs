@@ -254,7 +254,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
 
             [Fact]
-            public void When_asserting_not_null_is_equal_to_null_it_succeeds()
+            public void When_asserting_not_null_is_equal_to_null_period_it_succeeds()
             {
                 // Arrange
                 Period period = Period.Zero;
@@ -281,6 +281,20 @@ namespace FluentAssertions.NodaTime.Specs
                 act.Should().Throw<XunitException>()
                     .WithMessage(
                         $"Did not expect {nameof(period)} to be equal to {other}, but found {period}.");
+            }
+
+            [Fact]
+            public void When_asserting_not_null_is_not_equal_to_null_duration_it_succeeds()
+            {
+                // Arrange
+                Period period = Period.Zero;
+                Duration? other = null;
+
+                // Act
+                Action act = () => period.Should().NotBe(other);
+
+                // Assert
+                act.Should().NotThrow();
             }
 
             [Fact]
