@@ -16,7 +16,7 @@ namespace FluentAssertions.NodaTime.Formatters
         }
 
         /// <inheritdoc />
-        public void Format(object value, FormattedObjectGraph formattedGraph, FormattingContext context, FormatChild formatChild)
+        public void Format(object value, FormattedObjectGraph formattedGraph, FormattingContext? context, FormatChild? formatChild)
         {
             formattedGraph.AddFragment(value.ToString());
         }
