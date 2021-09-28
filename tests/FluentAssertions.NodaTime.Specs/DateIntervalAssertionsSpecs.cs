@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
+using FluentAssertions.NodaTime.Specs.Extensions;
+
 using NodaTime;
 
 using Xunit;
@@ -10,6 +12,18 @@ namespace FluentAssertions.NodaTime.Specs
 {
     public static class DateIntervalAssertionsSpecs
     {
+        private static CalendarSystem RandomCalendarSystem()
+        {
+            return CalendarSystem.ForId(CalendarSystem.Ids.Random());
+        }
+
+        private static (CalendarSystem first, CalendarSystem second) TwoRandomCalendarSystems()
+        {
+            CalendarSystem first = CalendarSystem.ForId(CalendarSystem.Ids.Random());
+            CalendarSystem second = CalendarSystem.ForId(CalendarSystem.Ids.Except(first.Id).Random());
+            return (first, second);
+        }
+
         public class Be
         {
             [Fact]
@@ -218,6 +232,234 @@ namespace FluentAssertions.NodaTime.Specs
             }
         }
 
+        public class BeInDays
+        {
+            [Fact]
+            public void When_a_date_interval_has_the_specified_amount_of_days_it_succeeds()
+            {
+                // Arrange
+                DateTime now = DateTime.Now;
+                LocalDate start = LocalDate.FromDateTime(now.AddDays(-1));
+                LocalDate end = LocalDate.FromDateTime(now.AddDays(1));
+                DateInterval dateInterval = new DateInterval(start, end);
+                int days = dateInterval.Length;
+
+                // Act
+                Action act = () => dateInterval.Should().BeInDays(days);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_a_date_interval_does_not_have_the_specified_amount_of_days_it_fails()
+            {
+                // Arrange
+                DateTime now = DateTime.Now;
+                LocalDate start = LocalDate.FromDateTime(now.AddDays(-1));
+                LocalDate end = LocalDate.FromDateTime(now.AddDays(1));
+                DateInterval dateInterval = new DateInterval(start, end);
+                int days = dateInterval.Length + 1;
+
+                // Act
+                Action act = () => dateInterval.Should().BeInDays(days);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(dateInterval)} to be {days} days, but found {dateInterval.Length}.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_null_it_fails()
+            {
+                // Arrange
+                DateInterval? dateInterval = default;
+                int days = new Random().Next();
+
+                // Act
+                Action act = () => dateInterval.Should().BeInDays(days);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(dateInterval)} to be {days} days, but found <null>.");
+            }
+        }
+
+        public class NotBeInDays
+        {
+            [Fact]
+            public void When_a_date_interval_has_the_specified_amount_of_days_it_fails()
+            {
+                // Arrange
+                DateTime now = DateTime.Now;
+                LocalDate start = LocalDate.FromDateTime(now.AddDays(-1));
+                LocalDate end = LocalDate.FromDateTime(now.AddDays(1));
+                DateInterval dateInterval = new DateInterval(start, end);
+                int days = dateInterval.Length;
+
+                // Act
+                Action act = () => dateInterval.Should().NotBeInDays(days);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(dateInterval)} to be {days} days.");
+            }
+
+            [Fact]
+            public void When_a_date_interval_does_not_have_the_specified_amount_of_days_it_succeeds()
+            {
+                // Arrange
+                DateTime now = DateTime.Now;
+                LocalDate start = LocalDate.FromDateTime(now.AddDays(-1));
+                LocalDate end = LocalDate.FromDateTime(now.AddDays(1));
+                DateInterval dateInterval = new DateInterval(start, end);
+                int days = dateInterval.Length + 1;
+
+                // Act
+                Action act = () => dateInterval.Should().NotBeInDays(days);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_null_it_fails()
+            {
+                // Arrange
+                DateInterval? dateInterval = default;
+                int days = new Random().Next();
+
+                // Act
+                Action act = () => dateInterval.Should().NotBeInDays(days);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(dateInterval)} to be {days} days, but found <null>.");
+            }
+        }
+
+        public class BeInCalendar
+        {
+            [Fact]
+            public void When_a_date_interval_has_the_specified_calendar_it_succeeds()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                LocalDate start = LocalDate.FromDateTime(DateTime.Now, calendar);
+                LocalDate end = LocalDate.FromDateTime(DateTime.Now.AddDays(1), start.Calendar);
+                DateInterval dateInterval = new DateInterval(start, end);
+
+                // Act
+                Action act = () => dateInterval.Should().BeInCalendar(calendar);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_it_succeeds_it_returns_the_calendar()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                LocalDate start = LocalDate.FromDateTime(DateTime.Now, calendar);
+                LocalDate end = LocalDate.FromDateTime(DateTime.Now.AddDays(1), start.Calendar);
+                DateInterval dateInterval = new DateInterval(start, end);
+
+                // Act
+                CalendarSystem returned = dateInterval.Should().BeInCalendar(calendar).Which;
+
+                // Assert
+                returned.Should().Be(calendar);
+            }
+
+            [Fact]
+            public void When_a_date_interval_does_not_have_the_specified_calendar_it_fails()
+            {
+                // Arrange
+                (CalendarSystem calendar, CalendarSystem other) = TwoRandomCalendarSystems();
+                LocalDate start = LocalDate.FromDateTime(DateTime.Now, calendar);
+                LocalDate end = LocalDate.FromDateTime(DateTime.Now.AddDays(1), calendar);
+                DateInterval dateInterval = new DateInterval(start, end);
+
+                // Act
+                Action act = () => dateInterval.Should().BeInCalendar(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(dateInterval)} to be in calendar {other}, but found {calendar}.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_date_interval_has_a_calendar_it_fails()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                DateInterval? dateInterval = default;
+
+                // Act
+                Action act = () => dateInterval.Should().BeInCalendar(calendar);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(dateInterval)} to be in calendar {calendar}, but {nameof(dateInterval)} was <null>.");
+            }
+        }
+
+        public class NotBeInCalendar
+        {
+            [Fact]
+            public void When_a_date_interval_does_not_have_the_specified_calendar_it_succeeds()
+            {
+                // Arrange
+                (CalendarSystem calendar, CalendarSystem other) = TwoRandomCalendarSystems();
+                LocalDate start = LocalDate.FromDateTime(DateTime.Now, calendar);
+                LocalDate end = LocalDate.FromDateTime(DateTime.Now.AddDays(1), calendar);
+                DateInterval dateInterval = new DateInterval(start, end);
+
+                // Act
+                Action act = () => dateInterval.Should().NotBeInCalendar(other);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_a_date_interval_has_the_specified_calendar_it_fails()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                LocalDate start = LocalDate.FromDateTime(DateTime.Now, calendar);
+                LocalDate end = LocalDate.FromDateTime(DateTime.Now.AddDays(1), start.Calendar);
+                DateInterval dateInterval = new DateInterval(start, end);
+
+                // Act
+                Action act = () => dateInterval.Should().NotBeInCalendar(calendar);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(dateInterval)} to be in calendar {calendar}.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_date_interval_has_a_calendar_it_fails()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                DateInterval? dateInterval = default;
+
+                // Act
+                Action act = () => dateInterval.Should().NotBeInCalendar(calendar);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(dateInterval)} to be in calendar {calendar}, but {nameof(dateInterval)} was <null>.");
+            }
+        }
+
         public class EndAt
         {
             [Fact]
@@ -414,8 +656,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
         }
 
-
-        public class Contain
+        public class ContainLocalDate
         {
             [Fact]
             public void When_a_date_interval_contains_the_local_date_it_succeeds()
@@ -461,7 +702,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
         }
 
-        public class NotContain
+        public class NotContainLocalDate
         {
             [Fact]
             public void When_a_date_interval_does_not_contain_the_local_date_it_succeeds()
@@ -478,6 +719,21 @@ namespace FluentAssertions.NodaTime.Specs
             }
 
             [Fact]
+            public void When_a_date_interval_contains_the_date_interval_it_fails()
+            {
+                // Arrange
+                DateInterval dateInterval = new DateInterval(LocalDate.MinIsoValue, LocalDate.MaxIsoValue);
+                LocalDate localDate = LocalDate.FromDateTime(DateTime.Now);
+
+                // Act
+                Action act = () => dateInterval.Should().NotContain(localDate);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(dateInterval)} to contain {localDate}.");
+            }
+
+            [Fact]
             public void When_asserting_a_null_date_interval_does_not_contain_an_local_date_it_fails()
             {
                 DateInterval? dateInterval = null;
@@ -489,6 +745,98 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage($"Did not expect {nameof(dateInterval)} to contain {localDate}, but {nameof(dateInterval)} was <null>.");
+            }
+        }
+
+        public class ContainDateInterval
+        {
+            [Fact]
+            public void When_a_date_interval_contains_the_date_interval_it_succeeds()
+            {
+                // Arrange
+                DateInterval dateInterval = new DateInterval(LocalDate.MinIsoValue, LocalDate.MaxIsoValue);
+                DateInterval other = new DateInterval(LocalDate.FromDateTime(DateTime.Now), LocalDate.FromDateTime(DateTime.Now.AddDays(1)));
+
+                // Act
+                Action act = () => dateInterval.Should().Contain(other);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_a_date_interval_does_not_contain_the_date_interval_it_fails()
+            {
+                // Arrange
+                DateInterval dateInterval = new DateInterval(LocalDate.FromDateTime(DateTime.Now), LocalDate.FromDateTime(DateTime.Now.AddDays(1)));
+                DateInterval other = new DateInterval(LocalDate.MinIsoValue, LocalDate.MinIsoValue);
+
+                // Act
+                Action act = () => dateInterval.Should().Contain(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(dateInterval)} to contain {other.AsFormatted()}.");
+            }
+
+            [Fact]
+            public void When_asserting_a_null_date_interval_contains_an_date_interval_it_fails()
+            {
+                DateInterval? dateInterval = null;
+                DateInterval other = new DateInterval(LocalDate.MinIsoValue, LocalDate.MinIsoValue);
+
+                // Act
+                Action act = () => dateInterval.Should().Contain(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(dateInterval)} to contain {other.AsFormatted()}, but {nameof(dateInterval)} was <null>.");
+            }
+        }
+
+        public class NotContainDateInterval
+        {
+            [Fact]
+            public void When_a_date_interval_does_not_contain_the_date_interval_it_succeeds()
+            {
+                // Arrange
+                DateInterval dateInterval = new DateInterval(LocalDate.FromDateTime(DateTime.Now), LocalDate.FromDateTime(DateTime.Now.AddDays(1)));
+                DateInterval other = new DateInterval(LocalDate.MinIsoValue, LocalDate.MinIsoValue);
+
+                // Act
+                Action act = () => dateInterval.Should().NotContain(other);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_a_date_interval_contains_the_date_interval_it_fails()
+            {
+                // Arrange
+                DateInterval dateInterval = new DateInterval(LocalDate.MinIsoValue, LocalDate.MaxIsoValue);
+                DateInterval other = new DateInterval(LocalDate.FromDateTime(DateTime.Now), LocalDate.FromDateTime(DateTime.Now.AddDays(1)));
+
+                // Act
+                Action act = () => dateInterval.Should().NotContain(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(dateInterval)} to contain {other.AsFormatted()}.");
+            }
+
+            [Fact]
+            public void When_asserting_a_null_date_interval_does_not_contain_an_date_interval_it_fails()
+            {
+                DateInterval? dateInterval = null;
+                DateInterval other = new DateInterval(LocalDate.MinIsoValue, LocalDate.MinIsoValue);
+
+                // Act
+                Action act = () => dateInterval.Should().NotContain(other);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(dateInterval)} to contain {other.AsFormatted()}, but {nameof(dateInterval)} was <null>.");
             }
         }
     }

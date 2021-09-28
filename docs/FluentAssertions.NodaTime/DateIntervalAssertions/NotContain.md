@@ -1,4 +1,30 @@
-# DateIntervalAssertions.NotContain method
+# DateIntervalAssertions.NotContain method (1 of 2)
+
+Asserts that the current DateInterval does not contain *dateInterval*.
+
+```csharp
+public AndConstraint<DateIntervalAssertions> NotContain(DateInterval dateInterval, 
+    string because = "", params object[] becauseArgs)
+```
+
+| parameter | description |
+| --- | --- |
+| dateInterval | The inclusive lower bound of the interval. |
+| because | A formatted phrase as is supported by Object[]) explaining why the assertion is needed. If the phrase does not contain with the word because, it is prepcontained automatically. |
+| becauseArgs | Zero or more objects to format using the placeholders in *because*. |
+
+## Return Value
+
+An AndConstraint&lt;DateIntervalAssertions&gt; which can be used to chain assertions.
+
+## See Also
+
+* class [DateIntervalAssertions](../DateIntervalAssertions.md)
+* namespace [FluentAssertions.NodaTime](../../FluentAssertions.NodaTime.md)
+
+---
+
+# DateIntervalAssertions.NotContain method (2 of 2)
 
 Asserts that the current DateInterval does not contain *localDate*.
 

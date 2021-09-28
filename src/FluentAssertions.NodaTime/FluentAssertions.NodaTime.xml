@@ -451,6 +451,38 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DateIntervalAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
+        <member name="M:FluentAssertions.NodaTime.DateIntervalAssertions.BeInDays(System.Int32,System.String,System.Object[])">
+            <summary>
+                Asserts that the length of this <see cref="T:NodaTime.DateInterval" /> is equal to <paramref name="days" /> days.
+            </summary>
+            <param name="days">The length of this date interval in days..</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DateIntervalAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DateIntervalAssertions.NotBeInDays(System.Int32,System.String,System.Object[])">
+            <summary>
+                Asserts that the length of this <see cref="T:NodaTime.DateInterval" /> is not equal to <paramref name="days" /> days.
+            </summary>
+            <param name="days">The length of this date interval in days..</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DateIntervalAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
         <member name="M:FluentAssertions.NodaTime.DateIntervalAssertions.EndAt(System.Nullable{NodaTime.LocalDate},System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.DateInterval" /> ends at <paramref name="localDate" />.
@@ -539,6 +571,75 @@
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
                 is needed. If the phrase does not contain with the word <i>because</i>, it is prepcontained automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DateIntervalAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DateIntervalAssertions.Contain(NodaTime.DateInterval,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.DateInterval" /> contains <paramref name="dateInterval" />.
+            </summary>
+            <param name="dateInterval">The inclusive lower bound of the interval.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not contain with the word <i>because</i>, it is prepcontained automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DateIntervalAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DateIntervalAssertions.NotContain(NodaTime.DateInterval,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.DateInterval" /> does not contain <paramref name="dateInterval" />.
+            </summary>
+            <param name="dateInterval">The inclusive lower bound of the interval.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not contain with the word <i>because</i>, it is prepcontained automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DateIntervalAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DateIntervalAssertions.BeInCalendar(NodaTime.CalendarSystem,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.DateInterval" /> has the specified <see cref="T:NodaTime.CalendarSystem" />.
+            </summary>
+            <param name="calendar">
+                The <see cref="T:NodaTime.CalendarSystem" /> that the current <see cref="T:NodaTime.DateInterval" /> is expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndWhichConstraint`2">AndWhichConstraint&lt;DateIntervalAssertions, CalendarSystem&gt;</see>
+                which can be used to assert the <see cref="T:NodaTime.CalendarSystem" />.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DateIntervalAssertions.NotBeInCalendar(NodaTime.CalendarSystem,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.DateInterval" /> does not have the specified <see cref="T:NodaTime.CalendarSystem" />.
+            </summary>
+            <param name="calendar">
+                The <see cref="T:NodaTime.CalendarSystem" /> that the current <see cref="T:NodaTime.DateInterval" /> is not expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
             </param>
             <param name="becauseArgs">
                 Zero or more objects to format using the placeholders in <paramref name="because" />.
@@ -1549,15 +1650,15 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="T:FluentAssertions.NodaTime.Formatters.DateIntervalFormatter">
+        <member name="T:FluentAssertions.NodaTime.Formatters.DateIntervalValueFormatter">
             <summary>
                 Formats a <see cref="T:NodaTime.DateInterval" /> into a human-readable string representation.
             </summary>
         </member>
-        <member name="M:FluentAssertions.NodaTime.Formatters.DateIntervalFormatter.CanHandle(System.Object)">
+        <member name="M:FluentAssertions.NodaTime.Formatters.DateIntervalValueFormatter.CanHandle(System.Object)">
             <inheritdoc />
         </member>
-        <member name="M:FluentAssertions.NodaTime.Formatters.DateIntervalFormatter.Format(System.Object,FluentAssertions.Formatting.FormattedObjectGraph,FluentAssertions.Formatting.FormattingContext,FluentAssertions.Formatting.FormatChild)">
+        <member name="M:FluentAssertions.NodaTime.Formatters.DateIntervalValueFormatter.Format(System.Object,FluentAssertions.Formatting.FormattedObjectGraph,FluentAssertions.Formatting.FormattingContext,FluentAssertions.Formatting.FormatChild)">
             <inheritdoc />
         </member>
         <member name="T:FluentAssertions.NodaTime.InstantAssertions">

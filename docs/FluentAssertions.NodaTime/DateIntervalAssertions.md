@@ -13,10 +13,14 @@ public sealed class DateIntervalAssertions :
 | --- | --- |
 | [DateIntervalAssertions](DateIntervalAssertions/DateIntervalAssertions.md)(…) | Initializes a new [`DateIntervalAssertions`](./DateIntervalAssertions.md). |
 | [Be](DateIntervalAssertions/Be.md)(…) | Asserts that this DateInterval is equal to *other*. |
-| [Contain](DateIntervalAssertions/Contain.md)(…) | Asserts that the current DateInterval contains *localDate*. |
+| [BeInCalendar](DateIntervalAssertions/BeInCalendar.md)(…) | Asserts that the current DateInterval has the specified CalendarSystem. |
+| [BeInDays](DateIntervalAssertions/BeInDays.md)(…) | Asserts that the length of this DateInterval is equal to *days* days. |
+| [Contain](DateIntervalAssertions/Contain.md)(…) | Asserts that the current DateInterval contains *localDate*. (2 methods) |
 | [EndAt](DateIntervalAssertions/EndAt.md)(…) | Asserts that the current DateInterval ends at *localDate*. |
 | [NotBe](DateIntervalAssertions/NotBe.md)(…) | Asserts that this DateInterval is not equal to *other*. |
-| [NotContain](DateIntervalAssertions/NotContain.md)(…) | Asserts that the current DateInterval does not contain *localDate*. |
+| [NotBeInCalendar](DateIntervalAssertions/NotBeInCalendar.md)(…) | Asserts that the current DateInterval does not have the specified CalendarSystem. |
+| [NotBeInDays](DateIntervalAssertions/NotBeInDays.md)(…) | Asserts that the length of this DateInterval is not equal to *days* days. |
+| [NotContain](DateIntervalAssertions/NotContain.md)(…) | Asserts that the current DateInterval does not contain *localDate*. (2 methods) |
 | [NotEndAt](DateIntervalAssertions/NotEndAt.md)(…) | Asserts that the current DateInterval does not end at *localDate*. |
 | [NotStartAt](DateIntervalAssertions/NotStartAt.md)(…) | Asserts that the current DateInterval does not start at *localDate*. |
 | [StartAt](DateIntervalAssertions/StartAt.md)(…) | Asserts that the current DateInterval starts at *localDate*. |

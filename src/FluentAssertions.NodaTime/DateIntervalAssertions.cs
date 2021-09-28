@@ -17,7 +17,7 @@ namespace FluentAssertions.NodaTime
     {
         static DateIntervalAssertions()
         {
-            Formatter.AddFormatter(new DateIntervalFormatter());
+            Formatter.AddFormatter(new DateIntervalValueFormatter());
         }
 
         /// <summary>
@@ -106,6 +106,80 @@ namespace FluentAssertions.NodaTime
                 scope
                     .ForCondition(false)
                     .FailWith(".");
+            }
+
+            return new AndConstraint<DateIntervalAssertions>(this);
+        }
+
+        /// <summary>
+        ///     Asserts that the length of this <see cref="DateInterval" /> is equal to <paramref name="days" /> days.
+        /// </summary>
+        /// <param name="days">The length of this date interval in days..</param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;DateIntervalAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<DateIntervalAssertions> BeInDays(int days, string because = "", params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Expected {context:DateInterval} to be {0} days{reason}", days);
+
+            if (Subject != null)
+            {
+                scope.ForCondition(Subject.Length == days)
+                    .FailWith(", but found {0}.", Subject.Length);
+            }
+            else
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but found <null>.");
+            }
+
+            return new AndConstraint<DateIntervalAssertions>(this);
+        }
+
+        /// <summary>
+        ///     Asserts that the length of this <see cref="DateInterval" /> is not equal to <paramref name="days" /> days.
+        /// </summary>
+        /// <param name="days">The length of this date interval in days..</param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;DateIntervalAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<DateIntervalAssertions> NotBeInDays(int days, string because = "", params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Did not expect {context:DateInterval} to be {0} days{reason}", days);
+
+            if (Subject != null)
+            {
+                scope.ForCondition(Subject.Length != days)
+                    .FailWith(".");
+            }
+            else
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but found <null>.");
             }
 
             return new AndConstraint<DateIntervalAssertions>(this);
@@ -334,6 +408,165 @@ namespace FluentAssertions.NodaTime
                 scope
                     .ForCondition(!Subject.Contains(localDate))
                     .FailWith(".");
+            }
+
+            return new AndConstraint<DateIntervalAssertions>(this);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="DateInterval" /> contains <paramref name="dateInterval" />.
+        /// </summary>
+        /// <param name="dateInterval">The inclusive lower bound of the interval.</param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not contain with the word <i>because</i>, it is prepcontained automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;DateIntervalAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<DateIntervalAssertions> Contain(DateInterval dateInterval, string because = "", params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Expected {context:DateInterval} to contain {0}{reason}", dateInterval);
+
+            if (Subject != null)
+            {
+                scope
+                    .ForCondition(Subject.Contains(dateInterval))
+                    .FailWith(".");
+            }
+            else
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but {context:DateInterval} was <null>.");
+            }
+
+            return new AndConstraint<DateIntervalAssertions>(this);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="DateInterval" /> does not contain <paramref name="dateInterval" />.
+        /// </summary>
+        /// <param name="dateInterval">The inclusive lower bound of the interval.</param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not contain with the word <i>because</i>, it is prepcontained automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;DateIntervalAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<DateIntervalAssertions> NotContain(DateInterval dateInterval, string because = "", params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Did not expect {context:DateInterval} to contain {0}{reason}", dateInterval);
+
+            if (Subject == null)
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but {context:DateInterval} was <null>.");
+            }
+            else
+            {
+                scope
+                    .ForCondition(!Subject.Contains(dateInterval))
+                    .FailWith(".");
+            }
+
+            return new AndConstraint<DateIntervalAssertions>(this);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="DateInterval" /> has the specified <see cref="CalendarSystem" />.
+        /// </summary>
+        /// <param name="calendar">
+        ///     The <see cref="CalendarSystem" /> that the current <see cref="DateInterval" /> is expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndWhichConstraint{TParentConstraint, TMatchedElement}">AndWhichConstraint&lt;DateIntervalAssertions, CalendarSystem&gt;</see>
+        ///     which can be used to assert the <see cref="CalendarSystem" />.
+        /// </returns>
+        [CustomAssertion]
+        public AndWhichConstraint<DateIntervalAssertions, CalendarSystem> BeInCalendar(CalendarSystem calendar,
+            string because = "", params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Expected {context:DateInterval} to be in calendar {0}{reason}", calendar);
+
+            if (Subject != null)
+            {
+                scope
+                    .ForCondition(Subject.Calendar.Equals(calendar))
+                    .FailWith(", but found {0}.", Subject.Calendar);
+            }
+            else
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but {context:DateInterval} was <null>.");
+            }
+
+            return new AndWhichConstraint<DateIntervalAssertions, CalendarSystem>(this, calendar);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="DateInterval" /> does not have the specified <see cref="CalendarSystem" />.
+        /// </summary>
+        /// <param name="calendar">
+        ///     The <see cref="CalendarSystem" /> that the current <see cref="DateInterval" /> is not expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;DateIntervalAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<DateIntervalAssertions> NotBeInCalendar(CalendarSystem calendar, string because = "",
+            params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Did not expect {context:DateInterval} to be in calendar {0}{reason}", calendar);
+
+            if (Subject != null)
+            {
+                scope
+                    .ForCondition(!Subject.Calendar.Equals(calendar))
+                    .FailWith(".");
+            }
+            else
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but {context:DateInterval} was <null>.");
             }
 
             return new AndConstraint<DateIntervalAssertions>(this);
