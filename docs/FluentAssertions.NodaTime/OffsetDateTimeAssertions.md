@@ -27,6 +27,7 @@ public sealed class OffsetDateTimeAssertions :
 | [HaveMonth](OffsetDateTimeAssertions/HaveMonth.md)(…) | Asserts that the current OffsetDateTime has the specified month. |
 | [HaveNanosecondOfDay](OffsetDateTimeAssertions/HaveNanosecondOfDay.md)(…) | Asserts that the current OffsetDateTime has the specified nanosecond of day. |
 | [HaveNanosecondOfSecond](OffsetDateTimeAssertions/HaveNanosecondOfSecond.md)(…) | Asserts that the current OffsetDateTime has the specified nanosecond of second. |
+| [HaveOffset](OffsetDateTimeAssertions/HaveOffset.md)(…) | Asserts that the current OffsetDateTime has the specified Offset. (2 methods) |
 | [HaveSecond](OffsetDateTimeAssertions/HaveSecond.md)(…) | Asserts that the current OffsetDateTime has the specified second. |
 | [HaveTickOfDay](OffsetDateTimeAssertions/HaveTickOfDay.md)(…) | Asserts that the current OffsetDateTime has the specified tick of day. |
 | [HaveTickOfSecond](OffsetDateTimeAssertions/HaveTickOfSecond.md)(…) | Asserts that the current OffsetDateTime has the specified tick of second. |
@@ -48,6 +49,7 @@ public sealed class OffsetDateTimeAssertions :
 | [NotHaveMonth](OffsetDateTimeAssertions/NotHaveMonth.md)(…) | Asserts that the current OffsetDateTime does not have the specified month. |
 | [NotHaveNanosecondOfDay](OffsetDateTimeAssertions/NotHaveNanosecondOfDay.md)(…) | Asserts that the current OffsetDateTime does not have the specified nanosecond of day. |
 | [NotHaveNanosecondOfSecond](OffsetDateTimeAssertions/NotHaveNanosecondOfSecond.md)(…) | Asserts that the current OffsetDateTime does not have the specified nanosecond of second. |
+| [NotHaveOffset](OffsetDateTimeAssertions/NotHaveOffset.md)(…) | Asserts that the current OffsetDateTime does not have the specified Offset. (2 methods) |
 | [NotHaveSecond](OffsetDateTimeAssertions/NotHaveSecond.md)(…) | Asserts that the current OffsetDateTime does not have the specified second. |
 | [NotHaveTickOfDay](OffsetDateTimeAssertions/NotHaveTickOfDay.md)(…) | Asserts that the current OffsetDateTime does not have the specified tick of day. |
 | [NotHaveTickOfSecond](OffsetDateTimeAssertions/NotHaveTickOfSecond.md)(…) | Asserts that the current OffsetDateTime does not have the specified tick of second. |

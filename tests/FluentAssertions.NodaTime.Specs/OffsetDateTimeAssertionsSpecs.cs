@@ -519,6 +519,236 @@ namespace FluentAssertions.NodaTime.Specs
             }
         }
 
+        public class HaveOffset
+        {
+            [Fact]
+            public void When_a_offset_date_time_has_the_specified_offset_it_succeeds()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                OffsetDateTime offsetDateTime = OffsetDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(calendar);
+                Offset offset = offsetDateTime.Offset;
+
+                // Act
+                Action act = () => offsetDateTime.Should().HaveOffset(offset);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_it_succeeds_it_returns_the_offset_date()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                OffsetDateTime offsetDateTime = OffsetDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(calendar);
+                Offset offset = offsetDateTime.Offset;
+
+                // Act
+                Offset returned = offsetDateTime.Should().HaveOffset(offset).Which;
+
+                // Assert
+                returned.Should().Be(offset);
+            }
+
+            [Fact]
+            public void When_a_offset_date_time_does_not_have_the_specified_offset_it_fails()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                OffsetDateTime offsetDateTime = OffsetDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(calendar);
+                Offset offset = offsetDateTime.Offset.Plus(Offset.FromSeconds(1));
+
+                // Act
+                Action act = () => offsetDateTime.Should().HaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(offsetDateTime)} to have offset {offset}, but found {offsetDateTime.Offset}.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_offset_date_time_has_the_specified_offset_it_fails()
+            {
+                // Arrange
+                Offset offset = Offset.FromSeconds(1);
+                OffsetDateTime? offsetDateTime = null;
+
+                // Act
+                Action act = () => offsetDateTime.Should().HaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(offsetDateTime)} to have offset {offset}, but {nameof(offsetDateTime)} was <null>.");
+            }
+        }
+
+        public class NotHaveOffset
+        {
+            [Fact]
+            public void When_a_offset_date_time_has_the_specified_offset_it_fails()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                OffsetDateTime offsetDateTime = OffsetDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(calendar);
+                Offset offset = offsetDateTime.Offset;
+
+                // Act
+                Action act = () => offsetDateTime.Should().NotHaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(offsetDateTime)} to have offset {offset}.");
+            }
+
+            [Fact]
+            public void When_a_offset_date_time_does_not_have_the_specified_offset_it_succeeds()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                OffsetDateTime offsetDateTime = OffsetDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(calendar);
+                Offset offset = offsetDateTime.Offset.Plus(Offset.FromSeconds(1));
+
+                // Act
+                Action act = () => offsetDateTime.Should().NotHaveOffset(offset);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_offset_date_time_does_not_have_the_specified_offset_it_fails()
+            {
+                // Arrange
+                Offset offset = Offset.FromSeconds(1);
+                OffsetDateTime? offsetDateTime = null;
+
+                // Act
+                Action act = () => offsetDateTime.Should().NotHaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(offsetDateTime)} to have offset {offset}, but {nameof(offsetDateTime)} was <null>.");
+            }
+        }
+
+        public class HaveOffsetTimeSpan
+        {
+            [Fact]
+            public void When_a_offset_date_time_has_the_specified_offset_it_succeeds()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                OffsetDateTime offsetDateTime = OffsetDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(calendar);
+                TimeSpan offset = offsetDateTime.Offset.ToTimeSpan();
+
+                // Act
+                Action act = () => offsetDateTime.Should().HaveOffset(offset);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_it_succeeds_it_returns_the_offset_date()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                OffsetDateTime offsetDateTime = OffsetDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(calendar);
+                TimeSpan offset = offsetDateTime.Offset.ToTimeSpan();
+
+                // Act
+                Offset returned = offsetDateTime.Should().HaveOffset(offset).Which;
+
+                // Assert
+                returned.Should().Be(offset);
+            }
+
+            [Fact]
+            public void When_a_offset_date_time_does_not_have_the_specified_offset_it_fails()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                OffsetDateTime offsetDateTime = OffsetDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(calendar);
+                TimeSpan offset = offsetDateTime.Offset.Plus(Offset.FromSeconds(1)).ToTimeSpan();
+
+                // Act
+                Action act = () => offsetDateTime.Should().HaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(offsetDateTime)} to have offset {Offset.FromTimeSpan(offset)}, but found {offsetDateTime.Offset}.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_offset_date_time_has_the_specified_offset_it_fails()
+            {
+                // Arrange
+                TimeSpan offset = TimeSpan.FromSeconds(1);
+                OffsetDateTime? offsetDateTime = null;
+
+                // Act
+                Action act = () => offsetDateTime.Should().HaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(offsetDateTime)} to have offset {Offset.FromTimeSpan(offset)}, but {nameof(offsetDateTime)} was <null>.");
+            }
+        }
+
+        public class NotHaveOffsetTimeSpan
+        {
+            [Fact]
+            public void When_a_offset_date_time_has_the_specified_offset_it_fails()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                OffsetDateTime offsetDateTime = OffsetDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(calendar);
+                TimeSpan offset = offsetDateTime.Offset.ToTimeSpan();
+
+                // Act
+                Action act = () => offsetDateTime.Should().NotHaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(offsetDateTime)} to have offset {Offset.FromTimeSpan(offset)}.");
+            }
+
+            [Fact]
+            public void When_a_offset_date_time_does_not_have_the_specified_offset_it_succeeds()
+            {
+                // Arrange
+                CalendarSystem calendar = RandomCalendarSystem();
+                OffsetDateTime offsetDateTime = OffsetDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(calendar);
+                TimeSpan offset = offsetDateTime.Offset.Plus(Offset.FromSeconds(1)).ToTimeSpan();
+
+                // Act
+                Action act = () => offsetDateTime.Should().NotHaveOffset(offset);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_offset_date_time_does_not_have_the_specified_offset_it_fails()
+            {
+                // Arrange
+                TimeSpan offset = TimeSpan.FromSeconds(1);
+                OffsetDateTime? offsetDateTime = null;
+
+                // Act
+                Action act = () => offsetDateTime.Should().NotHaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(offsetDateTime)} to have offset {Offset.FromTimeSpan(offset)}, but {nameof(offsetDateTime)} was <null>.");
+            }
+        }
+
         public class HaveTimeOfDay
         {
             [Fact]

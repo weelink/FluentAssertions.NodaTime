@@ -4515,7 +4515,7 @@
                 Asserts that the current <see cref="T:NodaTime.OffsetDate" /> has the specified <see cref="T:NodaTime.OffsetDate" />.
             </summary>
             <param name="date">
-                The <see cref="T:NodaTime.OffsetDate" /> that the current <see cref="T:NodaTime.OffsetDateTime" /> is expected to have.
+                The <see cref="T:NodaTime.OffsetDate" /> that the current <see cref="T:NodaTime.OffsetDate" /> is expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -4534,7 +4534,7 @@
                 Asserts that the current <see cref="T:NodaTime.OffsetDate" /> does not have the specified <see cref="T:NodaTime.OffsetDate" />.
             </summary>
             <param name="date">
-                The <see cref="T:NodaTime.OffsetDate" /> that the current <see cref="T:NodaTime.OffsetDateTime" /> is not expected to have.
+                The <see cref="T:NodaTime.OffsetDate" /> that the current <see cref="T:NodaTime.OffsetDate" /> is not expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -4549,10 +4549,29 @@
         </member>
         <member name="M:FluentAssertions.NodaTime.OffsetDateAssertions.HaveOffset(NodaTime.Offset,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.OffsetDateTime" /> has the specified <see cref="T:NodaTime.OffsetDate" />.
+                Asserts that the current <see cref="T:NodaTime.OffsetDate" /> has the specified <see cref="T:NodaTime.Offset" />.
             </summary>
-            <param name="date">
-                The <see cref="T:NodaTime.OffsetDate" /> that the current <see cref="T:NodaTime.OffsetDateTime" /> is expected to have.
+            <param name="offset">
+                The <see cref="T:NodaTime.OffsetDate" /> that the current <see cref="T:NodaTime.OffsetDate" /> is expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndWhichConstraint`2">AndWhichConstraint&lt;OffsetDateTimeAssertions, OffsetDate&gt;</see>
+                which can be used to assert the <see cref="T:NodaTime.OffsetDate" />.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.OffsetDateAssertions.HaveOffset(System.TimeSpan,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.OffsetDate" /> has the specified <see cref="T:System.TimeSpan" />.
+            </summary>
+            <param name="timeSpan">
+                The <see cref="T:NodaTime.OffsetDate" /> that the current <see cref="T:NodaTime.OffsetDate" /> is expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -4568,10 +4587,28 @@
         </member>
         <member name="M:FluentAssertions.NodaTime.OffsetDateAssertions.NotHaveOffset(NodaTime.Offset,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.OffsetDateTime" /> does not have the specified <see cref="T:NodaTime.OffsetDate" />.
+                Asserts that the current <see cref="T:NodaTime.OffsetDate" /> does not have the specified <see cref="T:NodaTime.Offset" />.
             </summary>
-            <param name="date">
-                The <see cref="T:NodaTime.OffsetDate" /> that the current <see cref="T:NodaTime.OffsetDateTime" /> is not expected to have.
+            <param name="offset">
+                The <see cref="T:NodaTime.OffsetDate" /> that the current <see cref="T:NodaTime.OffsetDate" /> is not expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.OffsetDateAssertions.NotHaveOffset(System.TimeSpan,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.OffsetDate" /> does not have the specified <see cref="T:System.TimeSpan" />.
+            </summary>
+            <param name="timeSpan">
+                The <see cref="T:NodaTime.OffsetDate" /> that the current <see cref="T:NodaTime.OffsetDate" /> is not expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -4981,6 +5018,80 @@
             </summary>
             <param name="date">
                 The <see cref="T:NodaTime.LocalDateTime" /> that the current <see cref="T:NodaTime.OffsetDateTime" /> is not expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.HaveOffset(NodaTime.Offset,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.OffsetDateTime" /> has the specified <see cref="T:NodaTime.Offset" />.
+            </summary>
+            <param name="offset">
+                The <see cref="T:NodaTime.OffsetDateTime" /> that the current <see cref="T:NodaTime.OffsetDateTime" /> is expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndWhichConstraint`2">AndWhichConstraint&lt;OffsetDateTimeAssertions, OffsetDateTime&gt;</see>
+                which can be used to assert the <see cref="T:NodaTime.OffsetDateTime" />.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.HaveOffset(System.TimeSpan,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.OffsetDateTime" /> has the specified <see cref="T:System.TimeSpan" />.
+            </summary>
+            <param name="timeSpan">
+                The <see cref="T:NodaTime.OffsetDateTime" /> that the current <see cref="T:NodaTime.OffsetDateTime" /> is expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndWhichConstraint`2">AndWhichConstraint&lt;OffsetDateTimeAssertions, OffsetDateTime&gt;</see>
+                which can be used to assert the <see cref="T:NodaTime.OffsetDateTime" />.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.NotHaveOffset(NodaTime.Offset,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.OffsetDateTime" /> does not have the specified <see cref="T:NodaTime.Offset" />.
+            </summary>
+            <param name="offset">
+                The <see cref="T:NodaTime.OffsetDateTime" /> that the current <see cref="T:NodaTime.OffsetDateTime" /> is not expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.NotHaveOffset(System.TimeSpan,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.OffsetDateTime" /> does not have the specified <see cref="T:System.TimeSpan" />.
+            </summary>
+            <param name="timeSpan">
+                The <see cref="T:NodaTime.OffsetDateTime" /> that the current <see cref="T:NodaTime.OffsetDateTime" /> is not expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -5641,6 +5752,117 @@
                 Asserts that this <see cref="T:NodaTime.OffsetTime" /> is not equal to <paramref name="other" />.
             </summary>
             <param name="other">The <see cref="T:NodaTime.OffsetTime" /> to compare to.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetTimeAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.OffsetTimeAssertions.HaveOffset(NodaTime.Offset,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.OffsetTime" /> has the specified <see cref="T:NodaTime.Offset" />.
+            </summary>
+            <param name="offset">
+                The <see cref="T:NodaTime.OffsetTime" /> that the current <see cref="T:NodaTime.OffsetTime" /> is expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndWhichConstraint`2">AndWhichConstraint&lt;OffsetTimeAssertions, OffsetTime&gt;</see>
+                which can be used to assert the <see cref="T:NodaTime.OffsetTime" />.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.OffsetTimeAssertions.HaveOffset(System.TimeSpan,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.OffsetTime" /> has the specified <see cref="T:System.TimeSpan" />.
+            </summary>
+            <param name="timeSpan">
+                The <see cref="T:NodaTime.OffsetTime" /> that the current <see cref="T:NodaTime.OffsetTime" /> is expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndWhichConstraint`2">AndWhichConstraint&lt;OffsetTimeAssertions, OffsetTime&gt;</see>
+                which can be used to assert the <see cref="T:NodaTime.OffsetTime" />.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.OffsetTimeAssertions.NotHaveOffset(NodaTime.Offset,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.OffsetTime" /> does not have the specified <see cref="T:NodaTime.Offset" />.
+            </summary>
+            <param name="offset">
+                The <see cref="T:NodaTime.OffsetTime" /> that the current <see cref="T:NodaTime.OffsetTime" /> is not expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetTimeAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.OffsetTimeAssertions.NotHaveOffset(System.TimeSpan,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.OffsetTime" /> does not have the specified <see cref="T:System.TimeSpan" />.
+            </summary>
+            <param name="timeSpan">
+                The <see cref="T:NodaTime.OffsetTime" /> that the current <see cref="T:NodaTime.OffsetTime" /> is not expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetTimeAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.OffsetTimeAssertions.HaveTimeOfDay(NodaTime.LocalTime,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.OffsetTime" /> has the specified <see cref="T:NodaTime.LocalTime" />.
+            </summary>
+            <param name="timeOfDay">
+                The <see cref="T:NodaTime.LocalTime" /> that the current <see cref="T:NodaTime.OffsetTime" /> is expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndWhichConstraint`2">AndWhichConstraint&lt;OffsetTimeAssertions, LocalTime&gt;</see>
+                which can be used to assert the <see cref="T:NodaTime.OffsetTime" />.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.OffsetTimeAssertions.NotHaveTimeOfDay(NodaTime.LocalTime,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.OffsetTime" /> does not have the specified <see cref="T:NodaTime.LocalTime" />.
+            </summary>
+            <param name="timeOfDay">
+                The <see cref="T:NodaTime.LocalTime" /> that the current <see cref="T:NodaTime.OffsetTime" /> is not expected to have.
+            </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
                 is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.

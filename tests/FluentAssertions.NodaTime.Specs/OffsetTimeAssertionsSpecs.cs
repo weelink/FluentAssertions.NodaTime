@@ -170,6 +170,348 @@ namespace FluentAssertions.NodaTime.Specs
             }
         }
 
+        public class HaveOffset
+        {
+            [Fact]
+            public void When_a_offset_time_has_the_specified_offset_it_succeeds()
+            {
+                // Arrange
+                long now = DateTime.Now.TimeOfDay.Ticks;
+                OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(now).WithOffset(Offset.FromHours(2));
+                Offset offset = offsetTime.Offset;
+
+                // Act
+                Action act = () => offsetTime.Should().HaveOffset(offset);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_it_succeeds_it_returns_the_offset_date()
+            {
+                // Arrange
+                long now = DateTime.Now.TimeOfDay.Ticks;
+                OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(now).WithOffset(Offset.FromHours(2));
+                Offset offset = offsetTime.Offset;
+
+                // Act
+                Offset returned = offsetTime.Should().HaveOffset(offset).Which;
+
+                // Assert
+                returned.Should().Be(offset);
+            }
+
+            [Fact]
+            public void When_a_offset_time_does_not_have_the_specified_offset_it_fails()
+            {
+                // Arrange
+                long now = DateTime.Now.TimeOfDay.Ticks;
+                OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(now).WithOffset(Offset.FromHours(2));
+                Offset offset = offsetTime.Offset.Plus(Offset.FromSeconds(1));
+
+                // Act
+                Action act = () => offsetTime.Should().HaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(offsetTime)} to have offset {offset}, but found {offsetTime.Offset}.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_offset_time_has_the_specified_offset_it_fails()
+            {
+                // Arrange
+                Offset offset = Offset.FromSeconds(1);
+                OffsetTime? offsetTime = null;
+
+                // Act
+                Action act = () => offsetTime.Should().HaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(offsetTime)} to have offset {offset}, but {nameof(offsetTime)} was <null>.");
+            }
+        }
+
+        public class NotHaveOffset
+        {
+            [Fact]
+            public void When_a_offset_time_has_the_specified_offset_it_fails()
+            {
+                // Arrange
+                long now = DateTime.Now.TimeOfDay.Ticks;
+                OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(now).WithOffset(Offset.FromHours(2));
+                Offset offset = offsetTime.Offset;
+
+                // Act
+                Action act = () => offsetTime.Should().NotHaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(offsetTime)} to have offset {offset}.");
+            }
+
+            [Fact]
+            public void When_a_offset_time_does_not_have_the_specified_offset_it_succeeds()
+            {
+                // Arrange
+                long now = DateTime.Now.TimeOfDay.Ticks;
+                OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(now).WithOffset(Offset.FromHours(2));
+                Offset offset = offsetTime.Offset.Plus(Offset.FromSeconds(1));
+
+                // Act
+                Action act = () => offsetTime.Should().NotHaveOffset(offset);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_offset_time_does_not_have_the_specified_offset_it_fails()
+            {
+                // Arrange
+                Offset offset = Offset.FromSeconds(1);
+                OffsetTime? offsetTime = null;
+
+                // Act
+                Action act = () => offsetTime.Should().NotHaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(offsetTime)} to have offset {offset}, but {nameof(offsetTime)} was <null>.");
+            }
+        }
+
+        public class HaveOffsetTimeSpan
+        {
+            [Fact]
+            public void When_a_offset_time_has_the_specified_offset_it_succeeds()
+            {
+                // Arrange
+                long now = DateTime.Now.TimeOfDay.Ticks;
+                OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(now).WithOffset(Offset.FromHours(2));
+                TimeSpan offset = offsetTime.Offset.ToTimeSpan();
+
+                // Act
+                Action act = () => offsetTime.Should().HaveOffset(offset);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_it_succeeds_it_returns_the_offset_date()
+            {
+                // Arrange
+                long now = DateTime.Now.TimeOfDay.Ticks;
+                OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(now).WithOffset(Offset.FromHours(2));
+                TimeSpan offset = offsetTime.Offset.ToTimeSpan();
+
+                // Act
+                Offset returned = offsetTime.Should().HaveOffset(offset).Which;
+
+                // Assert
+                returned.Should().Be(offset);
+            }
+
+            [Fact]
+            public void When_a_offset_time_does_not_have_the_specified_offset_it_fails()
+            {
+                // Arrange
+                long now = DateTime.Now.TimeOfDay.Ticks;
+                OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(now).WithOffset(Offset.FromHours(2));
+                TimeSpan offset = offsetTime.Offset.Plus(Offset.FromSeconds(1)).ToTimeSpan();
+
+                // Act
+                Action act = () => offsetTime.Should().HaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(offsetTime)} to have offset {Offset.FromTimeSpan(offset)}, but found {offsetTime.Offset}.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_offset_time_has_the_specified_offset_it_fails()
+            {
+                // Arrange
+                TimeSpan offset = TimeSpan.FromSeconds(1);
+                OffsetTime? offsetTime = null;
+
+                // Act
+                Action act = () => offsetTime.Should().HaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(offsetTime)} to have offset {Offset.FromTimeSpan(offset)}, but {nameof(offsetTime)} was <null>.");
+            }
+        }
+
+        public class NotHaveOffsetTimeSpan
+        {
+            [Fact]
+            public void When_a_offset_time_has_the_specified_offset_it_fails()
+            {
+                // Arrange
+                long now = DateTime.Now.TimeOfDay.Ticks;
+                OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(now).WithOffset(Offset.FromHours(2));
+                TimeSpan offset = offsetTime.Offset.ToTimeSpan();
+
+                // Act
+                Action act = () => offsetTime.Should().NotHaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(offsetTime)} to have offset {Offset.FromTimeSpan(offset)}.");
+            }
+
+            [Fact]
+            public void When_a_offset_time_does_not_have_the_specified_offset_it_succeeds()
+            {
+                // Arrange
+                long now = DateTime.Now.TimeOfDay.Ticks;
+                OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(now).WithOffset(Offset.FromHours(2));
+                TimeSpan offset = offsetTime.Offset.Plus(Offset.FromSeconds(1)).ToTimeSpan();
+
+                // Act
+                Action act = () => offsetTime.Should().NotHaveOffset(offset);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_offset_time_does_not_have_the_specified_offset_it_fails()
+            {
+                // Arrange
+                TimeSpan offset = TimeSpan.FromSeconds(1);
+                OffsetTime? offsetTime = null;
+
+                // Act
+                Action act = () => offsetTime.Should().NotHaveOffset(offset);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(offsetTime)} to have offset {Offset.FromTimeSpan(offset)}, but {nameof(offsetTime)} was <null>.");
+            }
+        }
+
+        public class HaveTimeOfDay
+        {
+            [Fact]
+            public void When_a_offset_time_has_the_specified_time_of_day_it_succeeds()
+            {
+                // Arrange
+                long now = DateTime.Now.TimeOfDay.Ticks;
+                OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(now).WithOffset(Offset.FromHours(2));
+
+                // Act
+                Action act = () => offsetTime.Should().HaveTimeOfDay(offsetTime.TimeOfDay);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_it_succeeds_it_returns_the_local_time()
+            {
+                // Arrange
+                long now = DateTime.Now.TimeOfDay.Ticks;
+                OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(now).WithOffset(Offset.FromHours(2));
+
+                // Act
+                LocalTime returned = offsetTime.Should().HaveTimeOfDay(offsetTime.TimeOfDay).Which;
+
+                // Assert
+                returned.Should().Be(offsetTime.TimeOfDay);
+            }
+
+            [Fact]
+            public void When_a_offset_time_does_not_have_the_specified_time_of_day_it_fails()
+            {
+                // Arrange
+                long now = DateTime.Now.TimeOfDay.Ticks;
+                OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(now).WithOffset(Offset.FromHours(2));
+                LocalTime time = offsetTime.TimeOfDay + Period.FromSeconds(1);
+
+                // Act
+                Action act = () => offsetTime.Should().HaveTimeOfDay(time);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(offsetTime)} to have time of day {time}, but found {offsetTime.TimeOfDay}.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_offset_time_has_the_specified_time_of_day_it_fails()
+            {
+                // Arrange
+                LocalTime time = LocalTime.FromTicksSinceMidnight(DateTime.Now.TimeOfDay.Ticks);
+                OffsetTime? offsetTime = null;
+
+                // Act
+                Action act = () => offsetTime.Should().HaveTimeOfDay(time);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(offsetTime)} to have time of day {time}, but {nameof(offsetTime)} was <null>.");
+            }
+        }
+
+        public class NotHaveTimeOfDay
+        {
+            [Fact]
+            public void When_a_offset_time_has_the_specified_time_of_day_it_fails()
+            {
+                // Arrange
+                long now = DateTime.Now.TimeOfDay.Ticks;
+                OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(now).WithOffset(Offset.FromHours(2));
+
+                // Act
+                Action act = () => offsetTime.Should().NotHaveTimeOfDay(offsetTime.TimeOfDay);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(offsetTime)} to have time of day {offsetTime.TimeOfDay}.");
+            }
+
+            [Fact]
+            public void When_a_offset_time_does_not_have_the_specified_time_of_day_it_succeeds()
+            {
+                // Arrange
+                long now = DateTime.Now.TimeOfDay.Ticks;
+                OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(now).WithOffset(Offset.FromHours(2));
+                LocalTime time = offsetTime.TimeOfDay + Period.FromSeconds(1);
+
+                // Act
+                Action act = () => offsetTime.Should().NotHaveTimeOfDay(time);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_offset_time_does_not_have_the_specified_time_of_day_it_fails()
+            {
+                // Arrange
+                LocalTime time = LocalTime.Midnight;
+                OffsetTime? offsetTime = null;
+
+                // Act
+                Action act = () => offsetTime.Should().NotHaveTimeOfDay(time);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(offsetTime)} to have time of day {time}, but {nameof(offsetTime)} was <null>.");
+            }
+        }
+
         public class HaveClockHourOfHalfDay
         {
             [Fact]

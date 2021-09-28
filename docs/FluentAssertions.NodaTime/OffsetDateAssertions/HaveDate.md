@@ -9,7 +9,7 @@ public AndWhichConstraint<OffsetDateAssertions, LocalDate> HaveDate(LocalDate da
 
 | parameter | description |
 | --- | --- |
-| date | The OffsetDate that the current OffsetDateTime is expected to have. |
+| date | The OffsetDate that the current OffsetDate is expected to have. |
 | because | A formatted phrase as is supported by Object[]) explaining why the assertion is needed. If the phrase does not start with the word because, it is prepended automatically. |
 | becauseArgs | Zero or more objects to format using the placeholders in *because*. |
 

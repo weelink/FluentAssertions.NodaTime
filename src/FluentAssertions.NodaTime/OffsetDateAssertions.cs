@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 using FluentAssertions.Execution;
 using FluentAssertions.Primitives;
@@ -165,7 +166,7 @@ namespace FluentAssertions.NodaTime
         ///     Asserts that the current <see cref="OffsetDate" /> has the specified <see cref="OffsetDate" />.
         /// </summary>
         /// <param name="date">
-        ///     The <see cref="OffsetDate" /> that the current <see cref="OffsetDateTime" /> is expected to have.
+        ///     The <see cref="OffsetDate" /> that the current <see cref="OffsetDate" /> is expected to have.
         /// </param>
         /// <param name="because">
         ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
@@ -207,7 +208,7 @@ namespace FluentAssertions.NodaTime
         ///     Asserts that the current <see cref="OffsetDate" /> does not have the specified <see cref="OffsetDate" />.
         /// </summary>
         /// <param name="date">
-        ///     The <see cref="OffsetDate" /> that the current <see cref="OffsetDateTime" /> is not expected to have.
+        ///     The <see cref="OffsetDate" /> that the current <see cref="OffsetDate" /> is not expected to have.
         /// </param>
         /// <param name="because">
         ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
@@ -245,10 +246,10 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
-        ///     Asserts that the current <see cref="OffsetDateTime" /> has the specified <see cref="OffsetDate" />.
+        ///     Asserts that the current <see cref="OffsetDate" /> has the specified <see cref="Offset" />.
         /// </summary>
-        /// <param name="date">
-        ///     The <see cref="OffsetDate" /> that the current <see cref="OffsetDateTime" /> is expected to have.
+        /// <param name="offset">
+        ///     The <see cref="OffsetDate" /> that the current <see cref="OffsetDate" /> is expected to have.
         /// </param>
         /// <param name="because">
         ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
@@ -262,18 +263,18 @@ namespace FluentAssertions.NodaTime
         ///     which can be used to assert the <see cref="OffsetDate" />.
         /// </returns>
         [CustomAssertion]
-        public AndWhichConstraint<OffsetDateAssertions, Offset> HaveOffset(Offset date, string because = "",
+        public AndWhichConstraint<OffsetDateAssertions, Offset> HaveOffset(Offset offset, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Expected {context:OffsetDate} to have offset {0}{reason}", date);
+                    .WithExpectation("Expected {context:OffsetDate} to have offset {0}{reason}", offset);
 
             if (Subject.HasValue)
             {
                 scope
-                    .ForCondition(Subject.Value.Offset.Equals(date))
+                    .ForCondition(Subject.Value.Offset.Equals(offset))
                     .FailWith(", but found {0}.", Subject.Value.Offset);
             }
             else
@@ -283,14 +284,38 @@ namespace FluentAssertions.NodaTime
                     .FailWith(", but {context:OffsetDate} was <null>.");
             }
 
-            return new AndWhichConstraint<OffsetDateAssertions, Offset>(this, date);
+            return new AndWhichConstraint<OffsetDateAssertions, Offset>(this, offset);
         }
 
         /// <summary>
-        ///     Asserts that the current <see cref="OffsetDateTime" /> does not have the specified <see cref="OffsetDate" />.
+        ///     Asserts that the current <see cref="OffsetDate" /> has the specified <see cref="TimeSpan" />.
         /// </summary>
-        /// <param name="date">
-        ///     The <see cref="OffsetDate" /> that the current <see cref="OffsetDateTime" /> is not expected to have.
+        /// <param name="timeSpan">
+        ///     The <see cref="OffsetDate" /> that the current <see cref="OffsetDate" /> is expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndWhichConstraint{TParentConstraint, TMatchedElement}">AndWhichConstraint&lt;OffsetDateTimeAssertions, OffsetDate&gt;</see>
+        ///     which can be used to assert the <see cref="OffsetDate" />.
+        /// </returns>
+        [CustomAssertion]
+        public AndWhichConstraint<OffsetDateAssertions, Offset> HaveOffset(TimeSpan timeSpan, string because = "",
+            params object[] becauseArgs)
+        {
+            return HaveOffset(Offset.FromTimeSpan(timeSpan), because, becauseArgs);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="OffsetDate" /> does not have the specified <see cref="Offset" />.
+        /// </summary>
+        /// <param name="offset">
+        ///     The <see cref="OffsetDate" /> that the current <see cref="OffsetDate" /> is not expected to have.
         /// </param>
         /// <param name="because">
         ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
@@ -303,18 +328,18 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<OffsetDateAssertions> NotHaveOffset(Offset date, string because = "",
+        public AndConstraint<OffsetDateAssertions> NotHaveOffset(Offset offset, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Did not expect {context:OffsetDate} to have offset {0}{reason}", date);
+                    .WithExpectation("Did not expect {context:OffsetDate} to have offset {0}{reason}", offset);
 
             if (Subject.HasValue)
             {
                 scope
-                    .ForCondition(!Subject.Value.Offset.Equals(date))
+                    .ForCondition(!Subject.Value.Offset.Equals(offset))
                     .FailWith(".");
             }
             else
@@ -325,6 +350,29 @@ namespace FluentAssertions.NodaTime
             }
 
             return new AndConstraint<OffsetDateAssertions>(this);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="OffsetDate" /> does not have the specified <see cref="TimeSpan" />.
+        /// </summary>
+        /// <param name="timeSpan">
+        ///     The <see cref="OffsetDate" /> that the current <see cref="OffsetDate" /> is not expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<OffsetDateAssertions> NotHaveOffset(TimeSpan timeSpan, string because = "",
+            params object[] becauseArgs)
+        {
+            return NotHaveOffset(Offset.FromTimeSpan(timeSpan), because, becauseArgs);
         }
 
         /// <summary>

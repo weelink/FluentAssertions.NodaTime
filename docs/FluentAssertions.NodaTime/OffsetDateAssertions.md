@@ -20,7 +20,7 @@ public sealed class OffsetDateAssertions :
 | [HaveDayOfYear](OffsetDateAssertions/HaveDayOfYear.md)(…) | Asserts that the current OffsetDate has the specified day of the year. |
 | [HaveEra](OffsetDateAssertions/HaveEra.md)(…) | Asserts that the current OffsetDate has the specified era. |
 | [HaveMonth](OffsetDateAssertions/HaveMonth.md)(…) | Asserts that the current OffsetDate has the specified month. |
-| [HaveOffset](OffsetDateAssertions/HaveOffset.md)(…) | Asserts that the current OffsetDateTime has the specified OffsetDate. |
+| [HaveOffset](OffsetDateAssertions/HaveOffset.md)(…) | Asserts that the current OffsetDate has the specified Offset. (2 methods) |
 | [HaveYear](OffsetDateAssertions/HaveYear.md)(…) | Asserts that the current OffsetDate has the specified year. |
 | [HaveYearOfEra](OffsetDateAssertions/HaveYearOfEra.md)(…) | Asserts that the current OffsetDate has the specified year of era. |
 | [NotBe](OffsetDateAssertions/NotBe.md)(…) | Asserts that this OffsetDate is not equal to *other*. |
@@ -31,7 +31,7 @@ public sealed class OffsetDateAssertions :
 | [NotHaveDayOfYear](OffsetDateAssertions/NotHaveDayOfYear.md)(…) | Asserts that the current OffsetDate does not have the specified day of the year. |
 | [NotHaveEra](OffsetDateAssertions/NotHaveEra.md)(…) | Asserts that the current OffsetDate does not have the specified era. |
 | [NotHaveMonth](OffsetDateAssertions/NotHaveMonth.md)(…) | Asserts that the current OffsetDate does not have the specified month. |
-| [NotHaveOffset](OffsetDateAssertions/NotHaveOffset.md)(…) | Asserts that the current OffsetDateTime does not have the specified OffsetDate. |
+| [NotHaveOffset](OffsetDateAssertions/NotHaveOffset.md)(…) | Asserts that the current OffsetDate does not have the specified Offset. (2 methods) |
 | [NotHaveYear](OffsetDateAssertions/NotHaveYear.md)(…) | Asserts that the current OffsetDate does not have the specified year. |
 | [NotHaveYearOfEra](OffsetDateAssertions/NotHaveYearOfEra.md)(…) | Asserts that the current OffsetDate does not have the specified year of era. |
 
