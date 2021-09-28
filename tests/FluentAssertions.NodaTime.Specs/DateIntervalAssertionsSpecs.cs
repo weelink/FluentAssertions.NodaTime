@@ -126,6 +126,57 @@ namespace FluentAssertions.NodaTime.Specs
                 act.Should().Throw<XunitException>()
                     .WithMessage($"Expected {nameof(dateInterval)} to be equal to {other}, but found {dateInterval}.");
             }
+
+            [Fact]
+            public void When_a_date_interval_has_the_specified_amount_of_days_it_succeeds()
+            {
+                // Arrange
+                DateTime now = DateTime.Now;
+                LocalDate start = LocalDate.FromDateTime(now.AddDays(-1));
+                LocalDate end = LocalDate.FromDateTime(now.AddDays(1));
+                DateInterval dateInterval = new DateInterval(start, end);
+                int days = dateInterval.Length;
+
+                // Act
+                Action act = () => dateInterval.Should().BeInDays(days);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_a_date_interval_does_not_have_the_specified_amount_of_days_it_fails()
+            {
+                // Arrange
+                DateTime now = DateTime.Now;
+                LocalDate start = LocalDate.FromDateTime(now.AddDays(-1));
+                LocalDate end = LocalDate.FromDateTime(now.AddDays(1));
+                DateInterval dateInterval = new DateInterval(start, end);
+                int days = dateInterval.Length + 1;
+
+                // Act
+                Action act = () => dateInterval.Should().BeInDays(days);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(dateInterval)} to be {days} days, but found {dateInterval.Length}.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_null_is_in_days_it_fails()
+            {
+                // Arrange
+                DateInterval? dateInterval = default;
+                int days = new Random().Next();
+
+                // Act
+                Action act = () => dateInterval.Should().BeInDays(days);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(dateInterval)} to be {days} days, but found <null>.");
+            }
         }
 
         public class NotBe
@@ -230,64 +281,7 @@ namespace FluentAssertions.NodaTime.Specs
                 // Assert
                 act.Should().NotThrow();
             }
-        }
 
-        public class BeInDays
-        {
-            [Fact]
-            public void When_a_date_interval_has_the_specified_amount_of_days_it_succeeds()
-            {
-                // Arrange
-                DateTime now = DateTime.Now;
-                LocalDate start = LocalDate.FromDateTime(now.AddDays(-1));
-                LocalDate end = LocalDate.FromDateTime(now.AddDays(1));
-                DateInterval dateInterval = new DateInterval(start, end);
-                int days = dateInterval.Length;
-
-                // Act
-                Action act = () => dateInterval.Should().BeInDays(days);
-
-                // Assert
-                act.Should().NotThrow();
-            }
-
-            [Fact]
-            public void When_a_date_interval_does_not_have_the_specified_amount_of_days_it_fails()
-            {
-                // Arrange
-                DateTime now = DateTime.Now;
-                LocalDate start = LocalDate.FromDateTime(now.AddDays(-1));
-                LocalDate end = LocalDate.FromDateTime(now.AddDays(1));
-                DateInterval dateInterval = new DateInterval(start, end);
-                int days = dateInterval.Length + 1;
-
-                // Act
-                Action act = () => dateInterval.Should().BeInDays(days);
-
-                // Assert
-                act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(dateInterval)} to be {days} days, but found {dateInterval.Length}.");
-            }
-
-            [Fact]
-            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
-            public void When_asserting_null_it_fails()
-            {
-                // Arrange
-                DateInterval? dateInterval = default;
-                int days = new Random().Next();
-
-                // Act
-                Action act = () => dateInterval.Should().BeInDays(days);
-
-                // Assert
-                act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(dateInterval)} to be {days} days, but found <null>.");
-            }
-        }
-
-        public class NotBeInDays
-        {
             [Fact]
             public void When_a_date_interval_has_the_specified_amount_of_days_it_fails()
             {
@@ -325,7 +319,7 @@ namespace FluentAssertions.NodaTime.Specs
 
             [Fact]
             [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
-            public void When_asserting_null_it_fails()
+            public void When_asserting_null_is_in_days_it_fails()
             {
                 // Arrange
                 DateInterval? dateInterval = default;

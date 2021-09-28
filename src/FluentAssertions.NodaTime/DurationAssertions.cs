@@ -583,6 +583,86 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
+        ///     Asserts that the current <see cref="Duration" /> has the specified hours.
+        /// </summary>
+        /// <param name="hours">
+        ///     The hours that the current <see cref="Duration" /> is expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<DurationAssertions> HaveHours(int hours, string because = "", params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Expected {context:Duration} to have {0} hours{reason}", hours);
+
+            if (Subject.HasValue)
+            {
+                scope
+                    .ForCondition(Subject.Value.Hours.Equals(hours))
+                    .FailWith(", but found {0}.", Subject.Value.Hours);
+            }
+            else
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but {context:Duration} was <null>.");
+            }
+
+            return new AndConstraint<DurationAssertions>(this);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="Duration" /> does not have the specified hours.
+        /// </summary>
+        /// <param name="hours">
+        ///     The hours that the current <see cref="Duration" /> is not expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<DurationAssertions> NotHaveHours(int hours, string because = "", params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Did not expect {context:Duration} to have {0} hours{reason}", hours);
+
+            if (Subject.HasValue)
+            {
+                scope
+                    .ForCondition(!Subject.Value.Hours.Equals(hours))
+                    .FailWith(".");
+            }
+            else
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but {context:Duration} was <null>.");
+            }
+
+            return new AndConstraint<DurationAssertions>(this);
+        }
+
+        /// <summary>
         ///     Asserts that the current <see cref="Duration" /> has the specified total number of days.
         /// </summary>
         /// <param name="totalDays">
@@ -696,6 +776,132 @@ namespace FluentAssertions.NodaTime
             {
                 scope
                     .ForCondition(!Subject.Value.TotalDays.IsApproximatelyEqual(totalDays, precision))
+                    .FailWith(".");
+            }
+            else
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but {context:Duration} was <null>.");
+            }
+
+            return new AndConstraint<DurationAssertions>(this);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="Duration" /> has the specified total number of hours.
+        /// </summary>
+        /// <param name="totalHours">
+        ///     The total number of hours that the current <see cref="Duration" /> is expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<DurationAssertions> HaveTotalHours(double totalHours, string because = "", params object[] becauseArgs)
+        {
+            return HaveTotalHours(totalHours, 0.01, because, becauseArgs);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="Duration" /> has the specified total number of hours.
+        /// </summary>
+        /// <param name="totalHours">
+        ///     The total number of hours that the current <see cref="Duration" /> is expected to have.
+        /// </param>
+        /// <param name="precision">The maximum amount of which the two values may differ.</param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<DurationAssertions> HaveTotalHours(double totalHours, double precision, string because = "", params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Expected {context:Duration} to have {0} total number of hours (+/- {1}){reason}", totalHours, precision);
+
+            if (Subject.HasValue)
+            {
+                scope
+                    .ForCondition(Subject.Value.TotalHours.IsApproximatelyEqual(totalHours, precision))
+                    .FailWith(", but found {0}.", Subject.Value.TotalHours);
+            }
+            else
+            {
+                scope
+                    .ForCondition(false)
+                    .FailWith(", but {context:Duration} was <null>.");
+            }
+
+            return new AndConstraint<DurationAssertions>(this);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="Duration" /> does not have the specified total number of hours.
+        /// </summary>
+        /// <param name="totalHours">
+        ///     The total number of hours that the current <see cref="Duration" /> is not expected to have.
+        /// </param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<DurationAssertions> NotHaveTotalHours(double totalHours, string because = "", params object[] becauseArgs)
+        {
+            return NotHaveTotalHours(totalHours, 0.01, because, becauseArgs);
+        }
+
+        /// <summary>
+        ///     Asserts that the current <see cref="Duration" /> does not have the specified total number of hours.
+        /// </summary>
+        /// <param name="totalHours">
+        ///     The total number of hours that the current <see cref="Duration" /> is not expected to have.
+        /// </param>
+        /// <param name="precision">The maximum amount of which the two values may differ.</param>
+        /// <param name="because">
+        ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
+        ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+        /// </param>
+        /// <param name="becauseArgs">
+        ///     Zero or more objects to format using the placeholders in <paramref name="because" />.
+        /// </param>
+        /// <returns>
+        ///     An <see cref="AndConstraint{T}">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+        /// </returns>
+        [CustomAssertion]
+        public AndConstraint<DurationAssertions> NotHaveTotalHours(double totalHours, double precision, string because = "", params object[] becauseArgs)
+        {
+            AssertionScope scope =
+                Execute.Assertion
+                    .BecauseOf(because, becauseArgs)
+                    .WithExpectation("Did not expect {context:Duration} to have {0} total number of hours (+/- {1}){reason}", totalHours, precision);
+
+            if (Subject.HasValue)
+            {
+                scope
+                    .ForCondition(!Subject.Value.TotalHours.IsApproximatelyEqual(totalHours, precision))
                     .FailWith(".");
             }
             else

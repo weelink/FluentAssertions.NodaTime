@@ -21,6 +21,7 @@ public sealed class DurationAssertions : ReferenceTypeAssertions<Duration?, Dura
 | [BePositive](DurationAssertions/BePositive.md)(…) | Asserts that this Duration is positive. |
 | [BeZero](DurationAssertions/BeZero.md)(…) | Asserts that this Duration is zero. |
 | [HaveDays](DurationAssertions/HaveDays.md)(…) | Asserts that the current Duration has the specified days. |
+| [HaveHours](DurationAssertions/HaveHours.md)(…) | Asserts that the current Duration has the specified hours. |
 | [HaveMilliseconds](DurationAssertions/HaveMilliseconds.md)(…) | Asserts that the current Duration has the specified milliseconds. |
 | [HaveMinutes](DurationAssertions/HaveMinutes.md)(…) | Asserts that the current Duration has the specified minutes. |
 | [HaveNanosecondOfDay](DurationAssertions/HaveNanosecondOfDay.md)(…) | Asserts that the current Duration has the specified nanosecond of day. |
@@ -29,6 +30,7 @@ public sealed class DurationAssertions : ReferenceTypeAssertions<Duration?, Dura
 | [HaveSubsecondInTicks](DurationAssertions/HaveSubsecondInTicks.md)(…) | Asserts that the current Duration has the specified subseconds in ticks. |
 | [HaveTicks](DurationAssertions/HaveTicks.md)(…) | Asserts that the current Duration has the specified ticks. |
 | [HaveTotalDays](DurationAssertions/HaveTotalDays.md)(…) | Asserts that the current Duration has the specified total number of days. (2 methods) |
+| [HaveTotalHours](DurationAssertions/HaveTotalHours.md)(…) | Asserts that the current Duration has the specified total number of hours. (2 methods) |
 | [HaveTotalMilliseconds](DurationAssertions/HaveTotalMilliseconds.md)(…) | Asserts that the current Duration has the specified total number of milliseconds. (2 methods) |
 | [HaveTotalMinutes](DurationAssertions/HaveTotalMinutes.md)(…) | Asserts that the current Duration has the specified total number of minutes. (2 methods) |
 | [HaveTotalNanoseconds](DurationAssertions/HaveTotalNanoseconds.md)(…) | Asserts that the current Duration has the specified total number of nanoseconds. (2 methods) |
@@ -38,6 +40,7 @@ public sealed class DurationAssertions : ReferenceTypeAssertions<Duration?, Dura
 | [NotBeCloseTo](DurationAssertions/NotBeCloseTo.md)(…) | Asserts that this Duration is not within *precision* of *other*. (2 methods) |
 | [NotBeZero](DurationAssertions/NotBeZero.md)(…) | Asserts that this Duration is not zero. |
 | [NotHaveDays](DurationAssertions/NotHaveDays.md)(…) | Asserts that the current Duration does not have the specified days. |
+| [NotHaveHours](DurationAssertions/NotHaveHours.md)(…) | Asserts that the current Duration does not have the specified hours. |
 | [NotHaveMilliseconds](DurationAssertions/NotHaveMilliseconds.md)(…) | Asserts that the current Duration does not have the specified milliseconds. |
 | [NotHaveMinutes](DurationAssertions/NotHaveMinutes.md)(…) | Asserts that the current Duration does not have the specified minutes. |
 | [NotHaveNanosecondOfDay](DurationAssertions/NotHaveNanosecondOfDay.md)(…) | Asserts that the current Duration does not have the specified nanosecond of day. |
@@ -46,6 +49,7 @@ public sealed class DurationAssertions : ReferenceTypeAssertions<Duration?, Dura
 | [NotHaveSubsecondInTicks](DurationAssertions/NotHaveSubsecondInTicks.md)(…) | Asserts that the current Duration does not have the specified subseconds in ticks. |
 | [NotHaveTicks](DurationAssertions/NotHaveTicks.md)(…) | Asserts that the current Duration does not have the specified ticks. |
 | [NotHaveTotalDays](DurationAssertions/NotHaveTotalDays.md)(…) | Asserts that the current Duration does not have the specified total number of days. (2 methods) |
+| [NotHaveTotalHours](DurationAssertions/NotHaveTotalHours.md)(…) | Asserts that the current Duration does not have the specified total number of hours. (2 methods) |
 | [NotHaveTotalMilliseconds](DurationAssertions/NotHaveTotalMilliseconds.md)(…) | Asserts that the current Duration does not have the specified total number of milliseconds. (2 methods) |
 | [NotHaveTotalMinutes](DurationAssertions/NotHaveTotalMinutes.md)(…) | Asserts that the current Duration does not have the specified total number of minutes. (2 methods) |
 | [NotHaveTotalNanoseconds](DurationAssertions/NotHaveTotalNanoseconds.md)(…) | Asserts that the current Duration does not have the specified total number of nanoseconds. (2 methods) |

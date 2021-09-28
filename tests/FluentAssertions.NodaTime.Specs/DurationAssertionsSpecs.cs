@@ -1493,6 +1493,100 @@ namespace FluentAssertions.NodaTime.Specs
             }
         }
 
+        public class HaveHours
+        {
+            [Fact]
+            public void When_a_duration_has_the_specified_hours_it_succeeds()
+            {
+                // Arrange
+                Duration duration = Duration.FromHours(new Random().Next(0, 23));
+
+                // Act
+                Action act = () => duration.Should().HaveHours(duration.Hours);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_a_duration_does_not_have_the_specified_hours_it_fails()
+            {
+                // Arrange
+                Duration duration = Duration.FromHours(new Random().Next(0, 23));
+                int hours = duration.Plus(Duration.FromHours(1)).Hours;
+
+                // Act
+                Action act = () => duration.Should().HaveHours(hours);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(duration)} to have {hours} hours, but found {duration.Hours}.");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_duration_has_the_specified_hours_it_fails()
+            {
+                // Arrange
+                int hours = new Random().Next(0, 23);
+                Duration? duration = null;
+
+                // Act
+                Action act = () => duration.Should().HaveHours(hours);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Expected {nameof(duration)} to have {hours} hours, but {nameof(duration)} was <null>.");
+            }
+        }
+
+        public class NotHaveHours
+        {
+            [Fact]
+            public void When_a_duration_has_the_specified_hours_it_fails()
+            {
+                // Arrange
+                Duration duration = Duration.FromHours(new Random().Next(0, 23));
+
+                // Act
+                Action act = () => duration.Should().NotHaveHours(duration.Hours);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(duration)} to have {duration.Hours} hours.");
+            }
+
+            [Fact]
+            public void When_a_duration_does_not_have_the_specified_hours_it_succeeds()
+            {
+                // Arrange
+                Duration duration = Duration.FromHours(new Random().Next(0, 23));
+                int hours = duration.Plus(Duration.FromHours(1)).Hours;
+
+                // Act
+                Action act = () => duration.Should().NotHaveHours(hours);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_duration_does_not_have_the_specified_hours_it_fails()
+            {
+                // Arrange
+                int hours = new Random().Next(0, 23);
+                Duration? duration = null;
+
+                // Act
+                Action act = () => duration.Should().NotHaveHours(hours);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage($"Did not expect {nameof(duration)} to have {hours} hours, but {nameof(duration)} was <null>.");
+            }
+        }
+
         public class HaveTotalDays
         {
             [Fact]
@@ -1652,6 +1746,168 @@ namespace FluentAssertions.NodaTime.Specs
                 act.Should().Throw<XunitException>()
                     .WithMessage(
                         $"Did not expect {nameof(duration)} to have {days.AsFormatted()} total number of days (+/- {DefaultPrecision.AsFormatted()}), but {nameof(duration)} was <null>.");
+            }
+        }
+
+        public class HaveTotalHours
+        {
+            [Fact]
+            public void When_a_duration_has_the_specified_total_number_of_hours_it_succeeds()
+            {
+                // Arrange
+                Duration duration = Duration.FromHours(new Random().Next(1, 1000));
+
+                // Act
+                Action act = () => duration.Should().HaveTotalHours(duration.TotalHours);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_a_duration_does_not_have_the_specified_total_number_of_hours_it_fails()
+            {
+                // Arrange
+                Duration duration = Duration.FromHours(new Random().Next(1, 1000));
+                double hours = duration.Plus(Duration.FromHours(1)).TotalHours;
+
+                // Act
+                Action act = () => duration.Should().HaveTotalHours(hours);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage(
+                        $"Expected {nameof(duration)} to have {hours.AsFormatted()} total number of hours (+/- {DefaultPrecision.AsFormatted()}), but found {duration.TotalHours.AsFormatted()}.");
+            }
+
+            [Fact]
+            public void When_a_duration_does_not_have_the_specified_total_number_of_hours_within_the_specified_precision_it_fails()
+            {
+                // Arrange
+                Duration duration = Duration.FromHours(new Random().Next(1, 1000));
+                double precision = new Random().Next(1, 100) / 1000d;
+                double hours = duration.TotalHours + precision + precision;
+
+                // Act
+                Action act = () => duration.Should().HaveTotalHours(hours, precision);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage(
+                        $"Expected {nameof(duration)} to have {hours.AsFormatted()} total number of hours (+/- {precision.AsFormatted()}), but found {duration.TotalHours.AsFormatted()}.");
+            }
+
+            [Fact]
+            public void When_a_duration_has_the_specified_total_number_of_hours_within_the_specified_precision_it_succeeds()
+            {
+                // Arrange
+                Duration duration = Duration.FromHours(new Random().Next(1, 1000));
+                double precision = new Random().Next(1, 100) / 1000d;
+                double hours = duration.TotalHours + precision / 2;
+
+                // Act
+                Action act = () => duration.Should().HaveTotalHours(hours, precision);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_duration_has_the_specified_total_number_of_hours_it_fails()
+            {
+                // Arrange
+                double hours = new Random().Next(1, 100);
+                Duration? duration = null;
+
+                // Act
+                Action act = () => duration.Should().HaveTotalHours(hours);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage(
+                        $"Expected {nameof(duration)} to have {hours.AsFormatted()} total number of hours (+/- {DefaultPrecision.AsFormatted()}), but {nameof(duration)} was <null>.");
+            }
+        }
+
+        public class NotHaveTotalHours
+        {
+            [Fact]
+            public void When_a_duration_has_the_specified_total_number_of_hours_it_fails()
+            {
+                // Arrange
+                Duration duration = Duration.FromHours(new Random().Next(1, 1000));
+
+                // Act
+                Action act = () => duration.Should().NotHaveTotalHours(duration.TotalHours);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage(
+                        $"Did not expect {nameof(duration)} to have {duration.TotalHours.AsFormatted()} total number of hours (+/- {DefaultPrecision.AsFormatted()}).");
+            }
+
+            [Fact]
+            public void When_a_duration_does_not_have_the_specified_total_number_of_hours_it_succeeds()
+            {
+                // Arrange
+                Duration duration = Duration.FromHours(new Random().Next(1, 1000));
+                double hours = duration.Plus(Duration.FromHours(1)).TotalHours;
+
+                // Act
+                Action act = () => duration.Should().NotHaveTotalHours(hours);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_a_duration_does_not_have_the_specified_total_number_of_hours_within_the_specified_precision_it_succeeds()
+            {
+                // Arrange
+                Duration duration = Duration.FromHours(new Random().Next(1, 1000));
+                double precision = new Random().Next(1, 100) / 1000d;
+                double hours = duration.TotalHours + precision + precision;
+
+                // Act
+                Action act = () => duration.Should().NotHaveTotalHours(hours, precision);
+
+                // Assert
+                act.Should().NotThrow();
+            }
+
+            [Fact]
+            public void When_a_duration_has_the_specified_total_number_of_hours_within_the_specified_precision_it_fails()
+            {
+                // Arrange
+                Duration duration = Duration.FromHours(new Random().Next(1, 1000));
+                double precision = new Random().Next(1, 100) / 1000d;
+                double hours = duration.TotalHours + precision / 2;
+
+                // Act
+                Action act = () => duration.Should().NotHaveTotalHours(hours, precision);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage(
+                        $"Did not expect {nameof(duration)} to have {hours.AsFormatted()} total number of hours (+/- {precision.AsFormatted()}).");
+            }
+
+            [Fact]
+            [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
+            public void When_asserting_a_null_duration_does_not_have_the_specified_total_number_of_hours_it_fails()
+            {
+                // Arrange
+                double hours = new Random().Next(1, 100);
+                Duration? duration = null;
+
+                // Act
+                Action act = () => duration.Should().NotHaveTotalHours(hours);
+
+                // Assert
+                act.Should().Throw<XunitException>()
+                    .WithMessage(
+                        $"Did not expect {nameof(duration)} to have {hours.AsFormatted()} total number of hours (+/- {DefaultPrecision.AsFormatted()}), but {nameof(duration)} was <null>.");
             }
         }
 

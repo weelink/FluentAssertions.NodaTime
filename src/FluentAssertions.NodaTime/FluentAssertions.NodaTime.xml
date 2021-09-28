@@ -990,6 +990,42 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.HaveHours(System.Int32,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Duration" /> has the specified hours.
+            </summary>
+            <param name="hours">
+                The hours that the current <see cref="T:NodaTime.Duration" /> is expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.NotHaveHours(System.Int32,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Duration" /> does not have the specified hours.
+            </summary>
+            <param name="hours">
+                The hours that the current <see cref="T:NodaTime.Duration" /> is not expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
         <member name="M:FluentAssertions.NodaTime.DurationAssertions.HaveTotalDays(System.Double,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.Duration" /> has the specified total number of days.
@@ -1051,6 +1087,80 @@
             </summary>
             <param name="totalDays">
                 The total number of days that the current <see cref="T:NodaTime.Duration" /> is not expected to have.
+            </param>
+            <param name="precision">The maximum amount of which the two values may differ.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.HaveTotalHours(System.Double,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Duration" /> has the specified total number of hours.
+            </summary>
+            <param name="totalHours">
+                The total number of hours that the current <see cref="T:NodaTime.Duration" /> is expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.HaveTotalHours(System.Double,System.Double,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Duration" /> has the specified total number of hours.
+            </summary>
+            <param name="totalHours">
+                The total number of hours that the current <see cref="T:NodaTime.Duration" /> is expected to have.
+            </param>
+            <param name="precision">The maximum amount of which the two values may differ.</param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.NotHaveTotalHours(System.Double,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Duration" /> does not have the specified total number of hours.
+            </summary>
+            <param name="totalHours">
+                The total number of hours that the current <see cref="T:NodaTime.Duration" /> is not expected to have.
+            </param>
+            <param name="because">
+                A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
+                is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
+            </param>
+            <param name="becauseArgs">
+                Zero or more objects to format using the placeholders in <paramref name="because" />.
+            </param>
+            <returns>
+                An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
+            </returns>
+        </member>
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.NotHaveTotalHours(System.Double,System.Double,System.String,System.Object[])">
+            <summary>
+                Asserts that the current <see cref="T:NodaTime.Duration" /> does not have the specified total number of hours.
+            </summary>
+            <param name="totalHours">
+                The total number of hours that the current <see cref="T:NodaTime.Duration" /> is not expected to have.
             </param>
             <param name="precision">The maximum amount of which the two values may differ.</param>
             <param name="because">
