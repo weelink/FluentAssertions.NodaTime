@@ -35,7 +35,7 @@ public AndConstraint<DurationAssertions> Be(TimeSpan? other, string because = ""
 
 | parameter | description |
 | --- | --- |
-| other | The Duration to compare to. |
+| other | The TimeSpan to compare to. |
 | because | A formatted phrase as is supported by Object[]) explaining why the assertion is needed. If the phrase does not start with the word because, it is prepended automatically. |
 | becauseArgs | Zero or more objects to format using the placeholders in *because*. |
 

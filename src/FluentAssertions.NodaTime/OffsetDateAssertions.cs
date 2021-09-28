@@ -796,13 +796,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetDateAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<OffsetDateAssertions> HaveYearOfEra(int yearOfEra, string because = "",
+        public AndConstraint<OffsetDateAssertions> HaveYearWithinEra(int yearOfEra, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Expected {context:OffsetDate} to have year of era {0}{reason}", yearOfEra);
+                    .WithExpectation("Expected {context:OffsetDate} to have {0} as the year within the era{reason}", yearOfEra);
 
             if (Subject.HasValue)
             {
@@ -837,13 +837,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetDateAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<OffsetDateAssertions> NotHaveYearOfEra(int yearOfEra, string because = "",
+        public AndConstraint<OffsetDateAssertions> NotHaveYearWithinEra(int yearOfEra, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Did not expect {context:OffsetDate} to have year of era {0}{reason}", yearOfEra);
+                    .WithExpectation("Did not expect {context:OffsetDate} to have {0} as the year within the era{reason}", yearOfEra);
 
             if (Subject.HasValue)
             {

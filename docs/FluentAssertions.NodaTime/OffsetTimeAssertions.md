@@ -17,24 +17,24 @@ public sealed class OffsetTimeAssertions :
 | [HaveHour](OffsetTimeAssertions/HaveHour.md)(…) | Asserts that the current OffsetTime has the specified hour of the day. |
 | [HaveMillisecond](OffsetTimeAssertions/HaveMillisecond.md)(…) | Asserts that the current OffsetTime has the specified millisecond. |
 | [HaveMinute](OffsetTimeAssertions/HaveMinute.md)(…) | Asserts that the current OffsetTime has the specified minute. |
-| [HaveNanosecondOfDay](OffsetTimeAssertions/HaveNanosecondOfDay.md)(…) | Asserts that the current OffsetTime has the specified nanosecond of day. |
-| [HaveNanosecondOfSecond](OffsetTimeAssertions/HaveNanosecondOfSecond.md)(…) | Asserts that the current OffsetTime has the specified nanosecond of second. |
+| [HaveNanosecondsWithinDay](OffsetTimeAssertions/HaveNanosecondsWithinDay.md)(…) | Asserts that the current OffsetTime has the specified nanoseconds within the day. |
+| [HaveNanosecondsWithinSecond](OffsetTimeAssertions/HaveNanosecondsWithinSecond.md)(…) | Asserts that the current OffsetTime has the specified nanoseconds within the second. |
 | [HaveOffset](OffsetTimeAssertions/HaveOffset.md)(…) | Asserts that the current OffsetTime has the specified Offset. (2 methods) |
 | [HaveSecond](OffsetTimeAssertions/HaveSecond.md)(…) | Asserts that the current OffsetTime has the specified second. |
-| [HaveTickOfDay](OffsetTimeAssertions/HaveTickOfDay.md)(…) | Asserts that the current OffsetTime has the specified tick of day. |
-| [HaveTickOfSecond](OffsetTimeAssertions/HaveTickOfSecond.md)(…) | Asserts that the current OffsetTime has the specified tick of second. |
+| [HaveTicksWithinDay](OffsetTimeAssertions/HaveTicksWithinDay.md)(…) | Asserts that the current OffsetTime has the specified tick of day. |
+| [HaveTicksWithinSecond](OffsetTimeAssertions/HaveTicksWithinSecond.md)(…) | Asserts that the current OffsetTime has the specified tick of second. |
 | [HaveTimeOfDay](OffsetTimeAssertions/HaveTimeOfDay.md)(…) | Asserts that the current OffsetTime has the specified LocalTime. |
 | [NotBe](OffsetTimeAssertions/NotBe.md)(…) | Asserts that this OffsetTime is not equal to *other*. |
 | [NotHaveClockHourOfHalfDay](OffsetTimeAssertions/NotHaveClockHourOfHalfDay.md)(…) | Asserts that the current OffsetTime does not have the specified hour of the half-day. |
 | [NotHaveHour](OffsetTimeAssertions/NotHaveHour.md)(…) | Asserts that the current OffsetTime does not have the specified hour of the day. |
 | [NotHaveMillisecond](OffsetTimeAssertions/NotHaveMillisecond.md)(…) | Asserts that the current OffsetTime does not have the specified millisecond. |
 | [NotHaveMinute](OffsetTimeAssertions/NotHaveMinute.md)(…) | Asserts that the current OffsetTime does not have the specified minute. |
-| [NotHaveNanosecondOfDay](OffsetTimeAssertions/NotHaveNanosecondOfDay.md)(…) | Asserts that the current OffsetTime does not have the specified nanosecond of day. |
-| [NotHaveNanosecondOfSecond](OffsetTimeAssertions/NotHaveNanosecondOfSecond.md)(…) | Asserts that the current OffsetTime does not have the specified nanosecond of second. |
+| [NotHaveNanosecondsWithinDay](OffsetTimeAssertions/NotHaveNanosecondsWithinDay.md)(…) | Asserts that the current OffsetTime does not have the specified nanoseconds within the day. |
+| [NotHaveNanosecondsWithinSecond](OffsetTimeAssertions/NotHaveNanosecondsWithinSecond.md)(…) | Asserts that the current OffsetTime does not have the specified nanoseconds within the second. |
 | [NotHaveOffset](OffsetTimeAssertions/NotHaveOffset.md)(…) | Asserts that the current OffsetTime does not have the specified Offset. (2 methods) |
 | [NotHaveSecond](OffsetTimeAssertions/NotHaveSecond.md)(…) | Asserts that the current OffsetTime does not have the specified second. |
-| [NotHaveTickOfDay](OffsetTimeAssertions/NotHaveTickOfDay.md)(…) | Asserts that the current OffsetTime does not have the specified tick of day. |
-| [NotHaveTickOfSecond](OffsetTimeAssertions/NotHaveTickOfSecond.md)(…) | Asserts that the current OffsetTime does not have the specified tick of second. |
+| [NotHaveTicksWithinDay](OffsetTimeAssertions/NotHaveTicksWithinDay.md)(…) | Asserts that the current OffsetTime does not have the specified tick of day. |
+| [NotHaveTicksWithinSecond](OffsetTimeAssertions/NotHaveTicksWithinSecond.md)(…) | Asserts that the current OffsetTime does not have the specified tick of second. |
 | [NotHaveTimeOfDay](OffsetTimeAssertions/NotHaveTimeOfDay.md)(…) | Asserts that the current OffsetTime does not have the specified LocalTime. |
 
 ## Protected Members

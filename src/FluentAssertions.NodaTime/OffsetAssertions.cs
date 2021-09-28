@@ -348,7 +348,7 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
-        ///     Asserts that this <see cref="Offset" /> is on or after <paramref name="other" />.
+        ///     Asserts that this <see cref="Offset" /> is greater than or equal to <paramref name="other" />.
         /// </summary>
         /// <param name="other">The <see cref="Offset" /> to compare to.</param>
         /// <param name="because">

@@ -336,10 +336,10 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
-        ///     Asserts that the current <see cref="AnnualDate" /> has the specified month of the month.
+        ///     Asserts that the current <see cref="AnnualDate" /> has the specified month of the year.
         /// </summary>
         /// <param name="month">
-        ///     The month of the month that the current <see cref="AnnualDate" /> is expected to have.
+        ///     The month of the year that the current <see cref="AnnualDate" /> is expected to have.
         /// </param>
         /// <param name="because">
         ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
@@ -376,10 +376,10 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
-        ///     Asserts that the current <see cref="AnnualDate" /> does not have the specified month of the month.
+        ///     Asserts that the current <see cref="AnnualDate" /> does not have the specified month of the year.
         /// </summary>
         /// <param name="month">
-        ///     The month of the month that the current <see cref="AnnualDate" /> is not expected to have.
+        ///     The month of the year that the current <see cref="AnnualDate" /> is not expected to have.
         /// </param>
         /// <param name="because">
         ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion

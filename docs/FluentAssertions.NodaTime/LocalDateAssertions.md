@@ -23,7 +23,7 @@ public sealed class LocalDateAssertions : ReferenceTypeAssertions<LocalDate?, Lo
 | [HaveEra](LocalDateAssertions/HaveEra.md)(…) | Asserts that the current LocalDate has the specified era. |
 | [HaveMonth](LocalDateAssertions/HaveMonth.md)(…) | Asserts that the current LocalDate has the specified month. |
 | [HaveYear](LocalDateAssertions/HaveYear.md)(…) | Asserts that the current LocalDate has the specified year. |
-| [HaveYearOfEra](LocalDateAssertions/HaveYearOfEra.md)(…) | Asserts that the current LocalDate has the specified year of era. |
+| [HaveYearWithinEra](LocalDateAssertions/HaveYearWithinEra.md)(…) | Asserts that the current LocalDate has the specified year of era. |
 | [NotBe](LocalDateAssertions/NotBe.md)(…) | Asserts that this LocalDate is not equal to *other*. (3 methods) |
 | [NotBeInCalendar](LocalDateAssertions/NotBeInCalendar.md)(…) | Asserts that the current LocalDate does not have the specified CalendarSystem. |
 | [NotHaveDay](LocalDateAssertions/NotHaveDay.md)(…) | Asserts that the current LocalDate does not have the specified day of the month. |
@@ -32,7 +32,7 @@ public sealed class LocalDateAssertions : ReferenceTypeAssertions<LocalDate?, Lo
 | [NotHaveEra](LocalDateAssertions/NotHaveEra.md)(…) | Asserts that the current LocalDate does not have the specified era. |
 | [NotHaveMonth](LocalDateAssertions/NotHaveMonth.md)(…) | Asserts that the current LocalDate does not have the specified month. |
 | [NotHaveYear](LocalDateAssertions/NotHaveYear.md)(…) | Asserts that the current LocalDate does not have the specified year. |
-| [NotHaveYearOfEra](LocalDateAssertions/NotHaveYearOfEra.md)(…) | Asserts that the current LocalDate does not have the specified year of era. |
+| [NotHaveYearWithinEra](LocalDateAssertions/NotHaveYearWithinEra.md)(…) | Asserts that the current LocalDate does not have the specified year of era. |
 
 ## Protected Members
 

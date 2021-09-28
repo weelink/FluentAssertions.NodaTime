@@ -1703,78 +1703,78 @@ namespace FluentAssertions.NodaTime.Specs
             }
         }
 
-        public class HaveNanosecondOfDay
+        public class HaveNanosecondsWithinDay
         {
             [Fact]
-            public void When_a_zoned_date_time_has_the_specified_nanosecond_of_day_it_succeeds()
+            public void When_a_zoned_date_time_has_the_specified_nanoseconds_within_the_day_it_succeeds()
             {
                 // Arrange
                 ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(RandomCalendarSystem());
 
                 // Act
-                Action act = () => zonedDateTime.Should().HaveNanosecondOfDay(zonedDateTime.NanosecondOfDay);
+                Action act = () => zonedDateTime.Should().HaveNanosecondsWithinDay(zonedDateTime.NanosecondOfDay);
 
                 // Assert
                 act.Should().NotThrow();
             }
 
             [Fact]
-            public void When_a_zoned_date_time_does_not_have_the_specified_nanosecond_of_day_it_fails()
+            public void When_a_zoned_date_time_does_not_have_the_specified_nanoseconds_within_the_day_it_fails()
             {
                 // Arrange
                 ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(RandomCalendarSystem());
                 long nanosecondOfDay = zonedDateTime.PlusNanoseconds(1).NanosecondOfDay;
 
                 // Act
-                Action act = () => zonedDateTime.Should().HaveNanosecondOfDay(nanosecondOfDay);
+                Action act = () => zonedDateTime.Should().HaveNanosecondsWithinDay(nanosecondOfDay);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have nanosecond of day {nanosecondOfDay.AsFormatted()}, but found {zonedDateTime.NanosecondOfDay.AsFormatted()}.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have {nanosecondOfDay.AsFormatted()} nanoseconds within the day, but found {zonedDateTime.NanosecondOfDay.AsFormatted()}.");
             }
 
             [Fact]
             [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
-            public void When_asserting_a_null_zoned_date_time_has_the_specified_nanosecond_of_day_it_fails()
+            public void When_asserting_a_null_zoned_date_time_has_the_specified_nanoseconds_within_the_day_it_fails()
             {
                 // Arrange
                 long nanosecondOfDay = new Random().Next(1, 999_999_999);
                 ZonedDateTime? zonedDateTime = null;
 
                 // Act
-                Action act = () => zonedDateTime.Should().HaveNanosecondOfDay(nanosecondOfDay);
+                Action act = () => zonedDateTime.Should().HaveNanosecondsWithinDay(nanosecondOfDay);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have nanosecond of day {nanosecondOfDay.AsFormatted()}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have {nanosecondOfDay.AsFormatted()} nanoseconds within the day, but {nameof(zonedDateTime)} was <null>.");
             }
         }
 
-        public class NotHaveNanosecondOfDay
+        public class NotHaveNanosecondsWithinDay
         {
             [Fact]
-            public void When_a_zoned_date_time_has_the_specified_nanosecond_of_day_it_fails()
+            public void When_a_zoned_date_time_has_the_specified_nanoseconds_within_the_day_it_fails()
             {
                 // Arrange
                 ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(RandomCalendarSystem());
 
                 // Act
-                Action act = () => zonedDateTime.Should().NotHaveNanosecondOfDay(zonedDateTime.NanosecondOfDay);
+                Action act = () => zonedDateTime.Should().NotHaveNanosecondsWithinDay(zonedDateTime.NanosecondOfDay);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have nanosecond of day {zonedDateTime.NanosecondOfDay.AsFormatted()}.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have {zonedDateTime.NanosecondOfDay.AsFormatted()} nanoseconds within the day.");
             }
 
             [Fact]
-            public void When_a_zoned_date_time_does_not_have_the_specified_nanosecond_of_day_it_succeeds()
+            public void When_a_zoned_date_time_does_not_have_the_specified_nanoseconds_within_the_day_it_succeeds()
             {
                 // Arrange
                 ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(RandomCalendarSystem());
                 long nanosecondOfDay = zonedDateTime.PlusNanoseconds(1).NanosecondOfDay;
 
                 // Act
-                Action act = () => zonedDateTime.Should().NotHaveNanosecondOfDay(nanosecondOfDay);
+                Action act = () => zonedDateTime.Should().NotHaveNanosecondsWithinDay(nanosecondOfDay);
 
                 // Assert
                 act.Should().NotThrow();
@@ -1782,93 +1782,93 @@ namespace FluentAssertions.NodaTime.Specs
 
             [Fact]
             [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
-            public void When_asserting_a_null_zoned_date_time_does_not_have_the_specified_nanosecond_of_day_it_fails()
+            public void When_asserting_a_null_zoned_date_time_does_not_have_the_specified_nanoseconds_within_the_day_it_fails()
             {
                 // Arrange
                 long nanosecondOfDay = new Random().Next(1, 999_999_999);
                 ZonedDateTime? zonedDateTime = null;
 
                 // Act
-                Action act = () => zonedDateTime.Should().NotHaveNanosecondOfDay(nanosecondOfDay);
+                Action act = () => zonedDateTime.Should().NotHaveNanosecondsWithinDay(nanosecondOfDay);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have nanosecond of day {nanosecondOfDay.AsFormatted()}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have {nanosecondOfDay.AsFormatted()} nanoseconds within the day, but {nameof(zonedDateTime)} was <null>.");
             }
         }
 
-        public class HaveNanosecondOfSecond
+        public class HaveNanosecondsWithinSecond
         {
             [Fact]
-            public void When_a_zoned_date_time_has_the_specified_nanosecond_of_second_it_succeeds()
+            public void When_a_zoned_date_time_has_the_specified_nanoseconds_within_the_day_it_succeeds()
             {
                 // Arrange
                 ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(RandomCalendarSystem());
 
                 // Act
-                Action act = () => zonedDateTime.Should().HaveNanosecondOfSecond(zonedDateTime.NanosecondOfSecond);
+                Action act = () => zonedDateTime.Should().HaveNanosecondsWithinSecond(zonedDateTime.NanosecondOfSecond);
 
                 // Assert
                 act.Should().NotThrow();
             }
 
             [Fact]
-            public void When_a_zoned_date_time_does_not_have_the_specified_nanosecond_of_second_it_fails()
+            public void When_a_zoned_date_time_does_not_have_the_specified_nanoseconds_within_the_day_it_fails()
             {
                 // Arrange
                 ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(RandomCalendarSystem());
                 int nanosecondOfSecond = zonedDateTime.PlusNanoseconds(1).NanosecondOfSecond;
 
                 // Act
-                Action act = () => zonedDateTime.Should().HaveNanosecondOfSecond(nanosecondOfSecond);
+                Action act = () => zonedDateTime.Should().HaveNanosecondsWithinSecond(nanosecondOfSecond);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have nanosecond of second {nanosecondOfSecond}, but found {zonedDateTime.NanosecondOfSecond}.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have {nanosecondOfSecond} nanoseconds within the second, but found {zonedDateTime.NanosecondOfSecond}.");
             }
 
             [Fact]
             [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
-            public void When_asserting_a_null_zoned_date_time_has_the_specified_nanosecond_of_second_it_fails()
+            public void When_asserting_a_null_zoned_date_time_has_the_specified_nanoseconds_within_the_day_it_fails()
             {
                 // Arrange
                 int nanosecondOfSecond = new Random().Next(1, 999_999_999);
                 ZonedDateTime? zonedDateTime = null;
 
                 // Act
-                Action act = () => zonedDateTime.Should().HaveNanosecondOfSecond(nanosecondOfSecond);
+                Action act = () => zonedDateTime.Should().HaveNanosecondsWithinSecond(nanosecondOfSecond);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have nanosecond of second {nanosecondOfSecond}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have {nanosecondOfSecond} nanoseconds within the second, but {nameof(zonedDateTime)} was <null>.");
             }
         }
 
-        public class NotHaveNanosecondOfSecond
+        public class NotHaveNanosecondsWithinSecond
         {
             [Fact]
-            public void When_a_zoned_date_time_has_the_specified_nanosecond_of_second_it_fails()
+            public void When_a_zoned_date_time_has_the_specified_nanoseconds_within_the_day_it_fails()
             {
                 // Arrange
                 ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(RandomCalendarSystem());
 
                 // Act
-                Action act = () => zonedDateTime.Should().NotHaveNanosecondOfSecond(zonedDateTime.NanosecondOfSecond);
+                Action act = () => zonedDateTime.Should().NotHaveNanosecondsWithinSecond(zonedDateTime.NanosecondOfSecond);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have nanosecond of second {zonedDateTime.NanosecondOfSecond}.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have {zonedDateTime.NanosecondOfSecond} nanoseconds within the second.");
             }
 
             [Fact]
-            public void When_a_zoned_date_time_does_not_have_the_specified_nanosecond_of_second_it_succeeds()
+            public void When_a_zoned_date_time_does_not_have_the_specified_nanoseconds_within_the_day_it_succeeds()
             {
                 // Arrange
                 ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(RandomCalendarSystem());
                 int nanosecondOfSecond = zonedDateTime.PlusNanoseconds(1).NanosecondOfSecond;
 
                 // Act
-                Action act = () => zonedDateTime.Should().NotHaveNanosecondOfSecond(nanosecondOfSecond);
+                Action act = () => zonedDateTime.Should().NotHaveNanosecondsWithinSecond(nanosecondOfSecond);
 
                 // Assert
                 act.Should().NotThrow();
@@ -1876,18 +1876,18 @@ namespace FluentAssertions.NodaTime.Specs
 
             [Fact]
             [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
-            public void When_asserting_a_null_zoned_date_time_does_not_have_the_specified_nanosecond_of_second_it_fails()
+            public void When_asserting_a_null_zoned_date_time_does_not_have_the_specified_nanoseconds_within_the_day_it_fails()
             {
                 // Arrange
                 int nanosecondOfSecond = new Random().Next(1, 999_999_999);
                 ZonedDateTime? zonedDateTime = null;
 
                 // Act
-                Action act = () => zonedDateTime.Should().NotHaveNanosecondOfSecond(nanosecondOfSecond);
+                Action act = () => zonedDateTime.Should().NotHaveNanosecondsWithinSecond(nanosecondOfSecond);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have nanosecond of second {nanosecondOfSecond}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have {nanosecondOfSecond} nanoseconds within the second, but {nameof(zonedDateTime)} was <null>.");
             }
         }
 
@@ -2081,78 +2081,78 @@ namespace FluentAssertions.NodaTime.Specs
             }
         }
 
-        public class HaveTickOfDay
+        public class HaveTicksWithinDay
         {
             [Fact]
-            public void When_a_zoned_date_time_has_the_specified_tick_of_day_it_succeeds()
+            public void When_a_zoned_date_time_has_the_specified_ticks_within_the_day_it_succeeds()
             {
                 // Arrange
                 ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(RandomCalendarSystem());
 
                 // Act
-                Action act = () => zonedDateTime.Should().HaveTickOfDay(zonedDateTime.TickOfDay);
+                Action act = () => zonedDateTime.Should().HaveTicksWithinDay(zonedDateTime.TickOfDay);
 
                 // Assert
                 act.Should().NotThrow();
             }
 
             [Fact]
-            public void When_a_zoned_date_time_does_not_have_the_specified_tick_of_day_it_fails()
+            public void When_a_zoned_date_time_does_not_have_the_specified_ticks_within_the_day_it_fails()
             {
                 // Arrange
                 ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(RandomCalendarSystem());
                 long tickOfDay = zonedDateTime.PlusTicks(1).TickOfDay;
 
                 // Act
-                Action act = () => zonedDateTime.Should().HaveTickOfDay(tickOfDay);
+                Action act = () => zonedDateTime.Should().HaveTicksWithinDay(tickOfDay);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have tick of day {tickOfDay.AsFormatted()}, but found {zonedDateTime.TickOfDay.AsFormatted()}.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have {tickOfDay.AsFormatted()} ticks within the day, but found {zonedDateTime.TickOfDay.AsFormatted()}.");
             }
 
             [Fact]
             [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
-            public void When_asserting_a_null_zoned_date_time_has_the_specified_tick_of_day_it_fails()
+            public void When_asserting_a_null_zoned_date_time_has_the_specified_ticks_within_the_day_it_fails()
             {
                 // Arrange
                 long tickOfDay = new Random().Next(1, 999_999_999);
                 ZonedDateTime? zonedDateTime = null;
 
                 // Act
-                Action act = () => zonedDateTime.Should().HaveTickOfDay(tickOfDay);
+                Action act = () => zonedDateTime.Should().HaveTicksWithinDay(tickOfDay);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have tick of day {tickOfDay.AsFormatted()}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have {tickOfDay.AsFormatted()} ticks within the day, but {nameof(zonedDateTime)} was <null>.");
             }
         }
 
-        public class NotHaveTickOfDay
+        public class NotHaveTicksWithinDay
         {
             [Fact]
-            public void When_a_zoned_date_time_has_the_specified_tick_of_day_it_fails()
+            public void When_a_zoned_date_time_has_the_specified_ticks_within_the_day_it_fails()
             {
                 // Arrange
                 ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(RandomCalendarSystem());
 
                 // Act
-                Action act = () => zonedDateTime.Should().NotHaveTickOfDay(zonedDateTime.TickOfDay);
+                Action act = () => zonedDateTime.Should().NotHaveTicksWithinDay(zonedDateTime.TickOfDay);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have tick of day {zonedDateTime.TickOfDay.AsFormatted()}.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have {zonedDateTime.TickOfDay.AsFormatted()} ticks within the day.");
             }
 
             [Fact]
-            public void When_a_zoned_date_time_does_not_have_the_specified_tick_of_day_it_succeeds()
+            public void When_a_zoned_date_time_does_not_have_the_specified_ticks_within_the_day_it_succeeds()
             {
                 // Arrange
                 ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(RandomCalendarSystem());
                 long tickOfDay = zonedDateTime.PlusTicks(1).TickOfDay;
 
                 // Act
-                Action act = () => zonedDateTime.Should().NotHaveTickOfDay(tickOfDay);
+                Action act = () => zonedDateTime.Should().NotHaveTicksWithinDay(tickOfDay);
 
                 // Assert
                 act.Should().NotThrow();
@@ -2160,22 +2160,22 @@ namespace FluentAssertions.NodaTime.Specs
 
             [Fact]
             [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
-            public void When_asserting_a_null_zoned_date_time_does_not_have_the_specified_tick_of_day_it_fails()
+            public void When_asserting_a_null_zoned_date_time_does_not_have_the_specified_ticks_within_the_day_it_fails()
             {
                 // Arrange
                 long tickOfDay = new Random().Next(1, 999_999_999);
                 ZonedDateTime? zonedDateTime = null;
 
                 // Act
-                Action act = () => zonedDateTime.Should().NotHaveTickOfDay(tickOfDay);
+                Action act = () => zonedDateTime.Should().NotHaveTicksWithinDay(tickOfDay);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have tick of day {tickOfDay.AsFormatted()}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have {tickOfDay.AsFormatted()} ticks within the day, but {nameof(zonedDateTime)} was <null>.");
             }
         }
 
-        public class HaveTickOfSecond
+        public class HaveTicksWithinSecond
         {
             [Fact]
             public void When_a_zoned_date_time_has_the_specified_tick_of_second_it_succeeds()
@@ -2184,7 +2184,7 @@ namespace FluentAssertions.NodaTime.Specs
                 ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(RandomCalendarSystem());
 
                 // Act
-                Action act = () => zonedDateTime.Should().HaveTickOfSecond(zonedDateTime.TickOfSecond);
+                Action act = () => zonedDateTime.Should().HaveTicksWithinSecond(zonedDateTime.TickOfSecond);
 
                 // Assert
                 act.Should().NotThrow();
@@ -2198,11 +2198,11 @@ namespace FluentAssertions.NodaTime.Specs
                 int tickOfSecond = zonedDateTime.PlusTicks(1).TickOfSecond;
 
                 // Act
-                Action act = () => zonedDateTime.Should().HaveTickOfSecond(tickOfSecond);
+                Action act = () => zonedDateTime.Should().HaveTicksWithinSecond(tickOfSecond);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have tick of second {tickOfSecond}, but found {zonedDateTime.TickOfSecond}.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have {tickOfSecond} ticks within the second, but found {zonedDateTime.TickOfSecond}.");
             }
 
             [Fact]
@@ -2214,15 +2214,15 @@ namespace FluentAssertions.NodaTime.Specs
                 ZonedDateTime? zonedDateTime = null;
 
                 // Act
-                Action act = () => zonedDateTime.Should().HaveTickOfSecond(tickOfSecond);
+                Action act = () => zonedDateTime.Should().HaveTicksWithinSecond(tickOfSecond);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have tick of second {tickOfSecond}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have {tickOfSecond} ticks within the second, but {nameof(zonedDateTime)} was <null>.");
             }
         }
 
-        public class NotHaveTickOfSecond
+        public class NotHaveTicksWithinSecond
         {
             [Fact]
             public void When_a_zoned_date_time_has_the_specified_tick_of_second_it_fails()
@@ -2231,11 +2231,11 @@ namespace FluentAssertions.NodaTime.Specs
                 ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(RandomCalendarSystem());
 
                 // Act
-                Action act = () => zonedDateTime.Should().NotHaveTickOfSecond(zonedDateTime.TickOfSecond);
+                Action act = () => zonedDateTime.Should().NotHaveTicksWithinSecond(zonedDateTime.TickOfSecond);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have tick of second {zonedDateTime.TickOfSecond}.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have {zonedDateTime.TickOfSecond} ticks within the second.");
             }
 
             [Fact]
@@ -2246,7 +2246,7 @@ namespace FluentAssertions.NodaTime.Specs
                 int tickOfSecond = zonedDateTime.PlusTicks(1).TickOfSecond;
 
                 // Act
-                Action act = () => zonedDateTime.Should().NotHaveTickOfSecond(tickOfSecond);
+                Action act = () => zonedDateTime.Should().NotHaveTicksWithinSecond(tickOfSecond);
 
                 // Assert
                 act.Should().NotThrow();
@@ -2261,86 +2261,86 @@ namespace FluentAssertions.NodaTime.Specs
                 ZonedDateTime? zonedDateTime = null;
 
                 // Act
-                Action act = () => zonedDateTime.Should().NotHaveTickOfSecond(tickOfSecond);
+                Action act = () => zonedDateTime.Should().NotHaveTicksWithinSecond(tickOfSecond);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have tick of second {tickOfSecond}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have {tickOfSecond} ticks within the second, but {nameof(zonedDateTime)} was <null>.");
             }
         }
 
-        public class HaveYearOfEra
+        public class HaveYearWithinEra
         {
             [Fact]
-            public void When_a_zoned_date_time_has_the_specified_year_of_era_it_succeeds()
+            public void When_a_zoned_date_time_has_the_specified_as_the_year_within_the_era_it_succeeds()
             {
                 // Arrange
                 ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(RandomCalendarSystem());
 
                 // Act
-                Action act = () => zonedDateTime.Should().HaveYearOfEra(zonedDateTime.YearOfEra);
+                Action act = () => zonedDateTime.Should().HaveYearWithinEra(zonedDateTime.YearOfEra);
 
                 // Assert
                 act.Should().NotThrow();
             }
 
             [Fact]
-            public void When_a_zoned_date_time_does_not_have_the_specified_year_of_era_it_fails()
+            public void When_a_zoned_date_time_does_not_have_the_specified_as_the_year_within_the_era_it_fails()
             {
                 // Arrange
                 ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(RandomCalendarSystem());
                 int yearOfEra = zonedDateTime.YearOfEra + 1;
 
                 // Act
-                Action act = () => zonedDateTime.Should().HaveYearOfEra(yearOfEra);
+                Action act = () => zonedDateTime.Should().HaveYearWithinEra(yearOfEra);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have year of era {yearOfEra}, but found {zonedDateTime.YearOfEra}.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have {yearOfEra} as the year within the era, but found {zonedDateTime.YearOfEra}.");
             }
 
             [Fact]
             [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
-            public void When_asserting_a_null_zoned_date_time_has_the_specified_year_of_era_it_fails()
+            public void When_asserting_a_null_zoned_date_time_has_the_specified_as_the_year_within_the_era_it_fails()
             {
                 // Arrange
                 int yearOfEra = new Random().Next(1, 100);
                 ZonedDateTime? zonedDateTime = null;
 
                 // Act
-                Action act = () => zonedDateTime.Should().HaveYearOfEra(yearOfEra);
+                Action act = () => zonedDateTime.Should().HaveYearWithinEra(yearOfEra);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(zonedDateTime)} to have year of era {yearOfEra}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(zonedDateTime)} to have {yearOfEra} as the year within the era, but {nameof(zonedDateTime)} was <null>.");
             }
         }
 
-        public class NotHaveYearOfEra
+        public class NotHaveYearWithinEra
         {
             [Fact]
-            public void When_a_zoned_date_time_has_the_specified_year_of_era_it_fails()
+            public void When_a_zoned_date_time_has_the_specified_as_the_year_within_the_era_it_fails()
             {
                 // Arrange
                 ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(RandomCalendarSystem());
 
                 // Act
-                Action act = () => zonedDateTime.Should().NotHaveYearOfEra(zonedDateTime.YearOfEra);
+                Action act = () => zonedDateTime.Should().NotHaveYearWithinEra(zonedDateTime.YearOfEra);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have year of era {zonedDateTime.YearOfEra}.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have {zonedDateTime.YearOfEra} as the year within the era.");
             }
 
             [Fact]
-            public void When_a_zoned_date_time_does_not_have_the_specified_year_of_era_it_succeeds()
+            public void When_a_zoned_date_time_does_not_have_the_specified_as_the_year_within_the_era_it_succeeds()
             {
                 // Arrange
                 ZonedDateTime zonedDateTime = ZonedDateTime.FromDateTimeOffset(DateTimeOffset.Now).WithCalendar(RandomCalendarSystem());
                 int yearOfEra = zonedDateTime.YearOfEra + 1;
 
                 // Act
-                Action act = () => zonedDateTime.Should().NotHaveYearOfEra(yearOfEra);
+                Action act = () => zonedDateTime.Should().NotHaveYearWithinEra(yearOfEra);
 
                 // Assert
                 act.Should().NotThrow();
@@ -2348,18 +2348,18 @@ namespace FluentAssertions.NodaTime.Specs
 
             [Fact]
             [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
-            public void When_asserting_a_null_zoned_date_time_does_not_have_the_specified_year_of_era_it_fails()
+            public void When_asserting_a_null_zoned_date_time_does_not_have_the_specified_as_the_year_within_the_era_it_fails()
             {
                 // Arrange
                 int yearOfEra = new Random().Next(1, 100);
                 ZonedDateTime? zonedDateTime = null;
 
                 // Act
-                Action act = () => zonedDateTime.Should().NotHaveYearOfEra(yearOfEra);
+                Action act = () => zonedDateTime.Should().NotHaveYearWithinEra(yearOfEra);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have year of era {yearOfEra}, but {nameof(zonedDateTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(zonedDateTime)} to have {yearOfEra} as the year within the era, but {nameof(zonedDateTime)} was <null>.");
             }
         }
     }

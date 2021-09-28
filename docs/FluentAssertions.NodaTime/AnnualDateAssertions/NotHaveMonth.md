@@ -1,6 +1,6 @@
 # AnnualDateAssertions.NotHaveMonth method
 
-Asserts that the current AnnualDate does not have the specified month of the month.
+Asserts that the current AnnualDate does not have the specified month of the year.
 
 ```csharp
 public AndConstraint<AnnualDateAssertions> NotHaveMonth(int month, string because = "", 
@@ -9,7 +9,7 @@ public AndConstraint<AnnualDateAssertions> NotHaveMonth(int month, string becaus
 
 | parameter | description |
 | --- | --- |
-| month | The month of the month that the current AnnualDate is not expected to have. |
+| month | The month of the year that the current AnnualDate is not expected to have. |
 | because | A formatted phrase as is supported by Object[]) explaining why the assertion is needed. If the phrase does not start with the word because, it is prepended automatically. |
 | becauseArgs | Zero or more objects to format using the placeholders in *because*. |
 

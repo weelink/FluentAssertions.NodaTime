@@ -20,21 +20,21 @@ public sealed class LocalTimeAssertions : ReferenceTypeAssertions<LocalTime?, Lo
 | [HaveHour](LocalTimeAssertions/HaveHour.md)(…) | Asserts that the current LocalTime has the specified hour of the day. |
 | [HaveMillisecond](LocalTimeAssertions/HaveMillisecond.md)(…) | Asserts that the current LocalTime has the specified millisecond. |
 | [HaveMinute](LocalTimeAssertions/HaveMinute.md)(…) | Asserts that the current LocalTime has the specified minute. |
-| [HaveNanosecondOfDay](LocalTimeAssertions/HaveNanosecondOfDay.md)(…) | Asserts that the current LocalTime has the specified nanosecond of day. |
-| [HaveNanosecondOfSecond](LocalTimeAssertions/HaveNanosecondOfSecond.md)(…) | Asserts that the current LocalTime has the specified nanosecond of second. |
+| [HaveNanosecondsWithinDay](LocalTimeAssertions/HaveNanosecondsWithinDay.md)(…) | Asserts that the current LocalTime has the specified nanoseconds within the day. |
+| [HaveNanosecondsWithinSecond](LocalTimeAssertions/HaveNanosecondsWithinSecond.md)(…) | Asserts that the current LocalTime has the specified nanoseconds within the second. |
 | [HaveSecond](LocalTimeAssertions/HaveSecond.md)(…) | Asserts that the current LocalTime has the specified second. |
-| [HaveTickOfDay](LocalTimeAssertions/HaveTickOfDay.md)(…) | Asserts that the current LocalTime has the specified tick of day. |
-| [HaveTickOfSecond](LocalTimeAssertions/HaveTickOfSecond.md)(…) | Asserts that the current LocalTime has the specified tick of second. |
+| [HaveTicksWithinDay](LocalTimeAssertions/HaveTicksWithinDay.md)(…) | Asserts that the current LocalTime has the specified tick of day. |
+| [HaveTicksWithinSecond](LocalTimeAssertions/HaveTicksWithinSecond.md)(…) | Asserts that the current LocalTime has the specified tick of second. |
 | [NotBe](LocalTimeAssertions/NotBe.md)(…) | Asserts that this LocalTime is not equal to *other*. |
 | [NotHaveClockHourOfHalfDay](LocalTimeAssertions/NotHaveClockHourOfHalfDay.md)(…) | Asserts that the current LocalTime does not have the specified hour of the half-day. |
 | [NotHaveHour](LocalTimeAssertions/NotHaveHour.md)(…) | Asserts that the current LocalTime does not have the specified hour of the day. |
 | [NotHaveMillisecond](LocalTimeAssertions/NotHaveMillisecond.md)(…) | Asserts that the current LocalTime does not have the specified millisecond. |
 | [NotHaveMinute](LocalTimeAssertions/NotHaveMinute.md)(…) | Asserts that the current LocalTime does not have the specified minute. |
-| [NotHaveNanosecondOfDay](LocalTimeAssertions/NotHaveNanosecondOfDay.md)(…) | Asserts that the current LocalTime does not have the specified nanosecond of day. |
-| [NotHaveNanosecondOfSecond](LocalTimeAssertions/NotHaveNanosecondOfSecond.md)(…) | Asserts that the current LocalTime does not have the specified nanosecond of second. |
+| [NotHaveNanosecondsWithinDay](LocalTimeAssertions/NotHaveNanosecondsWithinDay.md)(…) | Asserts that the current LocalTime does not have the specified nanoseconds within the day. |
+| [NotHaveNanosecondsWithinSecond](LocalTimeAssertions/NotHaveNanosecondsWithinSecond.md)(…) | Asserts that the current LocalTime does not have the specified nanoseconds within the second. |
 | [NotHaveSecond](LocalTimeAssertions/NotHaveSecond.md)(…) | Asserts that the current LocalTime does not have the specified second. |
-| [NotHaveTickOfDay](LocalTimeAssertions/NotHaveTickOfDay.md)(…) | Asserts that the current LocalTime does not have the specified tick of day. |
-| [NotHaveTickOfSecond](LocalTimeAssertions/NotHaveTickOfSecond.md)(…) | Asserts that the current LocalTime does not have the specified tick of second. |
+| [NotHaveTicksWithinDay](LocalTimeAssertions/NotHaveTicksWithinDay.md)(…) | Asserts that the current LocalTime does not have the specified tick of day. |
+| [NotHaveTicksWithinSecond](LocalTimeAssertions/NotHaveTicksWithinSecond.md)(…) | Asserts that the current LocalTime does not have the specified tick of second. |
 
 ## Protected Members
 

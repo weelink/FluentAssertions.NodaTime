@@ -14,7 +14,7 @@ public sealed class DurationAssertions : ReferenceTypeAssertions<Duration?, Dura
 | [Be](DurationAssertions/Be.md)(…) | Asserts that this Duration is equal to *other*. (2 methods) |
 | [BeCloseTo](DurationAssertions/BeCloseTo.md)(…) | Asserts that this Duration is within *precision* of *other*. (2 methods) |
 | [BeGreaterThan](DurationAssertions/BeGreaterThan.md)(…) | Asserts that this Duration is greater than *other*. |
-| [BeGreaterThanOrEqualTo](DurationAssertions/BeGreaterThanOrEqualTo.md)(…) | Asserts that this Duration is on or after *other*. |
+| [BeGreaterThanOrEqualTo](DurationAssertions/BeGreaterThanOrEqualTo.md)(…) | Asserts that this Duration is greater than or equal to *other*. |
 | [BeLessThan](DurationAssertions/BeLessThan.md)(…) | Asserts that this Duration is less than *other*. |
 | [BeLessThanOrEqualTo](DurationAssertions/BeLessThanOrEqualTo.md)(…) | Asserts that this Duration is less than or equal to *other*. |
 | [BeNegative](DurationAssertions/BeNegative.md)(…) | Asserts that this Duration is negative. |
@@ -24,7 +24,7 @@ public sealed class DurationAssertions : ReferenceTypeAssertions<Duration?, Dura
 | [HaveHours](DurationAssertions/HaveHours.md)(…) | Asserts that the current Duration has the specified hours. |
 | [HaveMilliseconds](DurationAssertions/HaveMilliseconds.md)(…) | Asserts that the current Duration has the specified milliseconds. |
 | [HaveMinutes](DurationAssertions/HaveMinutes.md)(…) | Asserts that the current Duration has the specified minutes. |
-| [HaveNanosecondOfDay](DurationAssertions/HaveNanosecondOfDay.md)(…) | Asserts that the current Duration has the specified nanosecond of day. |
+| [HaveNanosecondsWithinDay](DurationAssertions/HaveNanosecondsWithinDay.md)(…) | Asserts that the current Duration has the specified nanoseconds within the day. |
 | [HaveSeconds](DurationAssertions/HaveSeconds.md)(…) | Asserts that the current Duration has the specified seconds. |
 | [HaveSubsecondInNanoseconds](DurationAssertions/HaveSubsecondInNanoseconds.md)(…) | Asserts that the current Duration has the specified subseconds in nanoseconds. |
 | [HaveSubsecondInTicks](DurationAssertions/HaveSubsecondInTicks.md)(…) | Asserts that the current Duration has the specified subseconds in ticks. |
@@ -43,7 +43,7 @@ public sealed class DurationAssertions : ReferenceTypeAssertions<Duration?, Dura
 | [NotHaveHours](DurationAssertions/NotHaveHours.md)(…) | Asserts that the current Duration does not have the specified hours. |
 | [NotHaveMilliseconds](DurationAssertions/NotHaveMilliseconds.md)(…) | Asserts that the current Duration does not have the specified milliseconds. |
 | [NotHaveMinutes](DurationAssertions/NotHaveMinutes.md)(…) | Asserts that the current Duration does not have the specified minutes. |
-| [NotHaveNanosecondOfDay](DurationAssertions/NotHaveNanosecondOfDay.md)(…) | Asserts that the current Duration does not have the specified nanosecond of day. |
+| [NotHaveNanosecondsWithinDay](DurationAssertions/NotHaveNanosecondsWithinDay.md)(…) | Asserts that the current Duration does not have the specified nanoseconds within the day. |
 | [NotHaveSeconds](DurationAssertions/NotHaveSeconds.md)(…) | Asserts that the current Duration does not have the specified seconds. |
 | [NotHaveSubsecondInNanoseconds](DurationAssertions/NotHaveSubsecondInNanoseconds.md)(…) | Asserts that the current Duration does not have the specified subseconds in nanoseconds. |
 | [NotHaveSubsecondInTicks](DurationAssertions/NotHaveSubsecondInTicks.md)(…) | Asserts that the current Duration does not have the specified subseconds in ticks. |

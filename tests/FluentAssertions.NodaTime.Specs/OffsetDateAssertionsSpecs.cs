@@ -1242,24 +1242,24 @@ namespace FluentAssertions.NodaTime.Specs
             }
         }
 
-        public class HaveYearOfEra
+        public class HaveYearWithinEra
         {
             [Fact]
-            public void When_a_offset_date_has_the_specified_year_of_era_it_succeeds()
+            public void When_a_offset_date_has_the_specified_as_the_year_within_the_era_it_succeeds()
             {
                 // Arrange
                 DateTimeOffset now = DateTimeOffset.Now;
                 OffsetDate offsetDate = OffsetDateTime.FromDateTimeOffset(now).WithCalendar(RandomCalendarSystem()).ToOffsetDate();
 
                 // Act
-                Action act = () => offsetDate.Should().HaveYearOfEra(offsetDate.YearOfEra);
+                Action act = () => offsetDate.Should().HaveYearWithinEra(offsetDate.YearOfEra);
 
                 // Assert
                 act.Should().NotThrow();
             }
 
             [Fact]
-            public void When_a_offset_date_does_not_have_the_specified_year_of_era_it_fails()
+            public void When_a_offset_date_does_not_have_the_specified_as_the_year_within_the_era_it_fails()
             {
                 // Arrange
                 DateTimeOffset now = DateTimeOffset.Now;
@@ -1267,49 +1267,49 @@ namespace FluentAssertions.NodaTime.Specs
                 int yearOfEra = offsetDate.With(date => date.PlusYears(1)).YearOfEra;
 
                 // Act
-                Action act = () => offsetDate.Should().HaveYearOfEra(yearOfEra);
+                Action act = () => offsetDate.Should().HaveYearWithinEra(yearOfEra);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offsetDate)} to have year of era {yearOfEra}, but found {offsetDate.YearOfEra}.");
+                    .WithMessage($"Expected {nameof(offsetDate)} to have {yearOfEra} as the year within the era, but found {offsetDate.YearOfEra}.");
             }
 
             [Fact]
             [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
-            public void When_asserting_a_null_offset_date_has_the_specified_year_of_era_it_fails()
+            public void When_asserting_a_null_offset_date_has_the_specified_as_the_year_within_the_era_it_fails()
             {
                 // Arrange
                 int yearOfEra = new Random().Next(1, 100);
                 OffsetDate? offsetDate = null;
 
                 // Act
-                Action act = () => offsetDate.Should().HaveYearOfEra(yearOfEra);
+                Action act = () => offsetDate.Should().HaveYearWithinEra(yearOfEra);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offsetDate)} to have year of era {yearOfEra}, but {nameof(offsetDate)} was <null>.");
+                    .WithMessage($"Expected {nameof(offsetDate)} to have {yearOfEra} as the year within the era, but {nameof(offsetDate)} was <null>.");
             }
         }
 
-        public class NotHaveYearOfEra
+        public class NotHaveYearWithinEra
         {
             [Fact]
-            public void When_a_offset_date_has_the_specified_year_of_era_it_fails()
+            public void When_a_offset_date_has_the_specified_as_the_year_within_the_era_it_fails()
             {
                 // Arrange
                 DateTimeOffset now = DateTimeOffset.Now;
                 OffsetDate offsetDate = OffsetDateTime.FromDateTimeOffset(now).WithCalendar(RandomCalendarSystem()).ToOffsetDate();
 
                 // Act
-                Action act = () => offsetDate.Should().NotHaveYearOfEra(offsetDate.YearOfEra);
+                Action act = () => offsetDate.Should().NotHaveYearWithinEra(offsetDate.YearOfEra);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(offsetDate)} to have year of era {offsetDate.YearOfEra}.");
+                    .WithMessage($"Did not expect {nameof(offsetDate)} to have {offsetDate.YearOfEra} as the year within the era.");
             }
 
             [Fact]
-            public void When_a_offset_date_does_not_have_the_specified_year_of_era_it_succeeds()
+            public void When_a_offset_date_does_not_have_the_specified_as_the_year_within_the_era_it_succeeds()
             {
                 // Arrange
                 DateTimeOffset now = DateTimeOffset.Now;
@@ -1317,7 +1317,7 @@ namespace FluentAssertions.NodaTime.Specs
                 int yearOfEra = offsetDate.With(date => date.PlusYears(1)).YearOfEra;
 
                 // Act
-                Action act = () => offsetDate.Should().NotHaveYearOfEra(yearOfEra);
+                Action act = () => offsetDate.Should().NotHaveYearWithinEra(yearOfEra);
 
                 // Assert
                 act.Should().NotThrow();
@@ -1325,18 +1325,18 @@ namespace FluentAssertions.NodaTime.Specs
 
             [Fact]
             [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
-            public void When_asserting_a_null_offset_date_does_not_have_the_specified_year_of_era_it_fails()
+            public void When_asserting_a_null_offset_date_does_not_have_the_specified_as_the_year_within_the_era_it_fails()
             {
                 // Arrange
                 int yearOfEra = new Random().Next(1, 100);
                 OffsetDate? offsetDate = null;
 
                 // Act
-                Action act = () => offsetDate.Should().NotHaveYearOfEra(yearOfEra);
+                Action act = () => offsetDate.Should().NotHaveYearWithinEra(yearOfEra);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(offsetDate)} to have year of era {yearOfEra}, but {nameof(offsetDate)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(offsetDate)} to have {yearOfEra} as the year within the era, but {nameof(offsetDate)} was <null>.");
             }
         }
     }

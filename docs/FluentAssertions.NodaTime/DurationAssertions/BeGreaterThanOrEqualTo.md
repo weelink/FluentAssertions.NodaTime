@@ -1,6 +1,6 @@
 # DurationAssertions.BeGreaterThanOrEqualTo method
 
-Asserts that this Duration is on or after *other*.
+Asserts that this Duration is greater than or equal to *other*.
 
 ```csharp
 public AndConstraint<DurationAssertions> BeGreaterThanOrEqualTo(Duration other, 

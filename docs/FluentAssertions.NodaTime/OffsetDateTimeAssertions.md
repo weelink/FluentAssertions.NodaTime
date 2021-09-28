@@ -25,15 +25,15 @@ public sealed class OffsetDateTimeAssertions :
 | [HaveMillisecond](OffsetDateTimeAssertions/HaveMillisecond.md)(…) | Asserts that the current OffsetDateTime has the specified millisecond. |
 | [HaveMinute](OffsetDateTimeAssertions/HaveMinute.md)(…) | Asserts that the current OffsetDateTime has the specified minute. |
 | [HaveMonth](OffsetDateTimeAssertions/HaveMonth.md)(…) | Asserts that the current OffsetDateTime has the specified month. |
-| [HaveNanosecondOfDay](OffsetDateTimeAssertions/HaveNanosecondOfDay.md)(…) | Asserts that the current OffsetDateTime has the specified nanosecond of day. |
-| [HaveNanosecondOfSecond](OffsetDateTimeAssertions/HaveNanosecondOfSecond.md)(…) | Asserts that the current OffsetDateTime has the specified nanosecond of second. |
+| [HaveNanosecondsWithinDay](OffsetDateTimeAssertions/HaveNanosecondsWithinDay.md)(…) | Asserts that the current OffsetDateTime has the specified nanoseconds within the day. |
+| [HaveNanosecondsWithinSecond](OffsetDateTimeAssertions/HaveNanosecondsWithinSecond.md)(…) | Asserts that the current OffsetDateTime has the specified nanoseconds within the second. |
 | [HaveOffset](OffsetDateTimeAssertions/HaveOffset.md)(…) | Asserts that the current OffsetDateTime has the specified Offset. (2 methods) |
 | [HaveSecond](OffsetDateTimeAssertions/HaveSecond.md)(…) | Asserts that the current OffsetDateTime has the specified second. |
-| [HaveTickOfDay](OffsetDateTimeAssertions/HaveTickOfDay.md)(…) | Asserts that the current OffsetDateTime has the specified tick of day. |
-| [HaveTickOfSecond](OffsetDateTimeAssertions/HaveTickOfSecond.md)(…) | Asserts that the current OffsetDateTime has the specified tick of second. |
+| [HaveTicksWithinDay](OffsetDateTimeAssertions/HaveTicksWithinDay.md)(…) | Asserts that the current OffsetDateTime has the specified tick of day. |
+| [HaveTicksWithinSecond](OffsetDateTimeAssertions/HaveTicksWithinSecond.md)(…) | Asserts that the current OffsetDateTime has the specified tick of second. |
 | [HaveTimeOfDay](OffsetDateTimeAssertions/HaveTimeOfDay.md)(…) | Asserts that the current OffsetDateTime has the specified OffsetTime. |
 | [HaveYear](OffsetDateTimeAssertions/HaveYear.md)(…) | Asserts that the current OffsetDateTime has the specified year. |
-| [HaveYearOfEra](OffsetDateTimeAssertions/HaveYearOfEra.md)(…) | Asserts that the current OffsetDateTime has the specified year of era. |
+| [HaveYearWithinEra](OffsetDateTimeAssertions/HaveYearWithinEra.md)(…) | Asserts that the current OffsetDateTime has the specified year of era. |
 | [NotBe](OffsetDateTimeAssertions/NotBe.md)(…) | Asserts that this OffsetDateTime is not equal to *other*. |
 | [NotBeInCalendar](OffsetDateTimeAssertions/NotBeInCalendar.md)(…) | Asserts that the current OffsetDateTime does not have the specified CalendarSystem. |
 | [NotHaveClockHourOfHalfDay](OffsetDateTimeAssertions/NotHaveClockHourOfHalfDay.md)(…) | Asserts that the current OffsetDateTime does not have the specified hour of the half-day. |
@@ -47,15 +47,15 @@ public sealed class OffsetDateTimeAssertions :
 | [NotHaveMillisecond](OffsetDateTimeAssertions/NotHaveMillisecond.md)(…) | Asserts that the current OffsetDateTime does not have the specified millisecond. |
 | [NotHaveMinute](OffsetDateTimeAssertions/NotHaveMinute.md)(…) | Asserts that the current OffsetDateTime does not have the specified minute. |
 | [NotHaveMonth](OffsetDateTimeAssertions/NotHaveMonth.md)(…) | Asserts that the current OffsetDateTime does not have the specified month. |
-| [NotHaveNanosecondOfDay](OffsetDateTimeAssertions/NotHaveNanosecondOfDay.md)(…) | Asserts that the current OffsetDateTime does not have the specified nanosecond of day. |
-| [NotHaveNanosecondOfSecond](OffsetDateTimeAssertions/NotHaveNanosecondOfSecond.md)(…) | Asserts that the current OffsetDateTime does not have the specified nanosecond of second. |
+| [NotHaveNanosecondsWithinDay](OffsetDateTimeAssertions/NotHaveNanosecondsWithinDay.md)(…) | Asserts that the current OffsetDateTime does not have the specified nanoseconds within the day. |
+| [NotHaveNanosecondsWithinSecond](OffsetDateTimeAssertions/NotHaveNanosecondsWithinSecond.md)(…) | Asserts that the current OffsetDateTime does not have the specified nanoseconds within the second. |
 | [NotHaveOffset](OffsetDateTimeAssertions/NotHaveOffset.md)(…) | Asserts that the current OffsetDateTime does not have the specified Offset. (2 methods) |
 | [NotHaveSecond](OffsetDateTimeAssertions/NotHaveSecond.md)(…) | Asserts that the current OffsetDateTime does not have the specified second. |
-| [NotHaveTickOfDay](OffsetDateTimeAssertions/NotHaveTickOfDay.md)(…) | Asserts that the current OffsetDateTime does not have the specified tick of day. |
-| [NotHaveTickOfSecond](OffsetDateTimeAssertions/NotHaveTickOfSecond.md)(…) | Asserts that the current OffsetDateTime does not have the specified tick of second. |
+| [NotHaveTicksWithinDay](OffsetDateTimeAssertions/NotHaveTicksWithinDay.md)(…) | Asserts that the current OffsetDateTime does not have the specified tick of day. |
+| [NotHaveTicksWithinSecond](OffsetDateTimeAssertions/NotHaveTicksWithinSecond.md)(…) | Asserts that the current OffsetDateTime does not have the specified tick of second. |
 | [NotHaveTimeOfDay](OffsetDateTimeAssertions/NotHaveTimeOfDay.md)(…) | Asserts that the current OffsetDateTime does not have the specified OffsetTime. |
 | [NotHaveYear](OffsetDateTimeAssertions/NotHaveYear.md)(…) | Asserts that the current OffsetDateTime does not have the specified year. |
-| [NotHaveYearOfEra](OffsetDateTimeAssertions/NotHaveYearOfEra.md)(…) | Asserts that the current OffsetDateTime does not have the specified year of era. |
+| [NotHaveYearWithinEra](OffsetDateTimeAssertions/NotHaveYearWithinEra.md)(…) | Asserts that the current OffsetDateTime does not have the specified year of era. |
 
 ## Protected Members
 

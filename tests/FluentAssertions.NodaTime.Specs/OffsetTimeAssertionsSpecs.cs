@@ -888,78 +888,78 @@ namespace FluentAssertions.NodaTime.Specs
             }
         }
 
-        public class HaveNanosecondOfDay
+        public class HaveNanosecondsWithinDay
         {
             [Fact]
-            public void When_a_offset_time_has_the_specified_nanosecond_of_day_it_succeeds()
+            public void When_a_offset_time_has_the_specified_nanoseconds_within_the_day_it_succeeds()
             {
                 // Arrange
                 OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(DateTime.Now.TimeOfDay.Ticks).WithOffset(Offset.FromHours(2));
 
                 // Act
-                Action act = () => offsetTime.Should().HaveNanosecondOfDay(offsetTime.NanosecondOfDay);
+                Action act = () => offsetTime.Should().HaveNanosecondsWithinDay(offsetTime.NanosecondOfDay);
 
                 // Assert
                 act.Should().NotThrow();
             }
 
             [Fact]
-            public void When_a_offset_time_does_not_have_the_specified_nanosecond_of_day_it_fails()
+            public void When_a_offset_time_does_not_have_the_specified_nanoseconds_within_the_day_it_fails()
             {
                 // Arrange
                 OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(DateTime.Now.TimeOfDay.Ticks).WithOffset(Offset.FromHours(2));
                 long nanosecondOfDay = offsetTime.With(time => time.PlusNanoseconds(1)).NanosecondOfDay;
 
                 // Act
-                Action act = () => offsetTime.Should().HaveNanosecondOfDay(nanosecondOfDay);
+                Action act = () => offsetTime.Should().HaveNanosecondsWithinDay(nanosecondOfDay);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offsetTime)} to have nanosecond of day {nanosecondOfDay.AsFormatted()}, but found {offsetTime.NanosecondOfDay.AsFormatted()}.");
+                    .WithMessage($"Expected {nameof(offsetTime)} to have {nanosecondOfDay.AsFormatted()} nanoseconds within the day, but found {offsetTime.NanosecondOfDay.AsFormatted()}.");
             }
 
             [Fact]
             [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
-            public void When_asserting_a_null_offset_time_has_the_specified_nanosecond_of_day_it_fails()
+            public void When_asserting_a_null_offset_time_has_the_specified_nanoseconds_within_the_day_it_fails()
             {
                 // Arrange
                 long nanosecondOfDay = new Random().Next(1, 999_999_999);
                 OffsetTime? offsetTime = null;
 
                 // Act
-                Action act = () => offsetTime.Should().HaveNanosecondOfDay(nanosecondOfDay);
+                Action act = () => offsetTime.Should().HaveNanosecondsWithinDay(nanosecondOfDay);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offsetTime)} to have nanosecond of day {nanosecondOfDay.AsFormatted()}, but {nameof(offsetTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(offsetTime)} to have {nanosecondOfDay.AsFormatted()} nanoseconds within the day, but {nameof(offsetTime)} was <null>.");
             }
         }
 
-        public class NotHaveNanosecondOfDay
+        public class NotHaveNanosecondsWithinDay
         {
             [Fact]
-            public void When_a_offset_time_has_the_specified_nanosecond_of_day_it_fails()
+            public void When_a_offset_time_has_the_specified_nanoseconds_within_the_day_it_fails()
             {
                 // Arrange
                 OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(DateTime.Now.TimeOfDay.Ticks).WithOffset(Offset.FromHours(2));
 
                 // Act
-                Action act = () => offsetTime.Should().NotHaveNanosecondOfDay(offsetTime.NanosecondOfDay);
+                Action act = () => offsetTime.Should().NotHaveNanosecondsWithinDay(offsetTime.NanosecondOfDay);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(offsetTime)} to have nanosecond of day {offsetTime.NanosecondOfDay.AsFormatted()}.");
+                    .WithMessage($"Did not expect {nameof(offsetTime)} to have {offsetTime.NanosecondOfDay.AsFormatted()} nanoseconds within the day.");
             }
 
             [Fact]
-            public void When_a_offset_time_does_not_have_the_specified_nanosecond_of_day_it_succeeds()
+            public void When_a_offset_time_does_not_have_the_specified_nanoseconds_within_the_day_it_succeeds()
             {
                 // Arrange
                 OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(DateTime.Now.TimeOfDay.Ticks).WithOffset(Offset.FromHours(2));
                 long nanosecondOfDay = offsetTime.With(time => time.PlusNanoseconds(1)).NanosecondOfDay;
 
                 // Act
-                Action act = () => offsetTime.Should().NotHaveNanosecondOfDay(nanosecondOfDay);
+                Action act = () => offsetTime.Should().NotHaveNanosecondsWithinDay(nanosecondOfDay);
 
                 // Assert
                 act.Should().NotThrow();
@@ -967,93 +967,93 @@ namespace FluentAssertions.NodaTime.Specs
 
             [Fact]
             [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
-            public void When_asserting_a_null_offset_time_does_not_have_the_specified_nanosecond_of_day_it_fails()
+            public void When_asserting_a_null_offset_time_does_not_have_the_specified_nanoseconds_within_the_day_it_fails()
             {
                 // Arrange
                 long nanosecondOfDay = new Random().Next(1, 999_999_999);
                 OffsetTime? offsetTime = null;
 
                 // Act
-                Action act = () => offsetTime.Should().NotHaveNanosecondOfDay(nanosecondOfDay);
+                Action act = () => offsetTime.Should().NotHaveNanosecondsWithinDay(nanosecondOfDay);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(offsetTime)} to have nanosecond of day {nanosecondOfDay.AsFormatted()}, but {nameof(offsetTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(offsetTime)} to have {nanosecondOfDay.AsFormatted()} nanoseconds within the day, but {nameof(offsetTime)} was <null>.");
             }
         }
 
-        public class HaveNanosecondOfSecond
+        public class HaveNanosecondsWithinSecond
         {
             [Fact]
-            public void When_a_offset_time_has_the_specified_nanosecond_of_second_it_succeeds()
+            public void When_a_offset_time_has_the_specified_nanoseconds_within_the_day_it_succeeds()
             {
                 // Arrange
                 OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(DateTime.Now.TimeOfDay.Ticks).WithOffset(Offset.FromHours(2));
 
                 // Act
-                Action act = () => offsetTime.Should().HaveNanosecondOfSecond(offsetTime.NanosecondOfSecond);
+                Action act = () => offsetTime.Should().HaveNanosecondsWithinSecond(offsetTime.NanosecondOfSecond);
 
                 // Assert
                 act.Should().NotThrow();
             }
 
             [Fact]
-            public void When_a_offset_time_does_not_have_the_specified_nanosecond_of_second_it_fails()
+            public void When_a_offset_time_does_not_have_the_specified_nanoseconds_within_the_day_it_fails()
             {
                 // Arrange
                 OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(DateTime.Now.TimeOfDay.Ticks).WithOffset(Offset.FromHours(2));
                 int nanosecondOfSecond = offsetTime.With(time => time.PlusNanoseconds(1)).NanosecondOfSecond;
 
                 // Act
-                Action act = () => offsetTime.Should().HaveNanosecondOfSecond(nanosecondOfSecond);
+                Action act = () => offsetTime.Should().HaveNanosecondsWithinSecond(nanosecondOfSecond);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offsetTime)} to have nanosecond of second {nanosecondOfSecond}, but found {offsetTime.NanosecondOfSecond}.");
+                    .WithMessage($"Expected {nameof(offsetTime)} to have {nanosecondOfSecond} nanoseconds within the second, but found {offsetTime.NanosecondOfSecond}.");
             }
 
             [Fact]
             [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
-            public void When_asserting_a_null_offset_time_has_the_specified_nanosecond_of_second_it_fails()
+            public void When_asserting_a_null_offset_time_has_the_specified_nanoseconds_within_the_day_it_fails()
             {
                 // Arrange
                 int nanosecondOfSecond = new Random().Next(1, 999_999_999);
                 OffsetTime? offsetTime = null;
 
                 // Act
-                Action act = () => offsetTime.Should().HaveNanosecondOfSecond(nanosecondOfSecond);
+                Action act = () => offsetTime.Should().HaveNanosecondsWithinSecond(nanosecondOfSecond);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offsetTime)} to have nanosecond of second {nanosecondOfSecond}, but {nameof(offsetTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(offsetTime)} to have {nanosecondOfSecond} nanoseconds within the second, but {nameof(offsetTime)} was <null>.");
             }
         }
 
-        public class NotHaveNanosecondOfSecond
+        public class NotHaveNanosecondsWithinSecond
         {
             [Fact]
-            public void When_a_offset_time_has_the_specified_nanosecond_of_second_it_fails()
+            public void When_a_offset_time_has_the_specified_nanoseconds_within_the_day_it_fails()
             {
                 // Arrange
                 OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(DateTime.Now.TimeOfDay.Ticks).WithOffset(Offset.FromHours(2));
 
                 // Act
-                Action act = () => offsetTime.Should().NotHaveNanosecondOfSecond(offsetTime.NanosecondOfSecond);
+                Action act = () => offsetTime.Should().NotHaveNanosecondsWithinSecond(offsetTime.NanosecondOfSecond);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(offsetTime)} to have nanosecond of second {offsetTime.NanosecondOfSecond}.");
+                    .WithMessage($"Did not expect {nameof(offsetTime)} to have {offsetTime.NanosecondOfSecond} nanoseconds within the second.");
             }
 
             [Fact]
-            public void When_a_offset_time_does_not_have_the_specified_nanosecond_of_second_it_succeeds()
+            public void When_a_offset_time_does_not_have_the_specified_nanoseconds_within_the_day_it_succeeds()
             {
                 // Arrange
                 OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(DateTime.Now.TimeOfDay.Ticks).WithOffset(Offset.FromHours(2));
                 int nanosecondOfSecond = offsetTime.With(time => time.PlusNanoseconds(1)).NanosecondOfSecond;
 
                 // Act
-                Action act = () => offsetTime.Should().NotHaveNanosecondOfSecond(nanosecondOfSecond);
+                Action act = () => offsetTime.Should().NotHaveNanosecondsWithinSecond(nanosecondOfSecond);
 
                 // Assert
                 act.Should().NotThrow();
@@ -1061,18 +1061,18 @@ namespace FluentAssertions.NodaTime.Specs
 
             [Fact]
             [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
-            public void When_asserting_a_null_offset_time_does_not_have_the_specified_nanosecond_of_second_it_fails()
+            public void When_asserting_a_null_offset_time_does_not_have_the_specified_nanoseconds_within_the_day_it_fails()
             {
                 // Arrange
                 int nanosecondOfSecond = new Random().Next(1, 999_999_999);
                 OffsetTime? offsetTime = null;
 
                 // Act
-                Action act = () => offsetTime.Should().NotHaveNanosecondOfSecond(nanosecondOfSecond);
+                Action act = () => offsetTime.Should().NotHaveNanosecondsWithinSecond(nanosecondOfSecond);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(offsetTime)} to have nanosecond of second {nanosecondOfSecond}, but {nameof(offsetTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(offsetTime)} to have {nanosecondOfSecond} nanoseconds within the second, but {nameof(offsetTime)} was <null>.");
             }
         }
 
@@ -1170,78 +1170,78 @@ namespace FluentAssertions.NodaTime.Specs
             }
         }
 
-        public class HaveTickOfDay
+        public class HaveTicksWithinDay
         {
             [Fact]
-            public void When_a_offset_time_has_the_specified_tick_of_day_it_succeeds()
+            public void When_a_offset_time_has_the_specified_ticks_within_the_day_it_succeeds()
             {
                 // Arrange
                 OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(DateTime.Now.TimeOfDay.Ticks).WithOffset(Offset.FromHours(2));
 
                 // Act
-                Action act = () => offsetTime.Should().HaveTickOfDay(offsetTime.TickOfDay);
+                Action act = () => offsetTime.Should().HaveTicksWithinDay(offsetTime.TickOfDay);
 
                 // Assert
                 act.Should().NotThrow();
             }
 
             [Fact]
-            public void When_a_offset_time_does_not_have_the_specified_tick_of_day_it_fails()
+            public void When_a_offset_time_does_not_have_the_specified_ticks_within_the_day_it_fails()
             {
                 // Arrange
                 OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(DateTime.Now.TimeOfDay.Ticks).WithOffset(Offset.FromHours(2));
                 long tickOfDay = offsetTime.With(time => time.PlusTicks(1)).TickOfDay;
 
                 // Act
-                Action act = () => offsetTime.Should().HaveTickOfDay(tickOfDay);
+                Action act = () => offsetTime.Should().HaveTicksWithinDay(tickOfDay);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offsetTime)} to have tick of day {tickOfDay.AsFormatted()}, but found {offsetTime.TickOfDay.AsFormatted()}.");
+                    .WithMessage($"Expected {nameof(offsetTime)} to have {tickOfDay.AsFormatted()} ticks within the day, but found {offsetTime.TickOfDay.AsFormatted()}.");
             }
 
             [Fact]
             [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
-            public void When_asserting_a_null_offset_time_has_the_specified_tick_of_day_it_fails()
+            public void When_asserting_a_null_offset_time_has_the_specified_ticks_within_the_day_it_fails()
             {
                 // Arrange
                 long tickOfDay = new Random().Next(1, 999_999_999);
                 OffsetTime? offsetTime = null;
 
                 // Act
-                Action act = () => offsetTime.Should().HaveTickOfDay(tickOfDay);
+                Action act = () => offsetTime.Should().HaveTicksWithinDay(tickOfDay);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offsetTime)} to have tick of day {tickOfDay.AsFormatted()}, but {nameof(offsetTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(offsetTime)} to have {tickOfDay.AsFormatted()} ticks within the day, but {nameof(offsetTime)} was <null>.");
             }
         }
 
-        public class NotHaveTickOfDay
+        public class NotHaveTicksWithinDay
         {
             [Fact]
-            public void When_a_offset_time_has_the_specified_tick_of_day_it_fails()
+            public void When_a_offset_time_has_the_specified_ticks_within_the_day_it_fails()
             {
                 // Arrange
                 OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(DateTime.Now.TimeOfDay.Ticks).WithOffset(Offset.FromHours(2));
 
                 // Act
-                Action act = () => offsetTime.Should().NotHaveTickOfDay(offsetTime.TickOfDay);
+                Action act = () => offsetTime.Should().NotHaveTicksWithinDay(offsetTime.TickOfDay);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(offsetTime)} to have tick of day {offsetTime.TickOfDay.AsFormatted()}.");
+                    .WithMessage($"Did not expect {nameof(offsetTime)} to have {offsetTime.TickOfDay.AsFormatted()} ticks within the day.");
             }
 
             [Fact]
-            public void When_a_offset_time_does_not_have_the_specified_tick_of_day_it_succeeds()
+            public void When_a_offset_time_does_not_have_the_specified_ticks_within_the_day_it_succeeds()
             {
                 // Arrange
                 OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(DateTime.Now.TimeOfDay.Ticks).WithOffset(Offset.FromHours(2));
                 long tickOfDay = offsetTime.With(time => time.PlusTicks(1)).TickOfDay;
 
                 // Act
-                Action act = () => offsetTime.Should().NotHaveTickOfDay(tickOfDay);
+                Action act = () => offsetTime.Should().NotHaveTicksWithinDay(tickOfDay);
 
                 // Assert
                 act.Should().NotThrow();
@@ -1249,22 +1249,22 @@ namespace FluentAssertions.NodaTime.Specs
 
             [Fact]
             [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull", Justification = "It is supposed to be null for the test.")]
-            public void When_asserting_a_null_offset_time_does_not_have_the_specified_tick_of_day_it_fails()
+            public void When_asserting_a_null_offset_time_does_not_have_the_specified_ticks_within_the_day_it_fails()
             {
                 // Arrange
                 long tickOfDay = new Random().Next(1, 999_999_999);
                 OffsetTime? offsetTime = null;
 
                 // Act
-                Action act = () => offsetTime.Should().NotHaveTickOfDay(tickOfDay);
+                Action act = () => offsetTime.Should().NotHaveTicksWithinDay(tickOfDay);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(offsetTime)} to have tick of day {tickOfDay.AsFormatted()}, but {nameof(offsetTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(offsetTime)} to have {tickOfDay.AsFormatted()} ticks within the day, but {nameof(offsetTime)} was <null>.");
             }
         }
 
-        public class HaveTickOfSecond
+        public class HaveTicksWithinSecond
         {
             [Fact]
             public void When_a_offset_time_has_the_specified_tick_of_second_it_succeeds()
@@ -1273,7 +1273,7 @@ namespace FluentAssertions.NodaTime.Specs
                 OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(DateTime.Now.TimeOfDay.Ticks).WithOffset(Offset.FromHours(2));
 
                 // Act
-                Action act = () => offsetTime.Should().HaveTickOfSecond(offsetTime.TickOfSecond);
+                Action act = () => offsetTime.Should().HaveTicksWithinSecond(offsetTime.TickOfSecond);
 
                 // Assert
                 act.Should().NotThrow();
@@ -1287,11 +1287,11 @@ namespace FluentAssertions.NodaTime.Specs
                 int tickOfSecond = offsetTime.With(time => time.PlusTicks(1)).TickOfSecond;
 
                 // Act
-                Action act = () => offsetTime.Should().HaveTickOfSecond(tickOfSecond);
+                Action act = () => offsetTime.Should().HaveTicksWithinSecond(tickOfSecond);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offsetTime)} to have tick of second {tickOfSecond}, but found {offsetTime.TickOfSecond}.");
+                    .WithMessage($"Expected {nameof(offsetTime)} to have {tickOfSecond} ticks within the second, but found {offsetTime.TickOfSecond}.");
             }
 
             [Fact]
@@ -1303,15 +1303,15 @@ namespace FluentAssertions.NodaTime.Specs
                 OffsetTime? offsetTime = null;
 
                 // Act
-                Action act = () => offsetTime.Should().HaveTickOfSecond(tickOfSecond);
+                Action act = () => offsetTime.Should().HaveTicksWithinSecond(tickOfSecond);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Expected {nameof(offsetTime)} to have tick of second {tickOfSecond}, but {nameof(offsetTime)} was <null>.");
+                    .WithMessage($"Expected {nameof(offsetTime)} to have {tickOfSecond} ticks within the second, but {nameof(offsetTime)} was <null>.");
             }
         }
 
-        public class NotHaveTickOfSecond
+        public class NotHaveTicksWithinSecond
         {
             [Fact]
             public void When_a_offset_time_has_the_specified_tick_of_second_it_fails()
@@ -1320,11 +1320,11 @@ namespace FluentAssertions.NodaTime.Specs
                 OffsetTime offsetTime = LocalTime.FromTicksSinceMidnight(DateTime.Now.TimeOfDay.Ticks).WithOffset(Offset.FromHours(2));
 
                 // Act
-                Action act = () => offsetTime.Should().NotHaveTickOfSecond(offsetTime.TickOfSecond);
+                Action act = () => offsetTime.Should().NotHaveTicksWithinSecond(offsetTime.TickOfSecond);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(offsetTime)} to have tick of second {offsetTime.TickOfSecond}.");
+                    .WithMessage($"Did not expect {nameof(offsetTime)} to have {offsetTime.TickOfSecond} ticks within the second.");
             }
 
             [Fact]
@@ -1335,7 +1335,7 @@ namespace FluentAssertions.NodaTime.Specs
                 int tickOfSecond = offsetTime.With(time => time.PlusTicks(1)).TickOfSecond;
 
                 // Act
-                Action act = () => offsetTime.Should().NotHaveTickOfSecond(tickOfSecond);
+                Action act = () => offsetTime.Should().NotHaveTicksWithinSecond(tickOfSecond);
 
                 // Assert
                 act.Should().NotThrow();
@@ -1350,11 +1350,11 @@ namespace FluentAssertions.NodaTime.Specs
                 OffsetTime? offsetTime = null;
 
                 // Act
-                Action act = () => offsetTime.Should().NotHaveTickOfSecond(tickOfSecond);
+                Action act = () => offsetTime.Should().NotHaveTicksWithinSecond(tickOfSecond);
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(offsetTime)} to have tick of second {tickOfSecond}, but {nameof(offsetTime)} was <null>.");
+                    .WithMessage($"Did not expect {nameof(offsetTime)} to have {tickOfSecond} ticks within the second, but {nameof(offsetTime)} was <null>.");
             }
         }
     }

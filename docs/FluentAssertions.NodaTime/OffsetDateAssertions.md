@@ -22,7 +22,7 @@ public sealed class OffsetDateAssertions :
 | [HaveMonth](OffsetDateAssertions/HaveMonth.md)(…) | Asserts that the current OffsetDate has the specified month. |
 | [HaveOffset](OffsetDateAssertions/HaveOffset.md)(…) | Asserts that the current OffsetDate has the specified Offset. (2 methods) |
 | [HaveYear](OffsetDateAssertions/HaveYear.md)(…) | Asserts that the current OffsetDate has the specified year. |
-| [HaveYearOfEra](OffsetDateAssertions/HaveYearOfEra.md)(…) | Asserts that the current OffsetDate has the specified year of era. |
+| [HaveYearWithinEra](OffsetDateAssertions/HaveYearWithinEra.md)(…) | Asserts that the current OffsetDate has the specified year of era. |
 | [NotBe](OffsetDateAssertions/NotBe.md)(…) | Asserts that this OffsetDate is not equal to *other*. |
 | [NotBeInCalendar](OffsetDateAssertions/NotBeInCalendar.md)(…) | Asserts that the current OffsetDate does not have the specified CalendarSystem. |
 | [NotHaveDate](OffsetDateAssertions/NotHaveDate.md)(…) | Asserts that the current OffsetDate does not have the specified OffsetDate. |
@@ -33,7 +33,7 @@ public sealed class OffsetDateAssertions :
 | [NotHaveMonth](OffsetDateAssertions/NotHaveMonth.md)(…) | Asserts that the current OffsetDate does not have the specified month. |
 | [NotHaveOffset](OffsetDateAssertions/NotHaveOffset.md)(…) | Asserts that the current OffsetDate does not have the specified Offset. (2 methods) |
 | [NotHaveYear](OffsetDateAssertions/NotHaveYear.md)(…) | Asserts that the current OffsetDate does not have the specified year. |
-| [NotHaveYearOfEra](OffsetDateAssertions/NotHaveYearOfEra.md)(…) | Asserts that the current OffsetDate does not have the specified year of era. |
+| [NotHaveYearWithinEra](OffsetDateAssertions/NotHaveYearWithinEra.md)(…) | Asserts that the current OffsetDate does not have the specified year of era. |
 
 ## Protected Members
 

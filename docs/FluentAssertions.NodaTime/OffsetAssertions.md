@@ -14,7 +14,7 @@ public sealed class OffsetAssertions : ReferenceTypeAssertions<Offset?, OffsetAs
 | [Be](OffsetAssertions/Be.md)(…) | Asserts that this Offset is equal to *other*. (2 methods) |
 | [BeCloseTo](OffsetAssertions/BeCloseTo.md)(…) | Asserts that this Offset is within *precision* of *other*. (2 methods) |
 | [BeGreaterThan](OffsetAssertions/BeGreaterThan.md)(…) | Asserts that this Offset is greater than *other*. |
-| [BeGreaterThanOrEqualTo](OffsetAssertions/BeGreaterThanOrEqualTo.md)(…) | Asserts that this Offset is on or after *other*. |
+| [BeGreaterThanOrEqualTo](OffsetAssertions/BeGreaterThanOrEqualTo.md)(…) | Asserts that this Offset is greater than or equal to *other*. |
 | [BeLessThan](OffsetAssertions/BeLessThan.md)(…) | Asserts that this Offset is less than *other*. |
 | [BeLessThanOrEqualTo](OffsetAssertions/BeLessThanOrEqualTo.md)(…) | Asserts that this Offset is less than or equal to *other*. |
 | [BeNegative](OffsetAssertions/BeNegative.md)(…) | Asserts that this Offset is negative. |

@@ -1353,10 +1353,10 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
-        ///     Asserts that the current <see cref="ZonedDateTime" /> has the specified nanosecond of day.
+        ///     Asserts that the current <see cref="ZonedDateTime" /> has the specified nanoseconds within the day.
         /// </summary>
         /// <param name="nanosecondOfDay">
-        ///     The nanosecond of day that the current <see cref="ZonedDateTime" /> is expected to have.
+        ///     The nanoseconds within the day that the current <see cref="ZonedDateTime" /> is expected to have.
         /// </param>
         /// <param name="because">
         ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
@@ -1369,13 +1369,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;ZonedDateTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<ZonedDateTimeAssertions> HaveNanosecondOfDay(long nanosecondOfDay, string because = "",
+        public AndConstraint<ZonedDateTimeAssertions> HaveNanosecondsWithinDay(long nanosecondOfDay, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Expected {context:ZonedDateTime} to have nanosecond of day {0}{reason}", nanosecondOfDay);
+                    .WithExpectation("Expected {context:ZonedDateTime} to have {0} nanoseconds within the day{reason}", nanosecondOfDay);
 
             if (Subject.HasValue)
             {
@@ -1394,10 +1394,10 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
-        ///     Asserts that the current <see cref="ZonedDateTime" /> does not have the specified nanosecond of day.
+        ///     Asserts that the current <see cref="ZonedDateTime" /> does not have the specified nanoseconds within the day.
         /// </summary>
         /// <param name="nanosecondOfDay">
-        ///     The nanosecond of day that the current <see cref="ZonedDateTime" /> is not expected to have.
+        ///     The nanoseconds within the day that the current <see cref="ZonedDateTime" /> is not expected to have.
         /// </param>
         /// <param name="because">
         ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
@@ -1410,13 +1410,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;ZonedDateTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<ZonedDateTimeAssertions> NotHaveNanosecondOfDay(long nanosecondOfDay, string because = "",
+        public AndConstraint<ZonedDateTimeAssertions> NotHaveNanosecondsWithinDay(long nanosecondOfDay, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Did not expect {context:ZonedDateTime} to have nanosecond of day {0}{reason}",
+                    .WithExpectation("Did not expect {context:ZonedDateTime} to have {0} nanoseconds within the day{reason}",
                         nanosecondOfDay);
 
             if (Subject.HasValue)
@@ -1436,10 +1436,10 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
-        ///     Asserts that the current <see cref="ZonedDateTime" /> has the specified nanosecond of second.
+        ///     Asserts that the current <see cref="ZonedDateTime" /> has the specified nanoseconds within the second.
         /// </summary>
         /// <param name="nanosecondOfSecond">
-        ///     The nanosecond of second that the current <see cref="ZonedDateTime" /> is expected to have.
+        ///     The nanoseconds within the second that the current <see cref="ZonedDateTime" /> is expected to have.
         /// </param>
         /// <param name="because">
         ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
@@ -1452,12 +1452,12 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;ZonedDateTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<ZonedDateTimeAssertions> HaveNanosecondOfSecond(int nanosecondOfSecond, string because = "", params object[] becauseArgs)
+        public AndConstraint<ZonedDateTimeAssertions> HaveNanosecondsWithinSecond(int nanosecondOfSecond, string because = "", params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Expected {context:ZonedDateTime} to have nanosecond of second {0}{reason}", nanosecondOfSecond);
+                    .WithExpectation("Expected {context:ZonedDateTime} to have {0} nanoseconds within the second{reason}", nanosecondOfSecond);
 
             if (Subject.HasValue)
             {
@@ -1476,10 +1476,10 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
-        ///     Asserts that the current <see cref="ZonedDateTime" /> does not have the specified nanosecond of second.
+        ///     Asserts that the current <see cref="ZonedDateTime" /> does not have the specified nanoseconds within the second.
         /// </summary>
         /// <param name="nanosecondOfSecond">
-        ///     The nanosecond of second that the current <see cref="ZonedDateTime" /> is not expected to have.
+        ///     The nanoseconds within the second that the current <see cref="ZonedDateTime" /> is not expected to have.
         /// </param>
         /// <param name="because">
         ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
@@ -1492,12 +1492,12 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;ZonedDateTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<ZonedDateTimeAssertions> NotHaveNanosecondOfSecond(int nanosecondOfSecond, string because = "", params object[] becauseArgs)
+        public AndConstraint<ZonedDateTimeAssertions> NotHaveNanosecondsWithinSecond(int nanosecondOfSecond, string because = "", params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Did not expect {context:ZonedDateTime} to have nanosecond of second {0}{reason}", nanosecondOfSecond);
+                    .WithExpectation("Did not expect {context:ZonedDateTime} to have {0} nanoseconds within the second{reason}", nanosecondOfSecond);
 
             if (Subject.HasValue)
             {
@@ -1532,13 +1532,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;ZonedDateTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<ZonedDateTimeAssertions> HaveTickOfSecond(int tickOfSecond, string because = "",
+        public AndConstraint<ZonedDateTimeAssertions> HaveTicksWithinSecond(int tickOfSecond, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Expected {context:ZonedDateTime} to have tick of second {0}{reason}", tickOfSecond);
+                    .WithExpectation("Expected {context:ZonedDateTime} to have {0} ticks within the second{reason}", tickOfSecond);
 
             if (Subject.HasValue)
             {
@@ -1573,13 +1573,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;ZonedDateTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<ZonedDateTimeAssertions> NotHaveTickOfSecond(int tickOfSecond, string because = "",
+        public AndConstraint<ZonedDateTimeAssertions> NotHaveTicksWithinSecond(int tickOfSecond, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Did not expect {context:ZonedDateTime} to have tick of second {0}{reason}", tickOfSecond);
+                    .WithExpectation("Did not expect {context:ZonedDateTime} to have {0} ticks within the second{reason}", tickOfSecond);
 
             if (Subject.HasValue)
             {
@@ -1614,13 +1614,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;ZonedDateTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<ZonedDateTimeAssertions> HaveTickOfDay(long tickOfDay, string because = "",
+        public AndConstraint<ZonedDateTimeAssertions> HaveTicksWithinDay(long tickOfDay, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Expected {context:ZonedDateTime} to have tick of day {0}{reason}", tickOfDay);
+                    .WithExpectation("Expected {context:ZonedDateTime} to have {0} ticks within the day{reason}", tickOfDay);
 
             if (Subject.HasValue)
             {
@@ -1655,13 +1655,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;ZonedDateTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<ZonedDateTimeAssertions> NotHaveTickOfDay(long tickOfDay, string because = "",
+        public AndConstraint<ZonedDateTimeAssertions> NotHaveTicksWithinDay(long tickOfDay, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Did not expect {context:ZonedDateTime} to have tick of day {0}{reason}", tickOfDay);
+                    .WithExpectation("Did not expect {context:ZonedDateTime} to have {0} ticks within the day{reason}", tickOfDay);
 
             if (Subject.HasValue)
             {
@@ -1696,13 +1696,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;ZonedDateTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<ZonedDateTimeAssertions> HaveYearOfEra(int yearOfEra, string because = "",
+        public AndConstraint<ZonedDateTimeAssertions> HaveYearWithinEra(int yearOfEra, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Expected {context:ZonedDateTime} to have year of era {0}{reason}", yearOfEra);
+                    .WithExpectation("Expected {context:ZonedDateTime} to have {0} as the year within the era{reason}", yearOfEra);
 
             if (Subject.HasValue)
             {
@@ -1737,13 +1737,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;ZonedDateTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<ZonedDateTimeAssertions> NotHaveYearOfEra(int yearOfEra, string because = "",
+        public AndConstraint<ZonedDateTimeAssertions> NotHaveYearWithinEra(int yearOfEra, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Did not expect {context:ZonedDateTime} to have year of era {0}{reason}", yearOfEra);
+                    .WithExpectation("Did not expect {context:ZonedDateTime} to have {0} as the year within the era{reason}", yearOfEra);
 
             if (Subject.HasValue)
             {

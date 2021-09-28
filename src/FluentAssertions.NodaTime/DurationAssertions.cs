@@ -58,7 +58,7 @@ namespace FluentAssertions.NodaTime
         /// <summary>
         ///     Asserts that this <see cref="Duration" /> is equal to <paramref name="other" />.
         /// </summary>
-        /// <param name="other">The <see cref="Duration" /> to compare to.</param>
+        /// <param name="other">The <see cref="TimeSpan" /> to compare to.</param>
         /// <param name="because">
         ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
         ///     is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
@@ -348,7 +348,7 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
-        ///     Asserts that this <see cref="Duration" /> is on or after <paramref name="other" />.
+        ///     Asserts that this <see cref="Duration" /> is greater than or equal to <paramref name="other" />.
         /// </summary>
         /// <param name="other">The <see cref="Duration" /> to compare to.</param>
         /// <param name="because">
@@ -1705,10 +1705,10 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
-        ///     Asserts that the current <see cref="Duration" /> has the specified nanosecond of day.
+        ///     Asserts that the current <see cref="Duration" /> has the specified nanoseconds within the day.
         /// </summary>
         /// <param name="nanosecondOfDay">
-        ///     The nanosecond of day that the current <see cref="Duration" /> is expected to have.
+        ///     The nanoseconds within the day that the current <see cref="Duration" /> is expected to have.
         /// </param>
         /// <param name="because">
         ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
@@ -1721,13 +1721,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<DurationAssertions> HaveNanosecondOfDay(long nanosecondOfDay, string because = "",
+        public AndConstraint<DurationAssertions> HaveNanosecondsWithinDay(long nanosecondOfDay, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Expected {context:Duration} to have nanosecond of day {0}{reason}", nanosecondOfDay);
+                    .WithExpectation("Expected {context:Duration} to have {0} nanoseconds within the day{reason}", nanosecondOfDay);
 
             if (Subject.HasValue)
             {
@@ -1746,10 +1746,10 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
-        ///     Asserts that the current <see cref="Duration" /> does not have the specified nanosecond of day.
+        ///     Asserts that the current <see cref="Duration" /> does not have the specified nanoseconds within the day.
         /// </summary>
         /// <param name="nanosecondOfDay">
-        ///     The nanosecond of day that the current <see cref="Duration" /> is not expected to have.
+        ///     The nanoseconds within the day that the current <see cref="Duration" /> is not expected to have.
         /// </param>
         /// <param name="because">
         ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
@@ -1762,13 +1762,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<DurationAssertions> NotHaveNanosecondOfDay(long nanosecondOfDay, string because = "",
+        public AndConstraint<DurationAssertions> NotHaveNanosecondsWithinDay(long nanosecondOfDay, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Did not expect {context:Duration} to have nanosecond of day {0}{reason}",
+                    .WithExpectation("Did not expect {context:Duration} to have {0} nanoseconds within the day{reason}",
                         nanosecondOfDay);
 
             if (Subject.HasValue)

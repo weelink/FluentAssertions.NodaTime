@@ -484,10 +484,10 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
-        ///     Asserts that the current <see cref="LocalTime" /> has the specified nanosecond of day.
+        ///     Asserts that the current <see cref="LocalTime" /> has the specified nanoseconds within the day.
         /// </summary>
         /// <param name="nanosecondOfDay">
-        ///     The nanosecond of day that the current <see cref="LocalTime" /> is expected to have.
+        ///     The nanoseconds within the day that the current <see cref="LocalTime" /> is expected to have.
         /// </param>
         /// <param name="because">
         ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
@@ -500,13 +500,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;LocalTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<LocalTimeAssertions> HaveNanosecondOfDay(long nanosecondOfDay, string because = "",
+        public AndConstraint<LocalTimeAssertions> HaveNanosecondsWithinDay(long nanosecondOfDay, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Expected {context:LocalTime} to have nanosecond of day {0}{reason}", nanosecondOfDay);
+                    .WithExpectation("Expected {context:LocalTime} to have {0} nanoseconds within the day{reason}", nanosecondOfDay);
 
             if (Subject.HasValue)
             {
@@ -525,10 +525,10 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
-        ///     Asserts that the current <see cref="LocalTime" /> does not have the specified nanosecond of day.
+        ///     Asserts that the current <see cref="LocalTime" /> does not have the specified nanoseconds within the day.
         /// </summary>
         /// <param name="nanosecondOfDay">
-        ///     The nanosecond of day that the current <see cref="LocalTime" /> is not expected to have.
+        ///     The nanoseconds within the day that the current <see cref="LocalTime" /> is not expected to have.
         /// </param>
         /// <param name="because">
         ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
@@ -541,13 +541,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;LocalTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<LocalTimeAssertions> NotHaveNanosecondOfDay(long nanosecondOfDay, string because = "",
+        public AndConstraint<LocalTimeAssertions> NotHaveNanosecondsWithinDay(long nanosecondOfDay, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Did not expect {context:LocalTime} to have nanosecond of day {0}{reason}",
+                    .WithExpectation("Did not expect {context:LocalTime} to have {0} nanoseconds within the day{reason}",
                         nanosecondOfDay);
 
             if (Subject.HasValue)
@@ -567,10 +567,10 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
-        ///     Asserts that the current <see cref="LocalTime" /> has the specified nanosecond of second.
+        ///     Asserts that the current <see cref="LocalTime" /> has the specified nanoseconds within the second.
         /// </summary>
         /// <param name="nanosecondOfSecond">
-        ///     The nanosecond of second that the current <see cref="LocalTime" /> is expected to have.
+        ///     The nanoseconds within the second that the current <see cref="LocalTime" /> is expected to have.
         /// </param>
         /// <param name="because">
         ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
@@ -583,12 +583,12 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;LocalTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<LocalTimeAssertions> HaveNanosecondOfSecond(int nanosecondOfSecond, string because = "", params object[] becauseArgs)
+        public AndConstraint<LocalTimeAssertions> HaveNanosecondsWithinSecond(int nanosecondOfSecond, string because = "", params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Expected {context:LocalTime} to have nanosecond of second {0}{reason}", nanosecondOfSecond);
+                    .WithExpectation("Expected {context:LocalTime} to have {0} nanoseconds within the second{reason}", nanosecondOfSecond);
 
             if (Subject.HasValue)
             {
@@ -607,10 +607,10 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
-        ///     Asserts that the current <see cref="LocalTime" /> does not have the specified nanosecond of second.
+        ///     Asserts that the current <see cref="LocalTime" /> does not have the specified nanoseconds within the second.
         /// </summary>
         /// <param name="nanosecondOfSecond">
-        ///     The nanosecond of second that the current <see cref="LocalTime" /> is not expected to have.
+        ///     The nanoseconds within the second that the current <see cref="LocalTime" /> is not expected to have.
         /// </param>
         /// <param name="because">
         ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
@@ -623,12 +623,12 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;LocalTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<LocalTimeAssertions> NotHaveNanosecondOfSecond(int nanosecondOfSecond, string because = "", params object[] becauseArgs)
+        public AndConstraint<LocalTimeAssertions> NotHaveNanosecondsWithinSecond(int nanosecondOfSecond, string because = "", params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Did not expect {context:LocalTime} to have nanosecond of second {0}{reason}", nanosecondOfSecond);
+                    .WithExpectation("Did not expect {context:LocalTime} to have {0} nanoseconds within the second{reason}", nanosecondOfSecond);
 
             if (Subject.HasValue)
             {
@@ -663,13 +663,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;LocalTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<LocalTimeAssertions> HaveTickOfSecond(int tickOfSecond, string because = "",
+        public AndConstraint<LocalTimeAssertions> HaveTicksWithinSecond(int tickOfSecond, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Expected {context:LocalTime} to have tick of second {0}{reason}", tickOfSecond);
+                    .WithExpectation("Expected {context:LocalTime} to have {0} ticks within the second{reason}", tickOfSecond);
 
             if (Subject.HasValue)
             {
@@ -704,13 +704,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;LocalTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<LocalTimeAssertions> NotHaveTickOfSecond(int tickOfSecond, string because = "",
+        public AndConstraint<LocalTimeAssertions> NotHaveTicksWithinSecond(int tickOfSecond, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Did not expect {context:LocalTime} to have tick of second {0}{reason}", tickOfSecond);
+                    .WithExpectation("Did not expect {context:LocalTime} to have {0} ticks within the second{reason}", tickOfSecond);
 
             if (Subject.HasValue)
             {
@@ -745,13 +745,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;LocalTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<LocalTimeAssertions> HaveTickOfDay(long tickOfDay, string because = "",
+        public AndConstraint<LocalTimeAssertions> HaveTicksWithinDay(long tickOfDay, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Expected {context:LocalTime} to have tick of day {0}{reason}", tickOfDay);
+                    .WithExpectation("Expected {context:LocalTime} to have {0} ticks within the day{reason}", tickOfDay);
 
             if (Subject.HasValue)
             {
@@ -786,13 +786,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;LocalTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<LocalTimeAssertions> NotHaveTickOfDay(long tickOfDay, string because = "",
+        public AndConstraint<LocalTimeAssertions> NotHaveTicksWithinDay(long tickOfDay, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Did not expect {context:LocalTime} to have tick of day {0}{reason}", tickOfDay);
+                    .WithExpectation("Did not expect {context:LocalTime} to have {0} ticks within the day{reason}", tickOfDay);
 
             if (Subject.HasValue)
             {

@@ -28,14 +28,14 @@ public sealed class LocalDateTimeAssertions :
 | [HaveMillisecond](LocalDateTimeAssertions/HaveMillisecond.md)(…) | Asserts that the current LocalDateTime has the specified millisecond. |
 | [HaveMinute](LocalDateTimeAssertions/HaveMinute.md)(…) | Asserts that the current LocalDateTime has the specified minute. |
 | [HaveMonth](LocalDateTimeAssertions/HaveMonth.md)(…) | Asserts that the current LocalDateTime has the specified month. |
-| [HaveNanosecondOfDay](LocalDateTimeAssertions/HaveNanosecondOfDay.md)(…) | Asserts that the current LocalDateTime has the specified nanosecond of day. |
-| [HaveNanosecondOfSecond](LocalDateTimeAssertions/HaveNanosecondOfSecond.md)(…) | Asserts that the current LocalDateTime has the specified nanosecond of second. |
+| [HaveNanosecondsWithinDay](LocalDateTimeAssertions/HaveNanosecondsWithinDay.md)(…) | Asserts that the current LocalDateTime has the specified nanoseconds within the day. |
+| [HaveNanosecondsWithinSecond](LocalDateTimeAssertions/HaveNanosecondsWithinSecond.md)(…) | Asserts that the current LocalDateTime has the specified nanoseconds within the second. |
 | [HaveSecond](LocalDateTimeAssertions/HaveSecond.md)(…) | Asserts that the current LocalDateTime has the specified second. |
-| [HaveTickOfDay](LocalDateTimeAssertions/HaveTickOfDay.md)(…) | Asserts that the current LocalDateTime has the specified tick of day. |
-| [HaveTickOfSecond](LocalDateTimeAssertions/HaveTickOfSecond.md)(…) | Asserts that the current LocalDateTime has the specified tick of second. |
+| [HaveTicksWithinDay](LocalDateTimeAssertions/HaveTicksWithinDay.md)(…) | Asserts that the current LocalDateTime has the specified tick of day. |
+| [HaveTicksWithinSecond](LocalDateTimeAssertions/HaveTicksWithinSecond.md)(…) | Asserts that the current LocalDateTime has the specified tick of second. |
 | [HaveTimeOfDay](LocalDateTimeAssertions/HaveTimeOfDay.md)(…) | Asserts that the current LocalDateTime has the specified LocalTime. |
 | [HaveYear](LocalDateTimeAssertions/HaveYear.md)(…) | Asserts that the current LocalDateTime has the specified year. |
-| [HaveYearOfEra](LocalDateTimeAssertions/HaveYearOfEra.md)(…) | Asserts that the current LocalDateTime has the specified year of era. |
+| [HaveYearWithinEra](LocalDateTimeAssertions/HaveYearWithinEra.md)(…) | Asserts that the current LocalDateTime has the specified year of era. |
 | [NotBe](LocalDateTimeAssertions/NotBe.md)(…) | Asserts that this LocalDateTime is not equal to *other*. (3 methods) |
 | [NotBeInCalendar](LocalDateTimeAssertions/NotBeInCalendar.md)(…) | Asserts that the current LocalDateTime does not have the specified CalendarSystem. |
 | [NotHaveClockHourOfHalfDay](LocalDateTimeAssertions/NotHaveClockHourOfHalfDay.md)(…) | Asserts that the current LocalDateTime does not have the specified hour of the half-day. |
@@ -48,14 +48,14 @@ public sealed class LocalDateTimeAssertions :
 | [NotHaveMillisecond](LocalDateTimeAssertions/NotHaveMillisecond.md)(…) | Asserts that the current LocalDateTime does not have the specified millisecond. |
 | [NotHaveMinute](LocalDateTimeAssertions/NotHaveMinute.md)(…) | Asserts that the current LocalDateTime does not have the specified minute. |
 | [NotHaveMonth](LocalDateTimeAssertions/NotHaveMonth.md)(…) | Asserts that the current LocalDateTime does not have the specified month. |
-| [NotHaveNanosecondOfDay](LocalDateTimeAssertions/NotHaveNanosecondOfDay.md)(…) | Asserts that the current LocalDateTime does not have the specified nanosecond of day. |
-| [NotHaveNanosecondOfSecond](LocalDateTimeAssertions/NotHaveNanosecondOfSecond.md)(…) | Asserts that the current LocalDateTime does not have the specified nanosecond of second. |
+| [NotHaveNanosecondsWithinDay](LocalDateTimeAssertions/NotHaveNanosecondsWithinDay.md)(…) | Asserts that the current LocalDateTime does not have the specified nanoseconds within the day. |
+| [NotHaveNanosecondsWithinSecond](LocalDateTimeAssertions/NotHaveNanosecondsWithinSecond.md)(…) | Asserts that the current LocalDateTime does not have the specified nanoseconds within the second. |
 | [NotHaveSecond](LocalDateTimeAssertions/NotHaveSecond.md)(…) | Asserts that the current LocalDateTime does not have the specified second. |
-| [NotHaveTickOfDay](LocalDateTimeAssertions/NotHaveTickOfDay.md)(…) | Asserts that the current LocalDateTime does not have the specified tick of day. |
-| [NotHaveTickOfSecond](LocalDateTimeAssertions/NotHaveTickOfSecond.md)(…) | Asserts that the current LocalDateTime does not have the specified tick of second. |
+| [NotHaveTicksWithinDay](LocalDateTimeAssertions/NotHaveTicksWithinDay.md)(…) | Asserts that the current LocalDateTime does not have the specified tick of day. |
+| [NotHaveTicksWithinSecond](LocalDateTimeAssertions/NotHaveTicksWithinSecond.md)(…) | Asserts that the current LocalDateTime does not have the specified tick of second. |
 | [NotHaveTimeOfDay](LocalDateTimeAssertions/NotHaveTimeOfDay.md)(…) | Asserts that the current LocalDateTime does not have the specified LocalTime. |
 | [NotHaveYear](LocalDateTimeAssertions/NotHaveYear.md)(…) | Asserts that the current LocalDateTime does not have the specified year. |
-| [NotHaveYearOfEra](LocalDateTimeAssertions/NotHaveYearOfEra.md)(…) | Asserts that the current LocalDateTime does not have the specified year of era. |
+| [NotHaveYearWithinEra](LocalDateTimeAssertions/NotHaveYearWithinEra.md)(…) | Asserts that the current LocalDateTime does not have the specified year of era. |
 
 ## Protected Members
 

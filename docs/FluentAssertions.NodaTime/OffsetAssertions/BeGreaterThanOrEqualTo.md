@@ -1,6 +1,6 @@
 # OffsetAssertions.BeGreaterThanOrEqualTo method
 
-Asserts that this Offset is on or after *other*.
+Asserts that this Offset is greater than or equal to *other*.
 
 ```csharp
 public AndConstraint<OffsetAssertions> BeGreaterThanOrEqualTo(Offset other, string because = "", 

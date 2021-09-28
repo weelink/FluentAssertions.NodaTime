@@ -1204,7 +1204,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
         }
 
-        public class HaveNanoseconds
+        public class HaveNanosecondsWithinDay
         {
             [Fact]
             public void When_an_duration_has_the_specified_nanoseconds_of_day_it_succeeds()
@@ -1213,7 +1213,7 @@ namespace FluentAssertions.NodaTime.Specs
                 Duration duration = Duration.FromTicks(new Random().Next());
 
                 // Act
-                Action act = () => duration.Should().HaveNanosecondOfDay(duration.NanosecondOfDay);
+                Action act = () => duration.Should().HaveNanosecondsWithinDay(duration.NanosecondOfDay);
 
                 // Assert
                 act.Should().NotThrow();
@@ -1227,12 +1227,12 @@ namespace FluentAssertions.NodaTime.Specs
                 long nanoseconds = duration.Plus(Duration.FromNanoseconds(1)).NanosecondOfDay;
 
                 // Act
-                Action act = () => duration.Should().HaveNanosecondOfDay(nanoseconds);
+                Action act = () => duration.Should().HaveNanosecondsWithinDay(nanoseconds);
 
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Expected {nameof(duration)} to have nanosecond of day {nanoseconds.AsFormatted()}, but found {duration.NanosecondOfDay.AsFormatted()}.");
+                        $"Expected {nameof(duration)} to have {nanoseconds.AsFormatted()} nanoseconds within the day, but found {duration.NanosecondOfDay.AsFormatted()}.");
             }
 
             [Fact]
@@ -1244,16 +1244,16 @@ namespace FluentAssertions.NodaTime.Specs
                 Duration? duration = null;
 
                 // Act
-                Action act = () => duration.Should().HaveNanosecondOfDay(nanoseconds);
+                Action act = () => duration.Should().HaveNanosecondsWithinDay(nanoseconds);
 
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Expected {nameof(duration)} to have nanosecond of day {nanoseconds.AsFormatted()}, but {nameof(duration)} was <null>.");
+                        $"Expected {nameof(duration)} to have {nanoseconds.AsFormatted()} nanoseconds within the day, but {nameof(duration)} was <null>.");
             }
         }
 
-        public class NotHaveNanosecondOfDay
+        public class NotHaveNanosecondsWithinDay
         {
             [Fact]
             public void When_an_duration_has_the_specified_nanoseconds_of_day_it_fails()
@@ -1262,12 +1262,12 @@ namespace FluentAssertions.NodaTime.Specs
                 Duration duration = Duration.FromTicks(new Random().Next());
 
                 // Act
-                Action act = () => duration.Should().NotHaveNanosecondOfDay(duration.NanosecondOfDay);
+                Action act = () => duration.Should().NotHaveNanosecondsWithinDay(duration.NanosecondOfDay);
 
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Did not expect {nameof(duration)} to have nanosecond of day {duration.NanosecondOfDay.AsFormatted()}.");
+                        $"Did not expect {nameof(duration)} to have {duration.NanosecondOfDay.AsFormatted()} nanoseconds within the day.");
             }
 
             [Fact]
@@ -1278,7 +1278,7 @@ namespace FluentAssertions.NodaTime.Specs
                 long nanoseconds = duration.Plus(Duration.FromNanoseconds(1)).NanosecondOfDay;
 
                 // Act
-                Action act = () => duration.Should().NotHaveNanosecondOfDay(nanoseconds);
+                Action act = () => duration.Should().NotHaveNanosecondsWithinDay(nanoseconds);
 
                 // Assert
                 act.Should().NotThrow();
@@ -1293,12 +1293,12 @@ namespace FluentAssertions.NodaTime.Specs
                 Duration? duration = null;
 
                 // Act
-                Action act = () => duration.Should().NotHaveNanosecondOfDay(nanoseconds);
+                Action act = () => duration.Should().NotHaveNanosecondsWithinDay(nanoseconds);
 
                 // Assert
                 act.Should().Throw<XunitException>()
                     .WithMessage(
-                        $"Did not expect {nameof(duration)} to have nanosecond of day {nanoseconds.AsFormatted()}, but {nameof(duration)} was <null>.");
+                        $"Did not expect {nameof(duration)} to have {nanoseconds.AsFormatted()} nanoseconds within the day, but {nameof(duration)} was <null>.");
             }
         }
 

@@ -1352,10 +1352,10 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
-        ///     Asserts that the current <see cref="OffsetDateTime" /> has the specified nanosecond of day.
+        ///     Asserts that the current <see cref="OffsetDateTime" /> has the specified nanoseconds within the day.
         /// </summary>
         /// <param name="nanosecondOfDay">
-        ///     The nanosecond of day that the current <see cref="OffsetDateTime" /> is expected to have.
+        ///     The nanoseconds within the day that the current <see cref="OffsetDateTime" /> is expected to have.
         /// </param>
         /// <param name="because">
         ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
@@ -1368,13 +1368,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<OffsetDateTimeAssertions> HaveNanosecondOfDay(long nanosecondOfDay, string because = "",
+        public AndConstraint<OffsetDateTimeAssertions> HaveNanosecondsWithinDay(long nanosecondOfDay, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Expected {context:OffsetDateTime} to have nanosecond of day {0}{reason}", nanosecondOfDay);
+                    .WithExpectation("Expected {context:OffsetDateTime} to have {0} nanoseconds within the day{reason}", nanosecondOfDay);
 
             if (Subject.HasValue)
             {
@@ -1393,10 +1393,10 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
-        ///     Asserts that the current <see cref="OffsetDateTime" /> does not have the specified nanosecond of day.
+        ///     Asserts that the current <see cref="OffsetDateTime" /> does not have the specified nanoseconds within the day.
         /// </summary>
         /// <param name="nanosecondOfDay">
-        ///     The nanosecond of day that the current <see cref="OffsetDateTime" /> is not expected to have.
+        ///     The nanoseconds within the day that the current <see cref="OffsetDateTime" /> is not expected to have.
         /// </param>
         /// <param name="because">
         ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
@@ -1409,13 +1409,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<OffsetDateTimeAssertions> NotHaveNanosecondOfDay(long nanosecondOfDay, string because = "",
+        public AndConstraint<OffsetDateTimeAssertions> NotHaveNanosecondsWithinDay(long nanosecondOfDay, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Did not expect {context:OffsetDateTime} to have nanosecond of day {0}{reason}",
+                    .WithExpectation("Did not expect {context:OffsetDateTime} to have {0} nanoseconds within the day{reason}",
                         nanosecondOfDay);
 
             if (Subject.HasValue)
@@ -1435,10 +1435,10 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
-        ///     Asserts that the current <see cref="OffsetDateTime" /> has the specified nanosecond of second.
+        ///     Asserts that the current <see cref="OffsetDateTime" /> has the specified nanoseconds within the second.
         /// </summary>
         /// <param name="nanosecondOfSecond">
-        ///     The nanosecond of second that the current <see cref="OffsetDateTime" /> is expected to have.
+        ///     The nanoseconds within the second that the current <see cref="OffsetDateTime" /> is expected to have.
         /// </param>
         /// <param name="because">
         ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
@@ -1451,12 +1451,12 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<OffsetDateTimeAssertions> HaveNanosecondOfSecond(int nanosecondOfSecond, string because = "", params object[] becauseArgs)
+        public AndConstraint<OffsetDateTimeAssertions> HaveNanosecondsWithinSecond(int nanosecondOfSecond, string because = "", params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Expected {context:OffsetDateTime} to have nanosecond of second {0}{reason}", nanosecondOfSecond);
+                    .WithExpectation("Expected {context:OffsetDateTime} to have {0} nanoseconds within the second{reason}", nanosecondOfSecond);
 
             if (Subject.HasValue)
             {
@@ -1475,10 +1475,10 @@ namespace FluentAssertions.NodaTime
         }
 
         /// <summary>
-        ///     Asserts that the current <see cref="OffsetDateTime" /> does not have the specified nanosecond of second.
+        ///     Asserts that the current <see cref="OffsetDateTime" /> does not have the specified nanoseconds within the second.
         /// </summary>
         /// <param name="nanosecondOfSecond">
-        ///     The nanosecond of second that the current <see cref="OffsetDateTime" /> is not expected to have.
+        ///     The nanoseconds within the second that the current <see cref="OffsetDateTime" /> is not expected to have.
         /// </param>
         /// <param name="because">
         ///     A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion
@@ -1491,12 +1491,12 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<OffsetDateTimeAssertions> NotHaveNanosecondOfSecond(int nanosecondOfSecond, string because = "", params object[] becauseArgs)
+        public AndConstraint<OffsetDateTimeAssertions> NotHaveNanosecondsWithinSecond(int nanosecondOfSecond, string because = "", params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Did not expect {context:OffsetDateTime} to have nanosecond of second {0}{reason}", nanosecondOfSecond);
+                    .WithExpectation("Did not expect {context:OffsetDateTime} to have {0} nanoseconds within the second{reason}", nanosecondOfSecond);
 
             if (Subject.HasValue)
             {
@@ -1531,13 +1531,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<OffsetDateTimeAssertions> HaveTickOfSecond(int tickOfSecond, string because = "",
+        public AndConstraint<OffsetDateTimeAssertions> HaveTicksWithinSecond(int tickOfSecond, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Expected {context:OffsetDateTime} to have tick of second {0}{reason}", tickOfSecond);
+                    .WithExpectation("Expected {context:OffsetDateTime} to have {0} ticks within the second{reason}", tickOfSecond);
 
             if (Subject.HasValue)
             {
@@ -1572,13 +1572,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<OffsetDateTimeAssertions> NotHaveTickOfSecond(int tickOfSecond, string because = "",
+        public AndConstraint<OffsetDateTimeAssertions> NotHaveTicksWithinSecond(int tickOfSecond, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Did not expect {context:OffsetDateTime} to have tick of second {0}{reason}", tickOfSecond);
+                    .WithExpectation("Did not expect {context:OffsetDateTime} to have {0} ticks within the second{reason}", tickOfSecond);
 
             if (Subject.HasValue)
             {
@@ -1613,13 +1613,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<OffsetDateTimeAssertions> HaveTickOfDay(long tickOfDay, string because = "",
+        public AndConstraint<OffsetDateTimeAssertions> HaveTicksWithinDay(long tickOfDay, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Expected {context:OffsetDateTime} to have tick of day {0}{reason}", tickOfDay);
+                    .WithExpectation("Expected {context:OffsetDateTime} to have {0} ticks within the day{reason}", tickOfDay);
 
             if (Subject.HasValue)
             {
@@ -1654,13 +1654,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<OffsetDateTimeAssertions> NotHaveTickOfDay(long tickOfDay, string because = "",
+        public AndConstraint<OffsetDateTimeAssertions> NotHaveTicksWithinDay(long tickOfDay, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Did not expect {context:OffsetDateTime} to have tick of day {0}{reason}", tickOfDay);
+                    .WithExpectation("Did not expect {context:OffsetDateTime} to have {0} ticks within the day{reason}", tickOfDay);
 
             if (Subject.HasValue)
             {
@@ -1695,13 +1695,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<OffsetDateTimeAssertions> HaveYearOfEra(int yearOfEra, string because = "",
+        public AndConstraint<OffsetDateTimeAssertions> HaveYearWithinEra(int yearOfEra, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Expected {context:OffsetDateTime} to have year of era {0}{reason}", yearOfEra);
+                    .WithExpectation("Expected {context:OffsetDateTime} to have {0} as the year within the era{reason}", yearOfEra);
 
             if (Subject.HasValue)
             {
@@ -1736,13 +1736,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<OffsetDateTimeAssertions> NotHaveYearOfEra(int yearOfEra, string because = "",
+        public AndConstraint<OffsetDateTimeAssertions> NotHaveYearWithinEra(int yearOfEra, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Did not expect {context:OffsetDateTime} to have year of era {0}{reason}", yearOfEra);
+                    .WithExpectation("Did not expect {context:OffsetDateTime} to have {0} as the year within the era{reason}", yearOfEra);
 
             if (Subject.HasValue)
             {

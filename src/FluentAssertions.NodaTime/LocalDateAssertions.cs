@@ -665,13 +665,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;LocalDateAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<LocalDateAssertions> HaveYearOfEra(int yearOfEra, string because = "",
+        public AndConstraint<LocalDateAssertions> HaveYearWithinEra(int yearOfEra, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Expected {context:LocalDate} to have year of era {0}{reason}", yearOfEra);
+                    .WithExpectation("Expected {context:LocalDate} to have {0} as the year within the era{reason}", yearOfEra);
 
             if (Subject.HasValue)
             {
@@ -706,13 +706,13 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;LocalDateAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<LocalDateAssertions> NotHaveYearOfEra(int yearOfEra, string because = "",
+        public AndConstraint<LocalDateAssertions> NotHaveYearWithinEra(int yearOfEra, string because = "",
             params object[] becauseArgs)
         {
             AssertionScope scope =
                 Execute.Assertion
                     .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Did not expect {context:LocalDate} to have year of era {0}{reason}", yearOfEra);
+                    .WithExpectation("Did not expect {context:LocalDate} to have {0} as the year within the era{reason}", yearOfEra);
 
             if (Subject.HasValue)
             {

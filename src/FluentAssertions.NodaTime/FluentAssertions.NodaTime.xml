@@ -184,10 +184,10 @@
         </member>
         <member name="M:FluentAssertions.NodaTime.AnnualDateAssertions.HaveMonth(System.Int32,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.AnnualDate" /> has the specified month of the month.
+                Asserts that the current <see cref="T:NodaTime.AnnualDate" /> has the specified month of the year.
             </summary>
             <param name="month">
-                The month of the month that the current <see cref="T:NodaTime.AnnualDate" /> is expected to have.
+                The month of the year that the current <see cref="T:NodaTime.AnnualDate" /> is expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -202,10 +202,10 @@
         </member>
         <member name="M:FluentAssertions.NodaTime.AnnualDateAssertions.NotHaveMonth(System.Int32,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.AnnualDate" /> does not have the specified month of the month.
+                Asserts that the current <see cref="T:NodaTime.AnnualDate" /> does not have the specified month of the year.
             </summary>
             <param name="month">
-                The month of the month that the current <see cref="T:NodaTime.AnnualDate" /> is not expected to have.
+                The month of the year that the current <see cref="T:NodaTime.AnnualDate" /> is not expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -682,7 +682,7 @@
             <summary>
                 Asserts that this <see cref="T:NodaTime.Duration" /> is equal to <paramref name="other" />.
             </summary>
-            <param name="other">The <see cref="T:NodaTime.Duration" /> to compare to.</param>
+            <param name="other">The <see cref="T:System.TimeSpan" /> to compare to.</param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
                 is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
@@ -872,7 +872,7 @@
         </member>
         <member name="M:FluentAssertions.NodaTime.DurationAssertions.BeGreaterThanOrEqualTo(NodaTime.Duration,System.String,System.Object[])">
             <summary>
-                Asserts that this <see cref="T:NodaTime.Duration" /> is on or after <paramref name="other" />.
+                Asserts that this <see cref="T:NodaTime.Duration" /> is greater than or equal to <paramref name="other" />.
             </summary>
             <param name="other">The <see cref="T:NodaTime.Duration" /> to compare to.</param>
             <param name="because">
@@ -1616,12 +1616,12 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.DurationAssertions.HaveNanosecondOfDay(System.Int64,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.HaveNanosecondsWithinDay(System.Int64,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.Duration" /> has the specified nanosecond of day.
+                Asserts that the current <see cref="T:NodaTime.Duration" /> has the specified nanoseconds within the day.
             </summary>
             <param name="nanosecondOfDay">
-                The nanosecond of day that the current <see cref="T:NodaTime.Duration" /> is expected to have.
+                The nanoseconds within the day that the current <see cref="T:NodaTime.Duration" /> is expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -1634,12 +1634,12 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;DurationAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.DurationAssertions.NotHaveNanosecondOfDay(System.Int64,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.DurationAssertions.NotHaveNanosecondsWithinDay(System.Int64,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.Duration" /> does not have the specified nanosecond of day.
+                Asserts that the current <see cref="T:NodaTime.Duration" /> does not have the specified nanoseconds within the day.
             </summary>
             <param name="nanosecondOfDay">
-                The nanosecond of day that the current <see cref="T:NodaTime.Duration" /> is not expected to have.
+                The nanoseconds within the day that the current <see cref="T:NodaTime.Duration" /> is not expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -2580,7 +2580,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.LocalDateAssertions.HaveYearOfEra(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.LocalDateAssertions.HaveYearWithinEra(System.Int32,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.LocalDate" /> has the specified year of era.
             </summary>
@@ -2598,7 +2598,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.LocalDateAssertions.NotHaveYearOfEra(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.LocalDateAssertions.NotHaveYearWithinEra(System.Int32,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.LocalDate" /> does not have the specified year of era.
             </summary>
@@ -3299,12 +3299,12 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.LocalDateTimeAssertions.HaveNanosecondOfDay(System.Int64,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.LocalDateTimeAssertions.HaveNanosecondsWithinDay(System.Int64,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.LocalDateTime" /> has the specified nanosecond of day.
+                Asserts that the current <see cref="T:NodaTime.LocalDateTime" /> has the specified nanoseconds within the day.
             </summary>
             <param name="nanosecondOfDay">
-                The nanosecond of day that the current <see cref="T:NodaTime.LocalDateTime" /> is expected to have.
+                The nanoseconds within the day that the current <see cref="T:NodaTime.LocalDateTime" /> is expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -3317,12 +3317,12 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.LocalDateTimeAssertions.NotHaveNanosecondOfDay(System.Int64,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.LocalDateTimeAssertions.NotHaveNanosecondsWithinDay(System.Int64,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.LocalDateTime" /> does not have the specified nanosecond of day.
+                Asserts that the current <see cref="T:NodaTime.LocalDateTime" /> does not have the specified nanoseconds within the day.
             </summary>
             <param name="nanosecondOfDay">
-                The nanosecond of day that the current <see cref="T:NodaTime.LocalDateTime" /> is not expected to have.
+                The nanoseconds within the day that the current <see cref="T:NodaTime.LocalDateTime" /> is not expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -3335,12 +3335,12 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.LocalDateTimeAssertions.HaveNanosecondOfSecond(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.LocalDateTimeAssertions.HaveNanosecondsWithinSecond(System.Int32,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.LocalDateTime" /> has the specified nanosecond of second.
+                Asserts that the current <see cref="T:NodaTime.LocalDateTime" /> has the specified nanoseconds within the second.
             </summary>
             <param name="nanosecondOfSecond">
-                The nanosecond of second that the current <see cref="T:NodaTime.LocalDateTime" /> is expected to have.
+                The nanoseconds within the second that the current <see cref="T:NodaTime.LocalDateTime" /> is expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -3353,12 +3353,12 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.LocalDateTimeAssertions.NotHaveNanosecondOfSecond(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.LocalDateTimeAssertions.NotHaveNanosecondsWithinSecond(System.Int32,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.LocalDateTime" /> does not have the specified nanosecond of second.
+                Asserts that the current <see cref="T:NodaTime.LocalDateTime" /> does not have the specified nanoseconds within the second.
             </summary>
             <param name="nanosecondOfSecond">
-                The nanosecond of second that the current <see cref="T:NodaTime.LocalDateTime" /> is not expected to have.
+                The nanoseconds within the second that the current <see cref="T:NodaTime.LocalDateTime" /> is not expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -3371,7 +3371,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.LocalDateTimeAssertions.HaveTickOfSecond(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.LocalDateTimeAssertions.HaveTicksWithinSecond(System.Int32,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.LocalDateTime" /> has the specified tick of second.
             </summary>
@@ -3389,7 +3389,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.LocalDateTimeAssertions.NotHaveTickOfSecond(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.LocalDateTimeAssertions.NotHaveTicksWithinSecond(System.Int32,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.LocalDateTime" /> does not have the specified tick of second.
             </summary>
@@ -3407,7 +3407,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.LocalDateTimeAssertions.HaveTickOfDay(System.Int64,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.LocalDateTimeAssertions.HaveTicksWithinDay(System.Int64,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.LocalDateTime" /> has the specified tick of day.
             </summary>
@@ -3425,7 +3425,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.LocalDateTimeAssertions.NotHaveTickOfDay(System.Int64,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.LocalDateTimeAssertions.NotHaveTicksWithinDay(System.Int64,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.LocalDateTime" /> does not have the specified tick of day.
             </summary>
@@ -3443,7 +3443,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.LocalDateTimeAssertions.HaveYearOfEra(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.LocalDateTimeAssertions.HaveYearWithinEra(System.Int32,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.LocalDateTime" /> has the specified year of era.
             </summary>
@@ -3461,7 +3461,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.LocalDateTimeAssertions.NotHaveYearOfEra(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.LocalDateTimeAssertions.NotHaveYearWithinEra(System.Int32,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.LocalDateTime" /> does not have the specified year of era.
             </summary>
@@ -3805,12 +3805,12 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.LocalTimeAssertions.HaveNanosecondOfDay(System.Int64,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.LocalTimeAssertions.HaveNanosecondsWithinDay(System.Int64,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.LocalTime" /> has the specified nanosecond of day.
+                Asserts that the current <see cref="T:NodaTime.LocalTime" /> has the specified nanoseconds within the day.
             </summary>
             <param name="nanosecondOfDay">
-                The nanosecond of day that the current <see cref="T:NodaTime.LocalTime" /> is expected to have.
+                The nanoseconds within the day that the current <see cref="T:NodaTime.LocalTime" /> is expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -3823,12 +3823,12 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.LocalTimeAssertions.NotHaveNanosecondOfDay(System.Int64,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.LocalTimeAssertions.NotHaveNanosecondsWithinDay(System.Int64,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.LocalTime" /> does not have the specified nanosecond of day.
+                Asserts that the current <see cref="T:NodaTime.LocalTime" /> does not have the specified nanoseconds within the day.
             </summary>
             <param name="nanosecondOfDay">
-                The nanosecond of day that the current <see cref="T:NodaTime.LocalTime" /> is not expected to have.
+                The nanoseconds within the day that the current <see cref="T:NodaTime.LocalTime" /> is not expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -3841,12 +3841,12 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.LocalTimeAssertions.HaveNanosecondOfSecond(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.LocalTimeAssertions.HaveNanosecondsWithinSecond(System.Int32,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.LocalTime" /> has the specified nanosecond of second.
+                Asserts that the current <see cref="T:NodaTime.LocalTime" /> has the specified nanoseconds within the second.
             </summary>
             <param name="nanosecondOfSecond">
-                The nanosecond of second that the current <see cref="T:NodaTime.LocalTime" /> is expected to have.
+                The nanoseconds within the second that the current <see cref="T:NodaTime.LocalTime" /> is expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -3859,12 +3859,12 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.LocalTimeAssertions.NotHaveNanosecondOfSecond(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.LocalTimeAssertions.NotHaveNanosecondsWithinSecond(System.Int32,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.LocalTime" /> does not have the specified nanosecond of second.
+                Asserts that the current <see cref="T:NodaTime.LocalTime" /> does not have the specified nanoseconds within the second.
             </summary>
             <param name="nanosecondOfSecond">
-                The nanosecond of second that the current <see cref="T:NodaTime.LocalTime" /> is not expected to have.
+                The nanoseconds within the second that the current <see cref="T:NodaTime.LocalTime" /> is not expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -3877,7 +3877,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.LocalTimeAssertions.HaveTickOfSecond(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.LocalTimeAssertions.HaveTicksWithinSecond(System.Int32,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.LocalTime" /> has the specified tick of second.
             </summary>
@@ -3895,7 +3895,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.LocalTimeAssertions.NotHaveTickOfSecond(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.LocalTimeAssertions.NotHaveTicksWithinSecond(System.Int32,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.LocalTime" /> does not have the specified tick of second.
             </summary>
@@ -3913,7 +3913,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.LocalTimeAssertions.HaveTickOfDay(System.Int64,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.LocalTimeAssertions.HaveTicksWithinDay(System.Int64,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.LocalTime" /> has the specified tick of day.
             </summary>
@@ -3931,7 +3931,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;LocalTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.LocalTimeAssertions.NotHaveTickOfDay(System.Int64,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.LocalTimeAssertions.NotHaveTicksWithinDay(System.Int64,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.LocalTime" /> does not have the specified tick of day.
             </summary>
@@ -4237,7 +4237,7 @@
         </member>
         <member name="M:FluentAssertions.NodaTime.OffsetAssertions.BeGreaterThanOrEqualTo(NodaTime.Offset,System.String,System.Object[])">
             <summary>
-                Asserts that this <see cref="T:NodaTime.Offset" /> is on or after <paramref name="other" />.
+                Asserts that this <see cref="T:NodaTime.Offset" /> is greater than or equal to <paramref name="other" />.
             </summary>
             <param name="other">The <see cref="T:NodaTime.Offset" /> to compare to.</param>
             <param name="because">
@@ -4801,7 +4801,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetDateAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.OffsetDateAssertions.HaveYearOfEra(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.OffsetDateAssertions.HaveYearWithinEra(System.Int32,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.OffsetDate" /> has the specified year of era.
             </summary>
@@ -4819,7 +4819,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetDateAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.OffsetDateAssertions.NotHaveYearOfEra(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.OffsetDateAssertions.NotHaveYearWithinEra(System.Int32,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.OffsetDate" /> does not have the specified year of era.
             </summary>
@@ -5501,12 +5501,12 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.HaveNanosecondOfDay(System.Int64,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.HaveNanosecondsWithinDay(System.Int64,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.OffsetDateTime" /> has the specified nanosecond of day.
+                Asserts that the current <see cref="T:NodaTime.OffsetDateTime" /> has the specified nanoseconds within the day.
             </summary>
             <param name="nanosecondOfDay">
-                The nanosecond of day that the current <see cref="T:NodaTime.OffsetDateTime" /> is expected to have.
+                The nanoseconds within the day that the current <see cref="T:NodaTime.OffsetDateTime" /> is expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -5519,12 +5519,12 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.NotHaveNanosecondOfDay(System.Int64,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.NotHaveNanosecondsWithinDay(System.Int64,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.OffsetDateTime" /> does not have the specified nanosecond of day.
+                Asserts that the current <see cref="T:NodaTime.OffsetDateTime" /> does not have the specified nanoseconds within the day.
             </summary>
             <param name="nanosecondOfDay">
-                The nanosecond of day that the current <see cref="T:NodaTime.OffsetDateTime" /> is not expected to have.
+                The nanoseconds within the day that the current <see cref="T:NodaTime.OffsetDateTime" /> is not expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -5537,12 +5537,12 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.HaveNanosecondOfSecond(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.HaveNanosecondsWithinSecond(System.Int32,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.OffsetDateTime" /> has the specified nanosecond of second.
+                Asserts that the current <see cref="T:NodaTime.OffsetDateTime" /> has the specified nanoseconds within the second.
             </summary>
             <param name="nanosecondOfSecond">
-                The nanosecond of second that the current <see cref="T:NodaTime.OffsetDateTime" /> is expected to have.
+                The nanoseconds within the second that the current <see cref="T:NodaTime.OffsetDateTime" /> is expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -5555,12 +5555,12 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.NotHaveNanosecondOfSecond(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.NotHaveNanosecondsWithinSecond(System.Int32,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.OffsetDateTime" /> does not have the specified nanosecond of second.
+                Asserts that the current <see cref="T:NodaTime.OffsetDateTime" /> does not have the specified nanoseconds within the second.
             </summary>
             <param name="nanosecondOfSecond">
-                The nanosecond of second that the current <see cref="T:NodaTime.OffsetDateTime" /> is not expected to have.
+                The nanoseconds within the second that the current <see cref="T:NodaTime.OffsetDateTime" /> is not expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -5573,7 +5573,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.HaveTickOfSecond(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.HaveTicksWithinSecond(System.Int32,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.OffsetDateTime" /> has the specified tick of second.
             </summary>
@@ -5591,7 +5591,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.NotHaveTickOfSecond(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.NotHaveTicksWithinSecond(System.Int32,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.OffsetDateTime" /> does not have the specified tick of second.
             </summary>
@@ -5609,7 +5609,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.HaveTickOfDay(System.Int64,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.HaveTicksWithinDay(System.Int64,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.OffsetDateTime" /> has the specified tick of day.
             </summary>
@@ -5627,7 +5627,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.NotHaveTickOfDay(System.Int64,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.NotHaveTicksWithinDay(System.Int64,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.OffsetDateTime" /> does not have the specified tick of day.
             </summary>
@@ -5645,7 +5645,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.HaveYearOfEra(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.HaveYearWithinEra(System.Int32,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.OffsetDateTime" /> has the specified year of era.
             </summary>
@@ -5663,7 +5663,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.NotHaveYearOfEra(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.OffsetDateTimeAssertions.NotHaveYearWithinEra(System.Int32,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.OffsetDateTime" /> does not have the specified year of era.
             </summary>
@@ -6054,12 +6054,12 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.OffsetTimeAssertions.HaveNanosecondOfDay(System.Int64,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.OffsetTimeAssertions.HaveNanosecondsWithinDay(System.Int64,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.OffsetTime" /> has the specified nanosecond of day.
+                Asserts that the current <see cref="T:NodaTime.OffsetTime" /> has the specified nanoseconds within the day.
             </summary>
             <param name="nanosecondOfDay">
-                The nanosecond of day that the current <see cref="T:NodaTime.OffsetTime" /> is expected to have.
+                The nanoseconds within the day that the current <see cref="T:NodaTime.OffsetTime" /> is expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -6072,12 +6072,12 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.OffsetTimeAssertions.NotHaveNanosecondOfDay(System.Int64,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.OffsetTimeAssertions.NotHaveNanosecondsWithinDay(System.Int64,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.OffsetTime" /> does not have the specified nanosecond of day.
+                Asserts that the current <see cref="T:NodaTime.OffsetTime" /> does not have the specified nanoseconds within the day.
             </summary>
             <param name="nanosecondOfDay">
-                The nanosecond of day that the current <see cref="T:NodaTime.OffsetTime" /> is not expected to have.
+                The nanoseconds within the day that the current <see cref="T:NodaTime.OffsetTime" /> is not expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -6090,12 +6090,12 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.OffsetTimeAssertions.HaveNanosecondOfSecond(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.OffsetTimeAssertions.HaveNanosecondsWithinSecond(System.Int32,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.OffsetTime" /> has the specified nanosecond of second.
+                Asserts that the current <see cref="T:NodaTime.OffsetTime" /> has the specified nanoseconds within the second.
             </summary>
             <param name="nanosecondOfSecond">
-                The nanosecond of second that the current <see cref="T:NodaTime.OffsetTime" /> is expected to have.
+                The nanoseconds within the second that the current <see cref="T:NodaTime.OffsetTime" /> is expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -6108,12 +6108,12 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.OffsetTimeAssertions.NotHaveNanosecondOfSecond(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.OffsetTimeAssertions.NotHaveNanosecondsWithinSecond(System.Int32,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.OffsetTime" /> does not have the specified nanosecond of second.
+                Asserts that the current <see cref="T:NodaTime.OffsetTime" /> does not have the specified nanoseconds within the second.
             </summary>
             <param name="nanosecondOfSecond">
-                The nanosecond of second that the current <see cref="T:NodaTime.OffsetTime" /> is not expected to have.
+                The nanoseconds within the second that the current <see cref="T:NodaTime.OffsetTime" /> is not expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -6126,7 +6126,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.OffsetTimeAssertions.HaveTickOfSecond(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.OffsetTimeAssertions.HaveTicksWithinSecond(System.Int32,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.OffsetTime" /> has the specified tick of second.
             </summary>
@@ -6144,7 +6144,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.OffsetTimeAssertions.NotHaveTickOfSecond(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.OffsetTimeAssertions.NotHaveTicksWithinSecond(System.Int32,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.OffsetTime" /> does not have the specified tick of second.
             </summary>
@@ -6162,7 +6162,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.OffsetTimeAssertions.HaveTickOfDay(System.Int64,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.OffsetTimeAssertions.HaveTicksWithinDay(System.Int64,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.OffsetTime" /> has the specified tick of day.
             </summary>
@@ -6180,7 +6180,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;OffsetTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.OffsetTimeAssertions.NotHaveTickOfDay(System.Int64,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.OffsetTimeAssertions.NotHaveTicksWithinDay(System.Int64,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.OffsetTime" /> does not have the specified tick of day.
             </summary>
@@ -7354,12 +7354,12 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;ZonedDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.ZonedDateTimeAssertions.HaveNanosecondOfDay(System.Int64,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.ZonedDateTimeAssertions.HaveNanosecondsWithinDay(System.Int64,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.ZonedDateTime" /> has the specified nanosecond of day.
+                Asserts that the current <see cref="T:NodaTime.ZonedDateTime" /> has the specified nanoseconds within the day.
             </summary>
             <param name="nanosecondOfDay">
-                The nanosecond of day that the current <see cref="T:NodaTime.ZonedDateTime" /> is expected to have.
+                The nanoseconds within the day that the current <see cref="T:NodaTime.ZonedDateTime" /> is expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -7372,12 +7372,12 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;ZonedDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.ZonedDateTimeAssertions.NotHaveNanosecondOfDay(System.Int64,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.ZonedDateTimeAssertions.NotHaveNanosecondsWithinDay(System.Int64,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.ZonedDateTime" /> does not have the specified nanosecond of day.
+                Asserts that the current <see cref="T:NodaTime.ZonedDateTime" /> does not have the specified nanoseconds within the day.
             </summary>
             <param name="nanosecondOfDay">
-                The nanosecond of day that the current <see cref="T:NodaTime.ZonedDateTime" /> is not expected to have.
+                The nanoseconds within the day that the current <see cref="T:NodaTime.ZonedDateTime" /> is not expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -7390,12 +7390,12 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;ZonedDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.ZonedDateTimeAssertions.HaveNanosecondOfSecond(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.ZonedDateTimeAssertions.HaveNanosecondsWithinSecond(System.Int32,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.ZonedDateTime" /> has the specified nanosecond of second.
+                Asserts that the current <see cref="T:NodaTime.ZonedDateTime" /> has the specified nanoseconds within the second.
             </summary>
             <param name="nanosecondOfSecond">
-                The nanosecond of second that the current <see cref="T:NodaTime.ZonedDateTime" /> is expected to have.
+                The nanoseconds within the second that the current <see cref="T:NodaTime.ZonedDateTime" /> is expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -7408,12 +7408,12 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;ZonedDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.ZonedDateTimeAssertions.NotHaveNanosecondOfSecond(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.ZonedDateTimeAssertions.NotHaveNanosecondsWithinSecond(System.Int32,System.String,System.Object[])">
             <summary>
-                Asserts that the current <see cref="T:NodaTime.ZonedDateTime" /> does not have the specified nanosecond of second.
+                Asserts that the current <see cref="T:NodaTime.ZonedDateTime" /> does not have the specified nanoseconds within the second.
             </summary>
             <param name="nanosecondOfSecond">
-                The nanosecond of second that the current <see cref="T:NodaTime.ZonedDateTime" /> is not expected to have.
+                The nanoseconds within the second that the current <see cref="T:NodaTime.ZonedDateTime" /> is not expected to have.
             </param>
             <param name="because">
                 A formatted phrase as is supported by <see cref="M:System.String.Format(System.String,System.Object[])" /> explaining why the assertion
@@ -7426,7 +7426,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;ZonedDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.ZonedDateTimeAssertions.HaveTickOfSecond(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.ZonedDateTimeAssertions.HaveTicksWithinSecond(System.Int32,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.ZonedDateTime" /> has the specified tick of second.
             </summary>
@@ -7444,7 +7444,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;ZonedDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.ZonedDateTimeAssertions.NotHaveTickOfSecond(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.ZonedDateTimeAssertions.NotHaveTicksWithinSecond(System.Int32,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.ZonedDateTime" /> does not have the specified tick of second.
             </summary>
@@ -7462,7 +7462,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;ZonedDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.ZonedDateTimeAssertions.HaveTickOfDay(System.Int64,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.ZonedDateTimeAssertions.HaveTicksWithinDay(System.Int64,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.ZonedDateTime" /> has the specified tick of day.
             </summary>
@@ -7480,7 +7480,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;ZonedDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.ZonedDateTimeAssertions.NotHaveTickOfDay(System.Int64,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.ZonedDateTimeAssertions.NotHaveTicksWithinDay(System.Int64,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.ZonedDateTime" /> does not have the specified tick of day.
             </summary>
@@ -7498,7 +7498,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;ZonedDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.ZonedDateTimeAssertions.HaveYearOfEra(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.ZonedDateTimeAssertions.HaveYearWithinEra(System.Int32,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.ZonedDateTime" /> has the specified year of era.
             </summary>
@@ -7516,7 +7516,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;ZonedDateTimeAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.ZonedDateTimeAssertions.NotHaveYearOfEra(System.Int32,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.ZonedDateTimeAssertions.NotHaveYearWithinEra(System.Int32,System.String,System.Object[])">
             <summary>
                 Asserts that the current <see cref="T:NodaTime.ZonedDateTime" /> does not have the specified year of era.
             </summary>

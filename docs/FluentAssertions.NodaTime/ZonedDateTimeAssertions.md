@@ -25,15 +25,15 @@ public sealed class ZonedDateTimeAssertions :
 | [HaveMillisecond](ZonedDateTimeAssertions/HaveMillisecond.md)(…) | Asserts that the current ZonedDateTime has the specified millisecond. |
 | [HaveMinute](ZonedDateTimeAssertions/HaveMinute.md)(…) | Asserts that the current ZonedDateTime has the specified minute. |
 | [HaveMonth](ZonedDateTimeAssertions/HaveMonth.md)(…) | Asserts that the current ZonedDateTime has the specified month. |
-| [HaveNanosecondOfDay](ZonedDateTimeAssertions/HaveNanosecondOfDay.md)(…) | Asserts that the current ZonedDateTime has the specified nanosecond of day. |
-| [HaveNanosecondOfSecond](ZonedDateTimeAssertions/HaveNanosecondOfSecond.md)(…) | Asserts that the current ZonedDateTime has the specified nanosecond of second. |
+| [HaveNanosecondsWithinDay](ZonedDateTimeAssertions/HaveNanosecondsWithinDay.md)(…) | Asserts that the current ZonedDateTime has the specified nanoseconds within the day. |
+| [HaveNanosecondsWithinSecond](ZonedDateTimeAssertions/HaveNanosecondsWithinSecond.md)(…) | Asserts that the current ZonedDateTime has the specified nanoseconds within the second. |
 | [HaveOffset](ZonedDateTimeAssertions/HaveOffset.md)(…) | Asserts that the current ZonedDateTime has the specified Offset. (2 methods) |
 | [HaveSecond](ZonedDateTimeAssertions/HaveSecond.md)(…) | Asserts that the current ZonedDateTime has the specified second. |
-| [HaveTickOfDay](ZonedDateTimeAssertions/HaveTickOfDay.md)(…) | Asserts that the current ZonedDateTime has the specified tick of day. |
-| [HaveTickOfSecond](ZonedDateTimeAssertions/HaveTickOfSecond.md)(…) | Asserts that the current ZonedDateTime has the specified tick of second. |
+| [HaveTicksWithinDay](ZonedDateTimeAssertions/HaveTicksWithinDay.md)(…) | Asserts that the current ZonedDateTime has the specified tick of day. |
+| [HaveTicksWithinSecond](ZonedDateTimeAssertions/HaveTicksWithinSecond.md)(…) | Asserts that the current ZonedDateTime has the specified tick of second. |
 | [HaveTimeOfDay](ZonedDateTimeAssertions/HaveTimeOfDay.md)(…) | Asserts that the current ZonedDateTime has the specified LocalTime. |
 | [HaveYear](ZonedDateTimeAssertions/HaveYear.md)(…) | Asserts that the current ZonedDateTime has the specified year. |
-| [HaveYearOfEra](ZonedDateTimeAssertions/HaveYearOfEra.md)(…) | Asserts that the current ZonedDateTime has the specified year of era. |
+| [HaveYearWithinEra](ZonedDateTimeAssertions/HaveYearWithinEra.md)(…) | Asserts that the current ZonedDateTime has the specified year of era. |
 | [NotBe](ZonedDateTimeAssertions/NotBe.md)(…) | Asserts that this ZonedDateTime is not equal to *other*. |
 | [NotBeInCalendar](ZonedDateTimeAssertions/NotBeInCalendar.md)(…) | Asserts that the current ZonedDateTime does not have the specified CalendarSystem. |
 | [NotHaveClockHourOfHalfDay](ZonedDateTimeAssertions/NotHaveClockHourOfHalfDay.md)(…) | Asserts that the current ZonedDateTime does not have the specified hour of the half-day. |
@@ -47,15 +47,15 @@ public sealed class ZonedDateTimeAssertions :
 | [NotHaveMillisecond](ZonedDateTimeAssertions/NotHaveMillisecond.md)(…) | Asserts that the current ZonedDateTime does not have the specified millisecond. |
 | [NotHaveMinute](ZonedDateTimeAssertions/NotHaveMinute.md)(…) | Asserts that the current ZonedDateTime does not have the specified minute. |
 | [NotHaveMonth](ZonedDateTimeAssertions/NotHaveMonth.md)(…) | Asserts that the current ZonedDateTime does not have the specified month. |
-| [NotHaveNanosecondOfDay](ZonedDateTimeAssertions/NotHaveNanosecondOfDay.md)(…) | Asserts that the current ZonedDateTime does not have the specified nanosecond of day. |
-| [NotHaveNanosecondOfSecond](ZonedDateTimeAssertions/NotHaveNanosecondOfSecond.md)(…) | Asserts that the current ZonedDateTime does not have the specified nanosecond of second. |
+| [NotHaveNanosecondsWithinDay](ZonedDateTimeAssertions/NotHaveNanosecondsWithinDay.md)(…) | Asserts that the current ZonedDateTime does not have the specified nanoseconds within the day. |
+| [NotHaveNanosecondsWithinSecond](ZonedDateTimeAssertions/NotHaveNanosecondsWithinSecond.md)(…) | Asserts that the current ZonedDateTime does not have the specified nanoseconds within the second. |
 | [NotHaveOffset](ZonedDateTimeAssertions/NotHaveOffset.md)(…) | Asserts that the current ZonedDateTime does not have the specified Offset. (2 methods) |
 | [NotHaveSecond](ZonedDateTimeAssertions/NotHaveSecond.md)(…) | Asserts that the current ZonedDateTime does not have the specified second. |
-| [NotHaveTickOfDay](ZonedDateTimeAssertions/NotHaveTickOfDay.md)(…) | Asserts that the current ZonedDateTime does not have the specified tick of day. |
-| [NotHaveTickOfSecond](ZonedDateTimeAssertions/NotHaveTickOfSecond.md)(…) | Asserts that the current ZonedDateTime does not have the specified tick of second. |
+| [NotHaveTicksWithinDay](ZonedDateTimeAssertions/NotHaveTicksWithinDay.md)(…) | Asserts that the current ZonedDateTime does not have the specified tick of day. |
+| [NotHaveTicksWithinSecond](ZonedDateTimeAssertions/NotHaveTicksWithinSecond.md)(…) | Asserts that the current ZonedDateTime does not have the specified tick of second. |
 | [NotHaveTimeOfDay](ZonedDateTimeAssertions/NotHaveTimeOfDay.md)(…) | Asserts that the current ZonedDateTime does not have the specified LocalTime. |
 | [NotHaveYear](ZonedDateTimeAssertions/NotHaveYear.md)(…) | Asserts that the current ZonedDateTime does not have the specified year. |
-| [NotHaveYearOfEra](ZonedDateTimeAssertions/NotHaveYearOfEra.md)(…) | Asserts that the current ZonedDateTime does not have the specified year of era. |
+| [NotHaveYearWithinEra](ZonedDateTimeAssertions/NotHaveYearWithinEra.md)(…) | Asserts that the current ZonedDateTime does not have the specified year of era. |
 
 ## Protected Members
 
