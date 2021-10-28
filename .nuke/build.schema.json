@@ -73,7 +73,9 @@
             "enum": [
               "Clean",
               "Compile",
-              "Restore"
+              "Pack",
+              "Restore",
+              "UnitTests"
             ]
           }
         },
@@ -89,7 +91,9 @@
             "enum": [
               "Clean",
               "Compile",
-              "Restore"
+              "Pack",
+              "Restore",
+              "UnitTests"
             ]
           }
         },
