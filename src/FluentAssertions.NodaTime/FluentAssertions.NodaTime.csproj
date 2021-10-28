@@ -1,11 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net5.0;net47;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>net5.0;net47;netstandard2.0;netstandard2.1</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Nullable>enable</Nullable>
     <LangVersion>9.0</LangVersion>
     <DocumentationFile>$(SolutionDir)\docs\FluentAssertions.NodaTime.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>Jeroen Weelink</Authors>
+    <PackageDescription>Fluent Assertions extensions for NodaTime</PackageDescription>
+    <PackageProjectUrl>https://www.fluentassertions.com</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/weelink/FluentAssertions.NodaTime</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>FluentAssertions;NodaTime;xUnit;NUnit;MSpec;NSpec;TDD;BDD;Fluent;netcore;netstandard;uwp</PackageTags>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageReleaseNotes>See https://github.com/weelink/FluentAssertions.NodaTime/releases</PackageReleaseNotes>
+    <Copyright>Copyright Jeroen Weelink 2021</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
