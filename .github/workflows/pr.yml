@@ -24,14 +24,6 @@ jobs:
     - name: Install NUKE
       run: |
         dotnet tool install --global Nuke.GlobalTool
-    
-    - name: Install GitVersion
-      run: |
-        dotnet tool install --global GitVersion.Tool --version 5.*
-
-    - name: Run GitVersion
-      run: |
-        dotnet-gitversion /diag
 
     - name: Run NUKE
       run: nuke
