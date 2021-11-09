@@ -6,12 +6,13 @@
     <Nullable>enable</Nullable>
     <LangVersion>9.0</LangVersion>
     <DocumentationFile>$(SolutionDir)\docs\FluentAssertions.NodaTime.xml</DocumentationFile>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
 
   <PropertyGroup>
     <Authors>Jeroen Weelink</Authors>
     <PackageDescription>Fluent Assertions extensions for NodaTime</PackageDescription>
-    <PackageProjectUrl>https://www.fluentassertions.com</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/weelink/FluentAssertions.NodaTime</PackageProjectUrl>
     <RepositoryUrl>https://github.com/weelink/FluentAssertions.NodaTime</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>FluentAssertions;NodaTime;xUnit;NUnit;MSpec;NSpec;TDD;BDD;Fluent;netcore;netstandard;uwp</PackageTags>
@@ -24,16 +25,9 @@
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
   </PropertyGroup>
 
-  <PropertyGroup>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-  </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="FluentAssertions" Version="6.1.0" />
-    <PackageReference Include="NodaTime" Version="3.0.5" />
+    <PackageReference Include="FluentAssertions" Version="6.0.0" />
+    <PackageReference Include="NodaTime" Version="3.0.0" />
   </ItemGroup>
 
 </Project>
