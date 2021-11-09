@@ -19,11 +19,19 @@
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageReleaseNotes>See https://github.com/weelink/FluentAssertions.NodaTime/releases</PackageReleaseNotes>
     <Copyright>Copyright Jeroen Weelink 2021</Copyright>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>FluentAssertions.NodaTime.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
   </PropertyGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>FluentAssertions.NodaTime.Specs, PublicKey=00240000048000009400000006020000002400005253413100040000010001006d54b94d65bb9ce57de153f9fd618ad9ddb8f05bcf92fe16085d91d6e7a2ff345a2cb2815d1e103cdc1323994e049c796047e4e710c1e99d0c28b0fcaf37d7fc8975e8fdbd460b69f9e0870b7e6b91b3fe21042a83452beed086c008a6a940155f73e3754831cb71a6bd98185d5fc08eb07bde69de2bd7be2afeb333293dbcb7</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="FluentAssertions" Version="6.0.0" />
