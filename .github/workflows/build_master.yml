@@ -1,4 +1,4 @@
-name: .NET
+name: build-master
 
 on:
   push:
@@ -32,3 +32,9 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         path: ./artifacts/*
+        
+    - name: Push to Nuget
+      run: dotnet nuget push .\artifacts\*.nupkg --api-key "$env:ApiKey" --skip-duplicate --no-symbols true --source https://api.nuget.org/v3/index.json
+      if: contains(github.ref, 'refs/tags/')
+      env:
+        ApiKey: ${{ secrets.NUGET_API_KEY }}
