@@ -138,7 +138,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_an_offset_is_less_than_a_timespan_it_fails()
             {
                 // Arrange
-                TimeSpan other = DateTimeOffset.Now.TimeOfDay;
+                TimeSpan other = TimeSpan.FromSeconds(new Random().Next(1, 100));
                 Offset offset = Offset.FromTimeSpan(other) - Offset.FromSeconds(1);
 
                 // Act
@@ -153,7 +153,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_an_offset_is_greater_than_a_timespan_it_fails()
             {
                 // Arrange
-                TimeSpan other = DateTimeOffset.Now.TimeOfDay;
+                TimeSpan other = TimeSpan.FromSeconds(new Random().Next(1, 100));
                 Offset offset = Offset.FromTimeSpan(other) + Offset.FromSeconds(1);
 
                 // Act
@@ -291,7 +291,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_an_offset_is_less_than_a_timespan_it_succeeds()
             {
                 // Arrange
-                TimeSpan other = DateTimeOffset.Now.TimeOfDay;
+                TimeSpan other = TimeSpan.FromSeconds(new Random().Next(1, 100));
                 Offset offset = Offset.FromTimeSpan(other) - Offset.FromSeconds(1);
 
                 // Act
@@ -305,7 +305,7 @@ namespace FluentAssertions.NodaTime.Specs
             public void When_an_offset_is_greater_than_a_timespan_it_succeeds()
             {
                 // Arrange
-                TimeSpan other = DateTimeOffset.Now.TimeOfDay;
+                TimeSpan other = TimeSpan.FromSeconds(new Random().Next(1, 100));
                 Offset offset = Offset.FromTimeSpan(other) + Offset.FromSeconds(1);
 
                 // Act
