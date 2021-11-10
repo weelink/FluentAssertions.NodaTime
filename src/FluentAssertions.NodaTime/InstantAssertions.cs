@@ -281,7 +281,7 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<InstantAssertions> GreaterThan(Instant other, string because = "", params object[] becauseArgs)
+        public AndConstraint<InstantAssertions> BeGreaterThan(Instant other, string because = "", params object[] becauseArgs)
         {
             Execute.Assertion
                 .ForCondition(Subject > other)
@@ -306,7 +306,7 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<InstantAssertions> GreaterThanOrEqualTo(Instant other, string because = "", params object[] becauseArgs)
+        public AndConstraint<InstantAssertions> BeGreaterThanOrEqualTo(Instant other, string because = "", params object[] becauseArgs)
         {
             Execute.Assertion
                 .ForCondition(Subject >= other)
@@ -331,7 +331,7 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<InstantAssertions> LessThan(Instant other, string because = "", params object[] becauseArgs)
+        public AndConstraint<InstantAssertions> BeLessThan(Instant other, string because = "", params object[] becauseArgs)
         {
             Execute.Assertion
                 .ForCondition(Subject < other)
@@ -356,7 +356,7 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<InstantAssertions> LessThanOrEqualTo(Instant other, string because = "", params object[] becauseArgs)
+        public AndConstraint<InstantAssertions> BeLessThanOrEqualTo(Instant other, string because = "", params object[] becauseArgs)
         {
             Execute.Assertion
                 .ForCondition(Subject <= other)

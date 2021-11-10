@@ -400,7 +400,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
         }
 
-        public class GreaterThan
+        public class BeGreaterThan
         {
             [Fact]
             public void When_an_instant_is_greater_than_an_other_instant_it_succeeds()
@@ -410,7 +410,7 @@ namespace FluentAssertions.NodaTime.Specs
                 Instant instant = other + Duration.FromNanoseconds(1);
 
                 // Act
-                Action act = () => instant.Should().GreaterThan(other);
+                Action act = () => instant.Should().BeGreaterThan(other);
 
                 // Assert
                 act.Should().NotThrow();
@@ -424,7 +424,7 @@ namespace FluentAssertions.NodaTime.Specs
                 Instant instant = other - Duration.FromNanoseconds(1);
 
                 // Act
-                Action act = () => instant.Should().GreaterThan(other);
+                Action act = () => instant.Should().BeGreaterThan(other);
 
                 // Assert
                 act.Should().Throw<XunitException>()
@@ -440,7 +440,7 @@ namespace FluentAssertions.NodaTime.Specs
                 Instant instant = Instant.FromDateTimeOffset(now);
 
                 // Act
-                Action act = () => instant.Should().GreaterThan(other);
+                Action act = () => instant.Should().BeGreaterThan(other);
 
                 // Assert
                 act.Should().Throw<XunitException>()
@@ -454,7 +454,7 @@ namespace FluentAssertions.NodaTime.Specs
                 Instant instant = Instant.FromDateTimeOffset(DateTimeOffset.Now);
 
                 // Act
-                Action act = () => instant.Should().GreaterThan(instant);
+                Action act = () => instant.Should().BeGreaterThan(instant);
 
                 // Assert
                 act.Should().Throw<XunitException>()
@@ -462,7 +462,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
         }
 
-        public class GreaterThanOrEqualTo
+        public class BeGreaterThanOrEqualTo
         {
             [Fact]
             public void When_asserting_an_instant_is_greater_than_or_equal_to_itself_it_succeeds()
@@ -471,7 +471,7 @@ namespace FluentAssertions.NodaTime.Specs
                 Instant instant = Instant.FromDateTimeOffset(DateTimeOffset.Now);
 
                 // Act
-                Action act = () => instant.Should().GreaterThanOrEqualTo(instant);
+                Action act = () => instant.Should().BeGreaterThanOrEqualTo(instant);
 
                 // Assert
                 act.Should().NotThrow();
@@ -486,7 +486,7 @@ namespace FluentAssertions.NodaTime.Specs
                 Instant instant = Instant.FromDateTimeOffset(now);
 
                 // Act
-                Action act = () => instant.Should().GreaterThanOrEqualTo(other);
+                Action act = () => instant.Should().BeGreaterThanOrEqualTo(other);
 
                 // Assert
                 act.Should().NotThrow();
@@ -500,7 +500,7 @@ namespace FluentAssertions.NodaTime.Specs
                 Instant instant = other + Duration.FromNanoseconds(1);
 
                 // Act
-                Action act = () => instant.Should().GreaterThanOrEqualTo(other);
+                Action act = () => instant.Should().BeGreaterThanOrEqualTo(other);
 
                 // Assert
                 act.Should().NotThrow();
@@ -514,7 +514,7 @@ namespace FluentAssertions.NodaTime.Specs
                 Instant instant = other - Duration.FromNanoseconds(1);
 
                 // Act
-                Action act = () => instant.Should().GreaterThanOrEqualTo(other);
+                Action act = () => instant.Should().BeGreaterThanOrEqualTo(other);
 
                 // Assert
                 act.Should().Throw<XunitException>()
@@ -522,7 +522,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
         }
 
-        public class LessThan
+        public class BeLessThan
         {
             [Fact]
             public void When_an_instant_is_less_than_an_other_instant_it_succeeds()
@@ -532,7 +532,7 @@ namespace FluentAssertions.NodaTime.Specs
                 Instant instant = other - Duration.FromNanoseconds(1);
 
                 // Act
-                Action act = () => instant.Should().LessThan(other);
+                Action act = () => instant.Should().BeLessThan(other);
 
                 // Assert
                 act.Should().NotThrow();
@@ -546,7 +546,7 @@ namespace FluentAssertions.NodaTime.Specs
                 Instant instant = other + Duration.FromNanoseconds(1);
 
                 // Act
-                Action act = () => instant.Should().LessThan(other);
+                Action act = () => instant.Should().BeLessThan(other);
 
                 // Assert
                 act.Should().Throw<XunitException>()
@@ -562,7 +562,7 @@ namespace FluentAssertions.NodaTime.Specs
                 Instant instant = Instant.FromDateTimeOffset(now);
 
                 // Act
-                Action act = () => instant.Should().LessThan(other);
+                Action act = () => instant.Should().BeLessThan(other);
 
                 // Assert
                 act.Should().Throw<XunitException>()
@@ -576,7 +576,7 @@ namespace FluentAssertions.NodaTime.Specs
                 Instant instant = Instant.FromDateTimeOffset(DateTimeOffset.Now);
 
                 // Act
-                Action act = () => instant.Should().LessThan(instant);
+                Action act = () => instant.Should().BeLessThan(instant);
 
                 // Assert
                 act.Should().Throw<XunitException>()
@@ -584,7 +584,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
         }
 
-        public class LessThanOrEqualTo
+        public class BeLessThanOrEqualTo
         {
             [Fact]
             public void When_asserting_an_instant_is_less_than_or_equal_to_itself_it_succeeds()
@@ -593,7 +593,7 @@ namespace FluentAssertions.NodaTime.Specs
                 Instant instant = Instant.FromDateTimeOffset(DateTimeOffset.Now);
 
                 // Act
-                Action act = () => instant.Should().LessThanOrEqualTo(instant);
+                Action act = () => instant.Should().BeLessThanOrEqualTo(instant);
 
                 // Assert
                 act.Should().NotThrow();
@@ -608,7 +608,7 @@ namespace FluentAssertions.NodaTime.Specs
                 Instant instant = Instant.FromDateTimeOffset(now);
 
                 // Act
-                Action act = () => instant.Should().LessThanOrEqualTo(other);
+                Action act = () => instant.Should().BeLessThanOrEqualTo(other);
 
                 // Assert
                 act.Should().NotThrow();
@@ -622,7 +622,7 @@ namespace FluentAssertions.NodaTime.Specs
                 Instant instant = other - Duration.FromNanoseconds(1);
 
                 // Act
-                Action act = () => instant.Should().LessThanOrEqualTo(other);
+                Action act = () => instant.Should().BeLessThanOrEqualTo(other);
 
                 // Assert
                 act.Should().NotThrow();
@@ -636,7 +636,7 @@ namespace FluentAssertions.NodaTime.Specs
                 Instant instant = other + Duration.FromNanoseconds(1);
 
                 // Act
-                Action act = () => instant.Should().LessThanOrEqualTo(other);
+                Action act = () => instant.Should().BeLessThanOrEqualTo(other);
 
                 // Assert
                 act.Should().Throw<XunitException>()

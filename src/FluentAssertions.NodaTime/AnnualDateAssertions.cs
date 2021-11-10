@@ -119,7 +119,7 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;AnnualDateAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<AnnualDateAssertions> BeGreaterThanOrEqual(AnnualDate other, string because = "", params object[] becauseArgs)
+        public AndConstraint<AnnualDateAssertions> BeGreaterThanOrEqualTo(AnnualDate other, string because = "", params object[] becauseArgs)
         {
             Execute.Assertion
                 .ForCondition(Subject >= other)
@@ -169,7 +169,7 @@ namespace FluentAssertions.NodaTime
         ///     An <see cref="AndConstraint{T}">AndConstraint&lt;AnnualDateAssertions&gt;</see> which can be used to chain assertions.
         /// </returns>
         [CustomAssertion]
-        public AndConstraint<AnnualDateAssertions> BeLessThanOrEqual(AnnualDate other, string because = "", params object[] becauseArgs)
+        public AndConstraint<AnnualDateAssertions> BeLessThanOrEqualTo(AnnualDate other, string because = "", params object[] becauseArgs)
         {
             Execute.Assertion
                 .ForCondition(Subject <= other)

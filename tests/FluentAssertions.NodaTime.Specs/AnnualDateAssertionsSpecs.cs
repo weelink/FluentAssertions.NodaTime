@@ -300,7 +300,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
         }
 
-        public class BeGreaterThanOrEqual
+        public class BeGreaterThanOrEqualTo
         {
             [Fact]
             public void When_asserting_an_annual_date_is_greater_than_or_equal_to_itself_it_succeeds()
@@ -310,7 +310,7 @@ namespace FluentAssertions.NodaTime.Specs
                 AnnualDate annualDate = new AnnualDate(now.Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeGreaterThanOrEqual(annualDate);
+                Action act = () => annualDate.Should().BeGreaterThanOrEqualTo(annualDate);
 
                 // Assert
                 act.Should().NotThrow();
@@ -325,7 +325,7 @@ namespace FluentAssertions.NodaTime.Specs
                 AnnualDate other = new AnnualDate(now.Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeGreaterThanOrEqual(other);
+                Action act = () => annualDate.Should().BeGreaterThanOrEqualTo(other);
 
                 // Assert
                 act.Should().NotThrow();
@@ -340,7 +340,7 @@ namespace FluentAssertions.NodaTime.Specs
                 AnnualDate annualDate = new AnnualDate(now.AddMonths(1).Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeGreaterThanOrEqual(other);
+                Action act = () => annualDate.Should().BeGreaterThanOrEqualTo(other);
 
                 // Assert
                 act.Should().NotThrow();
@@ -355,7 +355,7 @@ namespace FluentAssertions.NodaTime.Specs
                 AnnualDate annualDate = new AnnualDate(now.AddMonths(-1).Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeGreaterThanOrEqual(other);
+                Action act = () => annualDate.Should().BeGreaterThanOrEqualTo(other);
 
                 // Assert
                 act.Should().Throw<XunitException>()
@@ -428,7 +428,7 @@ namespace FluentAssertions.NodaTime.Specs
             }
         }
 
-        public class BeLessThanOrEqual
+        public class BeLessThanOrEqualTo
         {
             [Fact]
             public void When_asserting_an_annual_date_is_less_than_or_equal_to_itself_it_succeeds()
@@ -438,7 +438,7 @@ namespace FluentAssertions.NodaTime.Specs
                 AnnualDate annualDate = new AnnualDate(now.Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeLessThanOrEqual(annualDate);
+                Action act = () => annualDate.Should().BeLessThanOrEqualTo(annualDate);
 
                 // Assert
                 act.Should().NotThrow();
@@ -453,7 +453,7 @@ namespace FluentAssertions.NodaTime.Specs
                 AnnualDate annualDate = new AnnualDate(now.Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeLessThanOrEqual(other);
+                Action act = () => annualDate.Should().BeLessThanOrEqualTo(other);
 
                 // Assert
                 act.Should().NotThrow();
@@ -468,7 +468,7 @@ namespace FluentAssertions.NodaTime.Specs
                 AnnualDate annualDate = new AnnualDate(now.AddMonths(-1).Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeLessThanOrEqual(other);
+                Action act = () => annualDate.Should().BeLessThanOrEqualTo(other);
 
                 // Assert
                 act.Should().NotThrow();
@@ -483,7 +483,7 @@ namespace FluentAssertions.NodaTime.Specs
                 AnnualDate annualDate = new AnnualDate(now.AddMonths(1).Month, 1);
 
                 // Act
-                Action act = () => annualDate.Should().BeLessThanOrEqual(other);
+                Action act = () => annualDate.Should().BeLessThanOrEqualTo(other);
 
                 // Assert
                 act.Should().Throw<XunitException>()

@@ -66,7 +66,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;AnnualDateAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.AnnualDateAssertions.BeGreaterThanOrEqual(NodaTime.AnnualDate,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.AnnualDateAssertions.BeGreaterThanOrEqualTo(NodaTime.AnnualDate,System.String,System.Object[])">
             <summary>
                 Asserts that this <see cref="T:NodaTime.AnnualDate" /> is greater than or equal to <paramref name="other" />.
             </summary>
@@ -98,7 +98,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;AnnualDateAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.AnnualDateAssertions.BeLessThanOrEqual(NodaTime.AnnualDate,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.AnnualDateAssertions.BeLessThanOrEqualTo(NodaTime.AnnualDate,System.String,System.Object[])">
             <summary>
                 Asserts that this <see cref="T:NodaTime.AnnualDate" /> is less than or equal to <paramref name="other" />.
             </summary>
@@ -1949,7 +1949,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.InstantAssertions.GreaterThan(NodaTime.Instant,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.InstantAssertions.BeGreaterThan(NodaTime.Instant,System.String,System.Object[])">
             <summary>
                 Asserts that this <see cref="T:NodaTime.Instant" /> is greater than <paramref name="other" />.
             </summary>
@@ -1965,7 +1965,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.InstantAssertions.GreaterThanOrEqualTo(NodaTime.Instant,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.InstantAssertions.BeGreaterThanOrEqualTo(NodaTime.Instant,System.String,System.Object[])">
             <summary>
                 Asserts that this <see cref="T:NodaTime.Instant" /> is greater than or equal to <paramref name="other" />.
             </summary>
@@ -1981,7 +1981,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.InstantAssertions.LessThan(NodaTime.Instant,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.InstantAssertions.BeLessThan(NodaTime.Instant,System.String,System.Object[])">
             <summary>
                 Asserts that this <see cref="T:NodaTime.Instant" /> is less than <paramref name="other" />.
             </summary>
@@ -1997,7 +1997,7 @@
                 An <see cref="T:FluentAssertions.AndConstraint`1">AndConstraint&lt;InstantAssertions&gt;</see> which can be used to chain assertions.
             </returns>
         </member>
-        <member name="M:FluentAssertions.NodaTime.InstantAssertions.LessThanOrEqualTo(NodaTime.Instant,System.String,System.Object[])">
+        <member name="M:FluentAssertions.NodaTime.InstantAssertions.BeLessThanOrEqualTo(NodaTime.Instant,System.String,System.Object[])">
             <summary>
                 Asserts that this <see cref="T:NodaTime.Instant" /> is less than or equal to <paramref name="other" />.
             </summary>

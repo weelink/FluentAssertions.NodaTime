@@ -1,9 +1,9 @@
-# InstantAssertions.GreaterThan method
+# InstantAssertions.BeLessThanOrEqualTo method
 
-Asserts that this Instant is greater than *other*.
+Asserts that this Instant is less than or equal to *other*.
 
 ```csharp
-public AndConstraint<InstantAssertions> GreaterThan(Instant other, string because = "", 
+public AndConstraint<InstantAssertions> BeLessThanOrEqualTo(Instant other, string because = "", 
     params object[] becauseArgs)
 ```
 
