@@ -49,7 +49,7 @@ namespace FluentAssertions.NodaTime
         {
             Execute.Assertion
                 .BecauseOf(because, becauseArgs)
-                .ForCondition((Subject.HasValue && Subject.Equals(other)) || (!Subject.HasValue && !other.HasValue))
+                .ForCondition(Nullable.Equals(Subject, other))
                 .FailWith("Expected {context:Duration} to be equal to {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<DurationAssertions>(this);
@@ -94,7 +94,7 @@ namespace FluentAssertions.NodaTime
         {
             Execute.Assertion
                 .BecauseOf(because, becauseArgs)
-                .ForCondition((Subject.HasValue && !Subject.Equals(other)) || (!Subject.HasValue && other.HasValue))
+                .ForCondition(!Nullable.Equals(Subject, other))
                 .FailWith("Did not expect {context:Duration} to be equal to {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<DurationAssertions>(this);

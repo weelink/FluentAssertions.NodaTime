@@ -46,7 +46,7 @@ namespace FluentAssertions.NodaTime
         {
             Execute.Assertion
                 .BecauseOf(because, becauseArgs)
-                .ForCondition(Subject.HasValue && Subject.Equals(other) || !Subject.HasValue && !other.HasValue)
+                .ForCondition(Nullable.Equals(Subject, other))
                 .FailWith("Expected {context:OffsetTime} to be equal to {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<OffsetTimeAssertions>(this);
@@ -72,7 +72,7 @@ namespace FluentAssertions.NodaTime
         {
             Execute.Assertion
                 .BecauseOf(because, becauseArgs)
-                .ForCondition(Subject.HasValue && !Subject.Equals(other) || !Subject.HasValue && other.HasValue)
+                .ForCondition(!Nullable.Equals(Subject, other))
                 .FailWith("Did not expect {context:OffsetTime} to be equal to {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<OffsetTimeAssertions>(this);
