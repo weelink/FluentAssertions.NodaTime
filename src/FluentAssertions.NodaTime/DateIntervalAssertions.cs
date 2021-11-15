@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 using FluentAssertions.Execution;
 using FluentAssertions.Formatting;
@@ -53,22 +54,10 @@ namespace FluentAssertions.NodaTime
         [CustomAssertion]
         public AndConstraint<DateIntervalAssertions> Be(DateInterval? other, string because = "", params object[] becauseArgs)
         {
-            AssertionScope scope =
-                Execute.Assertion
-                    .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Expected {context:DateInterval} to be equal to {0}{reason}", other);
-
-            if (Subject != null)
-            {
-                scope.ForCondition((Subject != null && Subject.Equals(other)) || (Subject == null && other == null))
-                    .FailWith(", but found {0}.", Subject);
-            }
-            else if (other != null)
-            {
-                scope
-                    .ForCondition(false)
-                    .FailWith(", but found <null>.");
-            }
+            Execute.Assertion
+                .BecauseOf(because, becauseArgs)
+                .ForCondition(Nullable.Equals(Subject, other))
+                .FailWith("Expected {context:DateInterval} to be equal to {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<DateIntervalAssertions>(this);
         }
@@ -90,23 +79,10 @@ namespace FluentAssertions.NodaTime
         [CustomAssertion]
         public AndConstraint<DateIntervalAssertions> NotBe(DateInterval? other, string because = "", params object[] becauseArgs)
         {
-            AssertionScope scope =
-                Execute.Assertion
-                    .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Did not expect {context:DateInterval} to be equal to {0}{reason}", other);
-
-            if (Subject != null)
-            {
-                scope
-                    .ForCondition(!Subject.Equals(other))
-                    .FailWith(", but found {0}.", Subject);
-            }
-            else if (other == null)
-            {
-                scope
-                    .ForCondition(false)
-                    .FailWith(".");
-            }
+            Execute.Assertion
+                .BecauseOf(because, becauseArgs)
+                .ForCondition(!Nullable.Equals(Subject, other))
+                .FailWith("Did not expect {context:DateInterval} to be equal to {0}{reason}.", other, Subject);
 
             return new AndConstraint<DateIntervalAssertions>(this);
         }

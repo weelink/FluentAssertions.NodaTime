@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 using FluentAssertions.Execution;
 using FluentAssertions.Primitives;
@@ -46,22 +47,10 @@ namespace FluentAssertions.NodaTime
         [CustomAssertion]
         public AndConstraint<IntervalAssertions> Be(Interval? other, string because = "", params object[] becauseArgs)
         {
-            AssertionScope scope =
-                Execute.Assertion
-                    .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Expected {context:Interval} to be equal to {0}{reason}", other);
-
-            if (Subject.HasValue)
-            {
-                scope.ForCondition((Subject.HasValue && Subject.Equals(other)) || (!Subject.HasValue && !other.HasValue))
-                    .FailWith(", but found {0}.", Subject);
-            }
-            else if (other.HasValue)
-            {
-                scope
-                    .ForCondition(false)
-                    .FailWith(", but found <null>.");
-            }
+            Execute.Assertion
+                .BecauseOf(because, becauseArgs)
+                .ForCondition(Nullable.Equals(Subject, other))
+                .FailWith("Expected {context:Interval} to be equal to {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<IntervalAssertions>(this);
         }
@@ -83,23 +72,10 @@ namespace FluentAssertions.NodaTime
         [CustomAssertion]
         public AndConstraint<IntervalAssertions> NotBe(Interval? other, string because = "", params object[] becauseArgs)
         {
-            AssertionScope scope =
-                Execute.Assertion
-                    .BecauseOf(because, becauseArgs)
-                    .WithExpectation("Did not expect {context:Interval} to be equal to {0}{reason}", other);
-
-            if (Subject.HasValue)
-            {
-                scope
-                    .ForCondition(!Subject.Equals(other))
-                    .FailWith(", but found {0}.", Subject);
-            }
-            else if (!other.HasValue)
-            {
-                scope
-                    .ForCondition(false)
-                    .FailWith(".");
-            }
+            Execute.Assertion
+                .BecauseOf(because, becauseArgs)
+                .ForCondition(!Nullable.Equals(Subject, other))
+                .FailWith("Did not expect {context:Interval} to be equal to {0}{reason}.", other);
 
             return new AndConstraint<IntervalAssertions>(this);
         }

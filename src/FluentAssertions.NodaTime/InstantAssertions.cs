@@ -115,7 +115,7 @@ namespace FluentAssertions.NodaTime
             Execute.Assertion
                 .BecauseOf(because, becauseArgs)
                 .ForCondition(!Nullable.Equals(Subject, other))
-                .FailWith("Did not expect {context:Instant} to be equal to {0}{reason}, but found {1}.", other, Subject);
+                .FailWith("Did not expect {context:Instant} to be equal to {0}{reason}.", other);
 
             return new AndConstraint<InstantAssertions>(this);
         }

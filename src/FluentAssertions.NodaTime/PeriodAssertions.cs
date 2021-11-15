@@ -99,7 +99,7 @@ namespace FluentAssertions.NodaTime
             Execute.Assertion
                 .BecauseOf(because, becauseArgs)
                 .ForCondition((Subject != null && !Subject.Equals(other)) || (Subject == null && other != null))
-                .FailWith("Did not expect {context:Period} to be equal to {0}{reason}, but found {1}.", other, Subject);
+                .FailWith("Did not expect {context:Period} to be equal to {0}{reason}.", other, Subject);
 
             return new AndConstraint<PeriodAssertions>(this);
         }
@@ -124,7 +124,7 @@ namespace FluentAssertions.NodaTime
             Execute.Assertion
                 .BecauseOf(because, becauseArgs)
                 .ForCondition((Subject != null && !Subject.ToDuration().Equals(other)) || (Subject == null && other != null))
-                .FailWith("Did not expect {context:Period} to be equal to {0}{reason}, but found {1}.", other, Subject);
+                .FailWith("Did not expect {context:Period} to be equal to {0}{reason}.", other, Subject);
 
             return new AndConstraint<PeriodAssertions>(this);
         }
