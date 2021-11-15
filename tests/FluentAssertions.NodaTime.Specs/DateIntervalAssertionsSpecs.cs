@@ -196,7 +196,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(dateInterval)} to be equal to {other}, but found {dateInterval}.");
+                    .WithMessage($"Did not expect {nameof(dateInterval)} to be equal to {other}.");
             }
 
             [Fact]
@@ -213,7 +213,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(dateInterval)} to be equal to {dateInterval}, but found {dateInterval}.");
+                    .WithMessage($"Did not expect {nameof(dateInterval)} to be equal to {dateInterval}.");
             }
 
             [Fact]

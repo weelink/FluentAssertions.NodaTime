@@ -249,7 +249,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(instant)} to be equal to {other}, but found {instant}.");
+                    .WithMessage($"Did not expect {nameof(instant)} to be equal to {other}.");
             }
 
             [Fact]
@@ -264,7 +264,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(instant)} to be equal to {instant}, but found {instant}.");
+                    .WithMessage($"Did not expect {nameof(instant)} to be equal to {instant}.");
             }
 
             [Fact]
@@ -280,7 +280,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(instant)} to be equal to <null>, but found <null>.");
+                    .WithMessage($"Did not expect {nameof(instant)} to be equal to <null>.");
             }
 
             [Fact]
@@ -325,7 +325,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(instant)} to be equal to {Instant.FromDateTimeOffset(other)}, but found {instant}.");
+                    .WithMessage($"Did not expect {nameof(instant)} to be equal to {Instant.FromDateTimeOffset(other)}.");
             }
 
             [Fact]
@@ -368,7 +368,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(instant)} to be equal to {Instant.FromDateTimeUtc(other)}, but found {instant}.");
+                    .WithMessage($"Did not expect {nameof(instant)} to be equal to {Instant.FromDateTimeUtc(other)}.");
             }
 
             [Fact]

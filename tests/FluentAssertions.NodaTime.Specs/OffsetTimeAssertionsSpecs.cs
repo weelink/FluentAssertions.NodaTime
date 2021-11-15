@@ -105,7 +105,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(offsetTime)} to be equal to {other}, but found {offsetTime}.");
+                    .WithMessage($"Did not expect {nameof(offsetTime)} to be equal to {other}.");
             }
 
             [Fact]
@@ -120,7 +120,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(offsetTime)} to be equal to {offsetTime}, but found {offsetTime}.");
+                    .WithMessage($"Did not expect {nameof(offsetTime)} to be equal to {offsetTime}.");
             }
 
             [Fact]
@@ -136,7 +136,7 @@ namespace FluentAssertions.NodaTime.Specs
 
                 // Assert
                 act.Should().Throw<XunitException>()
-                    .WithMessage($"Did not expect {nameof(offsetTime)} to be equal to <null>, but found <null>.");
+                    .WithMessage($"Did not expect {nameof(offsetTime)} to be equal to <null>.");
             }
 
             [Fact]
