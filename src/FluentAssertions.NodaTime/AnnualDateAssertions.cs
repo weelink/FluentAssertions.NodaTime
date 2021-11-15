@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 using FluentAssertions.Execution;
 using FluentAssertions.Primitives;
@@ -48,7 +49,7 @@ namespace FluentAssertions.NodaTime
         {
             Execute.Assertion
                 .BecauseOf(because, becauseArgs)
-                .ForCondition((Subject.HasValue && Subject.Equals(other)) || (!Subject.HasValue && !other.HasValue))
+                .ForCondition(Nullable.Equals(Subject, other))
                 .FailWith("Expected {context:AnnualDate} to be equal to {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<AnnualDateAssertions>(this);
@@ -73,7 +74,7 @@ namespace FluentAssertions.NodaTime
         {
             Execute.Assertion
                 .BecauseOf(because, becauseArgs)
-                .ForCondition((Subject.HasValue && !Subject.Equals(other)) || (!Subject.HasValue && other.HasValue))
+                .ForCondition(!Nullable.Equals(Subject, other))
                 .FailWith("Did not expect {context:AnnualDate} to be equal to {0}{reason}, but found {1}.", other, Subject);
 
             return new AndConstraint<AnnualDateAssertions>(this);
